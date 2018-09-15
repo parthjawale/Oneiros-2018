@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php require ('/head.php'); ?>
+  <?php require ('../head.php'); ?>
   <title>Login</title>
 </head>
 <body>
-  <? require ('/navbar.php'); ?>
+  <? require ('../navbar.php'); ?>
   <div class="login">
     <div class="login--form-wrapper">
       <div class="login--form">

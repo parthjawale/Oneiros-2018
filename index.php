@@ -4,11 +4,11 @@
 <head>
   <title>Oneiros' 18</title>
   <link rel="stylesheet" href="/css/libs/fullpage.css">
-  <?php require('/head.php') ?>
+  <?php require('head.php') ?>
 </head>
 
 <body>
-  <? require ('/navbar.php'); ?>
+  <? require ('navbar.php'); ?>
   <main id="fullpage" style="height: 100%">
     <section class="home-splash fp-section">
       <div id="particles">
