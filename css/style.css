@@ -1,3 +1,12 @@
+.color-primary {
+  color: #e50914; }
+
+.color-secondary {
+  color: #c10812; }
+
+.color-black {
+  color: #222; }
+
 @font-face {
   font-family: "Gotham-Black";
   src: url("/fonts/gotham/Gotham-Black.otf"); }
@@ -126,7 +135,7 @@ a:link, a:visited {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none; }
   .nav-container * {
     transition: all 1s; }
@@ -187,6 +196,9 @@ a:link, a:visited {
   left: 0 !important;
   opacity: 1 !important; }
 
+#pp-nav {
+  z-index: 1 !important; }
+
 .home-splash {
   height: 100%;
   background: #020202; }
@@ -194,7 +206,8 @@ a:link, a:visited {
 .home-about {
   background: url("/img/home/about.jpg");
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
 
 #particles {
   width: 100%;
@@ -219,3 +232,75 @@ a:link, a:visited {
   color: #fff;
   font-size: 2rem;
   font-family: 'Gotham-Thin'; }
+
+.home.about {
+  position: absolute;
+  width: 40%;
+  height: 80%;
+  background: #fff;
+  float: right;
+  bottom: 0;
+  right: 10rem;
+  padding: 3.5rem;
+  box-shadow: 0 0 5rem rgba(255, 255, 255, 0.3); }
+  .home.about__header {
+    font-size: 7rem;
+    font-family: 'Gotham-Black';
+    margin-left: 10rem; }
+  .home.about__breaker {
+    margin: 2rem 0 3rem 0;
+    height: 7px;
+    background: #222;
+    width: 75%; }
+  .home.about__content {
+    font-size: 2rem;
+    font-family: 'Gotham';
+    line-height: 30px;
+    margin-left: 10rem; }
+
+.login--form {
+  display: inline-block; }
+  .login--form-wrapper {
+    height: 100vh;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    position: relative; }
+  .login--form .input-group label {
+    margin-top: 1.5rem;
+    font-family: 'Gotham', sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    padding-bottom: 1rem; }
+  .login--form .input-group button {
+    border: none;
+    border: 2px solid black;
+    font-size: 2rem;
+    padding: 5px 12px; }
+    .login--form .input-group button:focus {
+      outline: none;
+      border: 2px solid black; }
+  .login--form .input-group input {
+    border: none;
+    font-size: 2.5rem;
+    height: 3rem;
+    font-family: 'Gotham-Light', sans-serif;
+    color: black;
+    outline: none; }
+    .login--form .input-group input:focus {
+      outline: none;
+      border: none; }
+  .login--form .input-group:not(:nth-child(1)) {
+    margin-top: 7rem; }
+
+.login .title {
+  font-family: 'Gotham-Bold', sans-serif;
+  color: #e50914;
+  font-size: 4rem;
+  margin-bottom: 9rem; }
+
+.login--background {
+  width: auto;
+  height: 100vh;
+  float: right; }

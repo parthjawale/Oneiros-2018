@@ -1,1 +1,31 @@
-.home.about {}
+.home.about {
+  position: absolute;
+  width: 40%;
+  height: 80%;
+  background: $color-white;
+  float: right;
+  bottom: 0;
+  right: 10rem;
+  padding: 3.5rem;
+  box-shadow: 0 0 5rem rgba($color-white, .3);
+
+  &__header {
+    font-size: 7rem;
+    font-family: 'Gotham-Black';
+    margin-left: 10rem;
+  }
+
+  &__breaker {
+    margin: 2rem 0 3rem 0;
+    height: 7px;
+    background: #222;
+    width: 75%;
+  }
+
+  &__content {
+    font-size: 2rem;
+    font-family: 'Gotham';
+    line-height: 30px;
+    margin-left: 10rem;
+  }
+}

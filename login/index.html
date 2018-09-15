@@ -5,11 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Oneiros' 18</title>
-
-  <link rel="stylesheet" href="/css/libs/pagepiling.css">
   <link rel="stylesheet" href="/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Login</title>
 </head>
 
 <body>
@@ -61,42 +59,25 @@
       </div>
     </div>
   </header>
-
-  <main id="pagepiling" style="height: 100%">
-    <section class="home-splash section">
-      <div id="particles">
-        <div class="logo">
-          <div class="oneiros" data-src="/img/logos/logo.png"></div>
+  <div class="login">
+    <div class="login--form-wrapper">
+      <div class="login--form">
+        <h1 class="title">Login</h1>
+        <div class="input-group">
+          <label for="name">My Username Is</label>
+          <input type="text" name="name" id="name" placeholder="Your Name" autocomplete="off">
         </div>
-        <canvas class="draw"></canvas>
+        <div class="input-group">
+          <label for="name">My Pasword Is</label>
+          <input type="text" name="name" id="name" placeholder="Your Password" autocomplete="off">
+        </div>
+        <div class="input-group">
+          <button>Submit</button>
+        </div>
       </div>
-      <div id="mext">
-        <p>Powered by</p>
-        <img src="/img/logos/mext.png" alt="Mext">
-      </div>
-      <div id="fest-date">
-        13 - 14th October
-      </div>
-    </section>
-
-    <section class="home-about section">
-      <div class="home about">
-        <h1 class="color-black home about__header">About <br><span class="color-primary">Oneiros</span></h1>
-        <hr class="home about__breaker">
-        <p class="home about__content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum, consequuntur quasi perspiciatis
-          doloribus quibusdam nesciunt dolor aperiam. Eius tempora atque dolor voluptatibus officiis consequuntur nisi
-          unde reiciendis repellendus quaerat ducimus aliquid perspiciatis quae impedit adipisci ut, eum sed quisquam
-          velit in quis. Sequi amet, consectetur dolorem accusamus expedita ut.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <script src="/js/libs/pagepiling.js"></script>
-  <script src="/js/home/particle.js"></script>
-  <script src="/js/home/pagepiling.js"></script>
-  <script src="/js/common/nav.js"></script>
+    </div>
+    <img class="login--background" src="/img/login/background.png">
+  </div>
 </body>
 
 </html>
