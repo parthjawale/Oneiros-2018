@@ -9,7 +9,6 @@
 
   <link rel="stylesheet" href="/css/libs/pagepiling.css">
   <link rel="stylesheet" href="/css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -37,10 +36,10 @@
       <div class="nav-container__whiteoverlay">
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
-            <a href="#">Events</a>
+            <a href="/events">Events</a>
           </li>
           <li>
             <a href="#">Clubs</a>
@@ -83,19 +82,26 @@
       <div class="home about">
         <h1 class="color-black home about__header">About <br><span class="color-primary">Oneiros</span></h1>
         <hr class="home about__breaker">
-        <p class="home about__content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum, consequuntur quasi perspiciatis
-          doloribus quibusdam nesciunt dolor aperiam. Eius tempora atque dolor voluptatibus officiis consequuntur nisi
-          unde reiciendis repellendus quaerat ducimus aliquid perspiciatis quae impedit adipisci ut, eum sed quisquam
-          velit in quis. Sequi amet, consectetur dolorem accusamus expedita ut.
-        </p>
+        <div class="home about__content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptatum, consequuntur quasi
+            perspiciatis
+            doloribus quibusdam nesciunt dolor aperiam. Eius tempora atque dolor voluptatibus officiis consequuntur
+            nisi
+            unde reiciendis repellendus quaerat ducimus aliquid perspiciatis quae impedit adipisci ut, eum sed quisquam
+            velit in quis. Sequi amet, consectetur dolorem accusamus expedita ut.
+          </p>
+        </div>
       </div>
+      <canvas id="about-canvas"></canvas>
     </section>
   </main>
 
+  <script src="/js/libs/jquery.js"></script>
   <script src="/js/libs/pagepiling.js"></script>
   <script src="/js/home/particle.js"></script>
   <script src="/js/home/pagepiling.js"></script>
+  <script src="/js/home/about.js"></script>
   <script src="/js/common/nav.js"></script>
 </body>
 

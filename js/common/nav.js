@@ -52,9 +52,9 @@ const showNavPage = (bool) => {
     whiteoverlay.removeClass('activate-whiteoverlay')
     setTimeout(() => {
       blackoverlay.removeClass('activate-blackoverlay')
-    }, 200);
+    }, 100);
     setTimeout(() => {
       redoverlay.removeClass('activate-redoverlay')
-    }, 300);
+    }, 200);
   }
 }
