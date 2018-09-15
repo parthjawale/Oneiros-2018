@@ -100,7 +100,7 @@ let stars = [];
 
 function init() {
   stars = [];
-  for (var i = 0; i < 150; i++) {
+  for (var i = 0; i < 50; i++) {
     var stars_radius = randomIntFromRange(2, 3);
     var stars_x = randomIntFromRange(stars_radius, canvas.width);
     var stars_y = randomIntFromRange(stars_radius, canvas.height);
