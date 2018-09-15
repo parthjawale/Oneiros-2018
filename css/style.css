@@ -27,12 +27,10 @@ body {
 
 html,
 body {
-  background-color: #000;
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0;
-  overflow: hidden; }
+  padding: 0; }
 
 *,
 *::after,
@@ -53,6 +51,22 @@ main {
 
 a:link, a:visited {
   text-decoration: none; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb {
+    background: #888; }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; }
+
+#wordmark {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 15rem;
+  z-index: 2; }
 
 .nav {
   position: fixed;
@@ -130,7 +144,7 @@ a:link, a:visited {
     background: #fff; }
 
 .activate-redoverlay {
-  width: 70%; }
+  width: 67%; }
 
 .activate-blackoverlay {
   width: 60%; }
@@ -149,9 +163,11 @@ a:link, a:visited {
     font-size: 5rem;
     font-family: 'Gotham-Bold';
     color: #222;
-    transition: .2s all;
+    transition: .5s all;
     opacity: 0;
-    position: relative; }
+    position: relative;
+    left: 10rem;
+    white-space: nowrap; }
     .nav-container__whiteoverlay ul li a:hover {
       color: #c10812;
       margin-left: 10px; }
@@ -168,20 +184,16 @@ a:link, a:visited {
       width: 100%; }
 
 .show-nav-links {
+  left: 0 !important;
   opacity: 1 !important; }
 
 .home-splash {
-  height: 100%; }
+  height: 100%;
+  background: #020202; }
 
 #particles {
   width: 100%;
   height: 100%; }
-
-#wordmark {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  width: 15rem; }
 
 #mext {
   position: fixed;

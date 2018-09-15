@@ -10,7 +10,7 @@ const whiteotheroverlay = $('.nav-container__whiteotheroverlay')
 
 const links = $('.nav-container__whiteoverlay a')
 
-nav.click(function () {
+nav.click(() => {
   if (!nav.hasClass('nav-active')) {
     nav.addClass('nav-active')
     sword1.addClass('sword1-activate')
@@ -28,7 +28,7 @@ nav.click(function () {
   }
 })
 
-const showNavPage = function (bool) {
+const showNavPage = (bool) => {
   if (bool) {
     $('.nav-container').css({
       pointerEvents: 'all'
@@ -38,9 +38,12 @@ const showNavPage = function (bool) {
       blackoverlay.addClass('activate-blackoverlay')
     }, 100);
     setTimeout(() => {
-      links.addClass('show-nav-links')
       redoverlay.addClass('activate-redoverlay')
     }, 200);
+    for (let i = 0; i < links.length; i++)
+      setTimeout(() => {
+        links[i].classList.add('show-nav-links')
+      }, i * 100);
   } else {
     $('.nav-container').css({
       pointerEvents: 'none'
@@ -49,9 +52,9 @@ const showNavPage = function (bool) {
     whiteoverlay.removeClass('activate-whiteoverlay')
     setTimeout(() => {
       blackoverlay.removeClass('activate-blackoverlay')
-    }, 100);
+    }, 200);
     setTimeout(() => {
       redoverlay.removeClass('activate-redoverlay')
-    }, 200);
+    }, 300);
   }
 }
