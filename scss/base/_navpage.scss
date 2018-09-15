@@ -34,7 +34,7 @@
 }
 
 .activate-redoverlay {
-  width: 70%;
+  width: 67%;
 }
 
 .activate-blackoverlay {
@@ -59,9 +59,11 @@
         font-size: 5rem;
         font-family: 'Gotham-Bold';
         color: #222;
-        transition: .2s all;
+        transition: .5s all;
         opacity: 0;
         position: relative;
+        left: 10rem;
+        white-space: nowrap;
 
         &:hover {
           color: $color-secondary;
@@ -88,5 +90,6 @@
 }
 
 .show-nav-links {
+  left: 0 !important;
   opacity: 1 !important;
 }

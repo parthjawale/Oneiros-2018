@@ -13,7 +13,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 *,
@@ -42,5 +42,21 @@ a {
   &:link,
   &:visited {
     text-decoration: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+
+  &-track {
+    background: #f1f1f1;
+  }
+
+  &-thumb {
+    background: #888;
+  }
+
+  &-thumb:hover {
+    background: #555;
   }
 }
