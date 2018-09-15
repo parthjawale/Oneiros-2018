@@ -66,7 +66,7 @@ a:link, a:visited {
   top: 1rem;
   left: 1rem;
   width: 15rem;
-  z-index: 2; }
+  z-index: 3; }
 
 .nav {
   position: fixed;
@@ -74,7 +74,7 @@ a:link, a:visited {
   height: 50px;
   right: 2rem;
   top: 2rem;
-  z-index: 2;
+  z-index: 3;
   cursor: pointer; }
   .nav ul {
     height: 100%;
@@ -190,6 +190,11 @@ a:link, a:visited {
 .home-splash {
   height: 100%;
   background: #020202; }
+
+.home-about {
+  background: url("/img/home/about.jpg");
+  background-position: center;
+  background-size: cover; }
 
 #particles {
   width: 100%;
