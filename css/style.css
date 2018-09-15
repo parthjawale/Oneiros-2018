@@ -27,7 +27,6 @@ body {
 
 html,
 body {
-  background-color: #000;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -202,3 +201,50 @@ a:link, a:visited {
   color: #fff;
   font-size: 2rem;
   font-family: 'Gotham-Thin'; }
+
+.login--form {
+  display: inline-block; }
+  .login--form-wrapper {
+    height: 100vh;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    position: relative; }
+  .login--form .input-group label {
+    margin-top: 1.5rem;
+    font-family: 'Gotham', sans-serif;
+    font-size: 1.5rem;
+    display: block;
+    padding-bottom: 1rem; }
+  .login--form .input-group button {
+    border: none;
+    border: 2px solid black;
+    font-size: 2rem;
+    padding: 5px 12px; }
+    .login--form .input-group button:focus {
+      outline: none;
+      border: 2px solid black; }
+  .login--form .input-group input {
+    border: none;
+    font-size: 2.5rem;
+    height: 3rem;
+    font-family: 'Gotham-Light', sans-serif;
+    color: black;
+    outline: none; }
+    .login--form .input-group input:focus {
+      outline: none;
+      border: none; }
+  .login--form .input-group:not(:nth-child(1)) {
+    margin-top: 7rem; }
+
+.login .title {
+  font-family: 'Gotham-Bold', sans-serif;
+  color: #e50914;
+  font-size: 4rem;
+  margin-bottom: 9rem; }
+
+.login--background {
+  width: auto;
+  height: 100vh;
+  float: right; }
