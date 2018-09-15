@@ -1,3 +1,30 @@
+@font-face {
+  font-family: "Gotham-Black";
+  src: url("/fonts/gotham/Gotham-Black.otf"); }
+
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("/fonts/gotham/Gotham-Bold.otf"); }
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/gotham/GothamBook.ttf"); }
+
+@font-face {
+  font-family: "Gotham-Light";
+  src: url("/fonts/gotham/Gotham-Light.otf"); }
+
+@font-face {
+  font-family: "Gotham-Thin";
+  src: url("/fonts/gotham/Gotham-XLight.otf"); }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-family: 'Gotham', sans-serif; }
+
 html,
 body {
   background-color: #000;
@@ -7,15 +34,141 @@ body {
   padding: 0;
   overflow: hidden; }
 
-html .slides,
-body .slides,
-html > .dg,
-body > .dg {
-  display: none; }
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
-@media (min-width: 1000px) {
-  body > .dg {
-    display: block; } }
+::selection {
+  background-color: #c10812;
+  color: #fff; }
+
+main {
+  transition: .5s all; }
+
+.body-darken {
+  filter: brightness(0.5); }
+
+a:link, a:visited {
+  text-decoration: none; }
+
+.nav {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  right: 2rem;
+  top: 2rem;
+  z-index: 2;
+  cursor: pointer; }
+  .nav ul {
+    height: 100%;
+    transition: 1s all; }
+    .nav ul li {
+      width: 100%;
+      height: 2px;
+      display: flex;
+      border-radius: 5px;
+      transform-origin: center;
+      transition: 1s all;
+      position: absolute; }
+    .nav ul li:nth-child(2) {
+      top: 1rem; }
+    .nav ul li:nth-child(3) {
+      top: 2rem; }
+  .nav:hover .nav__sword {
+    background: #c10812;
+    box-shadow: 0 0 15px red;
+    border-radius: 100px; }
+  .nav__sword, .nav__handle, .nav__middle {
+    height: 100%;
+    margin: 0 2px;
+    transition: .2s all; }
+  .nav__sword {
+    background: #fff;
+    width: 70%; }
+  .nav__handle {
+    background: #fff;
+    width: 30%; }
+
+.sword1-activate {
+  transform: rotate(405deg);
+  position: absolute;
+  filter: invert(1); }
+
+.sword2-activate {
+  transform: translateX(25rem); }
+
+.sword3-activate {
+  transform: rotate(495deg);
+  position: absolute;
+  filter: invert(1); }
+
+.nav-active ul {
+  margin-top: 2rem; }
+
+.nav-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none; }
+  .nav-container * {
+    transition: all 1s; }
+  .nav-container__blackoverlay, .nav-container__redoverlay, .nav-container__whiteoverlay, .nav-container__whiteotheroverlay {
+    right: 0;
+    position: absolute;
+    height: 100%;
+    box-shadow: -1rem 0 10rem rgba(34, 34, 34, 0.5);
+    width: 0; }
+  .nav-container__blackoverlay {
+    background: #222; }
+  .nav-container__redoverlay {
+    background: #c10812; }
+  .nav-container__whiteoverlay {
+    background: #fff; }
+
+.activate-redoverlay {
+  width: 70%; }
+
+.activate-blackoverlay {
+  width: 60%; }
+
+.activate-whiteoverlay {
+  width: 50%; }
+
+.nav-container__whiteoverlay ul {
+  list-style-type: none;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 0 5rem; }
+  .nav-container__whiteoverlay ul li a {
+    font-size: 5rem;
+    font-family: 'Gotham-Bold';
+    color: #222;
+    transition: .2s all;
+    opacity: 0;
+    position: relative; }
+    .nav-container__whiteoverlay ul li a:hover {
+      color: #c10812;
+      margin-left: 10px; }
+    .nav-container__whiteoverlay ul li a::after {
+      content: "";
+      transition: .2s all;
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 0%;
+      height: 5px;
+      background: #e50914; }
+    .nav-container__whiteoverlay ul li a:hover::after {
+      width: 100%; }
+
+.show-nav-links {
+  opacity: 1 !important; }
 
 .home-splash {
   height: 100%; }
@@ -23,3 +176,29 @@ body > .dg {
 #particles {
   width: 100%;
   height: 100%; }
+
+#wordmark {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 15rem; }
+
+#mext {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem; }
+  #mext p {
+    display: inline-block;
+    color: #fff;
+    transform: translateY(-1rem);
+    font-size: 1.2rem; }
+  #mext img {
+    width: 8rem; }
+
+#fest-date {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  color: #fff;
+  font-size: 2rem;
+  font-family: 'Gotham-Thin'; }

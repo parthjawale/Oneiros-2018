@@ -4,7 +4,6 @@ const spiral = .5
 
 function Particle(a) {
   var b = this;
-  console.log(b)
   b.sliderId = "particles", b.color = "#fff", b.hoverColor = "#88f", b.width = 0, b.height = 20, b.ptlGap = 0, b.ptlSize = 1, b.slideDelay = 10, b.arrowPadding = 10, b.showArrowControls = !0, b.onNextSlide = null, b.onWidthChange = null, b.onHeightChange = null, b.onSizeChange = null, b.monochrome = !1, b.mouseForce = 1e4, b.restless = !0, b.imgs = [];
   if (a) {
     var c = ["color", "hoverColor", "width", "height", "ptlGap", "ptlSize", "slideDelay", "arrowPadding", "sliderId", "showArrowControls", "onNextSlide", "monochrome", "mouseForce", "restless", "imgs", "onSizeChange", "onWidthChange", "onHeightChange"];

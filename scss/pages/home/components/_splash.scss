@@ -1,0 +1,37 @@
+#particles {
+  width: 100%;
+  height: 100%;
+}
+
+#wordmark {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 15rem;
+}
+
+#mext {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  p {
+    display: inline-block;
+    color: $color-white;
+    transform: translateY(-1rem);
+    font-size: 1.2rem;
+  }
+
+  img {
+    width: 8rem;
+  }
+}
+
+#fest-date {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  color: $color-white;
+  font-size: 2rem;
+  font-family: 'Gotham-Thin';
+}

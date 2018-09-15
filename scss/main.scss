@@ -1,1 +1,8 @@
-@import './home/root'
+@import './base/colors';
+@import './base/fonts';
+@import './base/layout';
+@import './base/nav.scss';
+@import './base/navpage';
+
+// PAGES
+@import "./pages/home/root";

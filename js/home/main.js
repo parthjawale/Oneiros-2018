@@ -1,4 +1,4 @@
-var init = function () {
+var particleInit = function () {
   var isMobile = navigator.userAgent &&
     navigator.userAgent.toLowerCase().indexOf('mobile') >= 0;
   var isSmall = window.innerWidth < 1000;
@@ -8,7 +8,7 @@ var init = function () {
     ptlSize: isMobile || isSmall ? 3 : 3,
     width: 1e9,
     height: 1e9,
-    mouseForce: 5000
+    mouseForce: 1000
   });
 
   (window.addEventListener ?
@@ -20,4 +20,4 @@ var init = function () {
     });
 }
 
-init()
+particleInit()
