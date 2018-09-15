@@ -26,11 +26,24 @@
         border: none;
         border: 2px solid black;
         font-size: 2rem;
+        font-family: 'Gotham-Light', sans-serif;
+        font-weight: 700;
         padding: 5px 12px;
         &:focus {
           outline: none;
           border: 2px solid black;
         }
+      }
+      .line {
+        height: 3px;
+        margin-top: 10px;
+        background-color: black;
+        width: 0;
+        display: block;
+        transition: width 0.4s ease-in-out;
+      }
+      input:focus+.line {
+        width: 100%;
       }
       input {
         border: none;
@@ -49,7 +62,7 @@
         // }
       }
       &:not(:nth-child(1)) {
-        margin-top: 7rem;
+        margin-top: 5rem;
       }
     }
   }
@@ -60,7 +73,7 @@
     margin-bottom: 9rem;
   }
   &--background {
-    width: auto;
+    width: 50%;
     height: 100vh;
     float: right;
   }
