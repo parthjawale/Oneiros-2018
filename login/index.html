@@ -59,25 +59,31 @@
       </div>
     </div>
   </header>
-  <div class="login">
+  <div class="login" id="login">
     <div class="login--form-wrapper">
       <div class="login--form">
         <h1 class="title">Login</h1>
         <div class="input-group">
           <label for="name">My Username Is</label>
-          <input type="text" name="name" id="name" placeholder="Your Name" autocomplete="off">
+          <input type="text" v-model="username" name="username" id="name" placeholder="Your Name" autocomplete="off">
+          <span class="line"></span>
         </div>
         <div class="input-group">
-          <label for="name">My Pasword Is</label>
-          <input type="text" name="name" id="name" placeholder="Your Password" autocomplete="off">
+          <label for="password">My Password Is</label>
+          <input type="password" v-model="password" name="password" id="password" placeholder="Your Password" autocomplete="off">
+          <span class="line"></span>
         </div>
         <div class="input-group">
-          <button>Submit</button>
+          <button @click="login">Submit</button>
         </div>
       </div>
     </div>
     <img class="login--background" src="/img/login/background.png">
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script src="/js/config/db.js"></script>
+  <script src="/js/config/login/index.js"></script>
 </body>
 
 </html>
