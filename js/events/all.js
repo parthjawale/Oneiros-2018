@@ -10,6 +10,15 @@ $(document).ready(() => {
       "showdownofsocieties-desc", "showdownofsocieties-info", "showdownofsocieties-registration",
       "pictureperfect-desc", "pictureperfect-info", "pictureperfect-registration",
       "powershoot-desc", "powershoot-info", "powershoot-registration",
+
+      "octaves-desc", 'octaves-info', 'octaves-registration',
+      "dhwani-desc", 'dhwani-info', 'dhwani-registration',
+      "saptak-desc", 'saptak-info', 'saptak-registration',
+      "twicethevoice-desc", 'twicethevoice-info', 'twicethevoice-registration',
+      "ensemble-desc", 'ensemble-info', 'ensemble-registration',
+      "beatstreet-desc", 'beatstreet-info', 'beatstreet-registration',
+      "woodstock-desc", 'woodstock-info', 'woodstock-registration',
+
     ],
     afterLoad: (origin, dest) => {
       let option = 0
