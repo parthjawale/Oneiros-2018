@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Login</title>
+</head>
+
+<body>
+  <header>
+    <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+    <div class="nav">
+      <ul>
+        <li>
+          <span class="nav__sword"></span>
+          <span class="nav__handle"></span>
+        </li>
+        <li>
+          <span class="nav__handle"></span>
+          <span class="nav__sword"></span>
+        </li>
+        <li>
+          <span class="nav__sword"></span>
+          <span class="nav__handle"></span>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-container">
+      <div class="nav-container__redoverlay"></div>
+      <div class="nav-container__blackoverlay"></div>
+      <div class="nav-container__whiteoverlay">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Events</a>
+          </li>
+          <li>
+            <a href="#">Clubs</a>
+          </li>
+          <li>
+            <a href="#">Register</a>
+          </li>
+          <li>
+            <a href="#">Login</a>
+          </li>
+          <li>
+            <a href="#">Campus Ambassador</a>
+          </li>
+          <li>
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="login" id="login">
+    <div class="login--form-wrapper">
+      <div class="login--form">
+        <h1 class="title">Login</h1>
+        <div class="input-group">
+          <label for="name">My Username Is</label>
+          <input type="text" v-model="username" name="username" id="name" placeholder="Your Name" autocomplete="off">
+          <span class="line"></span>
+        </div>
+        <div class="input-group">
+          <label for="password">My Password Is</label>
+          <input type="password" v-model="password" name="password" id="password" placeholder="Your Password" autocomplete="off">
+          <span class="line"></span>
+        </div>
+        <div class="input-group">
+          <button @click="login">Submit</button>
+        </div>
+      </div>
+    </div>
+    <img class="login--background" src="/img/login/background.png">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script src="/js/config/db.js"></script>
+  <script src="/js/config/login/index.js"></script>
+</body>
+
+</html>

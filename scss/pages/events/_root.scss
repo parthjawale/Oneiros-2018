@@ -1,0 +1,95 @@
+.events-splash {
+  background: url('/img/events/splash.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__overlay {
+    background: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: .5;
+  }
+
+  &__container {
+    position: absolute;
+    z-index: 1;
+    padding: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &--header {
+      color: #fff;
+      font-size: 10rem;
+      transform: translate(5rem, -10rem);
+      font-family: 'Gotham-Bold';
+    }
+
+    &--content {
+      color: $color-black;
+      font-size: 2rem;
+      font-family: 'Gotham';
+      line-height: 30px;
+      width: 50%;
+      float: right;
+      transform: translateY(10rem);
+      background: $color-white;
+      padding: 2.5rem 7rem;
+      box-shadow: 0 0 5rem rgba($color-black, .2);
+      clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+      text-align: center;
+    }
+  }
+}
+
+.clubs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+
+  & * {
+    transition: .5s all, 2s transform;
+  }
+
+  &__item {
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &:hover &--image {
+      opacity: .2;
+      transform: scale(1.2);
+    }
+
+    &--solid {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--header,
+    &--content {
+      color: #fff;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--content {
+      opacity: 0;
+      line-height: 32px;
+      font-size: 2rem;
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+}
+
+@import './clubs';
+@import './all/root';
+@import './social';

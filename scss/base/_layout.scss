@@ -1,0 +1,62 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Gotham', sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  // overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+::selection {
+  background-color: $color-secondary;
+  color: $color-white;
+}
+
+main {
+  transition: .5s all;
+}
+
+.body-darken {
+  filter: brightness(.5);
+}
+
+a {
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+
+  &-track {
+    background: #f1f1f1;
+  }
+
+  &-thumb {
+    background: #888;
+  }
+
+  &-thumb:hover {
+    background: #555;
+  }
+}

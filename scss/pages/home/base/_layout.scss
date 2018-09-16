@@ -1,0 +1,16 @@
+#pp-nav {
+  z-index: 1 !important;
+}
+
+.home-splash {
+  height: 100%;
+  background: #020202;
+}
+
+.home-about {
+  background: url('/img/home/about.jpg');
+  background-position: center;
+  background-size: cover;
+
+  position: relative;
+}
