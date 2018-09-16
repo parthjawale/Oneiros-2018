@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register - Campus Ambassador</title>
+</head>
+<body>
+  <div id="campus-ambassador-register">
+    <h1>Register For Campus Ambassador</h1>
+    <input type="text" placeholder="Name" v-model="name"> 
+    <br>
+    <input type="text" placeholder="Username" v-model="username"> 
+    <br>
+    <input type="email" placeholder="E-mail" v-model="email">
+    <br>
+    <input type="number" placeholder="Whatsapp Ph No." v-model="wpno">
+    <br>
+    <input type="number" placeholder="Calling Phone No." v-model="pno">
+    <br>
+    <input type="text" placeholder="College Name" v-model="college">
+    <br>
+    <input type="password" placeholder="Password" v-model="password">
+    <br>
+    <input type="password" placeholder="Re-enter Password" v-model="repassword">
+    <br>
+    <button @click="register">Register</button>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script src="/js/config/db.js"></script>
+    <script src="/js/config/campusamb/register.js"></script>
+  </div>
+</body>
+</html>
