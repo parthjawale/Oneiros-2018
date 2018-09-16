@@ -717,11 +717,52 @@ a:link, a:visited {
   background-position: center;
   background-size: cover; }
 
-.event-image__focus-splash {
-  background: url("/img/all/aperture/focus.jpg"); }
-
 .event-next__aperture {
   background: #FF5722; }
 
+.event-image__focus {
+  background: url("/img/all/aperture/focus.jpg"); }
+
+.event-image__aperture {
+  background: #FF5722; }
+
+.event-image__shutter-up {
+  background: url(""); }
+
+.event-image__instaperture {
+  background: url(""); }
+
+.event-image__showdownofsocieties {
+  background: url(""); }
+
+.event-image__pictureperfect {
+  background: url(""); }
+
+.event-image__powershoot {
+  background: url(""); }
+
+.tmc-prime {
+  background: url("/img/all/aperture/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-image__focus-splash {
+  background: url("/img/all/aperture/focus.jpg"); }
+
 .event-next__tmc {
   background: #c62828; }
+
+.event-next_shutter-up {
+  background: url(""); }
+
+.event-next_instaperture {
+  background: url(""); }
+
+.event-next_showdownofsocieties {
+  background: url(""); }
+
+.event-next_pictureperfect {
+  background: url(""); }
+
+.event-next_powershoot {
+  background: url(""); }
