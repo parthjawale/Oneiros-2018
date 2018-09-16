@@ -6,6 +6,10 @@ $(document).ready(() => {
       "club-aperture",
       "focus-desc", "focus-info", "focus-registration",
       "shutterup-desc", "shutterup-info", "shutterup-registration",
+      "instaperture-desc", "instaperture-info", "instaperture-registration",
+      "showdownofsocieties-desc", "showdownofsocieties-info", "showdownofsocieties-registration",
+      "pictureperfect-desc", "pictureperfect-info", "pictureperfect-registration",
+      "powershoot-desc", "powershoot-info", "powershoot-registration",
     ],
     afterLoad: (origin, dest) => {
       let option = 0
