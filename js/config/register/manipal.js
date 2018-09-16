@@ -54,15 +54,16 @@ new Vue({
         if (querySnapshot.size > 0) {
           alert('Username already exists. Please try with another username.');
           return false
+        } else {
+          return true
         }
       })
-      return true
     },
     register () {
       var result = this.validate()
       var self = this
       if (!result) {
-        return
+        return;
       }
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
       .then(function (user) {
