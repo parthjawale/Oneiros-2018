@@ -1,31 +1,60 @@
 .home.about {
   position: absolute;
   width: 40%;
-  height: 80%;
-  background: $color-white;
+  height: 0%;
+  // background: $color-white;
   float: right;
   bottom: 0;
   right: 10rem;
-  padding: 3.5rem;
-  box-shadow: 0 0 5rem rgba($color-white, .3);
+  padding: 0;
+  // box-shadow: 0 0 5rem rgba($color-white, .3);
+  transition: .5s all;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+  &__header,
+  &__content,
+  &__breaker {
+    opacity: 0;
+    transition: .5s all;
+  }
 
   &__header {
     font-size: 7rem;
     font-family: 'Gotham-Black';
     margin-left: 10rem;
+    color: $color-white;
   }
 
   &__breaker {
     margin: 2rem 0 3rem 0;
     height: 7px;
-    background: #222;
+    background: #fff;
     width: 75%;
+    border-radius: 100px;
   }
 
   &__content {
     font-size: 2rem;
     font-family: 'Gotham';
     line-height: 30px;
-    margin-left: 10rem;
+    margin-top: 10rem;
+    transition: 1s all;
+    color: $color-white;
   }
+}
+
+.home-about-showcontent {
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  opacity: 1 !important;
+}
+
+.home-about-breakershow {
+  opacity: 1 !important;
+}
+
+.home-about-resize {
+  height: 80% !important;
+  padding: 3.5rem !important;
 }
