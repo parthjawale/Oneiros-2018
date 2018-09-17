@@ -1,0 +1,51 @@
+@media (max-width: 1400px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 6px;
+  }
+
+  .camb {
+    padding: 10rem 5rem 6rem 7rem;
+
+    &__header {
+      margin-bottom: 8rem;
+    }
+
+    &__content {
+      width: 100%;
+      margin: 0;
+
+      &--mb {
+        margin-bottom: 10rem;
+      }
+
+      &--mbsmall {
+        margin-bottom: 10rem;
+      }
+
+      &__header {
+        white-space: normal;
+      }
+
+      &--right {
+        padding-right: 0;
+        padding-left: 3rem;
+
+        &:after {
+          right: auto;
+          left: 0;
+        }
+
+        &:before {
+          right: auto;
+          left: -2rem;
+        }
+      }
+    }
+  }
+}
