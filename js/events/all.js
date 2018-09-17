@@ -28,6 +28,14 @@ $(document).ready(() => {
       "groundzero-desc", 'groundzero-info', 'groundzero-registration',
       "stepsvsbeats-desc", 'stepsvsbeats-info', 'stepsvsbeats-registration',
 
+      "club-cinefilia",
+      "admak-desc",'admak-info','admak-registration',
+      "awaaz-desc",'awaaz-info','awaaz-registration',
+      "humorus-desc",'humorus-info','humorus-registration',
+      "missionimprovable-desc",'missionimprovable-info','missionimprovable-registration',
+
+
+
     ],
     afterLoad: (origin, dest) => {
       let option = 0
