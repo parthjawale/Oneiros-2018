@@ -41,13 +41,21 @@
             <a href="/events">Events</a>
           </li>
           <li>
+<<<<<<< HEAD
             <a href="/register">Register</a>
+=======
+            <a href="/events">Clubs</a>
+>>>>>>> apoorv
           </li>
           <li>
             <a href="/login">Login</a>
           </li>
           <li>
+<<<<<<< HEAD
             <a href="/campusambassador">Campus Ambassador</a>
+=======
+            <a href="/login">Login</a>
+>>>>>>> apoorv
           </li>
           <li>
             <a href="/contact">Contact Us</a>
@@ -56,6 +64,7 @@
       </div>
     </div>
   </header>
+<<<<<<< HEAD
 
   <main>
     <div id="black-overlay"></div>
@@ -77,6 +86,25 @@
           <div class="input-group">
             <button @click="login" class="mt-0 ono-btn ono-btn--small">Submit</button>
           </div>
+=======
+  <div class="login" id="login">
+    <div class="login--form-wrapper">
+      <div class="login--form">
+        <h1 class="title">Login</h1>
+        <div class="input-group">
+          <label for="name">My Username Is</label>
+          <input type="text" v-model="username" name="username" id="name" placeholder="Your Name" autocomplete="off">
+          <span class="line"></span>
+        </div>
+        <div class="input-group">
+          <label for="password">My Password Is</label>
+          <input type="password" v-model="password" name="password" id="password" placeholder="Your Password"
+            autocomplete="off">
+          <span class="line"></span>
+        </div>
+        <div class="input-group">
+          <button @click="login">Submit</button>
+>>>>>>> apoorv
         </div>
       </div>
     </div>

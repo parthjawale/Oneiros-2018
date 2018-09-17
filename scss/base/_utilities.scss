@@ -16,7 +16,6 @@
 
 .ono-btn {
   padding: 2rem 5rem;
-  margin-top: 10rem;
   font-size: 3rem;
   font-family: "Gotham-Bold";
   color: $color-primary;
@@ -24,6 +23,8 @@
   transition: 0.2s all;
   border-radius: 50px;
   background: transparent;
+  cursor: pointer;
+  outline: none;
 
   &:hover {
     background: $color-primary;
@@ -32,6 +33,15 @@
 
   &--small {
     transform: scale(0.8);
+  }
+
+  &--light {
+    color: white;
+    border-color: white;
+
+    &:hover {
+      background: $color-secondary;
+    }
   }
 }
 

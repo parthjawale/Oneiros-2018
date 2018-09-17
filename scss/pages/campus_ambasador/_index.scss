@@ -1,0 +1,126 @@
+.camb {
+  padding: 13rem 9rem 9rem 9rem;
+  background: #111;
+  height: auto;
+  color: white;
+  position: relative;
+  z-index: 0;
+  text-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.3);
+
+  &__header {
+    font-size: 5rem;
+    margin-bottom: 11rem;
+    text-align: center;
+    font-weight: 700;
+    font-family: inherit;
+    font-family: Gotham-black;
+    text-transform: uppercase;
+
+    &--highlight {
+      color: $color-primary;
+    }
+  }
+
+  &__bg {
+    z-index: -3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.813);
+    z-index: -1;
+  }
+
+  &__content {
+    width: 50%;
+    padding: 0rem 0rem 0 3rem;
+    position: relative;
+    margin: 0 auto 0 8rem;
+
+    &--mb {
+      margin-bottom: 17rem;
+    }
+
+    &--mbsmall {
+      margin-bottom: 13rem;
+    }
+
+    &:hover {
+      &:after {
+        height: 75%;
+      }
+
+      &:before {
+        height: 65%;
+      }
+    }
+
+    &::after,
+    &:before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      top: 0;
+      border-radius: 6px;
+      transition: height 0.4s;
+    }
+
+    &::after {
+      left: 0;
+      height: 20%;
+      background: white;
+      transition-timing-function: linear;
+    }
+
+    &:before {
+      left: -2rem;
+      height: 15%;
+      background: $color-secondary;
+      transition-timing-function: ease-in;
+      transition-delay: 0.05s;
+    }
+
+    &--right {
+      margin-right: 8rem;
+      margin-left: auto;
+      padding-right: 3rem;
+      padding-left: 0;
+
+      &:after {
+        right: 0rem;
+        left: auto;
+      }
+
+      &:before {
+        right: -2rem;
+        left: auto;
+      }
+    }
+
+    &__header {
+      font-size: 5rem;
+      margin-bottom: 3rem;
+      white-space: nowrap;
+
+      &--highlight {
+        font-size: 5.2rem;
+        color: $color-primary;
+      }
+    }
+
+    &__body {
+      font-size: 2.5rem;
+      line-height: 1.4;
+    }
+  }
+}
