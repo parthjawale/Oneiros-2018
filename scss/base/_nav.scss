@@ -67,7 +67,10 @@
 .sword1-activate {
   transform: rotate(405deg);
   position: absolute;
-  filter: invert(1)
+  
+  span {
+    background: #222;
+  }
 }
 
 .sword2-activate {
@@ -77,11 +80,18 @@
 .sword3-activate {
   transform: rotate(495deg);
   position: absolute;
-  filter: invert(1)
+  
+  span {
+    background: #222;
+  }
 }
 
 .nav-active {
   ul {
     margin-top: 2rem;
   }
+}
+
+.nav-darken {
+  background: #222;
 }
