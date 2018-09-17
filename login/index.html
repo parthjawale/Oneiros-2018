@@ -12,20 +12,20 @@
 
 <body>
   <header>
-    <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+    <img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
     <div class="nav">
       <ul>
         <li>
-          <span class="nav__sword"></span>
-          <span class="nav__handle"></span>
+          <span class="nav__sword nav-darken"></span>
+          <span class="nav__handle nav-darken"></span>
         </li>
         <li>
-          <span class="nav__handle"></span>
-          <span class="nav__sword"></span>
+          <span class="nav__handle nav-darken"></span>
+          <span class="nav__sword nav-darken"></span>
         </li>
         <li>
-          <span class="nav__sword"></span>
-          <span class="nav__handle"></span>
+          <span class="nav__sword nav-darken"></span>
+          <span class="nav__handle nav-darken"></span>
         </li>
       </ul>
     </div>
@@ -41,13 +41,13 @@
             <a href="#">Events</a>
           </li>
           <li>
-            <a href="#">Clubs</a>
+            <a href="/events">Clubs</a>
           </li>
           <li>
             <a href="#">Register</a>
           </li>
           <li>
-            <a href="#">Login</a>
+            <a href="/login">Login</a>
           </li>
           <li>
             <a href="#">Campus Ambassador</a>
@@ -70,7 +70,8 @@
         </div>
         <div class="input-group">
           <label for="password">My Password Is</label>
-          <input type="password" v-model="password" name="password" id="password" placeholder="Your Password" autocomplete="off">
+          <input type="password" v-model="password" name="password" id="password" placeholder="Your Password"
+            autocomplete="off">
           <span class="line"></span>
         </div>
         <div class="input-group">
@@ -84,6 +85,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
   <script src="/js/config/db.js"></script>
   <script src="/js/config/login/index.js"></script>
+  <script src="/js/common/nav.js"></script>
 </body>
 
 </html>
