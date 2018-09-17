@@ -5,9 +5,11 @@ $(document).ready(function () {
 
   item.hover((e) => {
     e.currentTarget.children[0].children[0].style.opacity = 0
+    e.currentTarget.children[0].children[2].style.opacity = 0
     e.currentTarget.children[0].children[1].style.opacity = 1
   }, (e) => {
     e.currentTarget.children[0].children[0].style.opacity = 1
+    e.currentTarget.children[0].children[2].style.opacity = 1
     e.currentTarget.children[0].children[1].style.opacity = 0
   })
 })

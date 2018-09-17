@@ -1,4 +1,5 @@
 .home.about {
+  pointer-events: none;
   position: absolute;
   width: 40%;
   height: 0%;
@@ -8,7 +9,7 @@
   right: 10rem;
   padding: 0;
   // box-shadow: 0 0 5rem rgba($color-white, .3);
-  transition: .5s all;
+  transition: 0.5s all;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 
@@ -16,12 +17,12 @@
   &__content,
   &__breaker {
     opacity: 0;
-    transition: .5s all;
+    transition: 0.5s all;
   }
 
   &__header {
     font-size: 7rem;
-    font-family: 'Gotham-Black';
+    font-family: "Gotham-Black";
     margin-left: 10rem;
     color: $color-white;
   }
@@ -36,7 +37,7 @@
 
   &__content {
     font-size: 2rem;
-    font-family: 'Gotham';
+    font-family: "Gotham";
     line-height: 30px;
     margin-top: 10rem;
     transition: 1s all;

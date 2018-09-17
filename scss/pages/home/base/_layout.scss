@@ -1,5 +1,5 @@
 #pp-nav {
-  z-index: 1 !important;
+  z-index: 4 !important;
 }
 
 .home-splash {
@@ -8,9 +8,13 @@
 }
 
 .home-about {
-  background: url('/img/home/about.jpg');
+  background: url("/img/home/about.jpg");
   background-position: center;
   background-size: cover;
 
   position: relative;
+}
+
+.home-contact {
+  background: $color-primary;
 }

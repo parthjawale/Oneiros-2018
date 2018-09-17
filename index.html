@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Oneiros' 18</title>
 
-  <link rel="stylesheet" href="/css/libs/pagepiling.css">
+  <link rel="stylesheet" href="/css/libs/fullpage.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -42,26 +42,25 @@
             <a href="/events">Events</a>
           </li>
           <li>
-            <a href="#">Clubs</a>
+            <a href="/register">Register</a>
           </li>
           <li>
-            <a href="#">Register</a>
+            <a href="/login">Login</a>
           </li>
           <li>
-            <a href="#">Login</a>
+            <a href="/campusambassador">Campus Ambassador</a>
           </li>
           <li>
-            <a href="#">Campus Ambassador</a>
-          </li>
-          <li>
-            <a href="#">Contact Us</a>
+            <a href="/contact">Contact Us</a>
           </li>
         </ul>
       </div>
     </div>
   </header>
 
-  <main id="pagepiling" style="height: 100%">
+  <main id="fullpage" style="height: 100%">
+    <div id="black-overlay"></div>
+
     <section class="home-splash section">
       <div id="particles">
         <div class="logo">
@@ -76,6 +75,10 @@
       <div id="fest-date">
         13th - 14th October
       </div>
+      <a href="#about" id="home-explore-btn" class="ono-animatedbtn">
+        <p>Explore</p>
+        <span class="ono-animatedbtn__circle"></span>
+      </a>
     </section>
 
     <section class="home-about section">
@@ -94,15 +97,26 @@
         </div>
       </div>
       <canvas id="about-canvas"></canvas>
+      <a href="#about" id="home-about-btn" class="ono-animatedbtn">
+        <p>Theme</p>
+        <span class="ono-animatedbtn__circle"></span>
+      </a>
     </section>
+
+    <!-- <section class="home-contact section">
+      <div class="home contact">
+        <h1>ASd</h1>
+      </div>
+    </section> -->
   </main>
 
   <script src="/js/libs/jquery.js"></script>
-  <script src="/js/libs/pagepiling.js"></script>
+  <script src="/js/libs/fullpage.js"></script>
   <script src="/js/home/particle.js"></script>
   <script src="/js/home/pagepiling.js"></script>
   <script src="/js/home/about.js"></script>
   <script src="/js/common/nav.js"></script>
+  <script src="/js/common/btn.js"></script>
 </body>
 
 </html>

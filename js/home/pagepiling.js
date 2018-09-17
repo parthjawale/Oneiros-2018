@@ -1,15 +1,20 @@
 $(document).ready(() => {
-  $("#pagepiling").pagepiling({
+  $("#fullpage").fullpage({
     anchors: ["home", "about", "theme"],
-    navigation: {
-      textColor: "#FFF",
-      bulletsColor: "#FFF",
-      position: "right",
-      tooltips: ["Home", "About", "Theme"]
-    },
-    afterLoad: (anchorLink, index) => {
-      if (index === 2) handleAboutPage();
-      else if (index === 3) handleThemePage();
+    // navigation: {
+    //   textColor: "#FFF",
+    //   bulletsColor: "#FFF",
+    //   position: "right",
+    //   tooltips: ["Home", "About", "Theme"]
+    // },
+    // afterLoad: (anchorLink, index) => {
+    //   if (index === 2) handleAboutPage();
+    //   else if (index === 3) handleThemePage();
+    // }
+    afterLoad: (origin, dest) => {
+      if (dest.index === 1) handleAboutPage();
+      // else if (dest.index === 2) handleThemePage();
+      else if (dest.index === 2) handleContactPage();
     }
   });
 });
@@ -33,4 +38,4 @@ handleAboutPage = () => {
   }, 500);
 };
 
-handleThemePage = () => {};
+handleContactPage = () => {};
