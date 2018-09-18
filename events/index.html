@@ -62,6 +62,9 @@
     <div id="black-overlay"></div>
 
     <section class="events-splash section">
+      <video id="events-video" autoplay muted loop>
+        <source src="/img/events/splash.mp4">
+      </video>
       <div class="events-splash">
         <div class="events-splash__container">
           <h1 class="events-splash__container--header">Events</h1>
@@ -151,6 +154,12 @@
   <script src="/js/libs/fullpage.js"></script>
   <script src="/js/events/main.js"></script>
   <script src="/js/common/nav.js"></script>
+  <script>
+    const video = document.getElementById('events-video')
+    setTimeout(() => {
+      video.play()
+    }, 1000);
+  </script>
 </body>
 
 </html>

@@ -112,6 +112,22 @@ a:link, a:visited {
   ::-webkit-scrollbar-thumb:hover {
     background: #555; }
 
+.loader-prime {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: 1s all;
+  opacity: 1; }
+
+.hide-prime-loader {
+  opacity: 0;
+  pointer-events: none; }
+
 #wordmark {
   position: fixed;
   top: 1rem;
@@ -524,7 +540,7 @@ a:link, a:visited {
   width: 200px; }
 
 .events-splash {
-  background: url("/img/events/splash.jpg");
+  background: url("/img/events/splash.mp4");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -597,6 +613,14 @@ a:link, a:visited {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%); }
+
+#events-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
 
 .club-image {
   position: absolute;
