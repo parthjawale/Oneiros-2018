@@ -9,7 +9,24 @@ $(document).ready(() => {
       "20questions-desc",
       "20questions-info",
       "20questions-rules",
-      "20questions-registration"
+      "20questions-registration","ekphrasis-desc",
+      "ekphrasis-info",
+      "ekphrasis-rules",
+      "ekphrasis-registration","jam-desc",
+      "jam-info",
+      "jam-rules",
+      "jam-registration","pictionary-desc",
+      "pictionary-info",
+      "pictionary-rules",
+      "pictionary-registration","songsmith-desc",
+      "songsmith-info",
+      "songsmith-rules",
+      "songsmith-registration",
+      "voiceover-desc",
+      "voiceover-info",
+      "voiceover-rules",
+      "voiceover-registration"
+
     ],
     afterLoad: (origin, dest) => {
       let option = 0;
