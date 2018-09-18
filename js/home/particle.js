@@ -527,4 +527,6 @@ var particleInit = function() {
       });
 };
 
-particleInit();
+setTimeout(() => {
+  particleInit();
+}, 100);
