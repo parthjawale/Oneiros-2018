@@ -529,4 +529,4 @@ var particleInit = function() {
 
 setTimeout(() => {
   particleInit();
-}, 100);
+}, 2000);

@@ -65,18 +65,20 @@ const loader = `
   </div>
 `;
 
-// $("body").prepend(loader);
+$("body").prepend(loader);
 
 $(document).ready(() => {
   setTimeout(() => {
     $(".loader-prime").addClass("hide-prime-loader");
-  }, 200);
+  }, 2000);
 });
 
-// $(".nav-container a").click(e => {
-//   e.preventDefault();
-//   const link = e.target.href;
+$(".nav-container a").click(e => {
+  e.preventDefault();
+  const link = e.target.href;
 
-//   $(".loader-prime").removeClass("hide-prime-loader");
-//   setTimeout(() => {}, 2000);
-// });
+  $(".loader-prime").removeClass("hide-prime-loader");
+  setTimeout(() => {
+    window.location.replace(link);
+  }, 2000);
+});
