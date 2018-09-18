@@ -9,6 +9,51 @@
     font-size: 6px;
   }
 
+  #wordmark {
+    top: 2rem;
+    left: 2rem;
+  }
+
+  .nav {
+    right: 7rem;
+  }
+  .event {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .event-desc {
+    &__info {
+      padding: 0 6rem;
+      &--detail {
+        flex-direction: column;
+        // justify-content: flex-start;
+        align-items: flex-start;
+        h1 {
+          margin-bottom: 4rem;
+        }
+        h3 {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .event-container {
+    .fp-tableCell {
+      flex-direction: column;
+      padding: 6rem;
+      align-items: stretch;
+
+      // justify-content: stretch;
+   
+    }
+
+    .event-image {
+      margin: 0 auto;
+    }
+  }
+
   .camb {
     padding: 10rem 5rem 6rem 7rem;
 

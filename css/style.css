@@ -62,8 +62,7 @@ body {
 
 body {
   box-sizing: border-box;
-  font-family: 'Gotham', sans-serif;
-  max-width: 100vw; }
+  font-family: 'Gotham', sans-serif; }
 
 *,
 *::after,
@@ -635,6 +634,7 @@ a:link, a:visited {
   .event-desc__info--detail {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 7rem 0; }
     .event-desc__info--detail h1 {
       font-size: 4rem;
@@ -644,7 +644,7 @@ a:link, a:visited {
       font-size: 2rem;
       font-family: "Gotham-Thin";
       display: flex;
-      align-items: center; }
+      text-align: right; }
 
 .event-reg__next {
   position: absolute;
@@ -689,7 +689,8 @@ a:link, a:visited {
     font-size: 10rem;
     color: #222;
     text-transform: uppercase;
-    font-family: "Gotham-Black"; }
+    font-family: "Gotham-Black";
+    margin-bottom: 4rem; }
   .event-reg__reg--reg {
     padding: 2rem 5rem;
     margin-top: 10rem;
@@ -1206,6 +1207,34 @@ a:link, a:visited {
 @media (max-width: 500px) {
   html {
     font-size: 6px; }
+
+  #wordmark {
+    top: 2rem;
+    left: 2rem; }
+
+  .nav {
+    right: 7rem; }
+
+  .event {
+    width: 100%;
+    margin-bottom: 2rem; }
+
+  .event-desc__info {
+    padding: 0 6rem; }
+    .event-desc__info--detail {
+      flex-direction: column;
+      align-items: flex-start; }
+      .event-desc__info--detail h1 {
+        margin-bottom: 4rem; }
+      .event-desc__info--detail h3 {
+        text-align: left; }
+
+  .event-container .fp-tableCell {
+    flex-direction: column;
+    padding: 6rem;
+    align-items: stretch; }
+  .event-container .event-image {
+    margin: 0 auto; }
 
   .camb {
     padding: 10rem 5rem 6rem 7rem; }
