@@ -98,6 +98,19 @@
   }
 }
 
+.event-image {
+  &__frame {
+    perspective: 3000px;
+    pointer-events: none;
+  }
+
+  &__container {
+    position: relative;
+    transition: 0.2s all;
+    transform-style: preserve-3d;
+  }
+}
+
 #events-video {
   position: absolute;
   top: 0;
