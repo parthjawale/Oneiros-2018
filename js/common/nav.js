@@ -58,3 +58,25 @@ const showNavPage = bool => {
     }, 200);
   }
 };
+
+const loader = `
+  <div class="loader-prime">
+    <img src="/img/logos/alpha.gif" alt="Alpha" />
+  </div>
+`;
+
+$("body").prepend(loader);
+
+$(document).ready(() => {
+  setTimeout(() => {
+    $(".loader-prime").addClass("hide-prime-loader");
+  }, 200);
+});
+
+$(".nav-container a").click(e => {
+  e.preventDefault();
+  const link = e.target.href;
+
+  $(".loader-prime").removeClass("hide-prime-loader");
+  setTimeout(() => {}, 2000);
+});

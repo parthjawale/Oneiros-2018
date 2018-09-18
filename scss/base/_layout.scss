@@ -71,3 +71,21 @@ a {
     background: #555;
   }
 }
+
+.loader-prime {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: 1s all;
+  opacity: 1;
+}
+
+.hide-prime-loader {
+  opacity: 0;
+  pointer-events: none;
+}
