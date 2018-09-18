@@ -55,7 +55,8 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: 'Gotham', sans-serif; }
+  font-family: 'Gotham', sans-serif;
+  width: 100vh; }
 
 html,
 body {
