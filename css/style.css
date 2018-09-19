@@ -542,6 +542,8 @@ a:link, a:visited {
   width: 100%;
   height: 100%;
   overflow: hidden; }
+  .events-splash > * {
+    pointer-events: none; }
   .events-splash__overlay {
     background: #000;
     width: 100%;
@@ -578,7 +580,8 @@ a:link, a:visited {
   grid-template-rows: 1fr 1fr;
   height: 100%; }
   .clubs-grid * {
-    transition: 0.5s all, 2s transform; }
+    transition: 0.5s all, 2s transform;
+    pointer-events: none; }
   .clubs-grid__item {
     font-size: 30px;
     text-align: center;
@@ -719,6 +722,8 @@ a:link, a:visited {
 .event {
   width: 50%;
   margin-left: 2.5rem; }
+  .event * {
+    pointer-events: none; }
   .event__header {
     font-size: 5rem;
     font-family: "Gotham-Black";
@@ -736,6 +741,9 @@ a:link, a:visited {
     .event__desc a {
       color: #c10812; }
 
+.event-container * {
+  pointer-events: none; }
+
 .event-container .fp-tableCell {
   display: flex;
   justify-content: space-around;
@@ -750,6 +758,9 @@ a:link, a:visited {
   background-position: center;
   box-shadow: 0 1rem 3rem rgba(34, 34, 34, 0.3);
   border: 1rem solid #fff; }
+
+.event-desc * {
+  pointer-events: none; }
 
 .event-desc__info {
   padding: 0 15rem;
@@ -1000,7 +1011,7 @@ a:link, a:visited {
   left: 50%;
   transform: translateX(-50%);
   top: 3rem;
-  z-index: 1000000;
+  z-index: 10;
   padding: 1.5rem 2rem;
   border-radius: 2rem;
   cursor: pointer;
@@ -1364,6 +1375,10 @@ a:link, a:visited {
       font-size: 2.5rem;
       line-height: 1.55;
       margin-bottom: 3rem; }
+      .event__desc * {
+        pointer-events: none; }
+  .event-rules * {
+    pointer-events: none; }
   .event-rules__header {
     margin-bottom: 1.5rem;
     margin-top: 1.5rem; }
@@ -1377,6 +1392,8 @@ a:link, a:visited {
     font-family: gotham;
     line-height: 1.5;
     padding: 0 2rem; }
+  .event-desc * {
+    pointer-events: none; }
   .event-desc__info {
     padding: 0 6rem;
     grid-template-columns: 1fr; }
