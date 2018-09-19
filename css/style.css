@@ -74,7 +74,7 @@ body {
 
 body {
   box-sizing: border-box;
-  font-family: 'Gotham', sans-serif;
+  font-family: "Gotham", sans-serif;
   overflow-x: hidden; }
 
 *,
@@ -124,10 +124,57 @@ a:link, a:visited {
   background: #000;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   z-index: 10000;
   transition: 1s all;
-  opacity: 1; }
+  opacity: 1;
+  color: white; }
+  .loader-prime .wordmark {
+    background-image: url("/img/logos/wordmark-white.png");
+    background-position: center;
+    background-size: contain;
+    height: 5rem;
+    width: 14rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1rem;
+    cursor: pointer;
+    left: 1rem; }
+  .loader-prime .moodi-logo {
+    background-image: url("/img/logos/moodi-logo-white.png");
+    background-position: center;
+    background-size: contain;
+    height: 5rem;
+    width: 9rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    cursor: pointer;
+    top: 1.5rem;
+    right: 1rem; }
+  .loader-prime .mext-logo {
+    background-image: url("/img/logos/mext.png");
+    background-position: center;
+    background-size: contain;
+    height: 5rem;
+    width: 9rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 1rem;
+    cursor: pointer;
+    right: 1rem; }
+    .loader-prime .mext-logo p {
+      display: inline-block;
+      color: #fff;
+      transform: translateY(-1rem);
+      font-size: 1.2rem; }
+  .loader-prime .dates {
+    color: white;
+    font-size: 1.8rem;
+    font-family: "Gotham-Thin", sans-serif;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem; }
 
 .hide-prime-loader {
   opacity: 0;
@@ -139,7 +186,8 @@ a:link, a:visited {
   left: 1rem;
   width: 15rem;
   z-index: 11;
-  transition: 1s all; }
+  transition: 1s all;
+  cursor: pointer; }
 
 .nav {
   position: fixed;
@@ -350,7 +398,8 @@ a:link, a:visited {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  z-index: 100; }
+  z-index: 100;
+  cursor: pointer; }
   #mext p {
     display: inline-block;
     color: #fff;
@@ -361,10 +410,10 @@ a:link, a:visited {
 
 #fest-date {
   position: fixed;
-  bottom: 2rem;
-  left: 2rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: "Gotham-Thin";
   z-index: 100; }
 
@@ -540,8 +589,6 @@ a:link, a:visited {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   height: 100%; }
-  .clubs-grid * {
-    transition: 0.5s all, 2s transform; }
   .clubs-grid__item {
     font-size: 30px;
     text-align: center;
@@ -651,10 +698,21 @@ a:link, a:visited {
   .club-spic__image {
     background: url("/img/events/clubs/overlays/aperture.jpg"); }
 
+.all * {
+  pointer-events: none; }
+
+.all__prime * {
+  pointer-events: none; }
+
 .all__prime--header, .all__prime--desc {
   z-index: 2;
   padding: 0 5rem;
   color: #fff; }
+<<<<<<< HEAD
+=======
+  .all__prime--header *, .all__prime--desc * {
+    pointer-events: none; }
+>>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
 
 .all__prime--header {
   font-size: 10rem;
@@ -682,6 +740,8 @@ a:link, a:visited {
 .event {
   width: 50%;
   margin-left: 2.5rem; }
+  .event * {
+    pointer-events: none; }
   .event__header {
     font-size: 5rem;
     font-family: "Gotham-Black";
@@ -699,6 +759,9 @@ a:link, a:visited {
     .event__desc a {
       color: #c10812; }
 
+.event-container * {
+  pointer-events: none; }
+
 .event-container .fp-tableCell {
   display: flex;
   justify-content: space-around;
@@ -714,6 +777,9 @@ a:link, a:visited {
   box-shadow: 0 1rem 3rem rgba(34, 34, 34, 0.3);
   border: 1rem solid #fff; }
 
+.event-desc * {
+  pointer-events: none; }
+
 .event-desc__info {
   padding: 0 15rem;
   display: grid;
@@ -728,7 +794,17 @@ a:link, a:visited {
       font-size: 4rem;
       color: #e50914;
       font-family: "Gotham-Bold";
-      margin-bottom: 1rem; }
+      margin-bottom: 3.0rem;
+      position: relative; }
+      .event-desc__info--detail h1:after {
+        position: absolute;
+        content: "";
+        bottom: -1.5rem;
+        left: 0;
+        width: 60%;
+        border-radius: 3px;
+        height: 3px;
+        background: #b4b4b459; }
     .event-desc__info--detail h3 {
       font-size: 2rem;
       font-family: "Gotham";
@@ -799,6 +875,9 @@ a:link, a:visited {
     margin-top: 5rem;
     font-size: 2rem;
     color: #aaa; }
+
+.event-rules * {
+  pointer-events: none; }
 
 .event-rules__header {
   font-size: 3rem;
@@ -949,6 +1028,7 @@ a:link, a:visited {
 .event-next__aperture {
   background: #ff5722; }
 
+<<<<<<< HEAD
 .me-container {
   display: flex;
   height: 100%;
@@ -1049,6 +1129,66 @@ a:link, a:visited {
       font-size: 2rem; }
     .majorevent__content--details li {
       font-size: 2rem; }
+=======
+.events-list {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3rem;
+  z-index: 10;
+  padding: 1.5rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: transform 0.25s ease-in-out;
+  opacity: 1; }
+  .events-list:hover .ono-animatedbtn__circle {
+    left: 0;
+    top: 0;
+    width: 100%; }
+  .events-list > .ono-animatedbtn__circle {
+    box-shadow: 0 0 2rem #e50914;
+    background: #e50914;
+    transition: width 0.3s ease; }
+  .events-list__item--selected {
+    color: black;
+    font-family: gotham-black;
+    font-size: 2rem;
+    z-index: 3;
+    position: relative; }
+  .events-list > ul {
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%) scale(0.8);
+    opacity: 0;
+    border-radius: 2rem;
+    list-style-type: none;
+    background: #fff;
+    box-shadow: 0 0.7rem 2.5rem rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    visibility: hidden; }
+    .events-list > ul.showlist {
+      opacity: 1;
+      transform: translateX(-50%) translateY(100%) scale(1);
+      visibility: visible; }
+    .events-list > ul > li {
+      font-size: 2rem;
+      overflow: hidden;
+      white-space: nowrap; }
+      .events-list > ul > li:first-child {
+        border-radius: 2rem 2rem 0 0; }
+      .events-list > ul > li:last-child {
+        border-radius: 0 0 2rem 2rem; }
+      .events-list > ul > li:hover > a {
+        background: #c10812;
+        color: white; }
+      .events-list > ul > li > a {
+        padding: 1.5rem 2rem;
+        display: inline-block;
+        color: #c10812;
+        transition: all 0.3s ease;
+        width: 100%; }
+>>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
 
 .card-grid {
   padding: 2rem 2rem;
@@ -1196,13 +1336,15 @@ a:link, a:visited {
   text-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.3); }
   .camb__list {
     width: 70%; }
-    .camb__list li {
-      font-size: 2.2rem;
+    .camb__list > li {
+      font-size: 2rem;
       margin-top: 1.8rem;
       line-height: 1.5; }
+      .camb__list > li:first-child {
+        margin-top: 0; }
   .camb__header {
-    font-size: 5rem;
-    margin-bottom: 6rem;
+    font-size: 4.5rem;
+    margin-bottom: 2.5rem;
     text-align: left;
     font-weight: 700;
     font-family: inherit;
@@ -1237,7 +1379,8 @@ a:link, a:visited {
       position: relative; }
       .camb__content > .fp-tableCell > .event-reg__next {
         left: 0;
-        background: #c10812; }
+        background: #c10812;
+        height: 7rem; }
     .camb__content--mb {
       margin-bottom: 17rem; }
     .camb__content--mbsmall {
@@ -1276,14 +1419,14 @@ a:link, a:visited {
         right: -2rem;
         left: auto; }
     .camb__content__header {
-      font-size: 5rem;
-      margin-bottom: 3rem;
+      font-size: 4.5rem;
+      margin-bottom: 4.5rem;
       white-space: nowrap; }
       .camb__content__header--highlight {
-        font-size: 5.2rem;
+        font-size: 5rem;
         color: #e50914; }
     .camb__content__body {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       line-height: 1.4; }
       .camb__content__body--highlight {
         font-family: Gotham; }
@@ -1357,6 +1500,13 @@ a:link, a:visited {
       font-size: 2.5rem;
       line-height: 1.55;
       margin-bottom: 3rem; }
+<<<<<<< HEAD
+=======
+      .event__desc * {
+        pointer-events: none; }
+  .event-rules * {
+    pointer-events: none; }
+>>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
   .event-rules__header {
     margin-bottom: 1.5rem;
     margin-top: 1.5rem; }
@@ -1370,6 +1520,11 @@ a:link, a:visited {
     font-family: gotham;
     line-height: 1.5;
     padding: 0 2rem; }
+<<<<<<< HEAD
+=======
+  .event-desc * {
+    pointer-events: none; }
+>>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
   .event-desc__info {
     padding: 0 6rem;
     grid-template-columns: 1fr; }
@@ -1378,9 +1533,31 @@ a:link, a:visited {
       align-items: flex-start;
       margin-top: 0; }
       .event-desc__info--detail h1 {
-        margin-bottom: 4rem; }
+        margin-bottom: 4rem;
+        position: relative; }
+        .event-desc__info--detail h1:after {
+          position: absolute;
+          content: "";
+          bottom: -1.5rem;
+          left: 0;
+          width: 120%;
+          border-radius: 3px;
+          height: 3px;
+          background: #b4b4b459; }
       .event-desc__info--detail h3 {
         text-align: left; }
+<<<<<<< HEAD
+=======
+  .events-list {
+    padding: 2rem 2.5rem; }
+    .events-list__item--selected {
+      color: white;
+      font-size: 3rem; }
+    .events-list > ul > li {
+      font-size: 2rem; }
+      .events-list > ul > li > a {
+        padding: 2rem 2.5rem; }
+>>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
   .events-splash__container--header {
     position: relative; }
     .events-splash__container--header:after {
@@ -1428,6 +1605,24 @@ a:link, a:visited {
     text-align: center;
     width: 80%;
     margin-bottom: 8rem; }
+<<<<<<< HEAD
+=======
+  .clubs-grid__item--logo {
+    width: 23rem;
+    top: 50%; }
+  .clubs-grid__item--solid {
+    position: relative; }
+  .clubs-grid__item--content {
+    position: absolute;
+    opacity: 1;
+    bottom: 0rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: none;
+    top: auto;
+    line-height: 1.4; }
+>>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
   .camb__list {
     width: 100%; }
     .camb__list li {
@@ -1441,6 +1636,8 @@ a:link, a:visited {
   .camb__content {
     width: 100%;
     margin: 0; }
+    .camb__content > .fp-tableCell > .event-reg__next {
+      height: 10rem; }
     .camb__content:hover:after {
       height: 20%; }
     .camb__content:hover:before {
