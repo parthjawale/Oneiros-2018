@@ -1,15 +1,14 @@
 const bounceFactor = 0.88
 const vacuum = window.innerWidth < 800 ? 0 : 0.5
 const spiral = window.innerWidth < 800 ? 0 : 0.5
-// const vacuum = 0.5
-// const spiral = 0.5
+
 function Particle(a) {
   var b = this
   ;(b.sliderId = 'particles'),
     (b.color = '#fff'),
     (b.hoverColor = '#88f'),
     (b.width = 0),
-    (b.height = 20),
+    (b.height = 0),
     (b.ptlGap = 0),
     (b.ptlSize = 1),
     (b.slideDelay = 10),
@@ -49,7 +48,7 @@ function Particle(a) {
   ;(b.$container = b.$('#' + b.sliderId)),
     (b.$$children = b.$container.childNodes),
     (b.$controlsContainer = b.$('.controls')),
-    (b.$$slides = b.$('.oneiros', b.$('.logo').childNodes, !0)),
+    (b.$$slides = b.$('.slide', b.$('.slides').childNodes, !0)),
     (b.$controlLeft = null),
     (b.$controlRight = null),
     (b.$canv = b.$('.draw')),
@@ -102,12 +101,8 @@ function Particle(a) {
     (b.currImg = 0),
     (b.lastImg = 0),
     (b.imagesLoaded = 0),
-    (b.pxlBuffer = {
-      first: null
-    }),
-    (b.recycleBuffer = {
-      first: null
-    }),
+    (b.pxlBuffer = { first: null }),
+    (b.recycleBuffer = { first: null }),
     (b.ctx = b.$canv.getContext('2d')),
     (b.srcCtx = b.$srcCanv.getContext('2d')),
     (b.prevCtx = b.$prevCanv.getContext('2d')),
@@ -226,19 +221,18 @@ var psParticle = function(a) {
     if (a.mx >= 0 && a.mouseForce) {
       var j = this.x - a.mx,
         k = this.y - a.my
-      ;(h =
-        Math.min(
-          a.mouseForce / (Math.pow(j, 2) + Math.pow(k, 2)),
-          a.mouseForce
-        ) - vacuum),
-        (i = Math.atan2(k, j) - spiral),
+      ;(h = Math.min(
+        a.mouseForce / (Math.pow(j, 2) + Math.pow(k, 2)),
+        a.mouseForce
+      )),
+        (i = Math.atan2(k, j)),
         typeof this.color == 'function' &&
           ((i += Math.PI), (h *= 0.001 + Math.random() * 0.1 - 0.05))
     } else (h = 0), (i = 0)
     ;(this.velocityX += g * Math.cos(f) + h * Math.cos(i)),
       (this.velocityY += g * Math.sin(f) + h * Math.sin(i)),
-      (this.velocityX *= bounceFactor),
-      (this.velocityY *= bounceFactor),
+      (this.velocityX *= 0.92),
+      (this.velocityY *= 0.92),
       (this.x += this.velocityX),
       (this.y += this.velocityY)
   }
@@ -500,34 +494,3 @@ var psParticle = function(a) {
         }
     c(a)
   })
-
-var particleInit = function() {
-  var isMobile =
-    navigator.userAgent &&
-    navigator.userAgent.toLowerCase().indexOf('mobile') >= 0
-  var isSmall = window.innerWidth < 1000
-
-  var ps = new Particle({
-    ptlGap: isMobile || isSmall ? 3 : 5,
-    ptlSize: isMobile || isSmall ? 3 : 3,
-    width: 1e9,
-    height: 1e9,
-    mouseForce: window.innerWidth < 800 ? 1 : 1000
-  })
-
-  window.addEventListener
-    ? window.addEventListener(
-        'click',
-        function() {
-          ps.init(true)
-        },
-        false
-      )
-    : (window.onclick = function() {
-        ps.init(true)
-      })
-}
-
-setTimeout(() => {
-  particleInit()
-}, 2000)

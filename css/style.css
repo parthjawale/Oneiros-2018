@@ -41,23 +41,18 @@
 @font-face {
   font-family: "Gotham-Black";
   src: url("/fonts/gotham/Gotham-Black.otf"); }
-
 @font-face {
   font-family: "Gotham-Bold";
   src: url("/fonts/gotham/Gotham-Bold.otf"); }
-
 @font-face {
   font-family: "Gotham";
   src: url("/fonts/gotham/GothamBook.ttf"); }
-
 @font-face {
   font-family: "Gotham-Light";
   src: url("/fonts/gotham/Gotham-Light.otf"); }
-
 @font-face {
   font-family: "Gotham-Thin";
   src: url("/fonts/gotham/Gotham-XLight.otf"); }
-
 html {
   font-size: 62.5%; }
 
@@ -422,16 +417,13 @@ a:link, a:visited {
   box-shadow: 0 0 1rem #fff;
   border-radius: 5px;
   pointer-events: none;
-  z-index: 1;
   opacity: 0;
   transition: 0.5s all; }
-
 .home-theme__header {
   font-size: 7rem;
   font-family: "Gotham-Black";
   color: #e50914;
   margin-bottom: 2rem; }
-
 .home-theme__para {
   font-size: 2rem; }
 
@@ -484,14 +476,12 @@ a:link, a:visited {
       color: #ddd; }
   .login--form .input-group:not(:nth-child(1)) {
     margin-top: 5rem; }
-
 .login .title {
   font-family: "Gotham-Black", sans-serif;
   color: #e50914;
   font-size: 4rem;
   margin-bottom: 9rem;
   font-size: 10rem; }
-
 .login--background {
   width: 50%;
   height: 100vh;
@@ -578,7 +568,6 @@ a:link, a:visited {
 .event-image__frame {
   perspective: 3000px;
   pointer-events: none; }
-
 .event-image__container {
   position: relative;
   transition: 0.2s all;
@@ -655,7 +644,6 @@ a:link, a:visited {
   z-index: 2;
   padding: 0 5rem;
   color: #fff; }
-
 .all__prime--header {
   font-size: 10rem;
   font-family: "Gotham-Black";
@@ -663,13 +651,11 @@ a:link, a:visited {
   text-shadow: 0 0 2rem #222;
   position: relative;
   z-index: 1; }
-
 .all__prime--desc {
   margin-top: 2rem;
   font-size: 3rem;
   z-index: 1;
   position: relative; }
-
 .all__prime--overlay {
   position: absolute;
   width: 100%;
@@ -703,7 +689,6 @@ a:link, a:visited {
   display: flex;
   justify-content: space-around;
   align-items: center; }
-
 .event-container .event-image {
   width: 42rem;
   height: 56rem;
@@ -769,7 +754,6 @@ a:link, a:visited {
       border-radius: 100%;
       background: #fff;
       animation: scroll infinite 3s; }
-
 .event-reg__reg {
   display: flex;
   justify-content: space-around;
@@ -809,13 +793,10 @@ a:link, a:visited {
     color: #e50914;
     text-transform: uppercase;
     padding: 0 10rem; }
-
 .event-rules__container {
   padding: 0 10rem; }
-
 .event-rules__item {
   padding: 2rem 0; }
-
 .event-rules__content {
   font-size: 1.5rem;
   font-family: "Gotham-Bold";
@@ -828,7 +809,6 @@ a:link, a:visited {
     transform: translateY(15px); }
   20% {
     transform: translateY(0); } }
-
 @keyframes changePad {
   10% {
     width: 4rem;
@@ -844,7 +824,6 @@ a:link, a:visited {
   70% {
     width: 4rem;
     height: 6rem; } }
-
 .aperture-prime {
   background: url("/img/events/clubs/aperture/prime.jpg");
   background-position: center;
@@ -1041,7 +1020,6 @@ a:link, a:visited {
   display: flex;
   margin-top: 20rem;
   margin-bottom: 20rem; }
-
 .skew__item {
   display: flex;
   transform: skewY(-12deg); }
@@ -1086,17 +1064,22 @@ a:link, a:visited {
     z-index: 100; }
 
 .camb {
-  padding: 13rem 9rem 9rem 9rem;
   background: #111;
   height: auto;
   color: white;
   position: relative;
   z-index: 0;
   text-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.3); }
+  .camb__list {
+    width: 70%; }
+    .camb__list li {
+      font-size: 2.2rem;
+      margin-top: 1.8rem;
+      line-height: 1.5; }
   .camb__header {
     font-size: 5rem;
-    margin-bottom: 11rem;
-    text-align: center;
+    margin-bottom: 6rem;
+    text-align: left;
     font-weight: 700;
     font-family: inherit;
     font-family: Gotham-black;
@@ -1120,10 +1103,17 @@ a:link, a:visited {
     background: rgba(0, 0, 0, 0.813);
     z-index: -1; }
   .camb__content {
-    width: 50%;
-    padding: 0rem 0rem 0 3rem;
-    position: relative;
-    margin: 0 auto 0 8rem; }
+    position: relative; }
+    .camb__content > .fp-tableCell {
+      padding: 0rem 8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      position: relative; }
+      .camb__content > .fp-tableCell > .event-reg__next {
+        left: 0;
+        background: #c10812; }
     .camb__content--mb {
       margin-bottom: 17rem; }
     .camb__content--mbsmall {
@@ -1140,12 +1130,12 @@ a:link, a:visited {
       border-radius: 6px;
       transition: height 0.4s; }
     .camb__content::after {
-      left: 0;
+      left: -0.5rem;
       height: 20%;
       background: white;
       transition-timing-function: linear; }
     .camb__content:before {
-      left: -2rem;
+      left: -2.5rem;
       height: 15%;
       background: #c10812;
       transition-timing-function: ease-in;
@@ -1171,47 +1161,81 @@ a:link, a:visited {
     .camb__content__body {
       font-size: 2.5rem;
       line-height: 1.4; }
+      .camb__content__body--highlight {
+        font-family: Gotham; }
 
 @media (max-width: 1400px) {
   html {
     font-size: 8px; } }
-
 @media (max-width: 500px) {
   html {
     font-size: 6px; }
+
   #wordmark {
     top: 2rem;
     left: 2rem; }
+
+  .ono-animatedbtn__circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 4rem; }
+
+  .clubs-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr; }
+
   .home.about {
-    width: 80%;
+    width: 70%;
     right: auto;
-    left: 2rem;
-    top: 7rem;
+    bottom: 16rem;
+    left: 3rem;
     padding: 0; }
     .home.about__content {
-      font-size: 3rem;
+      font-size: 2.5rem;
       line-height: 1.4; }
+
   .activate-redoverlay {
     width: 75%; }
+
   .activate-blackoverlay {
     width: 68%; }
+
   .activate-whiteoverlay {
     width: 60%; }
+
   .nav-container__whiteoverlay ul li a {
     white-space: normal; }
+
+  .home-theme__splash {
+    background-position: center 30%; }
   .home-theme__content {
     width: 80%;
-    bottom: 7rem; }
+    bottom: 4rem; }
+    .home-theme__content:after {
+      position: absolute;
+      content: "";
+      width: 2rem;
+      height: 90%;
+      background: #c10812;
+      z-index: 0;
+      top: 50%;
+      right: 0;
+      transform: translate(100%, -50%);
+      border-radius: 0 1rem 1rem 0;
+      box-shadow: inset 0px 0px 2rem rgba(0, 0, 0, 0.5); }
   .home-theme__para {
     font-size: 2rem;
     line-height: 1.5; }
+
   .nav {
     top: 2rem;
     right: 2rem; }
+
   .all__prime--header {
     font-size: 5rem; }
   .all__prime--desc {
     box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.3); }
+
   .event {
     width: 100%;
     margin-bottom: 2rem;
@@ -1220,15 +1244,44 @@ a:link, a:visited {
       font-size: 2.5rem;
       line-height: 1.55;
       margin-bottom: 3rem; }
+
+  .event-rules__header {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem; }
+    .event-rules__header--prime {
+      padding-left: 4rem; }
+  .event-rules__container {
+    padding: 0 2rem;
+    font-size: 3rem; }
+  .event-rules__content {
+    font-size: 1.95rem;
+    font-family: gotham;
+    line-height: 1.5;
+    padding: 0 2rem; }
+
   .event-desc__info {
-    padding: 0 6rem; }
+    padding: 0 6rem;
+    grid-template-columns: 1fr; }
     .event-desc__info--detail {
       flex-direction: column;
-      align-items: flex-start; }
+      align-items: flex-start;
+      margin-top: 0; }
       .event-desc__info--detail h1 {
         margin-bottom: 4rem; }
       .event-desc__info--detail h3 {
         text-align: left; }
+
+  .events-splash__container--header {
+    position: relative; }
+    .events-splash__container--header:after {
+      position: absolute;
+      content: "";
+      width: 110%;
+      height: 5px;
+      border-radius: 3px;
+      left: 0;
+      bottom: -2rem;
+      background: #e50914; }
   .events-splash__container--content {
     width: 90%;
     display: block;
@@ -1249,36 +1302,60 @@ a:link, a:visited {
       background: #9b02c660;
       transform: rotate(4deg) translate(0%, -50%);
       content: ""; }
+
   .event-container .fp-tableCell {
     flex-direction: column;
     padding: 6rem;
+    padding-top: 10.5rem;
     align-items: stretch; }
   .event-container .event-image {
     margin: 0 auto; }
+
+  .event-reg__reg--fee {
+    color: #747474;
+    font-size: 3.2rem;
+    margin-top: 2rem; }
   .event-reg__reg--header {
     font-size: 7rem;
     text-align: center;
     width: 80%;
     margin-bottom: 8rem; }
-  .camb {
-    padding: 10rem 5rem 6rem 7rem; }
-    .camb__header {
-      margin-bottom: 8rem; }
-    .camb__content {
-      width: 100%;
-      margin: 0; }
-      .camb__content--mb {
-        margin-bottom: 10rem; }
-      .camb__content--mbsmall {
-        margin-bottom: 10rem; }
-      .camb__content__header {
-        white-space: normal; }
-      .camb__content--right {
-        padding-right: 0;
-        padding-left: 3rem; }
-        .camb__content--right:after {
-          right: auto;
-          left: 0; }
-        .camb__content--right:before {
-          right: auto;
-          left: -2rem; } }
+
+  .camb__list {
+    width: 100%; }
+    .camb__list li {
+      font-size: 2rem;
+      margin-top: 2.7rem;
+      line-height: 1.6; }
+  .camb__header {
+    width: 75%;
+    margin: 0;
+    margin-bottom: 8rem; }
+  .camb__content {
+    width: 100%;
+    margin: 0; }
+    .camb__content:hover:after {
+      height: 20%; }
+    .camb__content:hover:before {
+      height: 15%; }
+    .camb__content--mb {
+      margin-bottom: 10rem; }
+    .camb__content--mbsmall {
+      margin-bottom: 10rem; }
+    .camb__content__header {
+      white-space: normal; }
+    .camb__content--right {
+      padding-right: 0;
+      padding-left: 3rem; }
+      .camb__content--right:after {
+        right: auto;
+        left: -0.5rem; }
+      .camb__content--right:before {
+        right: auto;
+        left: -2.5rem; }
+
+  #smallfz {
+    font-size: 2rem;
+    flex-basis: 30%; } }
+
+/*# sourceMappingURL=style.css.map */
