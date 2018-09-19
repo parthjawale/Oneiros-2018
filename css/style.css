@@ -1103,17 +1103,22 @@ a:link, a:visited {
     z-index: 100; }
 
 .camb {
-  padding: 13rem 9rem 9rem 9rem;
   background: #111;
   height: auto;
   color: white;
   position: relative;
   z-index: 0;
   text-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.3); }
+  .camb__list {
+    width: 70%; }
+    .camb__list li {
+      font-size: 2.2rem;
+      margin-top: 1.8rem;
+      line-height: 1.5; }
   .camb__header {
     font-size: 5rem;
-    margin-bottom: 11rem;
-    text-align: center;
+    margin-bottom: 6rem;
+    text-align: left;
     font-weight: 700;
     font-family: inherit;
     font-family: Gotham-black;
@@ -1137,10 +1142,17 @@ a:link, a:visited {
     background: rgba(0, 0, 0, 0.813);
     z-index: -1; }
   .camb__content {
-    width: 50%;
-    padding: 0rem 0rem 0 3rem;
-    position: relative;
-    margin: 0 auto 0 8rem; }
+    position: relative; }
+    .camb__content > .fp-tableCell {
+      padding: 0rem 8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      position: relative; }
+      .camb__content > .fp-tableCell > .event-reg__next {
+        left: 0;
+        background: #c10812; }
     .camb__content--mb {
       margin-bottom: 17rem; }
     .camb__content--mbsmall {
@@ -1157,12 +1169,12 @@ a:link, a:visited {
       border-radius: 6px;
       transition: height 0.4s; }
     .camb__content::after {
-      left: 0;
+      left: -0.5rem;
       height: 20%;
       background: white;
       transition-timing-function: linear; }
     .camb__content:before {
-      left: -2rem;
+      left: -2.5rem;
       height: 15%;
       background: #c10812;
       transition-timing-function: ease-in;
@@ -1188,6 +1200,8 @@ a:link, a:visited {
     .camb__content__body {
       font-size: 2.5rem;
       line-height: 1.4; }
+      .camb__content__body--highlight {
+        font-family: Gotham; }
 
 @media (max-width: 1400px) {
   html {
@@ -1329,28 +1343,38 @@ a:link, a:visited {
     text-align: center;
     width: 80%;
     margin-bottom: 8rem; }
-  .camb {
-    padding: 10rem 5rem 6rem 7rem; }
-    .camb__header {
-      margin-bottom: 8rem; }
-    .camb__content {
-      width: 100%;
-      margin: 0; }
-      .camb__content--mb {
-        margin-bottom: 10rem; }
-      .camb__content--mbsmall {
-        margin-bottom: 10rem; }
-      .camb__content__header {
-        white-space: normal; }
-      .camb__content--right {
-        padding-right: 0;
-        padding-left: 3rem; }
-        .camb__content--right:after {
-          right: auto;
-          left: 0; }
-        .camb__content--right:before {
-          right: auto;
-          left: -2rem; }
+  .camb__list {
+    width: 100%; }
+    .camb__list li {
+      font-size: 2rem;
+      margin-top: 2.7rem;
+      line-height: 1.6; }
+  .camb__header {
+    width: 75%;
+    margin: 0;
+    margin-bottom: 8rem; }
+  .camb__content {
+    width: 100%;
+    margin: 0; }
+    .camb__content:hover:after {
+      height: 20%; }
+    .camb__content:hover:before {
+      height: 15%; }
+    .camb__content--mb {
+      margin-bottom: 10rem; }
+    .camb__content--mbsmall {
+      margin-bottom: 10rem; }
+    .camb__content__header {
+      white-space: normal; }
+    .camb__content--right {
+      padding-right: 0;
+      padding-left: 3rem; }
+      .camb__content--right:after {
+        right: auto;
+        left: -0.5rem; }
+      .camb__content--right:before {
+        right: auto;
+        left: -2.5rem; }
   #smallfz {
     font-size: 2rem;
     flex-basis: 30%; } }
