@@ -41,18 +41,23 @@
 @font-face {
   font-family: "Gotham-Black";
   src: url("/fonts/gotham/Gotham-Black.otf"); }
+
 @font-face {
   font-family: "Gotham-Bold";
   src: url("/fonts/gotham/Gotham-Bold.otf"); }
+
 @font-face {
   font-family: "Gotham";
   src: url("/fonts/gotham/GothamBook.ttf"); }
+
 @font-face {
   font-family: "Gotham-Light";
   src: url("/fonts/gotham/Gotham-Light.otf"); }
+
 @font-face {
   font-family: "Gotham-Thin";
   src: url("/fonts/gotham/Gotham-XLight.otf"); }
+
 html {
   font-size: 62.5%; }
 
@@ -104,7 +109,7 @@ a:link, a:visited {
   text-decoration: none; }
 
 ::-webkit-scrollbar {
-  width: 15px; }
+  width: 10px; }
   ::-webkit-scrollbar-track {
     background: #fff; }
   ::-webkit-scrollbar-thumb {
@@ -419,13 +424,16 @@ a:link, a:visited {
   pointer-events: none;
   opacity: 0;
   transition: 0.5s all; }
+
 .home-theme__header {
   font-size: 7rem;
   font-family: "Gotham-Black";
   color: #e50914;
   margin-bottom: 2rem; }
+
 .home-theme__para {
-  font-size: 2rem; }
+  font-size: 2rem;
+  line-height: 1.5; }
 
 .home-theme-showcontent {
   opacity: 1; }
@@ -476,12 +484,14 @@ a:link, a:visited {
       color: #ddd; }
   .login--form .input-group:not(:nth-child(1)) {
     margin-top: 5rem; }
+
 .login .title {
   font-family: "Gotham-Black", sans-serif;
   color: #e50914;
   font-size: 4rem;
   margin-bottom: 9rem;
   font-size: 10rem; }
+
 .login--background {
   width: 50%;
   height: 100vh;
@@ -568,6 +578,7 @@ a:link, a:visited {
 .event-image__frame {
   perspective: 3000px;
   pointer-events: none; }
+
 .event-image__container {
   position: relative;
   transition: 0.2s all;
@@ -644,6 +655,7 @@ a:link, a:visited {
   z-index: 2;
   padding: 0 5rem;
   color: #fff; }
+
 .all__prime--header {
   font-size: 10rem;
   font-family: "Gotham-Black";
@@ -651,11 +663,13 @@ a:link, a:visited {
   text-shadow: 0 0 2rem #222;
   position: relative;
   z-index: 1; }
+
 .all__prime--desc {
   margin-top: 2rem;
   font-size: 3rem;
   z-index: 1;
   position: relative; }
+
 .all__prime--overlay {
   position: absolute;
   width: 100%;
@@ -689,6 +703,7 @@ a:link, a:visited {
   display: flex;
   justify-content: space-around;
   align-items: center; }
+
 .event-container .event-image {
   width: 42rem;
   height: 56rem;
@@ -754,6 +769,7 @@ a:link, a:visited {
       border-radius: 100%;
       background: #fff;
       animation: scroll infinite 3s; }
+
 .event-reg__reg {
   display: flex;
   justify-content: space-around;
@@ -765,7 +781,8 @@ a:link, a:visited {
     color: #222;
     text-transform: uppercase;
     font-family: "Gotham-Black";
-    margin-bottom: 5rem; }
+    margin-bottom: 5rem;
+    text-align: center; }
   .event-reg__reg--reg {
     padding: 2rem 5rem;
     margin-top: 10rem;
@@ -779,7 +796,7 @@ a:link, a:visited {
       background: #e50914;
       color: #fff; }
   .event-reg__reg--fee {
-    margin-top: 2rem;
+    margin-top: 5rem;
     font-size: 2rem;
     color: #aaa; }
 
@@ -793,10 +810,13 @@ a:link, a:visited {
     color: #e50914;
     text-transform: uppercase;
     padding: 0 10rem; }
+
 .event-rules__container {
   padding: 0 10rem; }
+
 .event-rules__item {
   padding: 2rem 0; }
+
 .event-rules__content {
   font-size: 1.5rem;
   font-family: "Gotham-Bold";
@@ -809,6 +829,7 @@ a:link, a:visited {
     transform: translateY(15px); }
   20% {
     transform: translateY(0); } }
+
 @keyframes changePad {
   10% {
     width: 4rem;
@@ -824,6 +845,7 @@ a:link, a:visited {
   70% {
     width: 4rem;
     height: 6rem; } }
+
 .aperture-prime {
   background: url("/img/events/clubs/aperture/prime.jpg");
   background-position: center;
@@ -927,6 +949,22 @@ a:link, a:visited {
 .event-next__aperture {
   background: #ff5722; }
 
+.me-container {
+  display: flex;
+  height: 100%; }
+  .me-container .destival, .me-container .requiem, .me-container .fashionshow {
+    background-size: cover !important;
+    background-position: top !important; }
+  .me-container .destival {
+    flex: 1;
+    background: url("https://images.unsplash.com/photo-1533854257392-71c5ff28dff7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d0398e4a2c8ed0d899487068b9a579a2&auto=format&fit=crop&w=1957&q=80"); }
+  .me-container .requiem {
+    flex: 1;
+    background: url("https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?ixlib=rb-0.3.5&s=5a8979f1d3f696c7f3e9488857d2668c&auto=format&fit=crop&w=1950&q=80"); }
+  .me-container .fashionshow {
+    flex: 1;
+    background: url("https://images.unsplash.com/photo-1519075509237-10f3fe5aeee1?ixlib=rb-0.3.5&s=bdb14dc2e37ca9dd5bbf34b89916f53f&auto=format&fit=crop&w=668&q=80"); }
+
 .card-grid {
   padding: 2rem 2rem;
   display: flex;
@@ -1020,6 +1058,7 @@ a:link, a:visited {
   display: flex;
   margin-top: 20rem;
   margin-bottom: 20rem; }
+
 .skew__item {
   display: flex;
   transform: skewY(-12deg); }
@@ -1153,23 +1192,20 @@ a:link, a:visited {
 @media (max-width: 1400px) {
   html {
     font-size: 8px; } }
+
 @media (max-width: 500px) {
   html {
     font-size: 6px; }
-
   #wordmark {
     top: 2rem;
     left: 2rem; }
-
   .ono-animatedbtn__circle {
     width: 100%;
     height: 100%;
     border-radius: 4rem; }
-
   .clubs-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr; }
-
   .home.about {
     width: 70%;
     right: auto;
@@ -1179,19 +1215,14 @@ a:link, a:visited {
     .home.about__content {
       font-size: 2.5rem;
       line-height: 1.4; }
-
   .activate-redoverlay {
     width: 75%; }
-
   .activate-blackoverlay {
     width: 68%; }
-
   .activate-whiteoverlay {
     width: 60%; }
-
   .nav-container__whiteoverlay ul li a {
     white-space: normal; }
-
   .home-theme__splash {
     background-position: center 30%; }
   .home-theme__content {
@@ -1212,16 +1243,13 @@ a:link, a:visited {
   .home-theme__para {
     font-size: 2rem;
     line-height: 1.5; }
-
   .nav {
     top: 2rem;
     right: 2rem; }
-
   .all__prime--header {
     font-size: 5rem; }
   .all__prime--desc {
     box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.3); }
-
   .event {
     width: 100%;
     margin-bottom: 2rem;
@@ -1230,7 +1258,6 @@ a:link, a:visited {
       font-size: 2.5rem;
       line-height: 1.55;
       margin-bottom: 3rem; }
-
   .event-rules__header {
     margin-bottom: 1.5rem;
     margin-top: 1.5rem; }
@@ -1244,7 +1271,6 @@ a:link, a:visited {
     font-family: gotham;
     line-height: 1.5;
     padding: 0 2rem; }
-
   .event-desc__info {
     padding: 0 6rem;
     grid-template-columns: 1fr; }
@@ -1256,7 +1282,6 @@ a:link, a:visited {
         margin-bottom: 4rem; }
       .event-desc__info--detail h3 {
         text-align: left; }
-
   .events-splash__container--header {
     position: relative; }
     .events-splash__container--header:after {
@@ -1288,7 +1313,6 @@ a:link, a:visited {
       background: #9b02c660;
       transform: rotate(4deg) translate(0%, -50%);
       content: ""; }
-
   .event-container .fp-tableCell {
     flex-direction: column;
     padding: 6rem;
@@ -1296,7 +1320,6 @@ a:link, a:visited {
     align-items: stretch; }
   .event-container .event-image {
     margin: 0 auto; }
-
   .event-reg__reg--fee {
     color: #747474;
     font-size: 3.2rem;
@@ -1306,7 +1329,6 @@ a:link, a:visited {
     text-align: center;
     width: 80%;
     margin-bottom: 8rem; }
-
   .camb {
     padding: 10rem 5rem 6rem 7rem; }
     .camb__header {
@@ -1329,9 +1351,6 @@ a:link, a:visited {
         .camb__content--right:before {
           right: auto;
           left: -2rem; }
-
   #smallfz {
     font-size: 2rem;
     flex-basis: 30%; } }
-
-/*# sourceMappingURL=style.css.map */
