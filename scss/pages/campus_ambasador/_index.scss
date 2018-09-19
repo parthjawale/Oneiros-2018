@@ -1,5 +1,4 @@
 .camb {
-  padding: 13rem 9rem 9rem 9rem;
   background: #111;
   height: auto;
   color: white;
@@ -7,10 +6,20 @@
   z-index: 0;
   text-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.3);
 
+  &__list {
+    width: 70%;
+
+    li {
+      font-size: 2.2rem;
+      margin-top: 1.8rem;
+      line-height: 1.5;
+    }
+  }
+
   &__header {
     font-size: 5rem;
-    margin-bottom: 11rem;
-    text-align: center;
+    margin-bottom: 6rem;
+    text-align: left;
     font-weight: 700;
     font-family: inherit;
     font-family: Gotham-black;
@@ -42,10 +51,23 @@
   }
 
   &__content {
-    width: 50%;
-    padding: 0rem 0rem 0 3rem;
     position: relative;
-    margin: 0 auto 0 8rem;
+
+    > .fp-tableCell {
+      // margin: 0 auto 0 8rem;
+      padding: 0rem 8rem;
+      // padding-top: 13rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+
+      > .event-reg__next {
+        left: 0;
+        background: $color-secondary;
+      }
+    }
 
     &--mb {
       margin-bottom: 17rem;
@@ -76,14 +98,14 @@
     }
 
     &::after {
-      left: 0;
+      left: -0.5rem;
       height: 20%;
       background: white;
       transition-timing-function: linear;
     }
 
     &:before {
-      left: -2rem;
+      left: -2.5rem;
       height: 15%;
       background: $color-secondary;
       transition-timing-function: ease-in;
@@ -121,6 +143,10 @@
     &__body {
       font-size: 2.5rem;
       line-height: 1.4;
+
+      &--highlight {
+        font-family: Gotham;
+      }
     }
   }
 }
