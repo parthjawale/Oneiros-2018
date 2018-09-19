@@ -1,6 +1,6 @@
 const bounceFactor = 0.88;
-const vacuum = 0.5;
-const spiral = 0.5;
+const vacuum = window.innerWidth < 800 ? 0 : 0.5;
+const spiral = window.innerWidth < 800 ? 0 : 0.5;
 
 function Particle(a) {
   var b = this;
@@ -511,7 +511,7 @@ var particleInit = function() {
     ptlSize: isMobile || isSmall ? 3 : 3,
     width: 1e9,
     height: 1e9,
-    mouseForce: 1000
+    mouseForce: window.innerWidth < 800 ? 1 : 1000
   });
 
   window.addEventListener
