@@ -7,6 +7,7 @@
   position: fixed;
   right: 1rem;
   bottom: 1rem;
+  z-index: 100;
 
   p {
     display: inline-block;
@@ -26,5 +27,6 @@
   left: 2rem;
   color: $color-white;
   font-size: 2rem;
-  font-family: 'Gotham-Thin';
+  font-family: "Gotham-Thin";
+  z-index: 100;
 }
