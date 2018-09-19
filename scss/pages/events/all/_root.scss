@@ -1,10 +1,22 @@
 .all {
+  * {
+    pointer-events: none;
+  }
+
   &__prime {
+    * {
+      pointer-events: none;
+    }
+
     &--header,
     &--desc {
       z-index: 2;
       padding: 0 5rem;
       color: #fff;
+
+      * {
+        pointer-events: none;
+      }
     }
 
     &--header {
@@ -139,6 +151,7 @@
 }
 
 .event-reg {
+
   &__next {
     position: absolute;
     bottom: 0;
@@ -220,6 +233,10 @@
 }
 
 .event-rules {
+  * {
+    pointer-events: none;
+  }
+
   &__header {
     font-size: 3rem;
     color: #ccc;

@@ -692,10 +692,18 @@ a:link, a:visited {
   .club-spic__image {
     background: url("/img/events/clubs/overlays/aperture.jpg"); }
 
+.all * {
+  pointer-events: none; }
+
+.all__prime * {
+  pointer-events: none; }
+
 .all__prime--header, .all__prime--desc {
   z-index: 2;
   padding: 0 5rem;
   color: #fff; }
+  .all__prime--header *, .all__prime--desc * {
+    pointer-events: none; }
 
 .all__prime--header {
   font-size: 10rem;
@@ -857,6 +865,9 @@ a:link, a:visited {
     margin-top: 2rem;
     font-size: 2rem;
     color: #aaa; }
+
+.event-rules * {
+  pointer-events: none; }
 
 .event-rules__header {
   font-size: 3rem;
