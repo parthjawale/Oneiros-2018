@@ -90,6 +90,7 @@
     &--detail {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin: 7rem 0;
 
       h1 {
@@ -102,7 +103,7 @@
         font-size: 2rem;
         font-family: "Gotham-Thin";
         display: flex;
-        align-items: center;
+        text-align: right;
       }
     }
   }
@@ -162,6 +163,7 @@
       color: $color-black;
       text-transform: uppercase;
       font-family: "Gotham-Black";
+      margin-bottom: 4rem;
     }
 
     &--reg {
