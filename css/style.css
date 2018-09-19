@@ -266,7 +266,9 @@ a:link, a:visited {
   font-size: 2rem;
   color: #fff;
   position: relative;
-  z-index: 100; }
+  z-index: 1000;
+  transition: 0.2s all;
+  opacity: 0; }
   .ono-animatedbtn p {
     position: relative;
     z-index: 10; }
@@ -305,8 +307,8 @@ a:link, a:visited {
     box-shadow: 0 0 2rem #ff9800;
     background: #ff9800; }
 
-#pp-nav {
-  z-index: 4 !important; }
+.ono-animation {
+  opacity: 1; }
 
 .home-splash {
   height: 100%;
@@ -365,21 +367,20 @@ a:link, a:visited {
   pointer-events: none;
   position: absolute;
   width: 40%;
-  height: 0%;
   float: right;
-  bottom: 0;
+  bottom: 10rem;
   right: 10rem;
   padding: 0;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  z-index: 100; }
+  z-index: 100;
+  opacity: 0;
+  transition: 0.5s all; }
   .home.about__header, .home.about__content, .home.about__breaker {
-    opacity: 0;
     transition: 0.5s all; }
   .home.about__header {
     font-size: 7rem;
     font-family: "Gotham-Black";
-    margin-left: 10rem;
     color: #fff; }
   .home.about__breaker {
     margin: 2rem 0 3rem 0;
@@ -391,7 +392,6 @@ a:link, a:visited {
     font-size: 2rem;
     font-family: "Gotham";
     line-height: 30px;
-    margin-top: 10rem;
     transition: 0.5s all;
     color: #fff; }
 
@@ -417,7 +417,9 @@ a:link, a:visited {
   box-shadow: 0 0 1rem #fff;
   border-radius: 5px;
   pointer-events: none;
-  z-index: 1; }
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s all; }
 
 .home-theme__header {
   font-size: 7rem;
@@ -427,6 +429,9 @@ a:link, a:visited {
 
 .home-theme__para {
   font-size: 2rem; }
+
+.home-theme-showcontent {
+  opacity: 1; }
 
 .login--form {
   display: inline-block;
