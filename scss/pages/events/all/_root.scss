@@ -1,10 +1,22 @@
 .all {
+  * {
+    pointer-events: none;
+  }
+
   &__prime {
+    * {
+      pointer-events: none;
+    }
+
     &--header,
     &--desc {
       z-index: 2;
       padding: 0 5rem;
       color: #fff;
+
+      * {
+        pointer-events: none;
+      }
     }
 
     &--header {
@@ -39,6 +51,10 @@
   width: 50%;
   margin-left: 2.5rem;
 
+  * {
+    pointer-events: none;
+  }
+
   &__header {
     font-size: 5rem;
     font-family: "Gotham-Black";
@@ -65,6 +81,10 @@
 }
 
 .event-container {
+  * {
+    pointer-events: none;
+  }
+
   .fp-tableCell {
     display: flex;
     justify-content: space-around;
@@ -84,6 +104,10 @@
 }
 
 .event-desc {
+  * {
+    pointer-events: none;
+  }
+
   &__info {
     padding: 0 15rem;
     display: grid;
@@ -100,7 +124,19 @@
         font-size: 4rem;
         color: $color-primary;
         font-family: "Gotham-Bold";
-        margin-bottom: 1rem;
+        margin-bottom: 3.0rem;
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: "";
+          bottom: -1.5rem;
+          left: 0;
+          width: 60%;
+          border-radius: 3px;
+          height: 3px;
+          background: #b4b4b459;
+        }
       }
 
       h3 {
@@ -115,6 +151,7 @@
 }
 
 .event-reg {
+
   &__next {
     position: absolute;
     bottom: 0;
@@ -197,6 +234,10 @@
 }
 
 .event-rules {
+  * {
+    pointer-events: none;
+  }
+
   &__header {
     font-size: 3rem;
     color: #ccc;
