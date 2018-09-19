@@ -1,10 +1,10 @@
-const bounceFactor = 0.88;
-const vacuum = window.innerWidth < 800 ? 0 : 0.5;
-const spiral = window.innerWidth < 800 ? 0 : 0.5;
+const bounceFactor = 0.88
+const vacuum = window.innerWidth < 800 ? 0 : 0.5
+const spiral = window.innerWidth < 800 ? 0 : 0.5
 
 function Particle(a) {
   var b = this
-  ;(b.sliderId = 'particles),
+  ;(b.sliderId = 'particles'),
     (b.color = '#fff'),
     (b.hoverColor = '#88f'),
     (b.width = 0),

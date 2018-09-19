@@ -1073,8 +1073,8 @@ a:link, a:visited {
   .camb__list {
     width: 70%; }
     .camb__list li {
-      font-size: 2rem;
-      margin-top: 2rem;
+      font-size: 2.2rem;
+      margin-top: 1.8rem;
       line-height: 1.5; }
   .camb__header {
     font-size: 5rem;
@@ -1106,7 +1106,9 @@ a:link, a:visited {
     position: relative; }
     .camb__content > .fp-tableCell {
       padding: 0rem 8rem;
-      padding-top: 13rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       width: 100%;
       position: relative; }
       .camb__content > .fp-tableCell > .event-reg__next {
