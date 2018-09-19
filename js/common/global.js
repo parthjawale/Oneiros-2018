@@ -70,7 +70,7 @@ const showNavPage = bool => {
 $(document).ready(() => {
   setTimeout(() => {
     $(".loader-prime").addClass("hide-prime-loader");
-    $("body").css({ overflow: "hidden" });
+    // $("body").css({ overflow: "hidden" });
   }, 2000);
 });
 

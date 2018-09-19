@@ -57,18 +57,18 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 15px;
 
   &-track {
-    background: #f1f1f1;
+    background: #fff;
   }
 
   &-thumb {
-    background: #888;
+    background: $color-primary;
   }
 
   &-thumb:hover {
-    background: #555;
+    background: $color-secondary;
   }
 }
 
