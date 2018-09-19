@@ -1,41 +1,40 @@
+const container = $(".home.about");
+const button = $(".ono-animatedbtn");
+const theme = $(".home-theme__content");
+
 $(document).ready(() => {
   $("#fullpage").fullpage({
+    easing: "easeInOut",
+    easingcss3: "easeInOut",
     anchors: ["home", "about", "theme"],
-    // navigation: {
-    //   textColor: "#FFF",
-    //   bulletsColor: "#FFF",
-    //   position: "right",
-    //   tooltips: ["Home", "About", "Theme"]
-    // },
-    // afterLoad: (anchorLink, index) => {
-    //   if (index === 2) handleAboutPage();
-    //   else if (index === 3) handleThemePage();
-    // }
+    onLeave: () => {
+      button.removeClass("ono-animation");
+    },
     afterLoad: (origin, dest) => {
+      container.removeClass("home-about-showcontent");
+      theme.removeClass("home-theme-showcontent");
+
+      handleButton();
       if (dest.index === 1) handleAboutPage();
-      // else if (dest.index === 2) handleThemePage();
-      else if (dest.index === 2) handleContactPage();
+      else if (dest.index === 2) handleThemePage();
     }
   });
 });
 
 handleAboutPage = () => {
-  const header = $(".home .about__header");
-  const content = $(".home .about__content");
-  const breaker = $(".home .about__breaker");
-  const container = $(".home.about");
-
-  container.addClass("home-about-resize");
-
   setTimeout(() => {
-    header.addClass("home-about-showcontent");
+    container.addClass("home-about-showcontent");
   }, 200);
+};
+
+handleButton = () => {
   setTimeout(() => {
-    content.addClass("home-about-showcontent");
-  }, 300);
-  setTimeout(() => {
-    breaker.addClass("home-about-breakershow");
+    button.addClass("ono-animation");
   }, 500);
 };
 
-handleContactPage = () => {};
+handleThemePage = () => {
+  setTimeout(() => {
+    theme.addClass("home-theme-showcontent");
+  }, 200);
+};

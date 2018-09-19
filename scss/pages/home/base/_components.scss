@@ -4,7 +4,9 @@
   font-size: 2rem;
   color: #fff;
   position: relative;
-  z-index: 100;
+  z-index: 1000;
+  transition: 0.2s all;
+  opacity: 0;
 
   p {
     position: relative;
@@ -54,4 +56,8 @@
     box-shadow: 0 0 2rem #ff9800;
     background: #ff9800;
   }
+}
+
+.ono-animation {
+  opacity: 1;
 }
