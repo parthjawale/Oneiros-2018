@@ -17,7 +17,7 @@ body {
 
 body {
   box-sizing: border-box;
-  font-family: 'Gotham', sans-serif;
+  font-family: "Gotham", sans-serif;
   overflow-x: hidden;
 }
 
@@ -84,10 +84,52 @@ a {
   background: #000;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   z-index: 10000;
   transition: 1s all;
   opacity: 1;
+  color: white;
+  .wordmark {
+    background-image: url("/img/logos/wordmark-nodate.png");
+    background-position: center;
+    background-size: contain;
+    height: 5rem;
+    width: 14rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+  .moodi-logo {
+    background-image: url("/img/logos/moodi-logo-white.png");
+    background-position: center;
+    background-size: contain;
+    height: 5rem;
+    width: 9rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+  }
+  .mext-logo {
+    background-image: url("/img/logos/mext.png");
+    background-position: center;
+    background-size: contain;
+    height: 5rem;
+    width: 9rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .dates {
+    color: white;
+    font-size: 1.8rem;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
 }
 
 .hide-prime-loader {
