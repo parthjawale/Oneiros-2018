@@ -139,6 +139,7 @@ a:link, a:visited {
     background-repeat: no-repeat;
     position: absolute;
     top: 1rem;
+    cursor: pointer;
     left: 1rem; }
   .loader-prime .moodi-logo {
     background-image: url("/img/logos/moodi-logo-white.png");
@@ -148,6 +149,7 @@ a:link, a:visited {
     width: 9rem;
     background-repeat: no-repeat;
     position: absolute;
+    cursor: pointer;
     top: 1.5rem;
     right: 1rem; }
   .loader-prime .mext-logo {
@@ -159,7 +161,13 @@ a:link, a:visited {
     background-repeat: no-repeat;
     position: absolute;
     bottom: 1rem;
+    cursor: pointer;
     right: 1rem; }
+    .loader-prime .mext-logo p {
+      display: inline-block;
+      color: #fff;
+      transform: translateY(-1rem);
+      font-size: 1.2rem; }
   .loader-prime .dates {
     color: white;
     font-size: 1.8rem;
@@ -178,7 +186,8 @@ a:link, a:visited {
   left: 1rem;
   width: 15rem;
   z-index: 11;
-  transition: 1s all; }
+  transition: 1s all;
+  cursor: pointer; }
 
 .nav {
   position: fixed;
@@ -389,7 +398,8 @@ a:link, a:visited {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  z-index: 100; }
+  z-index: 100;
+  cursor: pointer; }
   #mext p {
     display: inline-block;
     color: #fff;
@@ -543,8 +553,6 @@ a:link, a:visited {
   width: 100%;
   height: 100%;
   overflow: hidden; }
-  .events-splash > * {
-    pointer-events: none; }
   .events-splash__overlay {
     background: #000;
     width: 100%;
@@ -580,9 +588,6 @@ a:link, a:visited {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   height: 100%; }
-  .clubs-grid * {
-    transition: 0.5s all, 2s transform;
-    pointer-events: none; }
   .clubs-grid__item {
     font-size: 30px;
     text-align: center;
