@@ -19,7 +19,8 @@
       width: 80%;
       right: auto;
       left: 2rem;
-
+      top: 7rem;
+      padding: 0;
       &__content {
         font-size: 3rem;
         line-height: 1.4;
@@ -43,6 +44,17 @@
     white-space: normal;
   }
 
+  .home-theme {
+    &__content {
+      width: 80%;
+      bottom: 7rem;
+    }
+    &__para {
+      font-size: 2rem;
+      line-height: 1.5;
+    }
+  }
+
   .nav {
     top: 2rem;
     right: 2rem;
@@ -50,6 +62,9 @@
 
   .all{
     &__prime {
+      &--header {
+        font-size: 5rem;
+      }
       &--desc {
         // color: $color-secondary;
         box-shadow: 0px 0px 2rem rgba(0,0,0,0.3);
