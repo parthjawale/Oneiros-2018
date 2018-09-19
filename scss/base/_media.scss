@@ -14,15 +14,29 @@
     left: 2rem;
   }
 
+  .ono-animatedbtn__circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 4rem;
+  }
+
+  .clubs-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
   .home {
     &.about {
-      width: 80%;
+      width: 70%;
       right: auto;
-      left: 2rem;
-      top: 7rem;
+      bottom: 16rem;
+
+      // top: 10rem;
+      left: 3rem;
       padding: 0;
+
       &__content {
-        font-size: 3rem;
+        font-size: 2.5rem;
         line-height: 1.4;
       }
     }
@@ -45,10 +59,30 @@
   }
 
   .home-theme {
+    &__splash {
+      background-position: center 30%;
+    }
+
     &__content {
       width: 80%;
-      bottom: 7rem;
+      bottom: 4rem;
+
+      // z-index: 0;
+      &:after {
+        position: absolute;
+        content: "";
+        width: 2rem;
+        height: 90%;
+        background: $color-secondary;
+        z-index: 0;
+        top: 50%;
+        right: 0;
+        transform: translate(100%, -50%);
+        border-radius: 0 1rem 1rem 0;
+        box-shadow: inset 0px 0px 2rem rgba(0, 0, 0, 0.5);
+      }
     }
+
     &__para {
       font-size: 2rem;
       line-height: 1.5;
@@ -60,16 +94,19 @@
     right: 2rem;
   }
 
-  .all{
+  .all {
     &__prime {
       &--header {
         font-size: 5rem;
       }
+
       &--desc {
         // color: $color-secondary;
-        box-shadow: 0px 0px 2rem rgba(0,0,0,0.3);
+        box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.3);
+
         // font-weight: bold; 
         // font-family: Gotham-Black;
+     
       }
     }
   }
@@ -86,15 +123,40 @@
     }
   }
 
+  .event-rules {
+    &__header {
+      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+
+      &--prime {
+        padding-left: 4rem;
+      }
+    }
+
+    &__container {
+      padding: 0 2rem;
+      font-size: 3rem;
+    }
+
+    &__content {
+      font-size: 1.95rem;
+      font-family: gotham;
+      line-height: 1.5;
+      padding: 0 2rem;
+    }
+  }
+
   .event-desc {
     &__info {
       padding: 0 6rem;
+      grid-template-columns: 1fr;
 
       &--detail {
         flex-direction: column;
 
         // justify-content: flex-start;
         align-items: flex-start;
+        margin-top: 0;
 
         h1 {
           margin-bottom: 4rem;
@@ -109,6 +171,21 @@
 
   .events-splash {
     &__container {
+      &--header {
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: 110%;
+          height: 5px;
+          border-radius: 3px;
+          left: 0;
+          bottom: -2rem;
+          background: $color-primary;
+        }
+      }
+
       &--content {
         width: 90%;
         display: block;
@@ -139,6 +216,7 @@
     .fp-tableCell {
       flex-direction: column;
       padding: 6rem;
+      padding-top: 10.5rem;
       align-items: stretch;
 
       // justify-content: stretch;
@@ -152,6 +230,12 @@
 
   .event-reg {
     &__reg {
+      &--fee {
+        color: rgb(116, 116, 116);
+        font-size: 3.2rem;
+        margin-top: 2rem;
+      }
+
       &--header {
         font-size: 7rem;
         text-align: center;
@@ -199,5 +283,10 @@
         }
       }
     }
+  }
+
+  #smallfz {
+    font-size: 2rem;
+    flex-basis: 30%;
   }
 }
