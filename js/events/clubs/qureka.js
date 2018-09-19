@@ -4,7 +4,21 @@ $(document).ready(() => {
   $("#fullpage").fullpage({
     scrollBar: true,
 
-    anchors: [],
+    anchors: [
+      "club-qureka",
+      "sadharanthegeneralquiz-desc",
+      "sadharanthegeneralquiz-info",
+      "sadharanthegeneralquiz-rules",
+      "sadharanthegeneralquiz-registration",
+      "ignitedmindsthebusinessquiz-desc",
+      "ignitedmindsthebusinessquiz-info",
+      "ignitedmindsthebusinessquiz-rules",
+      "ignitedmindsthebusinessquiz-registration",
+      "poparazzitheculturalquiz-desc",
+      "poparazzitheculturalquiz-info",
+      "poparazzitheculturalquiz-rules",
+      "poparazzitheculturalquiz-registration"
+    ],
     afterLoad: (origin, dest) => {
       let option = 0;
       option = dest.anchor.split("-")[0] !== "club" ? 1 : 0;
