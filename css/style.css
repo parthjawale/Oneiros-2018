@@ -41,23 +41,18 @@
 @font-face {
   font-family: "Gotham-Black";
   src: url("/fonts/gotham/Gotham-Black.otf"); }
-
 @font-face {
   font-family: "Gotham-Bold";
   src: url("/fonts/gotham/Gotham-Bold.otf"); }
-
 @font-face {
   font-family: "Gotham";
   src: url("/fonts/gotham/GothamBook.ttf"); }
-
 @font-face {
   font-family: "Gotham-Light";
   src: url("/fonts/gotham/Gotham-Light.otf"); }
-
 @font-face {
   font-family: "Gotham-Thin";
   src: url("/fonts/gotham/Gotham-XLight.otf"); }
-
 html {
   font-size: 62.5%; }
 
@@ -126,7 +121,7 @@ a:link, a:visited {
   justify-content: center;
   align-items: center;
   z-index: 10000;
-  transition: 0.5s all;
+  transition: 1s all;
   opacity: 1; }
 
 .hide-prime-loader {
@@ -423,13 +418,11 @@ a:link, a:visited {
   border-radius: 5px;
   pointer-events: none;
   z-index: 1; }
-
 .home-theme__header {
   font-size: 7rem;
   font-family: "Gotham-Black";
   color: #e50914;
   margin-bottom: 2rem; }
-
 .home-theme__para {
   font-size: 2rem; }
 
@@ -479,14 +472,12 @@ a:link, a:visited {
       color: #ddd; }
   .login--form .input-group:not(:nth-child(1)) {
     margin-top: 5rem; }
-
 .login .title {
   font-family: "Gotham-Black", sans-serif;
   color: #e50914;
   font-size: 4rem;
   margin-bottom: 9rem;
   font-size: 10rem; }
-
 .login--background {
   width: 50%;
   height: 100vh;
@@ -498,76 +489,59 @@ a:link, a:visited {
   border: 2px solid black;
   margin-top: 20px;
   margin-left: 160px; }
-
 #register h1 {
   color: #e50914;
   margin-top: 90px;
   margin-left: 160px; }
-
 #register .inputs {
   width: 200px;
   margin-left: 160px;
   margin-right: 0px;
   display: inline-block; }
-
 #register .inputs2 {
   width: 200px;
   margin-left: 130px;
   margin-right: 0px;
   display: inline-block; }
-
 #register textarea:focus, #register input:focus {
   outline: none; }
-
 #register label {
   margin-top: 50px;
   margin-bottom: 0px;
   font-weight: 500; }
-
 #register .row {
   margin-right: 0px; }
-
 #register .left {
   background: white; }
-
 #register .right {
   background: black;
   height: 100vh; }
-
 #register #muj {
   color: black; }
-
 #register #blank {
   color: white; }
-
 #register .onoblack {
   width: 150px;
   height: auto; }
-
 #register input {
   width: 200px;
   border: 0px;
   position: relative;
   /*border-bottom: 0px solid black*/ }
-
 #register input:focus {
   /*border-bottom: 2px solid black;
-			border-height: 200px;
-			transition: border-bottom 0.4s cubic-bezier(1.0, 0.7,0.1,1);*/ }
-
+  border-height: 200px;
+  transition: border-bottom 0.4s cubic-bezier(1.0, 0.7,0.1,1);*/ }
 #register input[type=number]::-webkit-inner-spin-button,
 #register input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   margin: 0; }
-
 #register button:focus {
   outline: none; }
-
 #register .input-group {
   position: relative; }
-
 #register #line {
   height: 3px;
   width: 0px;
@@ -578,7 +552,6 @@ a:link, a:visited {
   margin: 0;
   position: absolute;
   bottom: -4px; }
-
 #register input:focus ~ #line {
   background-color: black;
   width: 200px; }
@@ -663,7 +636,6 @@ a:link, a:visited {
 .event-image__frame {
   perspective: 3000px;
   pointer-events: none; }
-
 .event-image__container {
   position: relative;
   transition: 0.2s all;
@@ -740,7 +712,6 @@ a:link, a:visited {
   z-index: 2;
   padding: 0 5rem;
   color: #fff; }
-
 .all__prime--header {
   font-size: 10rem;
   font-family: "Gotham-Black";
@@ -748,13 +719,11 @@ a:link, a:visited {
   text-shadow: 0 0 2rem #222;
   position: relative;
   z-index: 1; }
-
 .all__prime--desc {
   margin-top: 2rem;
   font-size: 3rem;
   z-index: 1;
   position: relative; }
-
 .all__prime--overlay {
   position: absolute;
   width: 100%;
@@ -789,7 +758,6 @@ a:link, a:visited {
   display: flex;
   justify-content: space-around;
   align-items: center; }
-
 .event-container .event-image {
   width: 42rem;
   height: 56rem;
@@ -850,7 +818,6 @@ a:link, a:visited {
       border-radius: 100%;
       background: #fff;
       animation: scroll infinite 3s; }
-
 .event-reg__reg {
   display: flex;
   justify-content: space-around;
@@ -890,13 +857,10 @@ a:link, a:visited {
     color: #e50914;
     text-transform: uppercase;
     padding: 0 10rem; }
-
 .event-rules__container {
   padding: 0 10rem; }
-
 .event-rules__item {
   padding: 2rem 0; }
-
 .event-rules__content {
   font-size: 1.5rem;
   font-family: "Gotham";
@@ -909,7 +873,6 @@ a:link, a:visited {
     transform: translateY(15px); }
   20% {
     transform: translateY(0); } }
-
 @keyframes changePad {
   10% {
     width: 4rem;
@@ -925,7 +888,6 @@ a:link, a:visited {
   70% {
     width: 4rem;
     height: 6rem; } }
-
 .aperture-prime {
   background: url("/img/events/clubs/aperture/prime.jpg");
   background-position: center;
@@ -1255,7 +1217,6 @@ a:link, a:visited {
 @media (max-width: 1400px) {
   html {
     font-size: 8px; } }
-
 @media (max-width: 500px) {
   html {
     font-size: 6px; }
@@ -1267,7 +1228,9 @@ a:link, a:visited {
   .home.about {
     width: 80%;
     right: auto;
-    left: 2rem; }
+    left: 2rem;
+    top: 7rem;
+    padding: 0; }
     .home.about__content {
       font-size: 3rem;
       line-height: 1.4; }
@@ -1284,10 +1247,19 @@ a:link, a:visited {
   .nav-container__whiteoverlay ul li a {
     white-space: normal; }
 
+  .home-theme__content {
+    width: 80%;
+    bottom: 7rem; }
+  .home-theme__para {
+    font-size: 2rem;
+    line-height: 1.5; }
+
   .nav {
     top: 2rem;
     right: 2rem; }
 
+  .all__prime--header {
+    font-size: 5rem; }
   .all__prime--desc {
     box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.3); }
 
@@ -1366,3 +1338,5 @@ a:link, a:visited {
         .camb__content--right:before {
           right: auto;
           left: -2rem; } }
+
+/*# sourceMappingURL=style.css.map */

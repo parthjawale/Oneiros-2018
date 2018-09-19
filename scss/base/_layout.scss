@@ -2,14 +2,11 @@ html {
   font-size: 62.5%;
 }
 
-<<<<<<< HEAD
 body {
   box-sizing: border-box;
   font-family: "Gotham", sans-serif;
 }
 
-=======
->>>>>>> apoorv
 html,
 body {
   width: 100%;
@@ -42,7 +39,6 @@ main {
 }
 
 .body-darken {
-<<<<<<< HEAD
   opacity: 0.7 !important;
   pointer-events: all;
 }
@@ -58,11 +54,6 @@ main {
   transition: 0.2s all;
 }
 
-=======
-  filter: brightness(0.5);
-}
-
->>>>>>> apoorv
 a {
   &:link,
   &:visited {
@@ -85,7 +76,6 @@ a {
     background: #555;
   }
 }
-<<<<<<< HEAD
 
 .loader-prime {
   position: fixed;
@@ -96,7 +86,7 @@ a {
   justify-content: center;
   align-items: center;
   z-index: 10000;
-  transition: 0.5s all;
+  transition: 1s all;
   opacity: 1;
 }
 
@@ -104,5 +94,3 @@ a {
   opacity: 0;
   pointer-events: none;
 }
-=======
->>>>>>> apoorv
