@@ -9,6 +9,7 @@
   padding: 0;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  z-index: 100;
 
   &__header,
   &__content,
@@ -37,7 +38,7 @@
     font-family: "Gotham";
     line-height: 30px;
     margin-top: 10rem;
-    transition: 1s all;
+    transition: 0.5s all;
     color: $color-white;
   }
 }

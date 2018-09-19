@@ -38,6 +38,7 @@
 .event {
   width: 50%;
   margin-left: 2.5rem;
+  pointer-events: none;
 
   &__header {
     font-size: 5rem;
