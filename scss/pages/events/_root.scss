@@ -5,6 +5,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 
   &__overlay {
     background: #000;
@@ -18,14 +19,13 @@
     position: absolute;
     z-index: 1;
     padding: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 5rem;
+    left: 2rem;
 
     &--header {
       color: #fff;
-      font-size: 10rem;
-      transform: translate(5rem, -10rem);
-      font-family: "Gotham-Bold";
+      font-size: 15rem;
+      font-family: "Gotham-Black";
     }
 
     &--content {
@@ -66,9 +66,14 @@
       transform: scale(1.2);
     }
 
+    &--image {
+      pointer-events: none;
+    }
+
     &--solid {
       width: 100%;
       height: 100%;
+      pointer-events: none;
     }
 
     &--header,
@@ -95,6 +100,19 @@
       top: 50%;
       transform: translate(-50%, -50%);
     }
+  }
+}
+
+.event-image {
+  &__frame {
+    perspective: 3000px;
+    pointer-events: none;
+  }
+
+  &__container {
+    position: relative;
+    transition: 0.2s all;
+    transform-style: preserve-3d;
   }
 }
 

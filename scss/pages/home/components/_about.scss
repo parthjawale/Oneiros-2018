@@ -2,25 +2,26 @@
   pointer-events: none;
   position: absolute;
   width: 40%;
-  height: 0%;
   float: right;
-  bottom: 0;
+  bottom: 10rem;
   right: 10rem;
   padding: 0;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  z-index: 100;
+  opacity: 0;
+  transition: 0.5s all;
 
   &__header,
   &__content,
   &__breaker {
-    opacity: 0;
     transition: 0.5s all;
   }
 
   &__header {
     font-size: 7rem;
     font-family: "Gotham-Black";
-    margin-left: 10rem;
+    // margin-left: 10rem;
     color: $color-white;
   }
 
@@ -36,8 +37,8 @@
     font-size: 2rem;
     font-family: "Gotham";
     line-height: 30px;
-    margin-top: 10rem;
-    transition: 1s all;
+    // margin-top: 10rem;
+    transition: 0.5s all;
     color: $color-white;
   }
 }
