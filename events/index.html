@@ -12,6 +12,10 @@
 </head>
 
 <body>
+  <div class="loader-prime">
+    <img src="/img/logos/alpha.gif" alt="Alpha" />
+  </div>
+
   <header>
     <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
     <div class="nav">
@@ -36,22 +40,16 @@
       <div class="nav-container__whiteoverlay">
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a href="/" class="custom-link">Home</a>
           </li>
           <li>
-            <a href="/events/all">Events</a>
+            <a href="/events" class="custom-link">Events</a>
           </li>
           <li>
-            <a href="/register">Register</a>
+            <a href="/majorevents" class="custom-link">Major Events</a>
           </li>
           <li>
-            <a href="/login">Login</a>
-          </li>
-          <li>
-            <a href="/campusambassador">Campus Ambassador</a>
-          </li>
-          <li>
-            <a href="/contact">Contact Us</a>
+            <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
           </li>
         </ul>
       </div>
@@ -63,30 +61,32 @@
 
     <section class="events-splash section">
       <video id="events-video" autoplay muted loop>
-        <source src="/img/events/splash.mp4">
+        <source src="/img/events/screen.mp4">
       </video>
       <div class="events-splash">
         <div class="events-splash__container">
           <h1 class="events-splash__container--header">Events</h1>
-          <p class="events-splash__container--content">
+          <!-- <p class="events-splash__container--content">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repellat, expedita veniam illum, ipsum minima
             doloribus repellendus rem quo similique ipsa natus distinctio magni! Esse quidem ullam earum quas!
-          </p>
+          </p> -->
         </div>
         <div class="events-splash__overlay"></div>
       </div>
     </section>
     <section class="events-clubs section">
       <div class="clubs-grid">
-        <a href="/events/aperture.html" class="clubs-grid__item">
+        <a href="/events/aperture.html" class="clubs-grid__item custom-link">
           <div class="clubs-grid__item--solid club-aperture">
             <h1 class="clubs-grid__item--header"></h1>
-            <p class="clubs-grid__item--content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboreomnis.</p>
+            <p class="clubs-grid__item--content">
+
+            </p>
             <img class="clubs-grid__item--logo" src="/img/events/clubs/logos/aperture.png" alt="Aperture">
           </div>
           <div class="clubs-grid__item--image club-aperture__image club-image"></div>
         </a>
-        <a href="/events/tmc.html" class="clubs-grid__item">
+        <a href="/events/tmc.html" class="clubs-grid__item custom-link">
           <div class="clubs-grid__item--solid club-tmc">
             <h1 class="clubs-grid__item--header"></h1>
             <p class="clubs-grid__item--content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboreomnis.</p>
@@ -94,7 +94,7 @@
           </div>
           <div class="clubs-grid__item--image club-tmc__image club-image"></div>
         </a>
-        <a href="/events/litmus.html" class="clubs-grid__item">
+        <a href="/events/litmus.html" class="clubs-grid__item custom-link">
           <div class="clubs-grid__item--solid club-litmus">
             <h1 class="clubs-grid__item--header"></h1>
             <p class="clubs-grid__item--content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboreomnis.</p>
@@ -102,7 +102,7 @@
           </div>
           <div class="clubs-grid__item--image club-litmus__image club-image"></div>
         </a>
-        <a href="/events/coreografia.html" class="clubs-grid__item">
+        <a href="/events/coreografia.html" class="clubs-grid__item custom-link">
           <div class="clubs-grid__item--solid club-choreo">
             <h1 class="clubs-grid__item--header"></h1>
             <p class="clubs-grid__item--content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboreomnis.</p>
@@ -114,7 +114,7 @@
     </section>
     <section class="events-clubs section">
       <div class="clubs-grid">
-        <a href="/events/scribbles.html" class="clubs-grid__item">
+        <a href="/events/scribbles.html" class="clubs-grid__item custom-link">
           <div class="clubs-grid__item--solid club-scribbles">
             <h1 class="clubs-grid__item--header"></h1>
             <p class="clubs-grid__item--content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboreomnis.</p>
@@ -122,7 +122,7 @@
           </div>
           <div class="clubs-grid__item--image club-scribbles__image club-image"></div>
         </a>
-        <a href="/events/cinefilia.html" class="clubs-grid__item">
+        <a href="/events/cinefilia.html" class="clubs-grid__item custom-link">
           <div class="clubs-grid__item--solid club-cinefilia">
             <h1 class="clubs-grid__item--header"></h1>
             <p class="clubs-grid__item--content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboreomnis.</p>
@@ -130,7 +130,7 @@
           </div>
           <div class="clubs-grid__item--image club-cinefilia__image club-image"></div>
         </a>
-        <a href="#" class="clubs-grid__item">
+        <a href="#" class="clubs-grid__item custom-link">
           <div class="clubs-grid__item--solid club-shabd">
             <h1 class="clubs-grid__item--header"></h1>
             <p class="clubs-grid__item--content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboreomnis.</p>
@@ -138,7 +138,7 @@
           </div>
           <div class="clubs-grid__item--image club-shabd__image club-image"></div>
         </a>
-        <a href="/events/qureka.html" class="clubs-grid__item">
+        <a href="/events/qureka.html" class="clubs-grid__item custom-link">
           <div class="clubs-grid__item--solid club-qureka">
             <h1 class="clubs-grid__item--header"></h1>
             <p class="clubs-grid__item--content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboreomnis.</p>
@@ -153,7 +153,7 @@
   <script src="/js/libs/jquery.js"></script>
   <script src="/js/libs/fullpage.js"></script>
   <script src="/js/events/main.js"></script>
-  <script src="/js/common/nav.js"></script>
+  <script src="/js/common/global.js"></script>
   <script>
     const video = document.getElementById('events-video')
     setTimeout(() => {

@@ -126,7 +126,7 @@ a:link, a:visited {
   justify-content: center;
   align-items: center;
   z-index: 10000;
-  transition: 1s all;
+  transition: 0.5s all;
   opacity: 1; }
 
 .hide-prime-loader {
@@ -270,7 +270,8 @@ a:link, a:visited {
   font-family: "Gotham-Black";
   font-size: 2rem;
   color: #fff;
-  position: relative; }
+  position: relative;
+  z-index: 100; }
   .ono-animatedbtn p {
     position: relative;
     z-index: 10; }
@@ -314,16 +315,30 @@ a:link, a:visited {
 
 .home-splash {
   height: 100%;
-  background: #020202; }
+  background: #020202;
+  overflow: hidden; }
 
 .home-about {
   background: url("/img/home/about.jpg");
   background-position: center;
   background-size: cover;
+  overflow: hidden;
   position: relative; }
 
-.home-contact {
-  background: #e50914; }
+.home-theme {
+  background: #ffdf00;
+  overflow: hidden; }
+  .home-theme__splash {
+    height: 100%;
+    width: 100%;
+    background: url("/img/home/theme.jpg");
+    background-size: contain;
+    background-position: right;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    transition: 1s transform; }
 
 #particles {
   width: 100%;
@@ -332,7 +347,8 @@ a:link, a:visited {
 #mext {
   position: fixed;
   right: 1rem;
-  bottom: 1rem; }
+  bottom: 1rem;
+  z-index: 100; }
   #mext p {
     display: inline-block;
     color: #fff;
@@ -347,7 +363,8 @@ a:link, a:visited {
   left: 2rem;
   color: #fff;
   font-size: 2rem;
-  font-family: 'Gotham-Thin'; }
+  font-family: "Gotham-Thin";
+  z-index: 100; }
 
 .home.about {
   pointer-events: none;
@@ -359,7 +376,8 @@ a:link, a:visited {
   right: 10rem;
   padding: 0;
   border-top-right-radius: 5px;
-  border-top-left-radius: 5px; }
+  border-top-left-radius: 5px;
+  z-index: 100; }
   .home.about__header, .home.about__content, .home.about__breaker {
     opacity: 0;
     transition: 0.5s all; }
@@ -379,7 +397,7 @@ a:link, a:visited {
     font-family: "Gotham";
     line-height: 30px;
     margin-top: 10rem;
-    transition: 1s all;
+    transition: 0.5s all;
     color: #fff; }
 
 .home-about-showcontent {
@@ -393,6 +411,27 @@ a:link, a:visited {
 .home-about-resize {
   height: 80% !important;
   padding: 3.5rem !important; }
+
+.home-theme__content {
+  position: absolute;
+  bottom: 15rem;
+  left: 5rem;
+  width: 40%;
+  background: #fff;
+  padding: 4rem 2rem;
+  box-shadow: 0 0 1rem #fff;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 1; }
+
+.home-theme__header {
+  font-size: 7rem;
+  font-family: "Gotham-Black";
+  color: #e50914;
+  margin-bottom: 2rem; }
+
+.home-theme__para {
+  font-size: 2rem; }
 
 .login--form {
   display: inline-block;
@@ -561,13 +600,12 @@ a:link, a:visited {
     position: absolute;
     z-index: 1;
     padding: 2rem;
-    top: 50%;
-    transform: translateY(-50%); }
+    bottom: 5rem;
+    left: 2rem; }
     .events-splash__container--header {
       color: #fff;
-      font-size: 10rem;
-      transform: translate(5rem, -10rem);
-      font-family: "Gotham-Bold"; }
+      font-size: 15rem;
+      font-family: "Gotham-Black"; }
     .events-splash__container--content {
       color: #222;
       font-size: 2rem;
@@ -597,9 +635,12 @@ a:link, a:visited {
     .clubs-grid__item:hover .clubs-grid__item--image {
       opacity: 0.2;
       transform: scale(1.2); }
+    .clubs-grid__item--image {
+      pointer-events: none; }
     .clubs-grid__item--solid {
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      pointer-events: none; }
     .clubs-grid__item--header, .clubs-grid__item--content {
       color: #fff;
       position: absolute;
@@ -618,6 +659,15 @@ a:link, a:visited {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%); }
+
+.event-image__frame {
+  perspective: 3000px;
+  pointer-events: none; }
+
+.event-image__container {
+  position: relative;
+  transition: 0.2s all;
+  transform-style: preserve-3d; }
 
 #events-video {
   position: absolute;
@@ -716,7 +766,8 @@ a:link, a:visited {
 
 .event {
   width: 50%;
-  margin-left: 2.5rem; }
+  margin-left: 2.5rem;
+  pointer-events: none; }
   .event__header {
     font-size: 5rem;
     font-family: "Gotham-Black";
