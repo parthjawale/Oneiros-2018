@@ -246,15 +246,34 @@
   }
 
   .camb {
-    padding: 10rem 5rem 6rem 7rem;
+    &__list {
+      width: 100%;
+      li {
+        font-size: 2rem;
+        margin-top: 2.7rem;
+        line-height: 1.6;
+      }
+    }
 
     &__header {
+      width: 75%;
+      margin: 0;
       margin-bottom: 8rem;
     }
 
     &__content {
       width: 100%;
       margin: 0;
+
+      &:hover {
+        &:after {
+          height: 20%;
+        }
+
+        &:before {
+          height: 15%;
+        }
+      }
 
       &--mb {
         margin-bottom: 10rem;
@@ -274,12 +293,12 @@
 
         &:after {
           right: auto;
-          left: 0;
+          left: -0.5rem;
         }
 
         &:before {
           right: auto;
-          left: -2rem;
+          left: -2.5rem;
         }
       }
     }
