@@ -14,26 +14,107 @@
     left: 2rem;
   }
 
-  .nav {
-    right: 7rem;
+  .home {
+    &.about {
+      width: 80%;
+      right: auto;
+      left: 2rem;
+
+      &__content {
+        font-size: 3rem;
+        line-height: 1.4;
+      }
+    }
   }
+
+  .activate-redoverlay {
+    width: 75%;
+  }
+
+  .activate-blackoverlay {
+    width: 68%;
+  }
+
+  .activate-whiteoverlay {
+    width: 60%;
+  }
+
+  .nav-container__whiteoverlay ul li a {
+    white-space: normal;
+  }
+
+  .nav {
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .all{
+    &__prime {
+      &--desc {
+        // color: $color-secondary;
+        box-shadow: 0px 0px 2rem rgba(0,0,0,0.3);
+        // font-weight: bold; 
+        // font-family: Gotham-Black;
+      }
+    }
+  }
+
   .event {
     width: 100%;
     margin-bottom: 2rem;
+    margin-left: 0;
+
+    &__desc {
+      font-size: 2.5rem;
+      line-height: 1.55;
+      margin-bottom: 3rem;
+    }
   }
 
   .event-desc {
     &__info {
       padding: 0 6rem;
+
       &--detail {
         flex-direction: column;
+
         // justify-content: flex-start;
         align-items: flex-start;
+
         h1 {
           margin-bottom: 4rem;
         }
+
         h3 {
           text-align: left;
+        }
+      }
+    }
+  }
+
+  .events-splash {
+    &__container {
+      &--content {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        float: none;
+        font-size: 3rem;
+        line-height: 1.6;
+        position: relative;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 0;
+
+        &:after {
+          position: absolute;
+          width: 2rem;
+          height: 100%;
+          top: 50%;
+          right: 4.5rem;
+          z-index: -1;
+          background: #9b02c660;
+          transform: rotate(4deg) translate(0%, -50%);
+          content: "";
         }
       }
     }
@@ -51,6 +132,17 @@
 
     .event-image {
       margin: 0 auto;
+    }
+  }
+
+  .event-reg {
+    &__reg {
+      &--header {
+        font-size: 7rem;
+        text-align: center;
+        width: 80%;
+        margin-bottom: 8rem;
+      }
     }
   }
 
