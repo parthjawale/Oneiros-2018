@@ -104,13 +104,13 @@ a:link, a:visited {
   text-decoration: none; }
 
 ::-webkit-scrollbar {
-  width: 5px; }
+  width: 15px; }
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; }
+    background: #fff; }
   ::-webkit-scrollbar-thumb {
-    background: #888; }
+    background: #e50914; }
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; }
+    background: #c10812; }
 
 .loader-prime {
   position: fixed;
@@ -766,8 +766,7 @@ a:link, a:visited {
 
 .event {
   width: 50%;
-  margin-left: 2.5rem;
-  pointer-events: none; }
+  margin-left: 2.5rem; }
   .event__header {
     font-size: 5rem;
     font-family: "Gotham-Black";
@@ -779,7 +778,7 @@ a:link, a:visited {
       font-family: "Gotham"; }
   .event__desc {
     font-size: 1.8rem;
-    font-family: "Gotham-Thin";
+    font-family: "Gotham";
     margin-top: 2rem;
     line-height: 30px; }
     .event__desc a {
@@ -801,20 +800,26 @@ a:link, a:visited {
   border: 1rem solid #fff; }
 
 .event-desc__info {
-  padding: 0 15rem; }
+  padding: 0 15rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem; }
   .event-desc__info--detail {
     display: flex;
-    justify-content: space-between;
-    margin: 7rem 0; }
+    justify-content: flex-start;
+    margin: 7rem 0;
+    flex-direction: column; }
     .event-desc__info--detail h1 {
       font-size: 4rem;
       color: #e50914;
-      font-family: "Gotham-Bold"; }
+      font-family: "Gotham-Bold";
+      margin-bottom: 1rem; }
     .event-desc__info--detail h3 {
       font-size: 2rem;
-      font-family: "Gotham-Thin";
+      font-family: "Gotham";
       display: flex;
-      align-items: center; }
+      align-items: center;
+      line-height: 2.5rem; }
 
 .event-reg__next {
   position: absolute;
@@ -860,7 +865,8 @@ a:link, a:visited {
     font-size: 10rem;
     color: #222;
     text-transform: uppercase;
-    font-family: "Gotham-Black"; }
+    font-family: "Gotham-Black";
+    margin-bottom: 5rem; }
   .event-reg__reg--reg {
     padding: 2rem 5rem;
     margin-top: 10rem;
@@ -880,8 +886,8 @@ a:link, a:visited {
 
 .event-rules__header {
   font-size: 3rem;
-  color: #ddd;
-  padding-bottom: 1rem; }
+  color: #ccc;
+  padding: 1rem 0; }
   .event-rules__header--prime {
     font-family: "Gotham-Black";
     font-size: 5rem;
@@ -897,8 +903,8 @@ a:link, a:visited {
 
 .event-rules__content {
   font-size: 1.5rem;
-  font-family: "Gotham";
-  line-height: 20px; }
+  font-family: "Gotham-Bold";
+  line-height: 2.4rem; }
 
 @keyframes scroll {
   0% {
