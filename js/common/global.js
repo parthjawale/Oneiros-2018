@@ -59,21 +59,22 @@ const showNavPage = bool => {
   }
 };
 
-const loader = `
-  <div class="loader-prime">
-    <img src="/img/logos/alpha.gif" alt="Alpha" />
-  </div>
-`;
+// const loader = `
+//   <div class="loader-prime">
+//     <img src="/img/logos/alpha.gif" alt="Alpha" />
+//   </div>
+// `;
 
-$("body").prepend(loader);
+// $("body").prepend(loader);
 
 $(document).ready(() => {
   setTimeout(() => {
     $(".loader-prime").addClass("hide-prime-loader");
+    $("body").css({ overflow: "hidden" });
   }, 2000);
 });
 
-$(".nav-container a").click(e => {
+$(".custom-link").click(e => {
   e.preventDefault();
   const link = e.target.href;
 
