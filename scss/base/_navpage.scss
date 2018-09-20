@@ -34,15 +34,27 @@
 }
 
 .activate-redoverlay {
-  width: 58%;
+  width: 67%;
+
+  @media screen and (max-width: 800px) {
+    width: 90% !important;
+  }
 }
 
 .activate-blackoverlay {
-  width: 55%;
+  width: 60%;
+
+  @media screen and (max-width: 800px) {
+    width: 80% !important;
+  }
 }
 
 .activate-whiteoverlay {
   width: 50%;
+
+  @media screen and (max-width: 800px) {
+    width: 70% !important;
+  }
 }
 
 .nav-container__whiteoverlay {

@@ -95,10 +95,9 @@
     width: 42rem;
     height: 56rem;
     margin: 0 3rem;
-    background-position: center;
-    background-size: cover;
-    background-position: center;
-    // box-shadow: 0 1rem 3rem rgba($color-black, 0.3);
+    background-position: center !important;
+    background-size: cover !important;
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.3);
     background: transparent;
     border: 1rem solid $color-white;
   }

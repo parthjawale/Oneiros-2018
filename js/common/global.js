@@ -70,18 +70,17 @@ const showNavPage = bool => {
 $(document).ready(() => {
   setTimeout(() => {
     $(".loader-prime").addClass("hide-prime-loader");
-    // $("body").css({ overflow: "hidden" });
   }, 2000);
-  $(".mext-logo").click(function() {
+  $(".mext-logo").click(function () {
     window.open("https://mext.in", "_blank");
   });
-  $(".moodi-logo").click(function() {
+  $(".moodi-logo").click(function () {
     window.open("https://moodi.org", "_blank");
   });
-  $(".wordmark, #wordmark").click(function() {
+  $(".wordmark, #wordmark").click(function () {
     window.open("https://oneiros.co.in", "_self");
   });
-  $("#mext").click(function() {
+  $("#mext").click(function () {
     window.open("https://mext.in", "_blank");
   });
 });
