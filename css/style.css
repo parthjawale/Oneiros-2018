@@ -163,11 +163,6 @@ a:link, a:visited {
     bottom: 1rem;
     cursor: pointer;
     right: 1rem; }
-    .loader-prime .mext-logo p {
-      display: inline-block;
-      color: #fff;
-      transform: translateY(-1rem);
-      font-size: 1.2rem; }
   .loader-prime .dates {
     color: white;
     font-size: 1.8rem;
@@ -589,6 +584,8 @@ a:link, a:visited {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   height: 100%; }
+  .clubs-grid * {
+    transition: .5s all; }
   .clubs-grid__item {
     font-size: 30px;
     text-align: center;
@@ -598,7 +595,8 @@ a:link, a:visited {
       opacity: 0.2;
       transform: scale(1.2); }
     .clubs-grid__item--image {
-      pointer-events: none; }
+      pointer-events: none;
+      transition: 1s all; }
     .clubs-grid__item--solid {
       width: 100%;
       height: 100%;
@@ -608,11 +606,13 @@ a:link, a:visited {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      font-family: 'Gotham-Bold'; }
     .clubs-grid__item--content {
       opacity: 0;
       line-height: 32px;
-      font-size: 2rem;
+      font-size: 3rem;
       width: 100%;
       padding: 2rem; }
     .clubs-grid__item--logo {
@@ -708,11 +708,8 @@ a:link, a:visited {
   z-index: 2;
   padding: 0 5rem;
   color: #fff; }
-<<<<<<< HEAD
-=======
   .all__prime--header *, .all__prime--desc * {
     pointer-events: none; }
->>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
 
 .all__prime--header {
   font-size: 10rem;
@@ -934,25 +931,22 @@ a:link, a:visited {
   background: #ff5722; }
 
 .event-image__focus {
-  background: url("/img/events/clubs/aperture/focus.jpg"); }
+  background: url("/img/events/clubs/aperture/focus.jpeg"); }
 
-.event-image__aperture {
-  background: #ff5722; }
-
-.event-image__shutter-up {
-  background: url(""); }
+.event-image__shutterup {
+  background: url("/img/events/clubs/aperture/shutterup.jpeg"); }
 
 .event-image__instaperture {
-  background: url(""); }
+  background: url("/img/events/clubs/aperture/instaperture.jpeg"); }
 
 .event-image__showdownofsocieties {
-  background: url(""); }
+  background: url("/img/events/clubs/aperture/showdown.jpeg"); }
 
 .event-image__pictureperfect {
-  background: url(""); }
+  background: url("/img/events/clubs/aperture/pictureperfect.png"); }
 
 .event-image__powershoot {
-  background: url(""); }
+  background: url("/img/events/clubs/aperture/powershoot.jpeg"); }
 
 .tmc-prime {
   background: url("/img/events/clubs/tmc/prime.jpg");
@@ -1028,24 +1022,23 @@ a:link, a:visited {
 .event-next__aperture {
   background: #ff5722; }
 
-<<<<<<< HEAD
 .me-container {
   display: flex;
   height: 100%;
   transition: .2s all;
   cursor: pointer; }
   .me-container .destival__splash {
-    background: url("https://images.unsplash.com/photo-1533854257392-71c5ff28dff7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d0398e4a2c8ed0d899487068b9a579a2&auto=format&fit=crop&w=1957&q=80"); }
+    background: url("/img/majorevents/destival.jpg"); }
   .me-container .destival__overlay {
-    background: blue; }
+    background: #3F51B5; }
   .me-container .requiem__splash {
-    background: url("https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?ixlib=rb-0.3.5&s=5a8979f1d3f696c7f3e9488857d2668c&auto=format&fit=crop&w=1950&q=80"); }
+    background: url("/img/majorevents/requiem.jpg"); }
   .me-container .requiem__overlay {
-    background: green; }
+    background: #9C27B0; }
   .me-container .fashionshow__splash {
     background: url("https://images.unsplash.com/photo-1519075509237-10f3fe5aeee1?ixlib=rb-0.3.5&s=bdb14dc2e37ca9dd5bbf34b89916f53f&auto=format&fit=crop&w=668&q=80"); }
   .me-container .fashionshow__overlay {
-    background: red; }
+    background: #E91E63; }
 
 .majorevent {
   position: relative;
@@ -1062,8 +1055,8 @@ a:link, a:visited {
     height: 100%;
     background-size: cover !important;
     background-position: center !important;
-    transition: .5s all;
-    pointer-events: none; }
+    pointer-events: none;
+    transition: .1s transform; }
   .majorevent:hover .majorevent__overlay {
     opacity: 0; }
   .majorevent:hover .majorevent__splash {
@@ -1094,8 +1087,8 @@ a:link, a:visited {
   width: 0; }
 
 .overlay-darken {
-  background: #222 !important;
-  opacity: .7 !important;
+  background: #000 !important;
+  opacity: .9 !important;
   pointer-events: none; }
 
 .majorevent * {
@@ -1108,14 +1101,22 @@ a:link, a:visited {
   padding: 5rem;
   height: 100%;
   overflow-y: scroll;
-  z-index: 1; }
+  z-index: 1;
+  cursor: pointer; }
+  .majorevent__content--link {
+    font-size: 1.5rem;
+    color: #ddd; }
+    .majorevent__content--link:hover {
+      opacity: .5; }
   .majorevent__content--header {
     font-size: 3rem;
     font-family: 'Gotham-Bold';
     color: #e50914;
     margin: 2rem 0; }
   .majorevent__content--subheader {
-    font-size: 2.5rem; }
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    color: #aaa; }
   .majorevent__content--para {
     font-size: 2rem; }
   .majorevent__content--details {
@@ -1129,7 +1130,7 @@ a:link, a:visited {
       font-size: 2rem; }
     .majorevent__content--details li {
       font-size: 2rem; }
-=======
+
 .events-list {
   position: fixed;
   left: 50%;
@@ -1188,7 +1189,6 @@ a:link, a:visited {
         color: #c10812;
         transition: all 0.3s ease;
         width: 100%; }
->>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
 
 .card-grid {
   padding: 2rem 2rem;
@@ -1500,13 +1500,10 @@ a:link, a:visited {
       font-size: 2.5rem;
       line-height: 1.55;
       margin-bottom: 3rem; }
-<<<<<<< HEAD
-=======
       .event__desc * {
         pointer-events: none; }
   .event-rules * {
     pointer-events: none; }
->>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
   .event-rules__header {
     margin-bottom: 1.5rem;
     margin-top: 1.5rem; }
@@ -1520,11 +1517,8 @@ a:link, a:visited {
     font-family: gotham;
     line-height: 1.5;
     padding: 0 2rem; }
-<<<<<<< HEAD
-=======
   .event-desc * {
     pointer-events: none; }
->>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
   .event-desc__info {
     padding: 0 6rem;
     grid-template-columns: 1fr; }
@@ -1546,8 +1540,6 @@ a:link, a:visited {
           background: #b4b4b459; }
       .event-desc__info--detail h3 {
         text-align: left; }
-<<<<<<< HEAD
-=======
   .events-list {
     padding: 2rem 2.5rem; }
     .events-list__item--selected {
@@ -1557,7 +1549,6 @@ a:link, a:visited {
       font-size: 2rem; }
       .events-list > ul > li > a {
         padding: 2rem 2.5rem; }
->>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
   .events-splash__container--header {
     position: relative; }
     .events-splash__container--header:after {
@@ -1605,8 +1596,6 @@ a:link, a:visited {
     text-align: center;
     width: 80%;
     margin-bottom: 8rem; }
-<<<<<<< HEAD
-=======
   .clubs-grid__item--logo {
     width: 23rem;
     top: 50%; }
@@ -1622,7 +1611,6 @@ a:link, a:visited {
     transform: none;
     top: auto;
     line-height: 1.4; }
->>>>>>> 3d40da40507acaa63924001f4bf4228dc7ad94ba
   .camb__list {
     width: 100%; }
     .camb__list li {

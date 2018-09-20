@@ -6,21 +6,21 @@
 
   .destival {
     &__splash {
-      background: url('https://images.unsplash.com/photo-1533854257392-71c5ff28dff7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d0398e4a2c8ed0d899487068b9a579a2&auto=format&fit=crop&w=1957&q=80');
+      background: url('/img/majorevents/destival.jpg');
     }
 
     &__overlay {
-      background: blue;
+      background: #3F51B5;
     }
   }
 
   .requiem {
     &__splash {
-      background: url('https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?ixlib=rb-0.3.5&s=5a8979f1d3f696c7f3e9488857d2668c&auto=format&fit=crop&w=1950&q=80');
+      background: url('/img/majorevents/requiem.jpg');
     }
 
     &__overlay {
-      background: green;
+      background: #9C27B0;
     }
   }
 
@@ -30,7 +30,7 @@
     }
 
     &__overlay {
-      background: red;
+      background: #E91E63;
     }
   }
 }
