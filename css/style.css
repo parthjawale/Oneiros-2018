@@ -84,10 +84,6 @@ body {
   padding: 0;
   box-sizing: inherit; }
 
-::selection {
-  background-color: #c10812;
-  color: #fff; }
-
 main {
   transition: 0.5s all; }
 
@@ -470,7 +466,7 @@ a:link, a:visited {
   bottom: 15rem;
   left: 5rem;
   width: 40%;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
   padding: 4rem 2rem;
   box-shadow: 0 0 1rem #fff;
   border-radius: 5px;
@@ -648,6 +644,18 @@ a:link, a:visited {
   height: 100%;
   object-fit: cover; }
 
+*::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none; }
+
+*::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none; }
+
+*::--webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none; }
+
 .club-image {
   position: absolute;
   top: 0;
@@ -759,7 +767,8 @@ a:link, a:visited {
       font-family: "Gotham"; }
   .event__desc {
     font-size: 1.8rem;
-    font-family: "Gotham";
+    font-family: 'Gotham', sans-serif;
+    color: black;
     margin-top: 2rem;
     line-height: 30px; }
     .event__desc a {
@@ -782,6 +791,10 @@ a:link, a:visited {
   box-shadow: 0 1rem 3rem rgba(34, 34, 34, 0.3);
   background: transparent;
   border: 1rem solid #fff; }
+
+@media screen and (max-width: 768px) {
+  .event-container .event-image {
+    display: none; } }
 
 .event-desc * {
   pointer-events: none; }
@@ -1177,17 +1190,15 @@ a:link, a:visited {
   border-radius: 2rem;
   cursor: pointer;
   transition: transform 0.25s ease-in-out;
-  opacity: 1; }
+  opacity: 1;
+  background: #df2d2d;
+  box-shadow: 0 0.13rem 2rem red; }
   .events-list:hover .ono-animatedbtn__circle {
     left: 0;
     top: 0;
     width: 100%; }
-  .events-list > .ono-animatedbtn__circle {
-    box-shadow: 0 0 2rem #e50914;
-    background: #e50914;
-    transition: width 0.3s ease; }
   .events-list__item--selected {
-    color: black;
+    color: #f7f7f7;
     font-family: gotham-black;
     font-size: 2rem;
     z-index: 3;
@@ -1553,29 +1564,31 @@ a:link, a:visited {
     font-family: gotham;
     line-height: 1.5;
     padding: 0 2rem; }
-  .event-desc * {
-    pointer-events: none; }
-  .event-desc__info {
-    padding: 0 6rem;
-    grid-template-columns: 1fr; }
-    .event-desc__info--detail {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 0; }
-      .event-desc__info--detail h1 {
-        margin-bottom: 4rem;
-        position: relative; }
-        .event-desc__info--detail h1:after {
-          position: absolute;
-          content: "";
-          bottom: -1.5rem;
-          left: 0;
-          width: 120%;
-          border-radius: 3px;
-          height: 3px;
-          background: #b4b4b459; }
-      .event-desc__info--detail h3 {
-        text-align: left; }
+  .event-desc {
+    color: black; }
+    .event-desc * {
+      pointer-events: none; }
+    .event-desc__info {
+      padding: 0 6rem;
+      grid-template-columns: 1fr; }
+      .event-desc__info--detail {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0; }
+        .event-desc__info--detail h1 {
+          margin-bottom: 4rem;
+          position: relative; }
+          .event-desc__info--detail h1:after {
+            position: absolute;
+            content: "";
+            bottom: -1.5rem;
+            left: 0;
+            width: 120%;
+            border-radius: 3px;
+            height: 3px;
+            background: #b4b4b459; }
+        .event-desc__info--detail h3 {
+          text-align: left; }
   .events-list {
     padding: 2rem 2.5rem; }
     .events-list__item--selected {

@@ -29,10 +29,10 @@ body {
   box-sizing: inherit;
 }
 
-::selection {
-  background-color: $color-secondary;
-  color: $color-white;
-}
+// *::selection {
+//   background-color: $color-secondary;
+//   color: white;
+// }
 
 main {
   transition: 0.5s all;
