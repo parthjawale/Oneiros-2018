@@ -1,41 +1,51 @@
-const sword = $(".nav ul li span");
+const sword = $('.nav ul li span')
 
 $(document).ready(() => {
-  $("#fullpage").fullpage({
+  $('#fullpage').fullpage({
     scrollBar: true,
 
     anchors: [
-      "club-litmus",
-      "20questions-desc",
-      "20questions-info",
-      "20questions-rules",
-      "20questions-registration","ekphrasis-desc",
-      "ekphrasis-info",
-      "ekphrasis-rules",
-      "ekphrasis-registration","jam-desc",
-      "jam-info",
-      "jam-rules",
-      "jam-registration","pictionary-desc",
-      "pictionary-info",
-      "pictionary-rules",
-      "pictionary-registration","songsmith-desc",
-      "songsmith-info",
-      "songsmith-rules",
-      "songsmith-registration",
-      "voiceover-desc",
-      "voiceover-info",
-      "voiceover-rules",
-      "voiceover-registration"
-
+      'club-litmus',
+      '20questions-desc',
+      '20questions-info',
+      '20questions-rules',
+      '20questions-registration',
+      'ekphrasis-desc',
+      'ekphrasis-info',
+      'ekphrasis-rules',
+      'ekphrasis-registration',
+      'jam-desc',
+      'jam-info',
+      'jam-rules',
+      'jam-registration',
+      'pictionary-desc',
+      'pictionary-info',
+      'pictionary-rules',
+      'pictionary-registration',
+      'songsmith-desc',
+      'songsmith-info',
+      'songsmith-rules',
+      'songsmith-registration',
+      'voiceover-desc',
+      'voiceover-info',
+      'voiceover-rules',
+      'voiceover-registration'
     ],
     afterLoad: (origin, dest) => {
-      let option = 0;
-      option = dest.anchor.split("-")[0] !== "club" ? 1 : 0;
-      $("#wordmark").css({
+      let option = 0
+      const selectedEvent = $('.events-list__item--selected')
+      const eventName = dest.anchor.split('-')[0].toUpperCase()
+      if (eventName !== 'CLUB') {
+        selectedEvent.text(eventName)
+      } else {
+        selectedEvent.text('Select Event')
+      }
+      option = dest.anchor.split('-')[0] !== 'club' ? 1 : 0
+      $('#wordmark').css({
         filter: `invert(${option})`
-      });
-      if (dest.anchor.split("-")[0] !== "club") sword.addClass("nav-darken");
-      else sword.removeClass("nav-darken");
+      })
+      if (dest.anchor.split('-')[0] !== 'club') sword.addClass('nav-darken')
+      else sword.removeClass('nav-darken')
     }
-  });
-});
+  })
+})

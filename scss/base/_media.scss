@@ -158,6 +158,7 @@
     * {
       pointer-events: none;
     }
+
     color: black;
 
     &__info {
@@ -294,8 +295,9 @@
   .clubs-grid {
     &__item {
       &--logo {
-        width: 23rem;
-        top: 50%;
+        width: 20rem;
+        top: 20%;
+        transform: translate(-50%, -20%);
       }
 
       &--solid {
@@ -314,6 +316,10 @@
         line-height: 1.4;
       }
     }
+  }
+
+  #shabdLogo {
+    width: 12rem;
   }
 
   .camb {
