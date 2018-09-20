@@ -829,7 +829,7 @@ a:link, a:visited {
       font-family: "Gotham";
       display: flex;
       align-items: center;
-      line-height: 2.5rem; }
+      line-height: 1.4; }
 
 .event-reg__next {
   position: absolute;
@@ -999,6 +999,9 @@ a:link, a:visited {
 .event-image__twicethevoice {
   background-image: url("/img/events/clubs/tmc/twicethevoice.jpg") !important; }
 
+.event-image__songsmith {
+  background-image: url("/img/events/clubs/tmc/songsmith.jpg") !important; }
+
 .coreo-prime {
   background: url("/img/events/clubs/coreografia/prime.jpg");
   background-position: center;
@@ -1096,7 +1099,7 @@ a:link, a:visited {
   align-items: center;
   overflow: hidden;
   cursor: pointer;
-  width: 33.333%;
+  width: 34%;
   transition: 0.5s all cubic-bezier(0.01, 0.67, 0.45, 1.04) !important; }
   .majorevent__splash {
     position: absolute;
