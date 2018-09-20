@@ -771,7 +771,7 @@ a:link, a:visited {
   background-position: center;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 1rem 3rem rgba(34, 34, 34, 0.3);
+  background: transparent;
   border: 1rem solid #fff; }
 
 .event-desc * {
