@@ -7,7 +7,6 @@
   cursor: pointer;
   width: 33.333%;
   transition: .5s all cubic-bezier(0.01, 0.67, 0.45, 1.04) !important;
-  // flex: 1;
 
   &__splash {
     position: absolute;
@@ -15,8 +14,8 @@
     height: 100%;
     background-size: cover !important;
     background-position: center !important;
-    transition: .5s all;
     pointer-events: none;
+    transition: .1s transform;
   }
 
   &:hover &__overlay {
@@ -54,7 +53,6 @@
 
 
 .majorevent-expand {
-  // flex: 1 !important;
   width: 100% !important;
 }
 
@@ -64,7 +62,7 @@
 }
 
 .overlay-darken {
-  background: #222 !important;
-  opacity: .7 !important;
+  background: #000 !important;
+  opacity: .9 !important;
   pointer-events: none;
 }
