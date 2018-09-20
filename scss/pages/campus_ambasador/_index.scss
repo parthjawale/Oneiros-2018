@@ -13,6 +13,7 @@
       font-size: 2rem;
       margin-top: 1.8rem;
       line-height: 1.5;
+
       &:first-child {
         margin-top: 0;
       }
@@ -67,10 +68,19 @@
       width: 100%;
       position: relative;
 
-      > .event-reg__next {
+      .event-reg__next {
         left: 0;
-        background: $color-secondary;
+        background: lighten($color-secondary, 13);
         height: 7rem;
+        &--scroll {
+          height: 5rem;
+          width: 3.5rem;
+          border-radius: 1.8rem;
+
+          &--dot {
+            animation: scrollsmall infinite 3s;
+          }
+        }
       }
     }
 
@@ -153,5 +163,19 @@
         font-family: Gotham;
       }
     }
+  }
+}
+
+@keyframes scrollsmall {
+  0% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(8px);
+  }
+
+  20% {
+    transform: translateY(0);
   }
 }
