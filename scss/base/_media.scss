@@ -106,7 +106,7 @@
 
         // font-weight: bold; 
         // font-family: Gotham-Black;
-     
+
       }
     }
   }
@@ -158,6 +158,7 @@
     * {
       pointer-events: none;
     }
+
     color: black;
 
     &__info {
@@ -204,11 +205,11 @@
       }
     }
 
-    > ul {
-      > li {
+    >ul {
+      >li {
         font-size: 2rem;
 
-        > a {
+        >a {
           padding: 2rem 2.5rem;
         }
       }
@@ -266,7 +267,7 @@
       align-items: stretch;
 
       // justify-content: stretch;
-   
+
     }
 
     .event-image {
@@ -337,8 +338,8 @@
       width: 100%;
       margin: 0;
 
-      > .fp-tableCell {
-        > .event-reg__next {
+      >.fp-tableCell {
+        >.event-reg__next {
           height: 10rem;
         }
       }
