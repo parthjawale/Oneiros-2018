@@ -29,10 +29,6 @@
       transform-origin: center;
       transition: 1s all;
       position: absolute;
-
-      @media screen and (max-width: 800px) {
-        padding: 1rem 0;
-      }
     }
 
     li:nth-child(2) {
