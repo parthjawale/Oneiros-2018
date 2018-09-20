@@ -9,6 +9,8 @@
   cursor: pointer;
   transition: transform 0.25s ease-in-out;
   opacity: 1;
+  background: rgb(223, 45, 45);
+  box-shadow: 0 0.13rem 2rem red;
   &:hover {
     .ono-animatedbtn__circle {
       left: 0;
@@ -16,18 +18,9 @@
       width: 100%;
     }
   }
-  // &:hover {
-  //   transform: translateX(-50%) translateY(-1rem);
-  // }
-  > .ono-animatedbtn__circle {
-    box-shadow: 0 0 2rem #e50914;
-    background: #e50914;
-    transition: width 0.3s ease;
-  }
-
   &__item {
     &--selected {
-      color: rgb(0, 0, 0);
+      color: rgb(247, 247, 247);
       font-family: gotham-black;
       font-size: 2rem;
       z-index: 3;

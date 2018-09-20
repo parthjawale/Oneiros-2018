@@ -758,7 +758,7 @@ a:link, a:visited {
       font-family: "Gotham"; }
   .event__desc {
     font-size: 1.8rem;
-    font-family: sans-serif;
+    font-family: 'Gotham', sans-serif;
     color: black;
     margin-top: 2rem;
     line-height: 30px; }
@@ -1154,17 +1154,15 @@ a:link, a:visited {
   border-radius: 2rem;
   cursor: pointer;
   transition: transform 0.25s ease-in-out;
-  opacity: 1; }
+  opacity: 1;
+  background: #df2d2d;
+  box-shadow: 0 0.13rem 2rem red; }
   .events-list:hover .ono-animatedbtn__circle {
     left: 0;
     top: 0;
     width: 100%; }
-  .events-list > .ono-animatedbtn__circle {
-    box-shadow: 0 0 2rem #e50914;
-    background: #e50914;
-    transition: width 0.3s ease; }
   .events-list__item--selected {
-    color: black;
+    color: #f7f7f7;
     font-family: gotham-black;
     font-size: 2rem;
     z-index: 3;
