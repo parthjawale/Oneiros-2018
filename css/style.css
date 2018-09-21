@@ -199,13 +199,10 @@ a:link, a:visited {
       transform-origin: center;
       transition: 1s all;
       position: absolute; }
-      @media screen and (max-width: 800px) {
-        .nav ul li {
-          padding: 1rem 0; } }
-    .nav ul li:nth-child(2) {
-      top: 1rem; }
-    .nav ul li:nth-child(3) {
-      top: 2rem; }
+      .nav ul li:nth-child(2) {
+        top: 1rem; }
+      .nav ul li:nth-child(3) {
+        top: 2rem; }
   .nav:hover .nav__sword {
     background: #c10812;
     box-shadow: 0 0 15px red;

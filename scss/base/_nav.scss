@@ -30,17 +30,27 @@
       transition: 1s all;
       position: absolute;
 
-      @media screen and (max-width: 800px) {
-        padding: 1rem 0;
+      &:nth-child(2) {
+        top: 1rem;
       }
-    }
 
-    li:nth-child(2) {
-      top: 1rem;
-    }
+      &:nth-child(3) {
+        top: 2rem;
+      }
 
-    li:nth-child(3) {
-      top: 2rem;
+      // @media screen and (max-width: 800px) {
+      //   &:nth-child(1) {
+      //     top: 1rem;
+      //   }
+
+      //   &:nth-child(2) {
+      //     top: 3.5rem;
+      //   }
+
+      //   &:nth-child(3) {
+      //     top: 5.5rem;
+      //   }
+      // }
     }
   }
 
