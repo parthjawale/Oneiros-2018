@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   const eventsListBtn = $('.events-list')
   const selectedEvent = $('.events-list__item--selected')
   const eventsList = $('.events-list > ul')
@@ -13,11 +13,11 @@ $(document).ready(function() {
   eventsListBtn.css('background', bg)
   eventsListBtn.css('box-shadow', `0 0.13rem 2rem ${bg}`)
   eventsListItemAnchor.css('color', bg)
-  eventsListItemAnchor.mouseenter(function() {
+  eventsListItemAnchor.mouseenter(function () {
     $(this).css('color', 'white')
     $(this).css('background', bg)
   })
-  eventsListItemAnchor.mouseleave(function() {
+  eventsListItemAnchor.mouseleave(function () {
     $(this).css('color', bg)
     $(this).css('background', 'white')
   })
@@ -25,12 +25,10 @@ $(document).ready(function() {
     e.stopPropagation()
     eventsList.toggleClass('showlist')
   })
-  eventsListItem.on('click', function() {
+  eventsListItem.on('click', function () {
     const text = $(this)
       .children('a')
       .text()
-    console.log($(this))
-    console.log($(this).children('a'))
     selectedEvent.text(text)
   })
 })
