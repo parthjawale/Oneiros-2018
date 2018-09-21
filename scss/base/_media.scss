@@ -106,7 +106,7 @@
 
         // font-weight: bold; 
         // font-family: Gotham-Black;
-
+     
       }
     }
   }
@@ -154,6 +154,10 @@
     }
   }
 
+  .majorevent__content--details {
+    flex-direction: column;
+  }
+
   .event-desc {
     * {
       pointer-events: none;
@@ -171,6 +175,7 @@
         // justify-content: flex-start;
         align-items: flex-start;
         margin-top: 0;
+        margin-bottom: 5rem;
 
         h1 {
           margin-bottom: 4rem;
@@ -201,15 +206,15 @@
     &__item {
       &--selected {
         color: white;
-        font-size: 3rem;
+        font-size: 2.3rem;
       }
     }
 
-    >ul {
-      >li {
+    > ul {
+      > li {
         font-size: 2rem;
 
-        >a {
+        > a {
           padding: 2rem 2.5rem;
         }
       }
@@ -267,7 +272,7 @@
       align-items: stretch;
 
       // justify-content: stretch;
-
+   
     }
 
     .event-image {
@@ -295,7 +300,7 @@
   .clubs-grid {
     &__item {
       &--logo {
-        width: 20rem;
+        width: 23rem;
         top: 20%;
         transform: translate(-50%, -20%);
       }
@@ -343,8 +348,8 @@
       width: 100%;
       margin: 0;
 
-      >.fp-tableCell {
-        >.event-reg__next {
+      > .fp-tableCell {
+        > .event-reg__next {
           height: 10rem;
         }
       }
@@ -391,5 +396,35 @@
   #smallfz {
     font-size: 2rem;
     flex-basis: 30%;
+  }
+
+  #nextar {
+    &__rules {
+      font-size: 1.8rem;
+    }
+  }
+
+  #aperture {
+    &__rules {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (max-width: 365px) {
+  html {
+    font-size: 4.5px;
+  }
+
+  #nextar {
+    &__rules {
+      font-size: 2.1rem;
+    }
+  }
+
+  #aperture {
+    &__rules {
+      font-size: 2.1rem;
+    }
   }
 }
