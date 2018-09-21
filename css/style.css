@@ -105,7 +105,7 @@ a:link, a:visited {
   text-decoration: none; }
 
 ::-webkit-scrollbar {
-  width: 10px; }
+  width: 5px; }
   ::-webkit-scrollbar-track {
     background: #fff; }
   ::-webkit-scrollbar-thumb {
@@ -199,10 +199,10 @@ a:link, a:visited {
       transform-origin: center;
       transition: 1s all;
       position: absolute; }
-    .nav ul li:nth-child(2) {
-      top: 1rem; }
-    .nav ul li:nth-child(3) {
-      top: 2rem; }
+      .nav ul li:nth-child(2) {
+        top: 1rem; }
+      .nav ul li:nth-child(3) {
+        top: 2rem; }
   .nav:hover .nav__sword {
     background: #c10812;
     box-shadow: 0 0 15px red;
@@ -261,13 +261,22 @@ a:link, a:visited {
     background: #fff; }
 
 .activate-redoverlay {
-  width: 58%; }
+  width: 67%; }
+  @media screen and (max-width: 800px) {
+    .activate-redoverlay {
+      width: 90% !important; } }
 
 .activate-blackoverlay {
-  width: 55%; }
+  width: 60%; }
+  @media screen and (max-width: 800px) {
+    .activate-blackoverlay {
+      width: 80% !important; } }
 
 .activate-whiteoverlay {
   width: 50%; }
+  @media screen and (max-width: 800px) {
+    .activate-whiteoverlay {
+      width: 70% !important; } }
 
 .nav-container__whiteoverlay ul {
   list-style-type: none;
@@ -478,26 +487,6 @@ a:link, a:visited {
 .home-theme-showcontent {
   opacity: 1; }
 
-.social {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  right: 2rem;
-  z-index: 100;
-  top: 50%;
-  transform: translateY(-50%); }
-  .social-icons {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out; }
-  @media screen and (max-width: 768px) {
-    .social-icons {
-      font-size: 3rem; } }
-  .social-icons:hover {
-    transform: scale(1.1); }
-
 .login--form {
   display: inline-block;
   margin-left: 15rem; }
@@ -637,6 +626,9 @@ a:link, a:visited {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%); }
+
+#shabdLogo {
+  width: 15rem; }
 
 .event-image__frame {
   perspective: 3000px;
@@ -797,9 +789,9 @@ a:link, a:visited {
   width: 42rem;
   height: 56rem;
   margin: 0 3rem;
-  background-position: center;
-  background-size: cover;
-  background-position: center;
+  background-position: center !important;
+  background-size: cover !important;
+  box-shadow: 0 1rem 3rem rgba(34, 34, 34, 0.3);
   background: transparent;
   border: 1rem solid #fff; }
 
@@ -840,7 +832,7 @@ a:link, a:visited {
       font-family: "Gotham";
       display: flex;
       align-items: center;
-      line-height: 2.5rem; }
+      line-height: 1.4; }
 
 .event-reg__next {
   position: absolute;
@@ -964,22 +956,22 @@ a:link, a:visited {
   background: #ff5722; }
 
 .event-image__focus {
-  background: url("/img/events/clubs/aperture/focus.jpeg"); }
+  background-image: url("/img/events/clubs/aperture/focus.jpeg") !important; }
 
 .event-image__shutterup {
-  background: url("/img/events/clubs/aperture/shutterup.jpeg"); }
+  background-image: url("/img/events/clubs/aperture/shutterup.jpeg") !important; }
 
 .event-image__instaperture {
-  background: url("/img/events/clubs/aperture/instaperture.jpeg"); }
+  background-image: url("/img/events/clubs/aperture/instaperture.jpeg") !important; }
 
 .event-image__showdownofsocieties {
-  background: url("/img/events/clubs/aperture/showdown.jpeg"); }
+  background-image: url("/img/events/clubs/aperture/showdown.jpeg") !important; }
 
 .event-image__pictureperfect {
-  background: url("/img/events/clubs/aperture/pictureperfect.png"); }
+  background-image: url("/img/events/clubs/aperture/pictureperfect.png") !important; }
 
 .event-image__powershoot {
-  background: url("/img/events/clubs/aperture/powershoot.jpeg"); }
+  background-image: url("/img/events/clubs/aperture/powershoot.jpeg") !important; }
 
 .tmc-prime {
   background: url("/img/events/clubs/tmc/prime.jpg");
@@ -988,6 +980,30 @@ a:link, a:visited {
 
 .event-next__tmc {
   background: #c62828; }
+
+.event-image__woodstock {
+  background-image: url("/img/events/clubs/tmc/woodstock.jpg") !important; }
+
+.event-image__beatstreet {
+  background-image: url("/img/events/clubs/tmc/beatstreet.jpg") !important; }
+
+.event-image__dhwani {
+  background-image: url("/img/events/clubs/tmc/dhwani.jpg") !important; }
+
+.event-image__ensemble {
+  background-image: url("/img/events/clubs/tmc/ensemble.jpg") !important; }
+
+.event-image__octaves {
+  background-image: url("/img/events/clubs/tmc/octaves.jpg") !important; }
+
+.event-image__saptak {
+  background-image: url("/img/events/clubs/tmc/saptak.jpg") !important; }
+
+.event-image__twicethevoice {
+  background-image: url("/img/events/clubs/tmc/twicethevoice.jpg") !important; }
+
+.event-image__songsmith {
+  background-image: url("/img/events/clubs/tmc/songsmith.jpg") !important; }
 
 .coreo-prime {
   background: url("/img/events/clubs/coreografia/prime.jpg");
@@ -1013,23 +1029,29 @@ a:link, a:visited {
 .event-next__cinefilia {
   background: #ffb300; }
 
-.event-image__focus {
-  background: url("/img/all/aperture/focus.jpg"); }
+.event-image__admak {
+  background-image: url("/img/events/clubs/cinefilia/admak.jpg") !important; }
 
-.event-image__shutter-up {
-  background: url(""); }
+.event-image__awaaz {
+  background-image: url("/img/events/clubs/cinefilia/awaaz.jpg") !important; }
 
-.event-image__instaperture {
-  background: url(""); }
+.event-image__humorus {
+  background-image: url("/img/events/clubs/cinefilia/humorus.jpg") !important; }
 
-.event-image__showdownofsocieties {
-  background: url(""); }
+.event-image__missionimpossible {
+  background-image: url("/img/events/clubs/cinefilia/missionimpossible.jpg") !important; }
 
-.event-image__pictureperfect {
-  background: url(""); }
+.event-image__pandorasbox {
+  background-image: url("/img/events/clubs/cinefilia/pandorasbox.jpg") !important; }
 
-.event-image__powershoot {
-  background: url(""); }
+.event-image__rangmanch {
+  background-image: url("/img/events/clubs/cinefilia/rangmanch.jpg") !important; }
+
+.event-image__spoofydo {
+  background-image: url("/img/events/clubs/cinefilia/spoofydo.jpg") !important; }
+
+.event-image__monoact {
+  background-image: url("/img/events/clubs/cinefilia/monoact.jpg") !important; }
 
 .shabd-prime {
   background: url("");
@@ -1080,7 +1102,7 @@ a:link, a:visited {
   align-items: center;
   overflow: hidden;
   cursor: pointer;
-  width: 33.333%;
+  width: 34%;
   transition: 0.5s all cubic-bezier(0.01, 0.67, 0.45, 1.04) !important; }
   .majorevent__splash {
     position: absolute;
@@ -1175,7 +1197,7 @@ a:link, a:visited {
   cursor: pointer;
   transition: transform 0.25s ease-in-out;
   opacity: 1;
-  background: #df2d2d;
+  background: #c82e2e;
   box-shadow: 0 0.13rem 2rem red; }
   .events-list:hover .ono-animatedbtn__circle {
     left: 0;
@@ -1219,7 +1241,8 @@ a:link, a:visited {
         display: inline-block;
         color: #c10812;
         transition: all 0.3s ease;
-        width: 100%; }
+        width: 100%;
+        text-transform: uppercase; }
 
 .card-grid {
   padding: 2rem 2rem;
@@ -1408,10 +1431,16 @@ a:link, a:visited {
       justify-content: center;
       width: 100%;
       position: relative; }
-      .camb__content > .fp-tableCell > .event-reg__next {
+      .camb__content > .fp-tableCell .event-reg__next {
         left: 0;
-        background: #c10812;
+        background: #f51622;
         height: 7rem; }
+        .camb__content > .fp-tableCell .event-reg__next--scroll {
+          height: 5rem;
+          width: 3.5rem;
+          border-radius: 1.8rem; }
+          .camb__content > .fp-tableCell .event-reg__next--scroll--dot {
+            animation: scrollsmall infinite 3s; }
     .camb__content--mb {
       margin-bottom: 17rem; }
     .camb__content--mbsmall {
@@ -1461,6 +1490,14 @@ a:link, a:visited {
       line-height: 1.4; }
       .camb__content__body--highlight {
         font-family: Gotham; }
+
+@keyframes scrollsmall {
+  0% {
+    transform: translateY(0); }
+  10% {
+    transform: translateY(8px); }
+  20% {
+    transform: translateY(0); } }
 
 @media (max-width: 1400px) {
   html {
@@ -1548,6 +1585,8 @@ a:link, a:visited {
     font-family: gotham;
     line-height: 1.5;
     padding: 0 2rem; }
+  .majorevent__content--details {
+    flex-direction: column; }
   .event-desc {
     color: black; }
     .event-desc * {
@@ -1558,7 +1597,8 @@ a:link, a:visited {
       .event-desc__info--detail {
         flex-direction: column;
         align-items: flex-start;
-        margin-top: 0; }
+        margin-top: 0;
+        margin-bottom: 5rem; }
         .event-desc__info--detail h1 {
           margin-bottom: 4rem;
           position: relative; }
@@ -1577,7 +1617,7 @@ a:link, a:visited {
     padding: 2rem 2.5rem; }
     .events-list__item--selected {
       color: white;
-      font-size: 3rem; }
+      font-size: 2.3rem; }
     .events-list > ul > li {
       font-size: 2rem; }
       .events-list > ul > li > a {
@@ -1631,7 +1671,8 @@ a:link, a:visited {
     margin-bottom: 8rem; }
   .clubs-grid__item--logo {
     width: 23rem;
-    top: 50%; }
+    top: 20%;
+    transform: translate(-50%, -20%); }
   .clubs-grid__item--solid {
     position: relative; }
   .clubs-grid__item--content {
@@ -1644,6 +1685,8 @@ a:link, a:visited {
     transform: none;
     top: auto;
     line-height: 1.4; }
+  #shabdLogo {
+    width: 12rem; }
   .camb__list {
     width: 100%; }
     .camb__list li {
@@ -1680,4 +1723,18 @@ a:link, a:visited {
         left: -2.5rem; }
   #smallfz {
     font-size: 2rem;
-    flex-basis: 30%; } }
+    flex-basis: 30%; }
+  #nextar__rules {
+    font-size: 1.8rem; }
+  #aperture__rules {
+    font-size: 1.8rem; } }
+
+@media (max-width: 365px) {
+  html {
+    font-size: 4.5px; }
+  .event-rules__content {
+    font-size: 2.4rem; }
+  #nextar__rules {
+    font-size: 2.1rem; }
+  #aperture__rules {
+    font-size: 2.1rem; } }
