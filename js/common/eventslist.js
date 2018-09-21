@@ -3,10 +3,12 @@ $(document).ready(function() {
   const selectedEvent = $('.events-list__item--selected')
   const eventsList = $('.events-list > ul')
   const eventsListItem = $('.events-list > ul li')
+  const eventsListItemAnchor = $('.events-list > ul li > a')
   const bg = $('.event-reg__next').css('background-color')
   eventsListBtn.css('background', bg)
   eventsListBtn.css('box-shadow', `0 0.13rem 2rem ${bg}`)
-  eventsListBtn.on('click', () => {
+  eventsListBtn.css('color', bg)
+  eventsListItemAnchor.on('click', () => {
     eventsList.toggleClass('showlist')
   })
   eventsListItem.on('click', function() {
