@@ -1182,10 +1182,10 @@ a:link, a:visited {
     font-size: 1.5rem;
     color: #ddd; }
     .majorevent__content--link:hover {
-      opacity: .5; }
+      opacity: 0.5; }
   .majorevent__content--header {
     font-size: 3rem;
-    font-family: 'Gotham-Bold';
+    font-family: "Gotham-Bold";
     color: #e50914;
     margin: 2rem 0; }
   .majorevent__content--subheader {
@@ -1194,6 +1194,9 @@ a:link, a:visited {
     color: #aaa; }
   .majorevent__content--para {
     font-size: 2rem; }
+    .majorevent__content--para span.emphasize {
+      color: #e50914;
+      font-family: "Gotham-Bold"; }
   .majorevent__content--details {
     display: flex;
     justify-content: space-between; }
