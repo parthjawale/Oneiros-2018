@@ -17,13 +17,13 @@
       font-size: 1.5rem;
       color: #ddd;
       &:hover {
-        opacity: .5;
+        opacity: 0.5;
       }
     }
 
     &--header {
       font-size: 3rem;
-      font-family: 'Gotham-Bold';
+      font-family: "Gotham-Bold";
       color: $color-primary;
       margin: 2rem 0;
     }
@@ -36,6 +36,10 @@
 
     &--para {
       font-size: 2rem;
+      span.emphasize {
+        color: $color-primary;
+        font-family: "Gotham-Bold";
+      }
     }
 
     &--details {
@@ -56,6 +60,6 @@
       li {
         font-size: 2rem;
       }
-    } 
+    }
   }
 }
