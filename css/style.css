@@ -1241,12 +1241,20 @@ a:link, a:visited {
         text-transform: uppercase; }
 
 .playmakers {
-  background: linear-gradient(#222 35%, #f6202b 50%);
+  background: linear-gradient(160deg, #222 50%, #f6202b 50%);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100%;
   height: auto; }
+  .playmakers::-webkit-scrollbar {
+    width: 5px; }
+    .playmakers::-webkit-scrollbar-track {
+      background: #fff; }
+    .playmakers::-webkit-scrollbar-thumb {
+      background: #222; }
+    .playmakers::-webkit-scrollbar-thumb:hover {
+      background: #444; }
   .playmakers__header {
     margin-top: 5rem;
     margin-bottom: 2rem;
