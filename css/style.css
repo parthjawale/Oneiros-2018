@@ -1775,7 +1775,14 @@ a:link, a:visited {
     font-size: 1.8rem; }
 
   #aperture__rules {
-    font-size: 1.8rem; } }
+    font-size: 1.8rem; }
+
+  .card-grid {
+    padding: 2rem 4.5rem;
+    justify-content: space-between; }
+    .card-grid__item {
+      flex-basis: 47%;
+      margin-left: 0%; } }
 @media (max-width: 365px) {
   html {
     font-size: 4.5px; }
