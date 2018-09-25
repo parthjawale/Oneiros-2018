@@ -633,7 +633,8 @@ a:link, a:visited {
       top: 50%;
       transform: translate(-50%, -50%);
       font-size: 3rem;
-      font-family: 'Gotham-Bold'; }
+      font-family: 'Gotham-Bold';
+      text-transform: uppercase; }
     .clubs-grid__item--content {
       opacity: 0;
       line-height: 32px;
