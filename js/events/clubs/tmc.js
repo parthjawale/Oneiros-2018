@@ -29,6 +29,7 @@ $(document).ready(() => {
       'beatstreet-desc',
       'beatstreet-info',
       'beatstreet-rules',
+      'beatstreet-rules',
       'beatstreet-registration',
       'songsmith-desc',
       'songsmith-info',
