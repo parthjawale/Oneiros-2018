@@ -106,7 +106,7 @@
 
         // font-weight: bold; 
         // font-family: Gotham-Black;
-
+     
       }
     }
   }
@@ -210,11 +210,11 @@
       }
     }
 
-    >ul {
-      >li {
+    > ul {
+      > li {
         font-size: 2rem;
 
-        >a {
+        > a {
           padding: 2rem 2.5rem;
         }
       }
@@ -237,6 +237,7 @@
         //   bottom: -2rem;
         //   background: $color-primary;
         // }
+     
       }
 
       &--content {
@@ -273,7 +274,7 @@
       align-items: stretch;
 
       // justify-content: stretch;
-
+   
     }
 
     .event-image {
@@ -353,8 +354,8 @@
       width: 100%;
       margin: 0;
 
-      >.fp-tableCell {
-        >.event-reg__next {
+      > .fp-tableCell {
+        > .event-reg__next {
           height: 10rem;
         }
       }
@@ -412,6 +413,16 @@
   #aperture {
     &__rules {
       font-size: 1.8rem;
+    }
+  }
+
+  .card-grid {
+    padding: 2rem 4.5rem;
+    justify-content: space-between;
+
+    &__item {
+      flex-basis: 47%;
+      margin-left: 0%;
     }
   }
 }
