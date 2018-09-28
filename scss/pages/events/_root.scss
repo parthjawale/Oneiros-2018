@@ -86,6 +86,7 @@
       transform: translate(-50%, -50%);
       font-size: 3rem;
       font-family: 'Gotham-Bold';
+      text-transform: uppercase;
     }
 
     &--content {
@@ -146,6 +147,40 @@
   display: none !important;
   -webkit-appearance: none;
 }
+
+.downarrow{
+  i {
+    font-size: 50px;
+    position: absolute;
+    bottom: 0;
+    color:white;
+    // transform: translate(-50%);
+    left: 50%;
+    opacity: 0.7;
+    margin-bottom: 10px;
+  }
+}
+.bounce {
+	-moz-animation: bounce 1s infinite;
+	-webkit-animation: bounce 1s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(15px);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 @import "./clubs";
 @import "./all/root";
