@@ -29,6 +29,24 @@ body {
   box-sizing: inherit;
 }
 
+input,
+textarea {
+  resize: none;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
 // *::selection {
 //   background-color: $color-secondary;
 //   color: white;

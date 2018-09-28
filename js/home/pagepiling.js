@@ -6,7 +6,7 @@ $(document).ready(() => {
   $('#fullpage').fullpage({
     easing: 'easeInOut',
     easingcss3: 'easeInOut',
-    anchors: ['home', 'about', 'theme'],
+    anchors: ['home', 'about', 'theme', 'contact'],
     onLeave: () => {
       button.removeClass('ono-animation')
     },
