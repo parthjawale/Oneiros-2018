@@ -41,18 +41,23 @@
 @font-face {
   font-family: "Gotham-Black";
   src: url("/fonts/gotham/Gotham-Black.otf"); }
+
 @font-face {
   font-family: "Gotham-Bold";
   src: url("/fonts/gotham/Gotham-Bold.otf"); }
+
 @font-face {
   font-family: "Gotham";
   src: url("/fonts/gotham/GothamBook.ttf"); }
+
 @font-face {
   font-family: "Gotham-Light";
   src: url("/fonts/gotham/Gotham-Light.otf"); }
+
 @font-face {
   font-family: "Gotham-Thin";
   src: url("/fonts/gotham/Gotham-XLight.otf"); }
+
 html {
   font-size: 62.5%; }
 
@@ -468,11 +473,13 @@ a:link, a:visited {
   pointer-events: none;
   opacity: 0;
   transition: 0.5s all; }
+
 .home-theme__header {
   font-size: 7rem;
   font-family: "Gotham-Black";
   color: #e50914;
   margin-bottom: 2rem; }
+
 .home-theme__para {
   font-size: 2rem;
   line-height: 1.5; }
@@ -546,12 +553,14 @@ a:link, a:visited {
       color: #ddd; }
   .login--form .input-group:not(:nth-child(1)) {
     margin-top: 5rem; }
+
 .login .title {
   font-family: "Gotham-Black", sans-serif;
   color: #e50914;
   font-size: 4rem;
   margin-bottom: 9rem;
   font-size: 10rem; }
+
 .login--background {
   width: 50%;
   height: 100vh;
@@ -644,6 +653,7 @@ a:link, a:visited {
 .event-image__frame {
   perspective: 3000px;
   pointer-events: none; }
+
 .event-image__container {
   position: relative;
   transition: 0.2s all;
@@ -730,14 +740,17 @@ a:link, a:visited {
 
 .all * {
   pointer-events: none; }
+
 .all__prime * {
   pointer-events: none; }
+
 .all__prime--header, .all__prime--desc {
   z-index: 2;
   padding: 0 5rem;
   color: #fff; }
   .all__prime--header *, .all__prime--desc * {
     pointer-events: none; }
+
 .all__prime--header {
   font-size: 10rem;
   font-family: "Gotham-Black";
@@ -745,11 +758,13 @@ a:link, a:visited {
   text-shadow: 0 0 2rem #222;
   position: relative;
   z-index: 1; }
+
 .all__prime--desc {
   margin-top: 2rem;
   font-size: 3rem;
   z-index: 1;
   position: relative; }
+
 .all__prime--overlay {
   position: absolute;
   width: 100%;
@@ -784,10 +799,12 @@ a:link, a:visited {
 
 .event-container * {
   pointer-events: none; }
+
 .event-container .fp-tableCell {
   display: flex;
   justify-content: space-around;
   align-items: center; }
+
 .event-container .event-image {
   width: 42rem;
   height: 56rem;
@@ -797,12 +814,14 @@ a:link, a:visited {
   box-shadow: 0 1rem 3rem rgba(34, 34, 34, 0.3);
   background: transparent;
   border: 1rem solid #fff; }
+
 @media screen and (max-width: 768px) {
   .event-container .event-image {
     display: none; } }
 
 .event-desc * {
   pointer-events: none; }
+
 .event-desc__info {
   padding: 0 15rem;
   display: grid;
@@ -868,6 +887,7 @@ a:link, a:visited {
       border-radius: 100%;
       background: #fff;
       animation: scroll infinite 3s; }
+
 .event-reg__reg {
   display: flex;
   justify-content: space-around;
@@ -900,6 +920,7 @@ a:link, a:visited {
 
 .event-rules * {
   pointer-events: none; }
+
 .event-rules__header {
   font-size: 3rem;
   color: #ccc;
@@ -910,10 +931,13 @@ a:link, a:visited {
     color: #e50914;
     text-transform: uppercase;
     padding: 0 10rem; }
+
 .event-rules__container {
   padding: 0 10rem; }
+
 .event-rules__item {
   padding: 2rem 0; }
+
 .event-rules__content {
   font-size: 1.5rem;
   font-family: "Gotham-Bold";
@@ -926,6 +950,7 @@ a:link, a:visited {
     transform: translateY(15px); }
   20% {
     transform: translateY(0); } }
+
 @keyframes changePad {
   10% {
     width: 4rem;
@@ -941,6 +966,7 @@ a:link, a:visited {
   70% {
     width: 4rem;
     height: 6rem; } }
+
 .aperture-prime {
   background: url("/img/events/clubs/aperture/prime.jpg");
   background-position: center;
@@ -1164,6 +1190,7 @@ a:link, a:visited {
 .majorevent * {
   line-height: 1.6;
   color: #fff; }
+
 .majorevent__content {
   display: none;
   position: relative;
@@ -1262,6 +1289,8 @@ a:link, a:visited {
         text-transform: uppercase; }
 
 .playmakers {
+  padding-top: 3rem;
+  position: relative;
   background: linear-gradient(160deg, #222 50%, #f6202b 50%);
   background-size: cover;
   background-repeat: no-repeat;
@@ -1307,7 +1336,7 @@ a:link, a:visited {
       padding: 3rem;
       box-shadow: 0px 0.3rem 3rem rgba(0, 0, 0, 0.15);
       z-index: 7;
-      background: #FFF;
+      background: #fff;
       border-radius: 0.6rem;
       overflow: hidden; }
       .card-grid__item__wrapper:hover > hr {
@@ -1348,17 +1377,37 @@ a:link, a:visited {
         top: 0;
         width: 100%;
         height: 100%;
+        object-fit: cover;
+        transition: filter 0.4s ease-in-out; }
+      .card-grid__item__image > img:hover {
+        position: absolute;
+        filter: grayscale(0%);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
         object-fit: cover; }
     .card-grid__item__name {
       text-align: center;
       font-size: 2rem;
       color: #222;
+      line-height: 1.5;
       margin-bottom: 1rem; }
     .card-grid__item__post {
       text-align: center;
+      line-height: 1.5;
       font-size: 1.6rem;
       margin-bottom: 1rem;
       color: #e63f3f; }
+    .card-grid__item__contact {
+      font-size: 1.3rem;
+      text-align: center;
+      line-height: 1.5;
+      font-family: "Gotham";
+      color: #555;
+      display: block;
+      outline: none;
+      margin-bottom: 1rem; }
     .card-grid__item:after, .card-grid__item:before {
       position: absolute;
       left: 50%;
@@ -1384,6 +1433,16 @@ a:link, a:visited {
       transform: scale(1.08); }
       .card-grid__item:hover:after, .card-grid__item:hover:before {
         transform: translateX(-50%) translateY(82%); }
+  .card-grid .zigzag-drop {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 75%;
+    background: #c23333;
+    clip-path: polygon(100% 0, 100% 85%, 91% 100%, 81% 88%, 71% 100%, 61% 87%, 53% 100%, 43% 88%, 33% 100%, 23% 88%, 12% 100%, 0 88%, 0 63%, 0% 53%, 0% 43%, 0% 34%, 0% 25%, 0 0);
+    z-index: -10000;
+    filter: drop-shadow(16px 16px 10px black); }
 
 .skew__container {
   display: flex;
@@ -1391,6 +1450,7 @@ a:link, a:visited {
   margin-bottom: 20rem;
   filter: drop-shadow(0rem 0.7rem 3rem rgba(0, 0, 0, 0.55));
   position: relative; }
+
 .skew__parallel {
   position: absolute;
   transform: skewY(12deg) translateY(13rem);
@@ -1405,6 +1465,7 @@ a:link, a:visited {
     right: 0;
     width: 25%;
     transform: skewY(-12deg) translateY(19.7rem); }
+
 .skew__item {
   display: flex;
   transform: skewY(-12deg); }
@@ -1512,6 +1573,9 @@ a:link, a:visited {
       left: 75%;
       width: 13%;
       background: #555; }
+
+#convenor--card {
+  flex-basis: 30%; }
 
 .camb {
   background: #111;
@@ -1630,26 +1694,24 @@ a:link, a:visited {
     transform: translateY(8px); }
   20% {
     transform: translateY(0); } }
+
 @media (max-width: 1400px) {
   html {
     font-size: 8px; } }
+
 @media (max-width: 500px) {
   html {
     font-size: 6px; }
-
   #wordmark {
     top: 2rem;
     left: 2rem; }
-
   .ono-animatedbtn__circle {
     width: 100%;
     height: 100%;
     border-radius: 4rem; }
-
   .clubs-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr; }
-
   .home.about {
     width: 70%;
     right: auto;
@@ -1659,19 +1721,14 @@ a:link, a:visited {
     .home.about__content {
       font-size: 2.5rem;
       line-height: 1.4; }
-
   .activate-redoverlay {
     width: 75%; }
-
   .activate-blackoverlay {
     width: 68%; }
-
   .activate-whiteoverlay {
     width: 60%; }
-
   .nav-container__whiteoverlay ul li a {
     white-space: normal; }
-
   .home-theme__splash {
     background-position: center 30%; }
   .home-theme__content {
@@ -1692,16 +1749,13 @@ a:link, a:visited {
   .home-theme__para {
     font-size: 2rem;
     line-height: 1.5; }
-
   .nav {
     top: 2rem;
     right: 2rem; }
-
   .all__prime--header {
     font-size: 5rem; }
   .all__prime--desc {
     box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.3); }
-
   .event {
     width: 100%;
     margin-bottom: 2rem;
@@ -1712,7 +1766,6 @@ a:link, a:visited {
       margin-bottom: 3rem; }
       .event__desc * {
         pointer-events: none; }
-
   .event-rules * {
     pointer-events: none; }
   .event-rules__header {
@@ -1728,10 +1781,8 @@ a:link, a:visited {
     font-family: gotham;
     line-height: 1.5;
     padding: 0 2rem; }
-
   .majorevent__content--details {
     flex-direction: column; }
-
   .event-desc {
     color: black; }
     .event-desc * {
@@ -1758,7 +1809,6 @@ a:link, a:visited {
             background: #b4b4b459; }
         .event-desc__info--detail h3 {
           text-align: left; }
-
   .events-list {
     padding: 2rem 2.5rem; }
     .events-list__item--selected {
@@ -1768,7 +1818,6 @@ a:link, a:visited {
       font-size: 2rem; }
       .events-list > ul > li > a {
         padding: 2rem 2.5rem; }
-
   .events-splash__container--header {
     position: relative;
     font-size: 12rem !important; }
@@ -1792,7 +1841,6 @@ a:link, a:visited {
       background: #9b02c660;
       transform: rotate(4deg) translate(0%, -50%);
       content: ""; }
-
   .event-container .fp-tableCell {
     flex-direction: column;
     padding: 6rem;
@@ -1800,7 +1848,6 @@ a:link, a:visited {
     align-items: stretch; }
   .event-container .event-image {
     margin: 0 auto; }
-
   .event-reg__reg--fee {
     color: #747474;
     font-size: 3.2rem;
@@ -1810,7 +1857,6 @@ a:link, a:visited {
     text-align: center;
     width: 80%;
     margin-bottom: 8rem; }
-
   .clubs-grid__item--logo {
     width: 23rem;
     top: 20%;
@@ -1827,13 +1873,10 @@ a:link, a:visited {
     transform: none;
     top: auto;
     line-height: 1.4; }
-
   #shabdLogo {
     width: 10rem; }
-
   #aperturelogo {
     width: 18rem; }
-
   .camb__list {
     width: 100%; }
     .camb__list li {
@@ -1868,34 +1911,28 @@ a:link, a:visited {
       .camb__content--right:before {
         right: auto;
         left: -2.5rem; }
-
   #smallfz {
     font-size: 2rem;
     flex-basis: 30%; }
-
   #nextar__rules {
     font-size: 1.8rem; }
-
   #aperture__rules {
     font-size: 1.8rem; }
-
   .card-grid {
     padding: 2rem 4.5rem;
     justify-content: space-between; }
     .card-grid__item {
       flex-basis: 47%;
-      margin-left: 0%; } }
+      margin-left: 0%; }
+  #convenor--grid {
+    justify-content: center; } }
+
 @media (max-width: 365px) {
   html {
     font-size: 4.5px; }
-
   .event-rules__content {
     font-size: 2.4rem; }
-
   #nextar__rules {
     font-size: 2.1rem; }
-
   #aperture__rules {
     font-size: 2.1rem; } }
-
-/*# sourceMappingURL=style.css.map */
