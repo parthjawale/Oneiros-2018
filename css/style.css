@@ -92,12 +92,17 @@ textarea {
   textarea:active {
     outline: none; }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   margin: 0; }
+
+*::selection {
+  background-color: #c10812;
+  color: white;
+  line-height: 1.5; }
 
 main {
   transition: 0.5s all; }
@@ -783,7 +788,7 @@ a:link, a:visited {
     margin-top: 8rem;
     font-size: 2rem;
     color: #e50914;
-    font-family: 'Gotham-Bold';
+    font-family: "Gotham-Bold";
     text-align: center;
     width: 100%;
     text-transform: uppercase; }
@@ -801,19 +806,21 @@ a:link, a:visited {
     .register-container__underlay form input {
       border: none;
       font-size: 2rem;
-      font-family: 'Gotham';
+      font-family: "Gotham";
       padding: 2rem 1rem;
       border-bottom: 3px solid transparent;
-      transition: .2s all;
+      transition: 0.2s all;
       width: 100%;
+      line-height: 3rem;
       background: transparent; }
       .register-container__underlay form input:focus {
         border-bottom: 3px solid #e50914; }
       .register-container__underlay form input::placeholder {
-        transition: .2s all;
+        transition: 0.2s all;
+        line-height: 1.4;
         color: #777; }
       .register-container__underlay form input:focus::placeholder {
-        opacity: .5; }
+        opacity: 0.5; }
     .register-container__underlay form label {
       position: absolute;
       top: 0;
@@ -821,22 +828,22 @@ a:link, a:visited {
       transform: translateY(-10px);
       padding: 0 1rem;
       font-size: 1.5rem;
-      font-family: 'Gotham-Bold';
-      opacity: .3; }
-  .register-container__underlay input[type='submit'] {
+      font-family: "Gotham-Bold";
+      opacity: 0.3; }
+  .register-container__underlay input[type="submit"] {
     background: transparent;
     grid-column: 1/-1;
     background: #c10812;
     width: 20rem;
-    font-family: 'Gotham-Black';
+    font-family: "Gotham-Black";
     font-size: 2rem;
     color: #fff;
     margin: 2rem auto;
     border-radius: 50px;
     border: 5px solid #fff;
-    transition: .2s all;
+    transition: 0.2s all;
     cursor: pointer; }
-    .register-container__underlay input[type='submit']:hover {
+    .register-container__underlay input[type="submit"]:hover {
       background: transparent;
       border: 5px solid #c10812;
       color: #222; }
@@ -849,10 +856,10 @@ a:link, a:visited {
   .register-container__black-section--underlay input::placeholder {
     color: #fff; }
 
-.register-container__black-section--underlay input[type='submit'] {
+.register-container__black-section--underlay input[type="submit"] {
   background: white;
   color: #e50914; }
-  .register-container__black-section--underlay input[type='submit']:hover {
+  .register-container__black-section--underlay input[type="submit"]:hover {
     color: #fff; }
 
 .register-container__black-section--underlay #refcode {
