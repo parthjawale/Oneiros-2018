@@ -60,19 +60,7 @@ new Vue({
         alert("Both passwords don't match.");
         return false;
       }
-      firebase
-        .firestore()
-        .collection("users")
-        .where("username", "==", self.username)
-        .get()
-        .then(function(querySnapshot) {
-          if (querySnapshot.size > 0) {
-            alert("Username already exists. Please try with another username.");
-            return false;
-          } else {
-            return true;
-          }
-        });
+      return true;
     },
     registerOther() {
       var result = this.validateOther();
@@ -82,58 +70,110 @@ new Vue({
       }
       firebase
         .firestore()
-        .collection("campus_ambassadors")
-        .where("referralcode", "==", self.code)
+        .collection("users")
+        .where("username", "==", self.username)
         .get()
-        .then(
-          function(querySnapshot) {
-            if (querySnapshot.size > 0) {
-              querySnapshot.forEach(function(doc) {
-                firebase
-                  .auth()
-                  .createUserWithEmailAndPassword(self.email, self.password)
-                  .then(
-                    function(user) {
-                      firebase
-                        .firestore()
-                        .collection("users")
-                        .doc(user.user.uid)
-                        .set({
-                          name: self.name,
-                          college: self.college,
-                          username: self.username,
-                          email: self.email,
-                          pno: self.pno,
-                          wpno: self.wpno,
-                          uid: user.user.uid,
-                          isManipal: self.isManipal,
-                          sameNos: self.phoneNos,
-                          referralcode: self.code,
-                          referredUid: doc.data().uid
-                        })
-                        .then(
-                          function() {
-                            console.log("Successful");
-                          },
-                          function(error) {
-                            console.log(error.message);
-                          }
-                        );
-                    },
-                    function(error) {
-                      console.log(error.message);
+        .then(function(querySnapshot) {
+          if (querySnapshot.size > 0) {
+            alert("Username already exists. Please try with another username.");
+          } else {
+            if (self.code != "") {
+              firebase
+                .firestore()
+                .collection("campus_ambassadors")
+                .where("referralcode", "==", self.code)
+                .get()
+                .then(
+                  function(querySnapshot) {
+                    if (querySnapshot.size > 0) {
+                      querySnapshot.forEach(function(doc) {
+                        firebase
+                          .auth()
+                          .createUserWithEmailAndPassword(
+                            self.email,
+                            self.password
+                          )
+                          .then(
+                            function(user) {
+                              firebase
+                                .firestore()
+                                .collection("users")
+                                .doc(user.user.uid)
+                                .set({
+                                  name: self.name,
+                                  college: self.college,
+                                  username: self.username,
+                                  email: self.email,
+                                  pno: self.pno,
+                                  wpno: self.wpno,
+                                  uid: user.user.uid,
+                                  isManipal: self.isManipal,
+                                  sameNos: self.phoneNos,
+                                  referred: true,
+                                  referralcode: self.code,
+                                  referredUid: doc.data().uid
+                                })
+                                .then(
+                                  function() {
+                                    console.log("Successful");
+                                  },
+                                  function(error) {
+                                    console.log(error.message);
+                                  }
+                                );
+                            },
+                            function(error) {
+                              console.log(error.message);
+                            }
+                          );
+                      });
+                    } else {
+                      alert("Referral Code not valid.");
                     }
-                  );
-              });
+                  },
+                  function(error) {
+                    alert(error.message);
+                    return;
+                  }
+                );
             } else {
-              alert("Referral Code not valid.");
+              firebase
+                .auth()
+                .createUserWithEmailAndPassword(self.email, self.password)
+                .then(
+                  function(user) {
+                    firebase
+                      .firestore()
+                      .collection("users")
+                      .doc(user.user.uid)
+                      .set({
+                        name: self.name,
+                        college: self.college,
+                        username: self.username,
+                        email: self.email,
+                        pno: self.pno,
+                        wpno: self.wpno,
+                        uid: user.user.uid,
+                        isManipal: self.isManipal,
+                        sameNos: self.phoneNos,
+                        referred: false
+                      })
+                      .then(
+                        function() {
+                          console.log("Successful");
+                        },
+                        function(error) {
+                          console.log(error.message);
+                        }
+                      );
+                  },
+                  function(error) {
+                    console.log(error.message);
+                  }
+                );
             }
-          },
-          function(error) {
-            alert(error.message);
-            return;
           }
-        );
+        });
     },
     validateManipal() {
       var self = this;
@@ -178,10 +218,10 @@ new Vue({
     registerManipal() {
       var result = this.validateManipal();
       var self = this;
-      console.log(result);
       if (!result) {
         return;
       }
+      console.log(result);
       firebase
         .firestore()
         .collection("users")
@@ -189,17 +229,15 @@ new Vue({
         .get()
         .then(
           function(querySnapshot) {
-            if (querySnapshot != undefined && querySnapshot != null) {
-              if (querySnapshot.size > 0) {
-                alert(
-                  "Username already exists. Please try with another username."
-                );
-                return false;
-              }
+            console.log(querySnapshot);
+            if (querySnapshot.size > 0) {
+              alert(
+                "Username already exists. Please try with another username."
+              );
             } else {
               firebase
                 .auth()
-                .createUserWithEmailAndPassword(this.email, this.password)
+                .createUserWithEmailAndPassword(self.email, self.password)
                 .then(
                   function(user) {
                     firebase
