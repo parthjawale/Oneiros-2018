@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+  <title>Register</title>
+</head>
+
+<body style="overflow: hidden">
+  <div class="loader-prime">
+    <img src="/img/logos/alpha.gif" alt="Alpha" />
+    <div class="wordmark"></div>
+    <div class="moodi-logo"></div>
+    <div class="mext-logo"></div>
+    <div class="dates">
+      <h4>18th - 20th October</h4>
+    </div>
+  </div>
+  <header>
+    <img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+    <div class="nav">
+      <ul>
+        <li>
+          <span class="nav__sword"></span>
+          <span class="nav__handle"></span>
+        </li>
+        <li>
+          <span class="nav__handle"></span>
+          <span class="nav__sword"></span>
+        </li>
+        <li>
+          <span class="nav__sword"></span>
+          <span class="nav__handle"></span>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-container">
+      <div class="nav-container__redoverlay"></div>
+      <div class="nav-container__blackoverlay"></div>
+      <div class="nav-container__whiteoverlay">
+        <ul>
+          <li>
+            <a href="/" class="custom-link">Home</a>
+          </li>
+          <li>
+            <a href="/events" class="custom-link">Events</a>
+          </li>
+          <li>
+            <a href="/register" class="custom-link">Register</a>
+          </li>
+          <li>
+            <a href="/login" class="custom-link">Login</a>
+          </li>
+          <li>
+            <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
+          </li>
+          <li>
+            <a href="/accomodation" class="custom-link">Accomodation</a>
+          </li>
+          <!-- <li>
+            <a href="/contact">Contact Us</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="register-container">
+    <div class="register-container">
+      <div class="register-container__white-section">
+        <div class="register-container__overlay register-container__white-section--overlay">
+          <h1>MUJ Students</h1>
+        </div>
+        <div class="register-container__underlay register-container__white-section--underlay">
+          <h1 id="mob-reg">Registration for MUJ STudents</h1>
+          <form id="mujform">
+            <section>
+              <input type="text" name="name" placeholder="Your Name" required>
+            </section>
+            <section>
+              <input type="text" name="username" placeholder="Username" required>
+            </section>
+            <section>
+              <input type="number" name="regno" placeholder="Registration Number" required>
+            </section>
+            <section>
+              <input type="email" name="email" placeholder="E-Mail" required>
+            </section>
+            <section>
+              <input type="password" name="password" placeholder="Password" required>
+            </section>
+            <section>
+              <input type="password" name="cpassword" placeholder="Confirm Password" required>
+            </section>
+            <section>
+              <input type="number" name="phno" placeholder="Phone Number" required>
+            </section>
+            <section>
+              <input type="number" name="whatsapp" placeholder="WhatsApp Number" required>
+            </section>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+      <div class="register-container__black-section">
+        <div class="register-container__overlay register-container__black-section--overlay">
+          <h1>Other Students</h1>
+        </div>
+        <div class="register-container__underlay register-container__black-section--underlay">
+          <h1>Registration for Other STudents</h1>
+          <form id="otherform">
+            <section>
+              <input autocomplete="off" type="text" name="name" placeholder="Your Name" required>
+            </section>
+            <section>
+              <input autocomplete="off" type="text" name="username" placeholder="Username" required>
+            </section>
+            <section>
+              <input autocomplete="off" type="number" name="college" placeholder="College" required>
+            </section>
+            <section>
+              <input autocomplete="off" type="email" name="email" placeholder="E-Mail" required>
+            </section>
+            <section id="refcode">
+              <input autocomplete="off" type="text" name="refcode" placeholder="Referral Code (Optional)">
+            </section>
+            <section>
+              <input autocomplete="off" type="password" name="password" placeholder="Password">
+            </section>
+            <section>
+              <input autocomplete="off" type="password" name="cpassword" placeholder="Confirm Password" required>
+            </section>
+            <section>
+              <input autocomplete="off" type="number" name="phno" placeholder="Phone Number" required>
+            </section>
+            <section>
+              <input autocomplete="off" type="number" name="whatsapp" placeholder="WhatsApp Number" required>
+            </section>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="/js/common/global.js"></script>
+  <script src="/js/register/index.js"></script>
+  <script src="/js/register/form.js"></script>
+
+</body>
+
+</html>
