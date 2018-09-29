@@ -4,8 +4,6 @@ $(".event-container").mousemove(e => {
 
   const frame = $(this).next();
 
-  console.log(frame);
-
   frame.css({
     transform: `rotate3d(-${y}, -${x}, 0, 10deg)`
   });

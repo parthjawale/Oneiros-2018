@@ -143,6 +143,11 @@
             <section id="refcode">
               <input autocomplete="off" v-model="code" type="text" name="refcode" placeholder="Referral Code (Optional)">
             </section>
+            <section id="campusambassador">
+              <label for="ambassador">Do you wish to be a Campus Ambassador?</label>
+              <input id="default-radio" type="radio" name="ambassador">
+              <span id="custom-radio"></span>
+            </section>
             <input type="submit" value="Submit">
           </form>
         </div>
@@ -153,7 +158,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
   <script src="/js/config/db.js"></script>
-  <script src="/js/config/register/nonmanipal.js"></script>
+  <script src="/js/config/register/register.js"></script>
   <script src="/js/common/global.js"></script>
   <script src="/js/register/index.js"></script>
   <script src="/js/register/form.js"></script>

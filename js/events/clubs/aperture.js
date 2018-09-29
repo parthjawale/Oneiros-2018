@@ -32,7 +32,6 @@ $(document).ready(() => {
       'powershoot-registration'
     ],
     afterLoad: (origin, dest) => {
-      console.log(dest)
       let option = 0
       const selectedEvent = $('.events-list__item--selected')
       const eventName = dest.anchor.split('-')[0].toUpperCase()
