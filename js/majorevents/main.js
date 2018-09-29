@@ -11,10 +11,16 @@ $(document).ready(() => {
       majorevent.removeClass('majorevent-expand')
       majoreventoverlay.removeClass('overlay-darken')
 
-      majorevent.css({ pointerEvents: 'none' })
-      $('.majorevent__content').css({ display: 'none' })
+      majorevent.css({
+        pointerEvents: 'none'
+      })
+      $('.majorevent__content').css({
+        display: 'none'
+      })
       setTimeout(() => {
-        majorevent.css({ pointerEvents: 'all' })
+        majorevent.css({
+          pointerEvents: 'all'
+        })
         $('.majorevent__header').fadeIn()
       }, 200);
       return
@@ -23,12 +29,16 @@ $(document).ready(() => {
     majoreventoverlay.addClass('overlay-darken')
     majorevent.addClass('majorevent-contract')
     e.target.classList.add('majorevent-expand')
-    majorevent.css({ pointerEvents: 'none' })
+    majorevent.css({
+      pointerEvents: 'none'
+    })
 
     setTimeout(() => {
       $('.majorevent__header').fadeOut()
       setTimeout(() => {
-        majorevent.css({ pointerEvents: 'all' })
+        majorevent.css({
+          pointerEvents: 'all'
+        })
         $('.majorevent__content').fadeIn()
       }, 500);
     }, 500);
@@ -39,7 +49,6 @@ const all = document.getElementsByClassName('majorevent')
 
 for (let i = 0; i < all.length; i++) {
   all[i].addEventListener('mousemove', (e) => {
-    console.log(e)
     const splash = all[i].childNodes[1]
     const x = e.layerX
     const y = e.clientY

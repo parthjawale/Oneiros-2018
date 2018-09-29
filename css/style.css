@@ -868,19 +868,20 @@ a:link, a:visited {
 #campusambassador {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  transform: translateY(0.8rem); }
   @media screen and (max-width: 800px) {
     #campusambassador {
       transform: translateY(1.5rem); } }
   #campusambassador label {
     color: #fff;
     position: relative;
-    font-family: 'Gotham';
+    font-family: "Gotham";
     font-size: 2rem;
     opacity: 1;
-    flex: .9; }
+    flex: 0.9; }
   #campusambassador input {
-    flex: .1;
+    flex: 0.1;
     width: inherit;
     transform: translateY(-10px); }
 
@@ -895,7 +896,7 @@ a:link, a:visited {
   transform: translate(-5rem, -1rem); }
 
 .radio--active::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 60%;
   height: 60%;
