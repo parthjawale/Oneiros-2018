@@ -1,0 +1,133 @@
+@import './layout';
+
+#mob-reg {
+  @media screen and (max-width: 800px) {
+    margin-top: 10rem;
+  }
+}
+
+.register-container {
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  &__underlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    h1 {
+      margin-top: 8rem;
+      font-size: 2rem;
+      color: $color-primary;
+      font-family: 'Gotham-Bold';
+      text-align: center;
+      width: 100%;
+      text-transform: uppercase;
+    }
+
+    form {
+      margin: 5rem 0;
+      padding: 0 3rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+
+      @media screen and (max-width: 800px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      section {
+        position: relative;
+      }
+
+      input {
+        border: none;
+        font-size: 2rem;
+        font-family: 'Gotham';
+        padding: 2rem 1rem;
+        border-bottom: 3px solid transparent;
+        transition: .2s all;
+        width: 100%;
+        background: transparent;
+
+        &:focus {
+          border-bottom: 3px solid $color-primary;
+        }
+
+        &::placeholder {
+          transition: .2s all;
+          color: #777;
+        }
+
+        &:focus::placeholder {
+          opacity: .5;
+        }
+      }
+
+      label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-10px);
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        font-family: 'Gotham-Bold';
+        opacity: .3;
+      }
+    }
+
+    input[type='submit'] {
+      background: transparent;
+      grid-column: 1/-1;
+      background: $color-secondary;
+      width: 20rem;
+      font-family: 'Gotham-Black';
+      font-size: 2rem;
+      color: #fff;
+      margin: 2rem auto;
+      border-radius: 50px;
+      border: 5px solid #fff;
+      transition: .2s all;
+      cursor: pointer;
+
+      &:hover {
+        background: transparent;
+        border: 5px solid $color-secondary;
+        color: #222;
+      }
+    }
+  }
+
+  &__black-section--underlay {
+    h1 {
+      color: #fff;
+    }
+
+    input {
+      color: #fff;
+
+      &::placeholder {
+        color: #fff;
+      }
+    }
+
+    input[type='submit'] {
+      background: white;
+      color: $color-primary;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    #refcode {
+      grid-column: 1/-1;
+    }
+
+    label {
+      color: #fff;
+    }
+  }
+}
