@@ -126,11 +126,6 @@
             <section>
               <input autocomplete="off" v-model="email" type="email" name="email" placeholder="E-Mail" required>
             </section>
-            <section id="campusambassador">
-              <label for="ambassador">Do you wish to be a Campus Ambassador?</label>
-              <input id="default-radio" type="radio" name="ambassador">
-              <span id="custom-radio"></span>
-            </section>
             <section>
               <input autocomplete="off" v-model="password" type="password" name="password" placeholder="Password">
             </section>
@@ -147,6 +142,11 @@
             </section>
             <section id="refcode">
               <input autocomplete="off" v-model="code" type="text" name="refcode" placeholder="Referral Code (Optional)">
+            </section>
+            <section id="campusambassador">
+              <label for="ambassador">Do you wish to be a Campus Ambassador?</label>
+              <input id="default-radio" type="radio" name="ambassador">
+              <span id="custom-radio"></span>
             </section>
             <input type="submit" value="Submit">
           </form>
