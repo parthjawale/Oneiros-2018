@@ -39,18 +39,19 @@ textarea {
   }
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   margin: 0;
 }
 
-// *::selection {
-//   background-color: $color-secondary;
-//   color: white;
-// }
+*::selection {
+  background-color: $color-secondary;
+  color: white;
+  line-height: 1.5;
+}
 
 main {
   transition: 0.5s all;
@@ -73,7 +74,6 @@ main {
 }
 
 a {
-
   &:link,
   &:visited {
     text-decoration: none;
