@@ -78,30 +78,30 @@
         </div>
         <div class="register-container__underlay register-container__white-section--underlay">
           <h1 id="mob-reg">Registration for MUJ STudents</h1>
-          <form id="mujform">
+          <form id="mujform" @submit.prevent="registerManipal">
             <section>
-              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="text" name="name" v-model="name" placeholder="Your Name" required>
             </section>
             <section>
-              <input type="text" name="username" placeholder="Username" required>
+              <input type="text" name="username" v-model="username" placeholder="Username" required>
             </section>
             <section>
-              <input type="number" name="regno" placeholder="Registration Number" required>
+              <input type="number" name="regno" v-model="regno" placeholder="Registration Number" required>
             </section>
             <section>
-              <input type="email" name="email" placeholder="E-Mail" required>
+              <input type="email" name="email" v-model="email" placeholder="E-Mail" required>
             </section>
             <section>
-              <input type="password" name="password" placeholder="Password" required>
+              <input type="password" name="password" v-model="password" placeholder="Password" required>
             </section>
             <section>
-              <input type="password" name="cpassword" placeholder="Confirm Password" required>
+              <input type="password" name="cpassword" v-model="repassword" placeholder="Confirm Password" required>
             </section>
             <section>
-              <input type="number" name="phno" placeholder="Phone Number" required>
+              <input type="number" name="phno" v-model="pno" placeholder="Phone Number" required>
             </section>
             <section>
-              <input type="number" name="whatsapp" placeholder="WhatsApp Number" required>
+              <input type="number" name="whatsapp" v-model="wpno" placeholder="WhatsApp Number" required>
             </section>
             <input type="submit" value="Submit">
           </form>
@@ -112,22 +112,19 @@
           <h1>Other Students</h1>
         </div>
         <div class="register-container__underlay register-container__black-section--underlay">
-          <h1>Registration for Other STudents</h1>
-          <form id="otherform">
+          <h1>Registration for Other Students</h1>
+          <form id="otherform" @submit.prevent="registerOther">
             <section>
-              <input autocomplete="off" type="text" name="name" placeholder="Your Name" required>
+              <input autocomplete="off" v-model="name" type="text" name="name" placeholder="Your Name" required>
             </section>
             <section>
-              <input autocomplete="off" type="text" name="username" placeholder="Username" required>
+              <input autocomplete="off" v-model="username" type="text" name="username" placeholder="Username" required>
             </section>
             <section>
-              <input autocomplete="off" type="number" name="college" placeholder="College" required>
+              <input autocomplete="off" v-model="college" type="text" name="college" placeholder="College" required>
             </section>
             <section>
-              <input autocomplete="off" type="email" name="email" placeholder="E-Mail" required>
-            </section>
-            <section id="refcode">
-              <input autocomplete="off" type="text" name="refcode" placeholder="Referral Code (Optional)">
+              <input autocomplete="off" v-model="email" type="email" name="email" placeholder="E-Mail" required>
             </section>
             <section id="campusambassador">
               <label for="ambassador">Do you wish to be a Campus Ambassador?</label>
@@ -135,16 +132,21 @@
               <span id="custom-radio"></span>
             </section>
             <section>
-              <input autocomplete="off" type="password" name="password" placeholder="Password">
+              <input autocomplete="off" v-model="password" type="password" name="password" placeholder="Password">
             </section>
             <section>
-              <input autocomplete="off" type="password" name="cpassword" placeholder="Confirm Password" required>
+              <input autocomplete="off" v-model="repassword" type="password" name="cpassword" placeholder="Confirm Password"
+                required>
             </section>
             <section>
-              <input autocomplete="off" type="number" name="phno" placeholder="Phone Number" required>
+              <input autocomplete="off" v-model="pno" type="number" name="phno" placeholder="Phone Number" required>
             </section>
             <section>
-              <input autocomplete="off" type="number" name="whatsapp" placeholder="WhatsApp Number" required>
+              <input autocomplete="off" v-model="wpno" type="number" name="whatsapp" placeholder="WhatsApp Number"
+                required>
+            </section>
+            <section id="refcode">
+              <input autocomplete="off" v-model="code" type="text" name="refcode" placeholder="Referral Code (Optional)">
             </section>
             <input type="submit" value="Submit">
           </form>
@@ -153,11 +155,14 @@
     </div>
   </main>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script src="/js/config/db.js"></script>
+  <script src="/js/config/register/register.js"></script>
   <script src="/js/common/global.js"></script>
   <script src="/js/register/index.js"></script>
   <script src="/js/register/form.js"></script>
-
+  <!-- <script src="/js/config/register/manipal.js"></script> -->
 </body>
 
 </html>
