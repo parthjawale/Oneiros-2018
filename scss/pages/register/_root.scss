@@ -124,12 +124,61 @@
       }
     }
 
-    #refcode {
-      grid-column: 1/-1;
-    }
-
     label {
       color: #fff;
     }
+  }
+}
+
+#campusambassador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateY(0.8rem);
+
+  @media screen and (max-width: 800px) {
+    transform: translateY(1.5rem);
+  }
+
+  label {
+    color: #fff;
+    position: relative;
+    font-family: "Gotham";
+    font-size: 2rem;
+    opacity: 1;
+    flex: 0.9;
+  }
+
+  input {
+    flex: 0.1;
+    width: inherit;
+    transform: translateY(-10px);
+  }
+}
+
+#default-radio {
+  opacity: 0;
+}
+
+#custom-radio {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 5px solid $color-primary;
+  transform: translate(-5rem, -1rem);
+}
+
+.radio--active {
+  &::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background: $color-primary;
+    border-radius: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
