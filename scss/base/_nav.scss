@@ -38,19 +38,15 @@
         top: 2rem;
       }
 
-      // @media screen and (max-width: 800px) {
-      //   &:nth-child(1) {
-      //     top: 1rem;
-      //   }
+      @media screen and (max-width: 800px) {
+        &:nth-child(2) {
+          top: 2rem;
+        }
 
-      //   &:nth-child(2) {
-      //     top: 3.5rem;
-      //   }
-
-      //   &:nth-child(3) {
-      //     top: 5.5rem;
-      //   }
-      // }
+        &:nth-child(3) {
+          top: 4rem;
+        }
+      }
     }
   }
 
@@ -95,6 +91,10 @@
 .sword3-activate {
   transform: rotate(495deg);
   position: absolute;
+
+  @media screen and (max-width: 800px) {
+    top: 2rem !important;
+  }
 
   span {
     background: #222;
