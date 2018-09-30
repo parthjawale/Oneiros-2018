@@ -376,14 +376,14 @@ new Vue({
             min: 2,
             max: 4,
             type: "team"
-          },
-          {
-            name: "debate",
-            price: 200,
-            min: 1,
-            max: 1,
-            type: "solo"
           }
+          // {
+          //   name: "debate",
+          //   price: 200,
+          //   min: 1,
+          //   max: 1,
+          //   type: "solo"
+          // }
         ]
       },
 
@@ -395,7 +395,7 @@ new Vue({
             price: 1500,
             min: 3,
             max: 8,
-            type: "team"
+            type: "fixed"
           },
           {
             name: "Destival - Group Dance Competetion",

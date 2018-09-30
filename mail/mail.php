@@ -12,7 +12,7 @@ function sendMail($username,$password,$body,$subject,$receiver) {
   $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
   try {
       //Server settings
-      // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+      // $mail->SMTPDebug = 3;                                 // Enable verbose debug output
       $mail->isSMTP();                                      // Set mailer to use SMTP
       $mail->Host = 'smtp.zoho.com:587';  // Specify main and backup SMTP servers
       $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -42,10 +42,9 @@ function sendMail($username,$password,$body,$subject,$receiver) {
       // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
       $mail->send();
-      echo json_encode(array('message' => 'Sent', 'code' => 200));
+      echo json_encode(array('message' => 'Sent', 'code' => "200"));
       
   } catch (Exception $e) {
-      echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    echo json_encode(array('message' => $mail->ErrorInfo, 'code' => "200"));
   }
-
 }
