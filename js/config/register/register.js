@@ -207,6 +207,7 @@ new Vue({
                                     self.mujerror = "Invalid E-Mail";
                                   }
                                 });
+                              window.location = "/eventregistrations";
                             },
                             function(error) {
                               self.mujerror = error.message;
@@ -223,6 +224,11 @@ new Vue({
                   }
                 );
             } else {
+              body = {
+                email: self.email,
+                message: self.message,
+                name: self.name
+              };
               firebase
                 .auth()
                 .createUserWithEmailAndPassword(self.email, self.password)
@@ -268,36 +274,31 @@ new Vue({
                       })
                       .then(
                         function() {
-                          console.log("Successful");
+                          fetch("/mail/checkMail.php", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(body)
+                          })
+                            .then(res => {
+                              return res.json();
+                            })
+                            .then(response => {
+                              if (response.code === 200) {
+                                self.mujerror = "We'll get back to you!";
+                              } else if (response.code === 405) {
+                                self.mujerror = "Fields cant be empty!";
+                              } else if (response.code === 406) {
+                                self.mujerror = "Invalid E-Mail";
+                              }
+                            });
+                          window.location = "/eventregistrations";
                         },
                         function(error) {
                           console.log(error.message);
                         }
                       );
-                    body = {
-                      email: self.email,
-                      message: self.message,
-                      name: self.name
-                    };
-                    fetch("/mail/checkMail.php", {
-                      method: "POST",
-                      headers: {
-                        "Content-Type": "application/json"
-                      },
-                      body: JSON.stringify(body)
-                    })
-                      .then(res => {
-                        return res.json();
-                      })
-                      .then(response => {
-                        if (response.code === 200) {
-                          self.mujerror = "We'll get back to you!";
-                        } else if (response.code === 405) {
-                          self.mujerror = "Fields cant be empty!";
-                        } else if (response.code === 406) {
-                          self.mujerror = "Invalid E-Mail";
-                        }
-                      });
                   },
                   function(error) {
                     console.log(error.message);
@@ -410,7 +411,7 @@ new Vue({
                                 self.mujerror = "Invalid E-Mail";
                               }
                             });
-                          self.mujerror = "Successful";
+                          window.location = "/eventregistrations";
                         },
                         function(error) {
                           self.mujerror = error.message;

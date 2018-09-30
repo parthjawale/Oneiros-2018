@@ -414,9 +414,9 @@ new Vue({
         ]
       }
     ],
-    userarr:[],
-    eventarr:[],
-    email:""
+    userarr: [],
+    eventarr: [],
+    email: ""
   },
 
   computed: {
@@ -456,6 +456,9 @@ new Vue({
     }
   },
   methods: {
+    jsUcfirst: function(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    },
     changeclub() {
       this.eventName = "";
       this.error = false;
@@ -487,77 +490,87 @@ new Vue({
       }
     },
     submit() {
-      console.log("method chala")
-      var self=this
-      var userdb=firebase.firestore().collection('users')
-      var eventdb=firebase.firestore().collection('events')
-      console.log(self.eventName)
-      eventdb.doc(self.eventName.name)
-      .get()
-      .then(function (doc) {
-          if (doc.exists) {
+      console.log("method chala");
+      var self = this;
+      var userdb = firebase.firestore().collection("users");
+      var eventdb = firebase.firestore().collection("events");
+      console.log(self.eventName);
+      eventdb
+        .doc(self.eventName.name)
+        .get()
+        .then(
+          function(doc) {
+            if (doc.exists) {
               if (doc.data().users != undefined || doc.data().users != null)
-                  self.userarr = doc.data().users
-              if (!self.userarr.includes("JGPUrYgmhFRoFjV7hSblfb4zxHG2")) {
-                self.userarr.push("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
+                self.userarr = doc.data().users;
+              if (!self.userarr.includes("tOxMbeKFbgSRo8qBPG00cUq11vN2")) {
+                self.userarr.push("tOxMbeKFbgSRo8qBPG00cUq11vN2");
               }
               eventdb.doc(self.eventName.name).update({
-                  users:self.userarr
-              })
-              userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
-              .get()
-              .then(function (doc) {
-                  if (doc.data().events != undefined || doc.data().events != null)
-                      self.eventarr = doc.data().events
+                users: self.userarr
+              });
+              userdb
+                .doc("tOxMbeKFbgSRo8qBPG00cUq11vN2")
+                .get()
+                .then(function(doc) {
+                  if (
+                    doc.data().events != undefined ||
+                    doc.data().events != null
+                  )
+                    self.eventarr = doc.data().events;
                   if (!self.eventarr.includes(self.eventName.name))
-                      self.eventarr.push(self.eventName.name)
-                  userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2").update({
+                    self.eventarr.push(self.eventName.name);
+                  userdb
+                    .doc("tOxMbeKFbgSRo8qBPG00cUq11vN2")
+                    .update({
                       events: self.eventarr
-                  })
-                  .then(function () {
-                      alert('HO GAYA')
-                  })
+                    })
+                    .then(function() {
+                      alert("HO GAYA");
+                    });
 
-                  userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
-                  .get()
-                  .then(function(doc){  
-                    if(doc.exists){
-                      self.email = doc.data().email,
-                      self.name = doc.data().name
-
-                      body = {
-
-                        email: self.email,
-                        message: "Thank you for registering for "+self.eventName.name,
-                        name: self.name
-                      };
-                      fetch("/mail/checkMail.php", {
-                        method: "POST",
-                        headers: {
-                          "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(body)
-                      })
-                        .then(res => {
-                          return res.json();
+                  userdb
+                    .doc("tOxMbeKFbgSRo8qBPG00cUq11vN2")
+                    .get()
+                    .then(function(doc) {
+                      if (doc.exists) {
+                        (self.email = doc.data().email),
+                          (self.name = doc.data().name);
+                        body = {
+                          email: self.email,
+                          message:
+                            "Thank you for registering for " +
+                            self.jsUcfirst(self.eventName.name),
+                          name: self.name
+                        };
+                        fetch("/mail/checkMail.php", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json"
+                          },
+                          body: JSON.stringify(body)
                         })
-                        .then(response => {
-                          if (response.code === 200) {
-                            self.mujerror = "We'll get back to you!";
-                          } else if (response.code === 405) {
-                            self.mujerror = "Fields cant be empty!";
-                          } else if (response.code === 406) {
-                            self.mujerror = "Invalid E-Mail";
-                          }
-                        });
-                    }
-                  })
-              })
+                          .then(res => {
+                            return res.json();
+                          })
+                          .then(response => {
+                            if (response.code === 200) {
+                              self.mujerror = "We'll get back to you!";
+                            } else if (response.code === 405) {
+                              self.mujerror = "Fields cant be empty!";
+                            } else if (response.code === 406) {
+                              self.mujerror = "Invalid E-Mail";
+                            }
+                          });
+                      }
+                    });
+                });
+            }
+          },
+          function(error) {
+            alert(error.message);
           }
-      }, function (error) {
-        alert(error.message)
-      })
+        );
     }
-  },
-  
+  }
 });
