@@ -5,10 +5,12 @@ new Vue({
     selectedClub: "",
     eventName: "",
     value: 0,
+    user: null,
     error: false,
     clubs: [
       {
         name: "aperture",
+        desc: "Media Events",
         events: [
           {
             name: "focus",
@@ -54,6 +56,7 @@ new Vue({
       },
       {
         name: "the music club",
+        desc: "Music Related Events",
         events: [
           {
             name: "octaves",
@@ -109,6 +112,7 @@ new Vue({
       },
       {
         name: "litmus",
+        desc: "English Literature Events",
         events: [
           {
             name: "bamboozled",
@@ -156,7 +160,8 @@ new Vue({
         ]
       },
       {
-        name: "coreofrafia",
+        name: "coreografia",
+        desc: "Dance Events",
         events: [
           {
             name: "nextar(solo and duet)",
@@ -190,6 +195,7 @@ new Vue({
       },
       {
         name: "cinefilia",
+        desc: "Dramatics Events",
         events: [
           {
             name: "ad mark",
@@ -251,6 +257,7 @@ new Vue({
       },
       {
         name: "scribbles",
+        desc: "Art & Craft Events",
         events: [
           {
             name: "Fusionoid",
@@ -288,6 +295,7 @@ new Vue({
       },
       {
         name: "shabd",
+        desc: "Hindi Literature Events",
         events: [
           // { name: 'Poetry Event', price: 50 },
           // { name: 'Quiz Event', price: 150 },
@@ -302,6 +310,7 @@ new Vue({
       },
       {
         name: "qureka",
+        desc: "Quizzing Events",
         events: [
           // { name: 'Pop Culture/Fantasy Quiz', price: 100 },
           {
@@ -322,6 +331,7 @@ new Vue({
       },
       {
         name: "sophia",
+        desc: "Philosophy Events",
         events: [
           {
             name: "Let's Tweet",
@@ -355,6 +365,7 @@ new Vue({
       },
       {
         name: "collab events",
+        desc: "Two is better than One",
         events: [
           {
             name: "Pop-a-razzi",
@@ -389,6 +400,7 @@ new Vue({
 
       {
         name: "major events",
+        desc: "Wait for It",
         events: [
           {
             name: "requiem- war of bands",
@@ -418,7 +430,18 @@ new Vue({
     eventarr: [],
     email: ""
   },
-
+  created() {
+    var self = this;
+    firebase.auth().onAuthStateChanged(
+      function(user) {
+        console.log(user);
+        self.user = user;
+      },
+      function(error) {
+        console.log(error);
+      }
+    );
+  },
   computed: {
     amount: function() {
       if (!this.error) {
@@ -503,14 +526,14 @@ new Vue({
             if (doc.exists) {
               if (doc.data().users != undefined || doc.data().users != null)
                 self.userarr = doc.data().users;
-              if (!self.userarr.includes("tOxMbeKFbgSRo8qBPG00cUq11vN2")) {
-                self.userarr.push("tOxMbeKFbgSRo8qBPG00cUq11vN2");
+              if (!self.userarr.includes(self.user.uid)) {
+                self.userarr.push(self.user.uid);
               }
               eventdb.doc(self.eventName.name).update({
                 users: self.userarr
               });
               userdb
-                .doc("tOxMbeKFbgSRo8qBPG00cUq11vN2")
+                .doc(self.user.uid)
                 .get()
                 .then(function(doc) {
                   if (
@@ -521,7 +544,7 @@ new Vue({
                   if (!self.eventarr.includes(self.eventName.name))
                     self.eventarr.push(self.eventName.name);
                   userdb
-                    .doc("tOxMbeKFbgSRo8qBPG00cUq11vN2")
+                    .doc(self.user.uid)
                     .update({
                       events: self.eventarr
                     })
@@ -530,7 +553,7 @@ new Vue({
                     });
 
                   userdb
-                    .doc("tOxMbeKFbgSRo8qBPG00cUq11vN2")
+                    .doc(self.user.uid)
                     .get()
                     .then(function(doc) {
                       if (doc.exists) {

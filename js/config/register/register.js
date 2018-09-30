@@ -206,8 +206,8 @@ new Vue({
                                   } else if (response.code === 406) {
                                     self.mujerror = "Invalid E-Mail";
                                   }
+                                  window.location = "/eventregistrations";
                                 });
-                              window.location = "/eventregistrations";
                             },
                             function(error) {
                               self.mujerror = error.message;
@@ -224,7 +224,7 @@ new Vue({
                   }
                 );
             } else {
-              body = {
+              var body = {
                 email: self.email,
                 message: self.message,
                 name: self.name
@@ -292,8 +292,8 @@ new Vue({
                               } else if (response.code === 406) {
                                 self.mujerror = "Invalid E-Mail";
                               }
+                              window.location = "/eventregistrations";
                             });
-                          window.location = "/eventregistrations";
                         },
                         function(error) {
                           console.log(error.message);
@@ -387,7 +387,7 @@ new Vue({
                       })
                       .then(
                         function() {
-                          body = {
+                          var body = {
                             email: self.email,
                             message: self.message,
                             name: self.name
@@ -410,8 +410,8 @@ new Vue({
                               } else if (response.code === 406) {
                                 self.mujerror = "Invalid E-Mail";
                               }
+                              window.location = "/eventregistrations";
                             });
-                          window.location = "/eventregistrations";
                         },
                         function(error) {
                           self.mujerror = error.message;
