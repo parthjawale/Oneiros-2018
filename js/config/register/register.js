@@ -12,6 +12,7 @@ new Vue({
     isManipal: false,
     pno: "",
     wpno: "",
+    campamb: false,
     response: 0,
     phoneNos: false
   },
@@ -111,7 +112,8 @@ new Vue({
                                   sameNos: self.phoneNos,
                                   referred: true,
                                   referralcode: self.code,
-                                  referredUid: doc.data().uid
+                                  referredUid: doc.data().uid,
+                                  campamb: self.campamb
                                 })
                                 .then(
                                   function() {
@@ -156,7 +158,8 @@ new Vue({
                         uid: user.user.uid,
                         isManipal: self.isManipal,
                         sameNos: self.phoneNos,
-                        referred: false
+                        referred: false,
+                        campamb: self.campamb
                       })
                       .then(
                         function() {
