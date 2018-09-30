@@ -1,5 +1,5 @@
 <?php
-  // include 'mail/mail.php';
+  include 'mail.php';
 
   $content = trim(file_get_contents("php://input"));
 
@@ -9,16 +9,12 @@
   $email = $data["email"];
   $name = $data["name"];
 
-  if ($message == '' || $email == '' || $name == '') {
-    echo json_encode(array('message' => 'empty', 'code' => 405));
-    die();
-  }
-  
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo json_encode(array('message' => 'invalid email', 'code' => 406));
+  if ($message == '' || $email == '' ) {
+    echo json_encode(array('message' => 'empty', 'code' => "405"));
     die();
   }
 
-  // sendMail('connect@oneiros.in','Promotions@312', $message,$subject, $email);
-  // echo json_encode(array('message' => 'Sent', 'code' => 200));
+  $subject = "Succesful Registration";
+  sendMail('webadmin@oneiros.in','_a3eYbhA1$', $message,$subject, $email);
+  // echo json_encode(array('message' => 'Sent', 'code' => "200"));
 ?>
