@@ -15,6 +15,7 @@ if (window.innerWidth < 800) {
 $(document).ready(() => {
   section.click(e => {
     if (e.target.localName !== 'div') return
+    blockContact(true)
     if (e.target.classList.value.indexOf('compress') > 0) {
       if (white.hasClass('section--expand')) {
         other_clicks(white, black, header_white, header_black, form_white, form_black)
@@ -40,6 +41,7 @@ const first_click = (expand, compress, header, fade, form) => {
   fade.addClass('fadeOut')
   setTimeout(() => {
     form.fadeIn()
+    blockContact(false)
   }, 1000);
 
   if (window.innerWidth > 800) header.addClass('header--rotate')
@@ -61,8 +63,21 @@ const other_clicks = (compress, expand, rotate, unrotate, formHide, formShow) =>
 
   setTimeout(() => {
     formShow.fadeIn()
+    blockContact(false)
   }, 1000);
   formHide.css({
     display: 'none'
   })
+}
+
+const blockContact = (bool) => {
+  if (bool) {
+    $('.register-container').css({
+      pointerEvents: 'none'
+    })
+  } else {
+    $('.register-container').css({
+      pointerEvents: 'all'
+    })
+  }
 }

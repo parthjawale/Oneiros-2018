@@ -140,13 +140,13 @@
               <input autocomplete="off" v-model="wpno" type="number" name="whatsapp" placeholder="WhatsApp Number"
                 required>
             </section>
-            <section>
-              <label for="campamb">Interested in Campus Ambassador</label>
-              <input autocomplete="off" id="campamb" v-model="campamb" type="checkbox" name="cambamb" placeholder="Campus Ambassador"
-                required>
-            </section>
             <section id="refcode">
               <input autocomplete="off" v-model="code" type="text" name="refcode" placeholder="Referral Code (Optional)">
+            </section>
+            <section id="campusambassador">
+              <label for="ambassador">Do you wish to be a Campus Ambassador?</label>
+              <input id="default-radio" v-model="campamb" value="yes" type="checkbox" name="ambassador">
+              <span id="custom-radio"></span>
             </section>
             <input type="submit" value="Submit">
           </form>

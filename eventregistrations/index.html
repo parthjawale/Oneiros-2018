@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration Page</title>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div id="app-wrapper">
+
+            <header class=" Reg">Event Registration Page</header>
+
+            <!-- 
+            <h2 class="details-participants">Full Name</h2>
+            <input type="text" name="name" v-model="name" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"> -->
+
+            <select class="Drop-Down" v-model="selectedClub" @change="changeclub">
+                <option value="">Select Club</option>
+                <option :value="club" v-for="club in clubs">{{club.name}}</option>
+            </select>
+            <span class="underline"></span>
+
+            <select class="Drop-Down" v-model="eventName" @change="changevent">
+                <option value="">Select Event</option>
+                <option :value="event" v-for="event in selectedClub.events">{{event.name}}</option>
+            </select>
+            <span class="underline"></span>
+
+
+            <transition name="fade">
+
+                <div class="imp" v-if="eventName && !getParticipants">
+                    <i class="fas fa-info-circle"></i>
+                    <p class="imp-content">
+
+                        <span style="display: block; font-size: 2.5rem;
+                        font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                            Event Info
+                        </span>
+
+                        This is a {{ eventName.type }} event.
+                    </p>
+                </div>
+            </transition>
+
+            <transition name="fade">
+
+                <div class="imp" v-if="eventName && getParticipants">
+                    <i class="fas fa-info-circle"></i>
+                    <p class="imp-content">
+
+                        <span style="display: block; font-size: 2.5rem;
+                font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                            Event rules
+                        </span>
+
+                        Min. and Max. no. of Participants: {{ eventName.min}} and {{ eventName.max }}
+                    </p>
+                </div>
+            </transition>
+
+            <h2 class="details-participants" v-if="getParticipants">Enter the number of participants</h2>
+            <input type="number" name="Participants" v-model="value" class="Part" placeholder="No. of Participants"
+                v-if="getParticipants">
+
+            <transition name="fade" mode="out-in">
+                <div class="imp" v-if="error" key="error">
+                    <i class="fas fa-info-circle"></i>
+                    <p class="imp-content">
+                        Please follow the rules and fill all the fields.
+                    </p>
+                </div>
+
+                <div v-if="!error && eventName" class="amount" key="amount">
+                    <span class="amount--header">Amount to be Paid : </span>
+                    <span class="amount--body">
+                        {{!error ? amount : 'NA'}}
+                    </span>
+                </div>
+
+            </transition>
+
+            <div class="contain">
+                <label class="btn btn--blue" for="modal-2" v-if="eventName && !error">Continue</label>
+                <input class="modal-state" id="modal-2" type="checkbox" />
+                <div class="modal">
+                    <div class="modal__bg"></div>
+                    <div class="modal__inner">
+                        <label class="modal__close" for="modal-2"></label>
+                        <h2 class="details--header">Registration Details</h2>
+
+                        <h4 class="details--heading">Participant Name</h4>
+                        <p class="details--entry">{{ name }}</p>
+
+                        <h4 class="details--heading">Club</h4>
+                        <p class="details--entry">{{ selectedClub.name }}</p>
+                        <hr class="details--divider">
+                        <h4 class="details--heading">Event</h4>
+                        <p class="details--entry">{{ eventName.name }}</p>
+                        <hr class="details--divider">
+                        <h4 class="details--heading">No. of Participants:</h4>
+                        <p class="details--entry">
+                            {{value}}
+                        </p>
+                        <hr class="details--divider">
+                        <h4 class="details--heading">Total Amount:</h4>
+                        <p class="details--entry">
+                            {{amount}}
+                        </p>
+
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <label class="btn btn--blue">Checkout</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./test.js"></script>
+</body>
+
+</html>

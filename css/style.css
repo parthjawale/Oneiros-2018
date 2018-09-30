@@ -862,11 +862,51 @@ a:link, a:visited {
   .register-container__black-section--underlay input[type="submit"]:hover {
     color: #fff; }
 
-.register-container__black-section--underlay #refcode {
-  grid-column: 1/-1; }
-
 .register-container__black-section--underlay label {
   color: #fff; }
+
+#campusambassador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(0.8rem); }
+  @media screen and (max-width: 800px) {
+    #campusambassador {
+      transform: translateY(1.5rem); } }
+  #campusambassador label {
+    color: #fff;
+    position: relative;
+    font-family: "Gotham";
+    font-size: 2rem;
+    opacity: 1;
+    flex: 0.9; }
+  #campusambassador input {
+    flex: 0.1;
+    width: inherit;
+    transform: translateY(-10px); }
+
+#default-radio {
+  opacity: 0.1;
+  z-index: 2; }
+
+#custom-radio {
+  width: 25px;
+  z-index: 1;
+  height: 25px;
+  border-radius: 100%;
+  border: 5px solid #e50914;
+  transform: translate(-5rem, -1rem); }
+
+.radio--active::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background: #e50914;
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
 
 .events-splash {
   background: url("/img/events/splash.mp4");
