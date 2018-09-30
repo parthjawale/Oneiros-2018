@@ -903,6 +903,12 @@ a:link, a:visited {
     top: 50%;
     transform: translate(-50%, -50%); }
 
+.register-error {
+  font-size: 2rem;
+  font-family: "Gotham-Bold";
+  text-align: center;
+  color: #c10812; }
+
 .events-splash {
   background: url("/img/events/splash.mp4");
   background-size: cover;

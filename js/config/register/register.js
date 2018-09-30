@@ -14,9 +14,21 @@ new Vue({
     wpno: "",
     campamb: "",
     response: 0,
-    phoneNos: false
+    phoneNos: false,
+    mujerror: "",
+    othererror: ""
   },
   methods: {
+    random_code: function() {
+      var start = new Date().getTime();
+      var end = start.toString(8).substr(10);
+      var random = Math.random()
+        .toString(36)
+        .substr(10);
+      var res = random.concat(end);
+
+      return res;
+    },
     validateOther() {
       var self = this;
       if (this.phoneNos) {
@@ -64,6 +76,7 @@ new Vue({
       return true;
     },
     registerOther() {
+      var newCode = this.random_code();
       var result = this.validateOther();
       var self = this;
       if (!result) {
@@ -96,30 +109,31 @@ new Vue({
                           )
                           .then(
                             function(user) {
-                              // if (self.campamb) {
-                              //   firebase.firestore
-                              //     .collection("campus_ambassadors")
-                              //     .doc(user.user.uid)
-                              //     .set({
-                              //       name: self.name,
-                              //       college: self.college,
-                              //       username: self.username,
-                              //       email: self.email,
-                              //       pno: self.pno,
-                              //       wpno: self.wpno,
-                              //       uid: user.user.uid,
-                              //       sameNos: self.phoneNos,
-                              //       referred: true
-                              //     })
-                              //     .catch(function(error) {
-                              //       alert(error.message);
-                              //     });
-                              // }
+                              if (self.campamb) {
+                                firebase
+                                  .firestore()
+                                  .collection("campus_ambassadors")
+                                  .doc(user.user.uid)
+                                  .set({
+                                    name: self.name,
+                                    college: self.college,
+                                    username: self.username,
+                                    email: self.email,
+                                    pno: self.pno,
+                                    wpno: self.wpno,
+                                    uid: user.user.uid,
+                                    sameNos: self.phoneNos,
+                                    referred: true,
+                                    referralcode: newCode
+                                  })
+                                  .catch(function(error) {
+                                    alert(error.message);
+                                  });
+                              }
                               if (
                                 doc.data().users != undefined &&
                                 doc.data().users != null
                               ) {
-                                console.log("In 1st if block");
                                 var usersArr = doc.data().users;
                                 if (!usersArr.includes(user.user.uid))
                                   usersArr.push(user.user.uid);
@@ -131,7 +145,6 @@ new Vue({
                                     users: usersArr
                                   });
                               } else {
-                                console.log("In else block");
                                 var usersArr = [];
                                 usersArr.push(user.user.uid);
                                 firebase
@@ -190,6 +203,27 @@ new Vue({
                 .createUserWithEmailAndPassword(self.email, self.password)
                 .then(
                   function(user) {
+                    if (self.campamb) {
+                      firebase
+                        .firestore()
+                        .collection("campus_ambassadors")
+                        .doc(user.user.uid)
+                        .set({
+                          name: self.name,
+                          college: self.college,
+                          username: self.username,
+                          email: self.email,
+                          pno: self.pno,
+                          wpno: self.wpno,
+                          uid: user.user.uid,
+                          sameNos: self.phoneNos,
+                          referred: false,
+                          referralcode: newCode
+                        })
+                        .catch(function(error) {
+                          alert(error.message);
+                        });
+                    }
                     firebase
                       .firestore()
                       .collection("users")
@@ -270,7 +304,6 @@ new Vue({
       if (!result) {
         return;
       }
-      console.log(result);
       firebase
         .firestore()
         .collection("users")
@@ -278,7 +311,6 @@ new Vue({
         .get()
         .then(
           function(querySnapshot) {
-            console.log(querySnapshot);
             if (querySnapshot.size > 0) {
               alert(
                 "Username already exists. Please try with another username."
