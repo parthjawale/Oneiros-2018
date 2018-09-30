@@ -36,6 +36,12 @@ body {
   background: rgb(255, 255, 255);
 }
 
+@media screen and (max-width: 768px) {
+  #app {
+    width: 90%;
+  }
+}
+
 #app-wrapper {
   width: 90%;
   margin: 0 auto;
