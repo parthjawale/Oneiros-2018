@@ -314,7 +314,7 @@ a:link, a:visited {
   flex-direction: column;
   padding: 0 5rem; }
   .nav-container__whiteoverlay ul li a {
-    font-size: 4rem;
+    font-size: 5rem;
     font-family: "Gotham-Bold";
     color: #222;
     transition: 0.5s all;
@@ -667,10 +667,13 @@ a:link, a:visited {
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat; }
+    @media screen and (max-width: 800px) {
+      .login--form-wrapper {
+        background: none; } }
   .login--form .input-group label {
     margin-top: 1.5rem;
     font-family: "Gotham", sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     display: block;
     padding-bottom: 1rem; }
   .login--form .input-group .line {
@@ -684,7 +687,7 @@ a:link, a:visited {
     width: 100%; }
   .login--form .input-group input {
     border: none;
-    font-size: 2.5rem;
+    font-size: 3rem;
     height: 3rem;
     font-family: "Gotham-Light", sans-serif;
     color: black;
