@@ -413,7 +413,9 @@ new Vue({
           }
         ]
       }
-    ]
+    ],
+    userarr:[],
+    eventarr:[],
   },
 
   computed: {
@@ -482,6 +484,44 @@ new Vue({
           this.error = true;
         }
       }
+    },
+    submit() {
+      console.log("method chala")
+      var self=this
+      var userdb=firebase.firestore().collection('users')
+      var eventdb=firebase.firestore().collection('events')
+      console.log(self.eventName)
+      eventdb.doc(self.eventName.name)
+      .get()
+      .then(function (doc) {
+          if (doc.exists) {
+              if (doc.data().users != undefined || doc.data().users != null)
+                  self.userarr = doc.data().users
+              if (!self.userarr.includes("JGPUrYgmhFRoFjV7hSblfb4zxHG2")) {
+                self.userarr.push("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
+              }
+              eventdb.doc(self.eventName.name).update({
+                  users:self.userarr
+              })
+              userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
+              .get()
+              .then(function (doc) {
+                  if (doc.data().events != undefined || doc.data().events != null)
+                      self.eventarr = doc.data().events
+                  if (!self.eventarr.includes(self.eventName.name))
+                      self.eventarr.push(self.eventName.name)
+                  userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2").update({
+                      events: self.eventarr
+                  })
+                  .then(function () {
+                      alert('HO GAYA')
+                  })
+              })
+          }
+      }, function (error) {
+        alert(error.message)
+      })
     }
-  }
+  },
+  
 });
