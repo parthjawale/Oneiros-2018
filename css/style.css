@@ -314,7 +314,7 @@ a:link, a:visited {
   flex-direction: column;
   padding: 0 5rem; }
   .nav-container__whiteoverlay ul li a {
-    font-size: 5rem;
+    font-size: 4rem;
     font-family: "Gotham-Bold";
     color: #222;
     transition: 0.5s all;
