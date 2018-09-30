@@ -725,7 +725,7 @@ a:link, a:visited {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .5s all; }
+    transition: 0.5s all; }
     .register-container__white-section:hover .register-container__overlay, .register-container__black-section:hover .register-container__overlay {
       transform: scale(1.1); }
     .register-container__white-section--underlay, .register-container__black-section--underlay {
@@ -741,7 +741,7 @@ a:link, a:visited {
       font-family: "Gotham-Black";
       text-transform: uppercase;
       transform-origin: center;
-      transition: opacity .5s linear .5s, transform .4s;
+      transition: opacity 0.5s linear 0.5s, transform 0.4s;
       position: absolute;
       width: 100%;
       text-align: center;
@@ -763,13 +763,17 @@ a:link, a:visited {
   white-space: nowrap; }
 
 .section--compress {
-  flex: .2; }
+  flex: 0.2; }
 
 .section--expand {
-  flex: .8; }
+  flex: 0.8; }
 
 .fadeOut {
   opacity: 0; }
+
+input,
+textarea {
+  line-height: 1.6 !important; }
 
 @media screen and (max-width: 800px) {
   #mob-reg {
@@ -866,13 +870,10 @@ a:link, a:visited {
   color: #fff; }
 
 #campusambassador {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(0.8rem); }
+  transform: translateY(1rem); }
   @media screen and (max-width: 800px) {
     #campusambassador {
-      transform: translateY(1.5rem); } }
+      transform: translateY(0); } }
   #campusambassador label {
     color: #fff;
     position: relative;
@@ -880,31 +881,37 @@ a:link, a:visited {
     font-size: 2rem;
     opacity: 1;
     flex: 0.9; }
-  #campusambassador input {
-    flex: 0.1;
-    width: inherit;
-    transform: translateY(-10px); }
 
 #default-radio {
-  opacity: 0; }
+  display: none; }
+  #default-radio:checked + label #custom-radio::after {
+    opacity: 1; }
 
 #custom-radio {
   width: 25px;
+  z-index: 1;
   height: 25px;
   border-radius: 100%;
   border: 5px solid #e50914;
-  transform: translate(-5rem, -1rem); }
+  display: inline-block;
+  transform: translate(3rem, 0.9rem); }
+  #custom-radio::after {
+    content: "";
+    opacity: 0;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    background: #e50914;
+    border-radius: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
 
-.radio--active::after {
-  content: "";
-  position: absolute;
-  width: 60%;
-  height: 60%;
-  background: #e50914;
-  border-radius: 100%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); }
+.register-error {
+  font-size: 2rem;
+  font-family: "Gotham-Bold";
+  text-align: center;
+  color: #c10812; }
 
 .events-splash {
   background: url("/img/events/splash.mp4");
