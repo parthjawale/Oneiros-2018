@@ -178,3 +178,10 @@
     transform: translate(-50%, -50%);
   }
 }
+
+.register-error {
+  font-size: 2rem;
+  font-family: "Gotham-Bold";
+  text-align: center;
+  color: $color-secondary;
+}
