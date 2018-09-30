@@ -348,139 +348,85 @@ new Vue({
       return true;
     },
     registerManipal() {
-      var body = {
-        email: this.email,
-        message: this.message,
-        name: this.name
-      };
-
-      fetch("/mail/checkMail.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-      })
-        .then(res => {
-          return res.json();
-        })
-        .then(response => {
-          if (response.code === 200) {
-            self.mujerror = "We'll get back to you!";
-          } else if (response.code === 405) {
-            self.mujerror = "Fields cant be empty!";
-          } else if (response.code === 406) {
-            self.mujerror = "Invalid E-Mail";
+      var result = this.validateManipal();
+      var self = this;
+      if (!result) {
+        return;
+      }
+      firebase
+        .firestore()
+        .collection("users")
+        .where("username", "==", self.username)
+        .get()
+        .then(
+          function(querySnapshot) {
+            if (querySnapshot.size > 0) {
+              alert(
+                "Username already exists. Please try with another username."
+              );
+            } else {
+              firebase
+                .auth()
+                .createUserWithEmailAndPassword(self.email, self.password)
+                .then(
+                  function(user) {
+                    firebase
+                      .firestore()
+                      .collection("users")
+                      .doc(user.user.uid)
+                      .set({
+                        name: self.name,
+                        regno: self.regno,
+                        username: self.username,
+                        email: self.email,
+                        isManipal: true,
+                        pno: self.pno,
+                        wpno: self.wpno,
+                        sameNos: self.phoneNos
+                      })
+                      .then(
+                        function() {
+                          body = {
+                            email: self.email,
+                            message: self.message,
+                            name: self.name
+                          };
+                          fetch("/mail/checkMail.php", {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(body)
+                          })
+                            .then(res => {
+                              return res.json();
+                            })
+                            .then(response => {
+                              if (response.code === 200) {
+                                self.mujerror = "We'll get back to you!";
+                              } else if (response.code === 405) {
+                                self.mujerror = "Fields cant be empty!";
+                              } else if (response.code === 406) {
+                                self.mujerror = "Invalid E-Mail";
+                              }
+                            });
+                          self.mujerror = "Successful";
+                        },
+                        function(error) {
+                          self.mujerror = error.message;
+                        }
+                      );
+                  },
+                  function(error) {
+                    self.mujerror = error.message;
+                  }
+                );
+            }
+          },
+          function(error) {
+            console.log(error);
           }
-        });
-
-      // var result = this.validateManipal();
-      // var self = this;
-      // if (!result) {
-      //   return;
-      // }
-      // firebase
-      //   .firestore()
-      //   .collection("users")
-      //   .where("username", "==", self.username)
-      //   .get()
-      //   .then(
-      //     function(querySnapshot) {
-      //       if (querySnapshot.size > 0) {
-      //         alert(
-      //           "Username already exists. Please try with another username."
-      //         );
-      //       } else {
-      //         firebase
-      //           .auth()
-      //           .createUserWithEmailAndPassword(self.email, self.password)
-      //           .then(
-      //             function(user) {
-      //               firebase
-      //                 .firestore()
-      //                 .collection("users")
-      //                 .doc(user.user.uid)
-      //                 .set({
-      //                   name: self.name,
-      //                   regno: self.regno,
-      //                   username: self.username,
-      //                   email: self.email,
-      //                   isManipal: true,
-      //                   pno: self.pno,
-      //                   wpno: self.wpno,
-      //                   sameNos: self.phoneNos
-      //                 })
-      //                 .then(
-      //                   function() {
-      //                     body = {
-      //                       email: self.email,
-      //                       message: self.message,
-      //                       name: self.name
-      //                     };
-      //                     fetch("/mail/checkMail.php", {
-      //                       method: "POST",
-      //                       headers: {
-      //                         "Content-Type": "application/json"
-      //                       },
-      //                       body: JSON.stringify(body)
-      //                     })
-      //                       .then(res => {
-      //                         return res.json();
-      //                       })
-      //                       .then(response => {
-      //                         if (response.code === 200) {
-      //                           self.mujerror = "We'll get back to you!";
-      //                         } else if (response.code === 405) {
-      //                           self.mujerror = "Fields cant be empty!";
-      //                         } else if (response.code === 406) {
-      //                           self.mujerror = "Invalid E-Mail";
-      //                         }
-      //                       });
-      //                     self.mujerror = "Successful";
-      //                   },
-      //                   function(error) {
-      //                     self.mujerror = error.message;
-      //                   }
-      //                 );
-      //             },
-      //             function(error) {
-      //               self.mujerror = error.message;
-      //             }
-      //           );
-      //       }
-      //     },
-      //     function(error) {
-      //       console.log(error);
-      //     }
-      //   );
+        );
     }
-  },
-  created() {
-    var body = {
-      email: "akashaaron1998@gmail.com",
-      message: "YOYO",
-      name: "Aaron"
-    };
-
-    fetch("/mail/checkMail.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-    })
-      .then(res => {
-        return res.json();
-      })
-      .then(response => {
-        console.log(response);
-        if (response.code === 200) {
-          self.mujerror = "We'll get back to you!";
-        } else if (response.code === 405) {
-          self.mujerror = "Fields cant be empty!";
-        } else if (response.code === 406) {
-          self.mujerror = "Invalid E-Mail";
-        }
-      });
   }
 });
