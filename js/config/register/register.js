@@ -12,7 +12,7 @@ new Vue({
     isManipal: false,
     pno: "",
     wpno: "",
-    campamb: false,
+    campamb: "",
     response: 0,
     phoneNos: false
   },
@@ -96,6 +96,52 @@ new Vue({
                           )
                           .then(
                             function(user) {
+                              // if (self.campamb) {
+                              //   firebase.firestore
+                              //     .collection("campus_ambassadors")
+                              //     .doc(user.user.uid)
+                              //     .set({
+                              //       name: self.name,
+                              //       college: self.college,
+                              //       username: self.username,
+                              //       email: self.email,
+                              //       pno: self.pno,
+                              //       wpno: self.wpno,
+                              //       uid: user.user.uid,
+                              //       sameNos: self.phoneNos,
+                              //       referred: true
+                              //     })
+                              //     .catch(function(error) {
+                              //       alert(error.message);
+                              //     });
+                              // }
+                              if (
+                                doc.data().users != undefined &&
+                                doc.data().users != null
+                              ) {
+                                console.log("In 1st if block");
+                                var usersArr = doc.data().users;
+                                if (!usersArr.includes(user.user.uid))
+                                  usersArr.push(user.user.uid);
+                                firebase
+                                  .firestore()
+                                  .collection("campus_ambassadors")
+                                  .doc(doc.id)
+                                  .update({
+                                    users: usersArr
+                                  });
+                              } else {
+                                console.log("In else block");
+                                var usersArr = [];
+                                usersArr.push(user.user.uid);
+                                firebase
+                                  .firestore()
+                                  .collection("campus_ambassadors")
+                                  .doc(doc.id)
+                                  .update({
+                                    users: usersArr
+                                  });
+                              }
                               firebase
                                 .firestore()
                                 .collection("users")
