@@ -1,5 +1,10 @@
 @import "./layout";
 
+input,
+textarea {
+  line-height: 1.6 !important;
+}
+
 #mob-reg {
   @media screen and (max-width: 800px) {
     margin-top: 10rem;
@@ -177,4 +182,11 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
+}
+
+.register-error {
+  font-size: 2rem;
+  font-family: "Gotham-Bold";
+  text-align: center;
+  color: $color-secondary;
 }
