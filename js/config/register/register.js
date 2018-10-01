@@ -214,7 +214,7 @@ new Vue({
                                     } else if (response.code === 406) {
                                       self.mujerror = "Invalid E-Mail";
                                     }
-                                    window.location = "/eventregistrations";
+                                    // window.location = "/eventregistrations";
                                   });
                               },
                               function(error) {
@@ -302,7 +302,7 @@ new Vue({
                                 } else if (response.code === 406) {
                                   self.mujerror = "Invalid E-Mail";
                                 }
-                                window.location = "/eventregistrations";
+                                // window.location = "/eventregistrations";
                               });
                           },
                           function(error) {
@@ -432,7 +432,6 @@ new Vue({
                               alert(
                                 "Successfully Registered. Click ok to proceed."
                               );
-                              window.location = "/eventregistrations";
                             });
                         },
                         function(error) {
@@ -445,6 +444,7 @@ new Vue({
                   }
                 );
             }
+            window.location = "/eventregistrations";
             self.disabled = false;
             // self.clear();
           },
@@ -471,5 +471,13 @@ new Vue({
       this.mujerror = "";
       this.othererror = "";
     }
+  },
+  created() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        alert("You're already logged in.");
+        window.location = "/eventregistrations";
+      }
+    });
   }
 });

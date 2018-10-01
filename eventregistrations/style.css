@@ -3,7 +3,6 @@
 html {
   font-size: 62.5%;
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -44,6 +43,7 @@ body {
 
 #app-wrapper {
   width: 90%;
+  margin-top: 4rem;
   margin: 0 auto;
 }
 
@@ -55,7 +55,7 @@ body {
   overflow: hidden;
 }
 
-header {
+header.Reg {
   font-size: 4.5rem;
   font-weight: 800;
   color: #d14c53;
@@ -384,5 +384,12 @@ p img {
   .btn.btn--blue {
     text-align: center;
     font-size: 2.5rem;
+  }
+
+  .logout-btn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

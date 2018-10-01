@@ -2,7 +2,8 @@ new Vue({
   el: "#login",
   data: {
     username: "",
-    password: ""
+    password: "",
+    userexists: false
   },
   methods: {
     getArray(array) {
@@ -36,6 +37,7 @@ new Vue({
                 .signInWithEmailAndPassword(email, self.password)
                 .then(
                   function(user) {
+                    alert("You're already logged in.");
                     window.location = "/eventregistrations";
                   },
                   function(error) {
@@ -49,5 +51,14 @@ new Vue({
           );
       }
     }
+  },
+  created() {
+    var self = this;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        window.location = "/eventregistrations";
+        self.userexists = true;
+      }
+    });
   }
 });

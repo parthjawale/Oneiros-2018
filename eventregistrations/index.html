@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header class="head">
+    <header>
         <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
         <div class="nav">
             <ul>
@@ -41,6 +41,12 @@
                         <a href="/" class="custom-link">Home</a>
                     </li>
                     <li>
+                        <a href="/login" class="custom-link">Login</a>
+                    </li>
+                    <li>
+                        <a href="/register" class="custom-link">Register</a>
+                    </li>
+                    <li>
                         <a href="/events" class="custom-link">Events</a>
                     </li>
                     <li>
@@ -59,116 +65,119 @@
             </div>
         </div>
     </header>
-    <div class="container" id="app">
-        <div id="app-wrapper">
-
-            <header class=" Reg">Event Registration Page</header>
-
-            <!-- 
+    <div>
+        <div class="container" id="app">
+            <div class="logout-btn">
+                <button class="btn btn--blue" @click="logout">Logout</button>
+            </div>
+            <div id="app-wrapper">
+                <header class="Reg">Event Registration Page</header>
+                <!-- 
             <h2 class="details-participants">Full Name</h2>
             <input type="text" name="name" v-model="name" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"> -->
 
-            <select class="Drop-Down" v-model="selectedClub" @change="changeclub">
-                <option value="">Select Club</option>
-                <option :value="club" v-for="club in clubs">{{club.desc}} - {{club.name}}</option>
-            </select>
-            <span class="underline"></span>
+                <select class="Drop-Down" v-model="selectedClub" @change="changeclub">
+                    <option value="">Select Club</option>
+                    <option :value="club" v-for="club in clubs">{{club.desc}} - {{club.name}}</option>
+                </select>
+                <span class="underline"></span>
 
-            <select class="Drop-Down" v-model="eventName" @change="changevent">
-                <option value="">Select Event</option>
-                <option :value="event" v-for="event in selectedClub.events">{{event.name}}</option>
-            </select>
-            <span class="underline"></span>
+                <select class="Drop-Down" v-model="eventName" @change="changevent">
+                    <option value="">Select Event</option>
+                    <option :value="event" v-for="event in selectedClub.events">{{event.name}}</option>
+                </select>
+                <span class="underline"></span>
 
 
-            <transition name="fade">
+                <transition name="fade">
 
-                <div class="imp" v-if="eventName && !getParticipants">
-                    <i class="fas fa-info-circle"></i>
-                    <p class="imp-content">
+                    <div class="imp" v-if="eventName && !getParticipants">
+                        <i class="fas fa-info-circle"></i>
+                        <p class="imp-content">
 
-                        <span style="display: block; font-size: 2.5rem;
+                            <span style="display: block; font-size: 2.5rem;
                         font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
-                            Event Info
-                        </span>
+                                Event Info
+                            </span>
 
-                        This is a {{ eventName.type }} event.
-                    </p>
-                </div>
-            </transition>
+                            This is a {{ eventName.type }} event.
+                        </p>
+                    </div>
+                </transition>
 
-            <transition name="fade">
+                <transition name="fade">
 
-                <div class="imp" v-if="eventName && getParticipants">
-                    <i class="fas fa-info-circle"></i>
-                    <p class="imp-content">
+                    <div class="imp" v-if="eventName && getParticipants">
+                        <i class="fas fa-info-circle"></i>
+                        <p class="imp-content">
 
-                        <span style="display: block; font-size: 2.5rem;
+                            <span style="display: block; font-size: 2.5rem;
                 font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
-                            Event rules
+                                Event rules
+                            </span>
+
+                            Min. and Max. no. of Participants: {{ eventName.min}} and {{ eventName.max }}
+                        </p>
+                    </div>
+                </transition>
+
+                <h2 class="details-participants" v-if="getParticipants">Enter the number of participants</h2>
+                <input type="number" name="Participants" v-model="value" class="Part" placeholder="No. of Participants"
+                    v-if="getParticipants">
+
+                <transition name="fade" mode="out-in">
+                    <div class="imp" v-if="error" key="error">
+                        <i class="fas fa-info-circle"></i>
+                        <p class="imp-content">
+                            Please follow the rules and fill all the fields.
+                        </p>
+                    </div>
+
+                    <div v-if="!error && eventName" class="amount" key="amount">
+                        <span class="amount--header">Amount to be Paid : </span>
+                        <span class="amount--body">
+                            {{!error ? amount : 'NA'}}
                         </span>
+                    </div>
 
-                        Min. and Max. no. of Participants: {{ eventName.min}} and {{ eventName.max }}
-                    </p>
-                </div>
-            </transition>
+                </transition>
 
-            <h2 class="details-participants" v-if="getParticipants">Enter the number of participants</h2>
-            <input type="number" name="Participants" v-model="value" class="Part" placeholder="No. of Participants"
-                v-if="getParticipants">
+                <div class="contain">
+                    <label class="btn btn--blue" for="modal-2" v-if="eventName && !error">Continue</label>
+                    <input class="modal-state" id="modal-2" type="checkbox" />
+                    <div class="modal">
+                        <div class="modal__bg"></div>
+                        <div class="modal__inner">
+                            <label class="modal__close" for="modal-2"></label>
+                            <h2 class="details--header">Registration Details</h2>
 
-            <transition name="fade" mode="out-in">
-                <div class="imp" v-if="error" key="error">
-                    <i class="fas fa-info-circle"></i>
-                    <p class="imp-content">
-                        Please follow the rules and fill all the fields.
-                    </p>
-                </div>
-
-                <div v-if="!error && eventName" class="amount" key="amount">
-                    <span class="amount--header">Amount to be Paid : </span>
-                    <span class="amount--body">
-                        {{!error ? amount : 'NA'}}
-                    </span>
-                </div>
-
-            </transition>
-
-            <div class="contain">
-                <label class="btn btn--blue" for="modal-2" v-if="eventName && !error">Continue</label>
-                <input class="modal-state" id="modal-2" type="checkbox" />
-                <div class="modal">
-                    <div class="modal__bg"></div>
-                    <div class="modal__inner">
-                        <label class="modal__close" for="modal-2"></label>
-                        <h2 class="details--header">Registration Details</h2>
-
-                        <!-- <h4 class="details--heading">Participant Name</h4>
+                            <!-- <h4 class="details--heading">Participant Name</h4>
                         <p class="details--entry">{{ name }}</p> -->
 
-                        <h4 class="details--heading">Club</h4>
-                        <p class="details--entry">{{ selectedClub.name }}</p>
-                        <hr class="details--divider">
-                        <h4 class="details--heading">Event</h4>
-                        <p class="details--entry">{{ eventName.name }}</p>
-                        <hr class="details--divider">
-                        <h4 class="details--heading">No. of Participants:</h4>
-                        <p class="details--entry">
-                            {{value}}
-                        </p>
-                        <hr class="details--divider">
-                        <h4 class="details--heading">Total Amount:</h4>
-                        <p class="details--entry">
-                            {{amount}}
-                        </p>
+                            <h4 class="details--heading">Club</h4>
+                            <p class="details--entry">{{ selectedClub.name }}</p>
+                            <hr class="details--divider">
+                            <h4 class="details--heading">Event</h4>
+                            <p class="details--entry">{{ eventName.name }}</p>
+                            <hr class="details--divider">
+                            <h4 class="details--heading">No. of Participants:</h4>
+                            <p class="details--entry">
+                                {{value}}
+                            </p>
+                            <hr class="details--divider">
+                            <h4 class="details--heading">Total Amount:</h4>
+                            <p class="details--entry">
+                                {{amount}}
+                            </p>
 
-                        <div style="text-align: center; margin-bottom: 1.5rem;">
-                            <button class="btn btn--blue" @click="submit" :disabled="disabled">Register</button>
+                            <div style="text-align: center; margin-bottom: 1.5rem;">
+                                <button class="btn btn--blue" @click="submit" :disabled="disabled">Register</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
