@@ -41,7 +41,7 @@
   <!-- event list end -->
 
   <header>
-    <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+    <img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
     <div class="nav">
       <ul>
         <li>
@@ -67,10 +67,15 @@
             <a href="/" class="custom-link">Home</a>
           </li>
           <li>
-            <a href="/events" class="custom-link">Events</a>
+            <a href="/login" class="custom-link">Sign In</a>
           </li>
           <li>
-            <a href="/majorevents" class="custom-link">Major Events</a>
+            <a href="/register" class="custom-link">Sign Up</a>
+          </li>
+          <li>
+            <a href="/eventregistrations" class="custom-link">Registration</a>
+          <li>
+            <a href="/events" class="custom-link">Events</a>
           </li>
           <li>
             <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
@@ -78,6 +83,12 @@
           <li>
             <a href="/accomodation" class="custom-link">Accomodation</a>
           </li>
+          <li id="logout">
+            <a href="/" class="custom-link">Logout</a>
+          </li>
+          <!-- <li>
+              <a href="/contact">Contact Us</a>
+            </li> -->
         </ul>
       </div>
     </div>
@@ -109,7 +120,7 @@
         </h3>
         <!-- SOCIAL -->
       </div>
-      <!-- <div class="event-image event-image__bamboozled"></div>  -->
+      <!-- <div class="event-image event-image__bamboozled"></div> -->
     </section>
     <section class="section event-desc bg-grey-light">
       <div class="event-desc__info">
@@ -169,6 +180,11 @@
             only answer the questions using yes or no.
           </p>
         </div>
+      </div>
+    </section>
+    <section class="section event-rules bg-grey-light">
+      <h1 class="event-rules__header--prime">Rules</h1>
+      <div class="event-rules__container">
         <div class="event-rules__item">
           <h1 class="event-rules__header">Round 3</h1>
           <p class="event-rules__content">
@@ -279,6 +295,11 @@
             4. Top 5 entries get their writeups published in the college magazine.
           </p>
         </div>
+      </div>
+    </section>
+    <section class="section event-rules bg-grey-light">
+      <h1 class="event-rules__header--prime">Rules</h1>
+      <div class="event-rules__container">
         <div class="event-rules__item">
           <h1 class="event-rules__header">General Rules</h1>
           <p class="event-rules__content">
@@ -376,6 +397,12 @@
 
           </p>
         </div>
+      </div>
+    </section>
+    <section class="section event-rules bg-grey-light">
+      <h1 class="event-rules__header--prime">Rules</h1>
+      <div class="event-rules__container">
+
         <div class="event-rules__item">
           <h1 class="event-rules__header">Round 2</h1>
           <p class="event-rules__content">
@@ -542,20 +569,29 @@
         <div class="event-rules__item">
           <p class="event-rules__content">
 
-            a)<u>The classic Pictionary</u>:<br>
-            1. of 60 seconds<br>
+            a) <u>The classic Pictionary</u>:<br>
+            1. Of 60 seconds<br>
             2. 5 points for the correct answer<br>
             3. Difficulty level – medium<br><br>
 
-            b)<u>The taboo round</u>:<br> where in one word will be the taboo, and the person cannot draw that.<br>
+            b) <u>The taboo round</u>:<br> where in one word will be the taboo, and the person cannot draw that.<br>
 
             (Eg. A pokeball for Pikachu)<br>
 
             1. Of 90 seconds<br>
             2. 5 points for the correct answer<br>
             3. Difficulty level - hard<br><br>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section event-rules bg-grey-light">
+      <h1 class="event-rules__header--prime">Rules</h1>
+      <div class="event-rules__container">
 
-            c)<u>Emoji-nary</u>:<br> Players will have to guess the emojis displayed on the screen. The emojis will
+        <div class="event-rules__item">
+          <p class="event-rules__content">
+            c) <u>Emoji-nary</u>:<br> Players will have to guess the emojis displayed on the screen. The emojis will
             make the
             name of the movie title/character/object. Players will have to guess the maximum titles in 120
             seconds.<br>
@@ -568,7 +604,7 @@
             3.&nbsp; Teams will be filtered according to number of participants<br>
             4.&nbsp; The team with maximum scores win.&nbsp; <br>
             5.&nbsp; Verbal communication is not permitted<br>
-            6.&nbsp; Expected duration of event 2hours<br>
+            6.&nbsp; Expected duration of event 2 Hours<br>
           </p>
         </div>
 
@@ -724,7 +760,7 @@
             2.&#xb7; The qualifying teams face an array of rounds with 6 questions in each round. <br>
             3.&#xb7; The Quizmaster’s decision is final. <br>
             4.&#xb7; No phones are allowed during the quiz. <br>
-            Registration Fee: Rs.100 per participant(Maximum 2 in a team)
+            <!-- Registration Fee: Rs.100 per participant(Maximum 2 in a team) -->
           </p>
         </div>
 
@@ -794,7 +830,7 @@
             video, clarity of the plot.<br>
             3. The organising committee has the right to alter the rules, change or cancel the time, venue and
             event itself. Decision of the coordinators is final and binding.<br>
-            Registration fee: Rs. 150 per team
+            <!-- Registration fee: Rs. 150 per team -->
           </p>
         </div>
 
@@ -816,6 +852,8 @@
 
   </main>
 
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script src="/js/config/db.js"></script>
   <script src="/js/libs/jquery.js"></script>
   <script src="/js/libs/fullpage.js"></script>
   <script src="/js/events/clubs/litmus.js"></script>

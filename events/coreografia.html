@@ -38,7 +38,7 @@
 
 
   <header>
-    <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+    <img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
     <div class="nav">
       <ul>
         <li>
@@ -64,10 +64,15 @@
             <a href="/" class="custom-link">Home</a>
           </li>
           <li>
-            <a href="/events" class="custom-link">Events</a>
+            <a href="/login" class="custom-link">Sign In</a>
           </li>
           <li>
-            <a href="/majorevents" class="custom-link">Major Events</a>
+            <a href="/register" class="custom-link">Sign Up</a>
+          </li>
+          <li>
+            <a href="/eventregistrations" class="custom-link">Registration</a>
+          <li>
+            <a href="/events" class="custom-link">Events</a>
           </li>
           <li>
             <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
@@ -75,6 +80,12 @@
           <li>
             <a href="/accomodation" class="custom-link">Accomodation</a>
           </li>
+          <li id="logout">
+            <a href="/" class="custom-link">Logout</a>
+          </li>
+          <!-- <li>
+              <a href="/contact">Contact Us</a>
+            </li> -->
         </ul>
       </div>
     </div>
@@ -174,6 +185,16 @@
             Participants will be marked negative for exceeding the time limits.<br>
             5) No extra time will be allotted for dressing up or rehearsals. Come dressed up accordingly for your
             performances.<br>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section event-rules bg-grey-light">
+      <h1 class="event-rules__header--prime">Rules</h1>
+      <div class="event-rules__container">
+        <div class="event-rules__item">
+          <!-- <h1 class="event-rules__header">Round 1</h1> -->
+          <p class="event-rules__content" id="nextar__rules">
             6) Participants must get themselves registered in advance and report an hour prior to the event.<br>
             7) Registrations will close 2 hours prior to the event.<br>
             8) Participants must carry their college/institution IDs at all times.<br>
@@ -376,10 +397,10 @@
           <p class="event-rules__content">
             1) The event is an all style hip hop dance battle event<br>
             2) Team limit: 4-6 members per team. <br>
-            3) No participant should indulge in any kind of physical or verbal abuse <br>
-            (slogans on clothing, nicknames etc) at any instance (before, during or <br>
-            after event) thereby maintaining the decorum of the event. <br>
-            Any intentional physical contact will result in the competitor's crew forfeiting the battle. <br>
+            3) No participant should indulge in any kind of physical or verbal abuse
+            (slogans on clothing, nicknames etc) at any instance (before, during or
+            after event) thereby maintaining the decorum of the event.
+            Any intentional physical contact will result in the competitor's crew forfeiting the battle.
             In case of any sort of disturbance created by a participant, a warning will be given to the particular
             team, and further breaking of rules will lead to disqualification from the event. <br>
             4) Wearing a pair of shoes is mandatory for the participants. <br>
@@ -518,6 +539,8 @@
 
   </main>
 
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script src="/js/config/db.js"></script>
   <script src="/js/libs/jquery.js"></script>
   <script src="/js/libs/fullpage.js"></script>
   <script src="/js/events/clubs/coreografia.js"></script>
