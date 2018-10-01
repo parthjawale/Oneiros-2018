@@ -9,6 +9,7 @@ $(document).ready(() => {
       'nextar-desc',
       'nextar-info',
       'nextar-rules',
+      'nextar-rules',
       'nextar-registration',
       'showcase-desc',
       'showcase-info',
