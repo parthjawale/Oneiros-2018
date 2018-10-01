@@ -108,8 +108,7 @@
 
                 <div class="imp" v-if="eventName && getParticipants">
                     <i class="fas fa-info-circle"></i>
-                    <p class="imp-content" v-if="eventName.name != 'Ensemble'">
-
+                    <p class="imp-content" v-if="eventName.name != 'Ensemble' && eventName.name != 'Destival - Group Dance Competition'">
                         <span style="display: block; font-size: 2.5rem;
                 font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
                             Event rules
@@ -117,7 +116,16 @@
                         Min. No. of Participants: {{ eventName.min}} <br>
                         Max No. of Pariticipants: {{ eventName.max }}
                     </p>
-                    <p class="imp-content" v-else>
+                    <p class="imp-content" v-if="eventName.name == 'Destival - Group Dance Competition'">
+
+                        <span style="display: block; font-size: 2.5rem;
+                    font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                            Event rules
+                        </span>
+                        Min. No. of Participants: {{ eventName.min}} <br>
+                        Max No. of Pariticipants: {{ eventName.max }} (including helpers)
+                    </p>
+                    <p class="imp-content" v-if="eventName.name == 'Ensemble'">
 
                         <span style="display: block; font-size: 2.5rem;
                     font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
@@ -132,7 +140,7 @@
             <template v-if="destivalSelected">
                 <h2 class="details-participants">Team Name</h2>
                 <input type="text" v-model="destival.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;">
-                <h2 class="details-participants">Links</h2>
+                <h2 class="details-participants">Link to Preliminary Video Round </h2>
                 <input type="text" v-model="destival.links" class="Part" placeholder="Links" style="margin-bottom: 2.5rem;">
             </template>
 
