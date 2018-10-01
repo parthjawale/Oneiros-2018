@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="head">
         <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
         <div class="nav">
             <ul>
@@ -143,8 +143,8 @@
                         <label class="modal__close" for="modal-2"></label>
                         <h2 class="details--header">Registration Details</h2>
 
-                        <h4 class="details--heading">Participant Name</h4>
-                        <p class="details--entry">{{ name }}</p>
+                        <!-- <h4 class="details--heading">Participant Name</h4>
+                        <p class="details--entry">{{ name }}</p> -->
 
                         <h4 class="details--heading">Club</h4>
                         <p class="details--entry">{{ selectedClub.name }}</p>
@@ -163,7 +163,7 @@
                         </p>
 
                         <div style="text-align: center; margin-bottom: 1.5rem;">
-                            <button class="btn btn--blue" @click="submit">Register</button>
+                            <button class="btn btn--blue" @click="submit" :disabled="disabled">Register</button>
                         </div>
                     </div>
                 </div>

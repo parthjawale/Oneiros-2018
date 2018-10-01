@@ -7,46 +7,47 @@ new Vue({
     value: 0,
     user: null,
     error: false,
+    disabled: false,
     clubs: [
       {
-        name: "aperture",
-        desc: "Media Events",
+        name: "Aperture",
+        desc: "Photography Events",
         events: [
           {
-            name: "focus",
-            price: "free",
+            name: "FOCUS",
+            price: "Free",
             type: "solo"
           },
           {
-            name: "shutter up",
+            name: "Shutter Up",
             price: 200,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "instaperture",
+            name: "InstAperture",
             price: 100,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "show down of societies",
+            name: "Show Down Of Societies",
             price: 500,
             min: 3,
             max: 5,
             type: "fixed"
           },
           {
-            name: "picture perfect",
+            name: "Picture Perfect",
             price: 100,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "power shoot",
+            name: "Power Shoot",
             price: 100,
             min: 2,
             max: 2,
@@ -55,46 +56,46 @@ new Vue({
         ]
       },
       {
-        name: "the music club",
-        desc: "Music Related Events",
+        name: "The Music Club",
+        desc: "Music Events",
         events: [
           {
-            name: "octaves",
+            name: "Octaves",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "dhwani",
+            name: "Dhwani",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "beatstreet",
+            name: "BeatStreet",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "saptak",
+            name: "Saptak",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "ensemble",
+            name: "Ensemble",
             price: 800,
-            min: "6 Vocalists + 1 Accompanists",
-            max: "No limit",
+            min: 7,
+            max: 1000,
             type: "team"
           },
           {
-            name: "twice the voice",
+            name: "Twice The Voice",
             price: 250,
             min: 2,
             max: 2,
@@ -102,7 +103,7 @@ new Vue({
           },
           // { name: 'rapisody', price: 150 },
           {
-            name: "woodstock",
+            name: "Woodstock",
             price: 150,
             min: 1,
             max: 3,
@@ -111,39 +112,39 @@ new Vue({
         ]
       },
       {
-        name: "litmus",
+        name: "Litmus",
         desc: "English Literature Events",
         events: [
           {
-            name: "bamboozled",
+            name: "Bamboozled",
             price: 250,
             min: 2,
             max: 3,
             type: "fixed"
           },
           {
-            name: "ekphrasis",
+            name: "Ekphrasis",
             price: 100,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "just a minute",
+            name: "Just A Minute",
             price: 100,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "parliamentary debate",
+            name: "British Parliamentary Debate",
             price: 500,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "pictionary",
+            name: "Pictionary",
             price: 150,
             min: 2,
             max: 2,
@@ -151,7 +152,7 @@ new Vue({
           },
 
           {
-            name: "voice over",
+            name: "Voice Over",
             price: 150,
             min: 2,
             max: 2,
@@ -160,32 +161,32 @@ new Vue({
         ]
       },
       {
-        name: "coreografia",
+        name: "Coreofrafia",
         desc: "Dance Events",
         events: [
           {
-            name: "nextar(solo and duet)",
+            name: "NEXTARs",
             price: 200,
             min: 1,
             max: 2,
             type: "team"
           },
           {
-            name: "showcase",
+            name: "Showcase",
             price: 100,
             min: 1,
             max: 2,
             type: "team"
           },
           {
-            name: "ground zero",
+            name: "Ground Zero",
             price: 800,
             min: 4,
             max: 6,
             type: "team"
           },
           {
-            name: "steps vs beats",
+            name: "Steps Vs Beats",
             price: 100,
             min: 1,
             max: 1,
@@ -194,60 +195,60 @@ new Vue({
         ]
       },
       {
-        name: "cinefilia",
+        name: "Cinefilia",
         desc: "Dramatics Events",
         events: [
           {
-            name: "ad mark",
+            name: "AD Mak",
             price: 100,
             min: 3,
             max: 5,
             type: "team"
           },
           {
-            name: "awaaz",
+            name: "Awaaz",
             price: 100,
             min: 8,
             max: 20,
             type: "team"
           },
           {
-            name: "humor us",
+            name: "Humor Us",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "mission improvable",
+            name: "Mission Improvable",
             price: 100,
             min: 4,
             max: 5,
             type: "team"
           },
           {
-            name: "pandora's box",
+            name: "Pandora's Box",
             price: 250,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "rangmanch",
+            name: "Rangmanch",
             price: 100,
             min: 4,
             max: 15,
             type: "team"
           },
           {
-            name: "mono-act",
+            name: "Mono-Act",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "spoofy do",
+            name: "Spoofy Do",
             price: 150,
             min: 1,
             max: 1,
@@ -256,7 +257,7 @@ new Vue({
         ]
       },
       {
-        name: "scribbles",
+        name: "Scribbles",
         desc: "Art & Craft Events",
         events: [
           {
@@ -267,7 +268,7 @@ new Vue({
             type: "solo"
           },
           {
-            name: "Trippy Tales",
+            name: "Trippy Tiles",
             price: 200,
             min: 1,
             max: 2,
@@ -281,7 +282,7 @@ new Vue({
             type: "team"
           },
           {
-            name: "Junk-o-mania",
+            name: "Junk-O-Mania",
             price: 150,
             min: 1,
             max: 2,
@@ -294,13 +295,13 @@ new Vue({
         ]
       },
       {
-        name: "shabd",
+        name: "Shabd",
         desc: "Hindi Literature Events",
         events: [
           // { name: 'Poetry Event', price: 50 },
           // { name: 'Quiz Event', price: 150 },
           {
-            name: "izhar",
+            name: "Izhar",
             price: 50,
             min: 1,
             max: 1,
@@ -309,19 +310,19 @@ new Vue({
         ]
       },
       {
-        name: "qureka",
+        name: "Qureka",
         desc: "Quizzing Events",
         events: [
           // { name: 'Pop Culture/Fantasy Quiz', price: 100 },
           {
-            name: "BizTech Quiz",
+            name: "BizTech Quiz(Ignited Minds)",
             price: 100,
             min: 1,
             max: 2,
             type: "team"
           },
           {
-            name: "General Quiz",
+            name: "General Quiz(Sadharan)",
             price: 100,
             min: 1,
             max: 2,
@@ -330,7 +331,7 @@ new Vue({
         ]
       },
       {
-        name: "sophia",
+        name: "Sophia",
         desc: "Philosophy Events",
         events: [
           {
@@ -355,7 +356,7 @@ new Vue({
             type: "solo"
           },
           {
-            name: "debate",
+            name: "Debate",
             price: 200,
             min: 1,
             max: 1,
@@ -364,25 +365,25 @@ new Vue({
         ]
       },
       {
-        name: "collab events",
-        desc: "Two is better than One",
+        name: "Collab Events",
+        desc: "Two is better than one!",
         events: [
           {
-            name: "Pop-a-razzi",
+            name: "Pop-a-razzi(Litmus-Qureka)",
             price: 100,
             min: 1,
             max: 2,
             type: "team"
           },
           {
-            name: "chakravyuh(cinefilia-shabd)",
+            name: "Chakravyuh(Cinefilia-Shabd)",
             price: 150,
             min: 2,
             max: 5,
             type: "team"
           },
           {
-            name: "song-smith(tmc-litmus)",
+            name: "Song-Smith(TMC-Litmus)",
             price: 200,
             min: 2,
             max: 4,
@@ -396,35 +397,35 @@ new Vue({
           //   type: "solo"
           // }
         ]
-      },
-
-      {
-        name: "major events",
-        desc: "Wait for It",
-        events: [
-          {
-            name: "requiem- war of bands",
-            price: 1500,
-            min: 3,
-            max: 8,
-            type: "fixed"
-          },
-          {
-            name: "Destival - Group Dance Competetion",
-            price: 150,
-            min: 12,
-            max: 43,
-            type: "team"
-          },
-          {
-            name: "Fashion Show",
-            price: 200,
-            min: 12,
-            max: 22,
-            type: "team"
-          }
-        ]
       }
+
+      // {
+      //   name: "Major Events",
+      //   desc: "Wait for It!",
+      //   events: [
+      //     {
+      //       name: "Requiem - War Of Bands",
+      //       price: 1500,
+      //       min: 3,
+      //       max: 8,
+      //       type: "fixed"
+      //     },
+      //     {
+      //       name: "Destival - Group Dance Competetion",
+      //       price: 150,
+      //       min: 12,
+      //       max: 43,
+      //       type: "team"
+      //     },
+      //     {
+      //       name: "Kairos - Fashion Show",
+      //       price: 200,
+      //       min: 12,
+      //       max: 22,
+      //       type: "team"
+      //     }
+      //   ]
+      // }
     ],
     userarr: [],
     eventarr: [],
@@ -434,8 +435,8 @@ new Vue({
     var self = this;
     firebase.auth().onAuthStateChanged(
       function(user) {
-        console.log(user);
         self.user = user;
+        console.log(user);
       },
       function(error) {
         console.log(error);
@@ -513,11 +514,10 @@ new Vue({
       }
     },
     submit() {
-      console.log("method chala");
       var self = this;
+      self.disabled = true;
       var userdb = firebase.firestore().collection("users");
       var eventdb = firebase.firestore().collection("events");
-      console.log(self.eventName);
       eventdb
         .doc(self.eventName.name)
         .get()
@@ -549,51 +549,67 @@ new Vue({
                       events: self.eventarr
                     })
                     .then(function() {
-                      alert("HO GAYA");
-                    });
-
-                  userdb
-                    .doc(self.user.uid)
-                    .get()
-                    .then(function(doc) {
-                      if (doc.exists) {
-                        (self.email = doc.data().email),
-                          (self.name = doc.data().name);
-                        body = {
-                          email: self.email,
-                          message:
-                            "Thank you for registering for " +
-                            self.jsUcfirst(self.eventName.name),
-                          name: self.name
-                        };
-                        fetch("/mail/checkMail.php", {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json"
-                          },
-                          body: JSON.stringify(body)
-                        })
-                          .then(res => {
-                            return res.json();
-                          })
-                          .then(response => {
-                            if (response.code === 200) {
-                              self.mujerror = "We'll get back to you!";
-                            } else if (response.code === 405) {
-                              self.mujerror = "Fields cant be empty!";
-                            } else if (response.code === 406) {
-                              self.mujerror = "Invalid E-Mail";
-                            }
-                          });
-                      }
+                      alert(
+                        "Thank you for registering for " +
+                          self.eventName.name +
+                          ". Your unique code is: " +
+                          doc.data().ucode +
+                          ". Please refer to the mail for further instructions."
+                      );
+                      userdb
+                        .doc(self.user.uid)
+                        .get()
+                        .then(function(doc) {
+                          if (doc.exists) {
+                            (self.email = doc.data().email),
+                              (self.name = doc.data().name);
+                            body = {
+                              email: self.email,
+                              message:
+                                "Thank you for registering for " +
+                                self.eventName.name +
+                                ". <br>Your unique code is " +
+                                doc.data().ucode +
+                                ".<br>Payment instructions will be sent soon.",
+                              name: self.name
+                            };
+                            fetch("/mail/checkMail.php", {
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json"
+                              },
+                              body: JSON.stringify(body)
+                            })
+                              .then(res => {
+                                return res.json();
+                              })
+                              .then(response => {
+                                if (response.code === 200) {
+                                  self.mujerror = "We'll get back to you!";
+                                } else if (response.code === 405) {
+                                  self.mujerror = "Fields cant be empty!";
+                                } else if (response.code === 406) {
+                                  self.mujerror = "Invalid E-Mail";
+                                }
+                                // self.clear();
+                                self.disabled = false;
+                              });
+                          }
+                        });
                     });
                 });
             }
           },
           function(error) {
             alert(error.message);
+            self.disabled = false;
           }
         );
+    },
+    clear() {
+      self.selectedClub = "";
+      self.eventName = "";
+      self.disable = false;
     }
   }
 });
