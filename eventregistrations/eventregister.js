@@ -161,11 +161,11 @@ new Vue({
         ]
       },
       {
-        name: "Coreofrafia",
+        name: "Coreografia",
         desc: "Dance Events",
         events: [
           {
-            name: "NEXTARs",
+            name: "NEXTAR",
             price: 200,
             min: 1,
             max: 2,
@@ -213,7 +213,7 @@ new Vue({
             type: "team"
           },
           {
-            name: "Humor Us",
+            name: "Humor-Us",
             price: 150,
             min: 1,
             max: 1,
@@ -369,7 +369,7 @@ new Vue({
         desc: "Two is better than one!",
         events: [
           {
-            name: "Pop-a-razzi(Litmus-Qureka)",
+            name: "Pop-A-Razzi(Litmus-Qureka)",
             price: 100,
             min: 1,
             max: 2,
@@ -452,10 +452,10 @@ new Vue({
     amount: function() {
       if (!this.error) {
         if (this.eventName) {
-          if (this.eventName.name == "ensemble") {
-            if (this.value <= 10) {
+          if (this.eventName.name == "Ensemble") {
+            if (this.value >= 7 && this.value <= 10) {
               return this.eventName.price;
-            } else {
+            } else if (this.value > 10) {
               return this.eventName.price + (this.value - 10) * 100;
             }
           } else if (this.eventName.type == "team" && this.value != 0) {
@@ -495,7 +495,7 @@ new Vue({
     },
     changevent() {
       this.error = false;
-      this.value = this.eventName.name != "ensemble" ? this.eventName.min : 7;
+      this.value = this.eventName.name != "Ensemble" ? this.eventName.min : 7;
     },
     check() {
       const eventType = this.eventName.type;
@@ -506,10 +506,11 @@ new Vue({
       //     return this.error = true
       // }
 
-      if (this.eventName.name == "ensemble") {
+      if (this.eventName.name == "Ensemble") {
         return;
       }
-
+      if (eventType == "solo") this.value = 1;
+      if (eventType == "duet") this.value = 2;
       if (eventType == "team" || eventType == "fixed") {
         if (this.value >= min && this.value <= max) {
           this.error = false;
@@ -542,8 +543,18 @@ new Vue({
             if (doc.exists) {
               if (doc.data().users != undefined || doc.data().users != null)
                 self.userarr = doc.data().users;
-              if (!self.userarr.includes(self.user.uid)) {
-                self.userarr.push(self.user.uid);
+              // if (!self.userarr.includes(self.user.uid)) {
+              //   self.userarr.push(self.user.uid);
+              // }
+              var obj = {
+                user: self.user.uid,
+                value: self.value
+              };
+              var found = self.userarr.some(function(el) {
+                return el.user === self.user.uid;
+              });
+              if (!found) {
+                self.userarr.push(obj);
               }
               eventdb.doc(self.eventName.name).update({
                 users: self.userarr

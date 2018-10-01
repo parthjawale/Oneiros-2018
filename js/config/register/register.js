@@ -389,6 +389,20 @@ new Vue({
                 .createUserWithEmailAndPassword(self.email, self.password)
                 .then(
                   function(user) {
+                    // firebase
+                    //   .auth()
+                    //   .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+                    //   .then(function() {
+                    //     return firebase
+                    //       .auth()
+                    //       .signInWithEmailAndPassword(
+                    //         self.email,
+                    //         self.password
+                    //       );
+                    //   })
+                    //   .catch(function(error) {
+                    //     alert(error.message);
+                    //   });
                     firebase
                       .firestore()
                       .collection("users")
