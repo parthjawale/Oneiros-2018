@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+        <img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
         <div class="nav">
             <ul>
                 <li>
@@ -41,22 +41,24 @@
                         <a href="/" class="custom-link">Home</a>
                     </li>
                     <li>
-                        <a href="/login" class="custom-link">Login</a>
+                        <a href="/login" class="custom-link">Sign In</a>
                     </li>
                     <li>
-                        <a href="/register" class="custom-link">Register</a>
+                        <a href="/register" class="custom-link">Sign Up</a>
                     </li>
+                    <li>
+                        <a href="/eventregistrations" class="custom-link">Registration</a>
                     <li>
                         <a href="/events" class="custom-link">Events</a>
-                    </li>
-                    <li>
-                        <a href="/majorevents" class="custom-link">Major Events</a>
                     </li>
                     <li>
                         <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
                     </li>
                     <li>
                         <a href="/accomodation" class="custom-link">Accomodation</a>
+                    </li>
+                    <li id="logout">
+                        <a href="/" class="custom-link">Logout</a>
                     </li>
                     <!-- <li>
                         <a href="/contact">Contact Us</a>
@@ -104,14 +106,43 @@
 
             <transition name="fade">
 
+<<<<<<< HEAD
                 <div class="imp" v-if="eventName && getParticipants">
                     <i class="fas fa-info-circle"></i>
                     <p class="imp-content">
+=======
+                    <div class="imp" v-if="eventName && getParticipants">
+                        <i class="fas fa-info-circle"></i>
+                        <p class="imp-content" v-if="eventName.name != 'Ensemble'">
+>>>>>>> c6c8ca83dc4c2b0796d94bde805ef0c8b3ba44ae
 
                         <span style="display: block; font-size: 2.5rem;
                 font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+<<<<<<< HEAD
                             Event rules
                         </span>
+=======
+                                Event rules
+                            </span>
+                            Min. No. of Participants: {{ eventName.min}} <br>
+                            Max No. of Pariticipants: {{ eventName.max }}
+                        </p>
+                        <p class="imp-content" v-else>
+
+                            <span style="display: block; font-size: 2.5rem;
+                    font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                                Event rules
+                            </span>
+                            Min. No. of Participants: 6 Vocalists + 1 Accompanist <br>
+                            Max No. of Pariticipants: No Limit
+                        </p>
+                    </div>
+                </transition>
+
+                <h2 class="details-participants" v-if="getParticipants">Enter the number of participants</h2>
+                <input type="number" name="Participants" v-model="value" class="Part" placeholder="No. of Participants"
+                    v-if="getParticipants">
+>>>>>>> c6c8ca83dc4c2b0796d94bde805ef0c8b3ba44ae
 
                         Min. and Max. no. of Participants: {{ eventName.min}} and {{ eventName.max }}
                     </p>
