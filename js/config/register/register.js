@@ -187,11 +187,11 @@ new Vue({
                                   })
                                   .then(
                                     function() {
-                                      console.log("Successful");
+                                      this.othererror = "Successful";
                                       self.disabled = false;
                                     },
                                     function(error) {
-                                      console.log(error.message);
+                                      this.othererror = error.message;
                                       self.disabled = false;
                                     }
                                   );
@@ -219,7 +219,7 @@ new Vue({
                                     } else if (response.code === 406) {
                                       self.othererror = "Invalid E-Mail";
                                     }
-                                    // window.location = "/eventregistrations";
+                                    window.location = "/eventregistrations";
                                   });
                               },
                               function(error) {
@@ -311,17 +311,17 @@ new Vue({
                                 } else if (response.code === 406) {
                                   self.mujerror = "Invalid E-Mail";
                                 }
-                                // window.location = "/eventregistrations";
+                                // window.open = "/eventregistrations";
                               });
                             self.othererror = "Successfully Registered";
                             self.disabled = false;
                             self.clear();
                             setTimeout(() => {
-                              window.location("/eventregistrations");
+                              window.location.href = "/eventregistrations";
                             }, 1500);
                           },
                           function(error) {
-                            console.log(error.message);
+                            this.othererror = error.message;
                             self.disabled = false;
                           }
                         );
@@ -451,7 +451,7 @@ new Vue({
                           self.mujerror = "Successfully Registered!";
                           self.clear();
                           setTimeout(() => {
-                            window.location("/eventregistrations");
+                            window.location.href = "/eventregistrations";
                           }, 1500);
                         },
                         function(error) {
@@ -468,7 +468,7 @@ new Vue({
             }
           },
           function(error) {
-            console.log(error);
+            this.mujerror = error.message;
             self.disabled = false;
           }
         );
