@@ -89,6 +89,11 @@ textarea {
   textarea:active {
     outline: none; }
 
+a {
+  text-decoration: none; }
+  a:focus, a:active {
+    text-decoration: none; }
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
