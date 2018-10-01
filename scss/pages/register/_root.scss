@@ -12,7 +12,6 @@ textarea {
 }
 
 .register-container {
-  padding-bottom: 4rem;
   .modal {
     opacity: 0;
     visibility: hidden;
@@ -274,6 +273,7 @@ textarea {
 
 .register-error {
   font-size: 2rem;
+  padding-bottom: 4rem;
   font-family: "Gotham-Bold";
   text-align: center;
   color: $color-secondary;
