@@ -33,7 +33,7 @@ new Vue({
             type: "solo"
           },
           {
-            name: "Show Down Of Societies",
+            name: "Showdown Of Societies",
             price: 500,
             min: 3,
             max: 5,
@@ -435,8 +435,13 @@ new Vue({
     var self = this;
     firebase.auth().onAuthStateChanged(
       function(user) {
-        self.user = user;
-        console.log(user);
+        if (user) {
+          self.user = user;
+          console.log(user);
+        } else {
+          alert("Please register yourself first.");
+          window.location = "/register";
+        }
       },
       function(error) {
         console.log(error);
@@ -512,6 +517,17 @@ new Vue({
           this.error = true;
         }
       }
+    },
+    logout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(function() {
+          window.location = "/index.html";
+        })
+        .catch(function(error) {
+          alert(error.message);
+        });
     },
     submit() {
       var self = this;
