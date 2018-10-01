@@ -38,7 +38,7 @@
         transition: width 0.2s;
       }
 
-      input:focus+.line {
+      input:focus + .line {
         width: 100%;
       }
 
@@ -84,4 +84,12 @@
     height: 100vh;
     float: right;
   }
+}
+
+#login-error {
+  font-size: 2rem;
+  font-family: "Gotham-Bold";
+  position: absolute;
+  color: $color-primary;
+  margin-top: 5rem;
 }

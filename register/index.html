@@ -48,13 +48,13 @@
             <a href="/" class="custom-link">Home</a>
           </li>
           <li>
-            <a href="/login" class="custom-link">Login</a>
+            <a href="/login" class="custom-link">Sign In</a>
           </li>
           <li>
-            <a href="/register" class="custom-link">Register</a>
+            <a href="/register" class="custom-link">Sign Up</a>
           </li>
           <li>
-            <a href="/eventregistrations" class="custom-link">Register-Events</a>
+            <a href="/eventregistrations" class="custom-link">Registration</a>
           <li>
             <a href="/events" class="custom-link">Events</a>
           </li>
@@ -63,6 +63,9 @@
           </li>
           <li>
             <a href="/accomodation" class="custom-link">Accomodation</a>
+          </li>
+          <li id="logout">
+            <a href="/" class="custom-link">Logout</a>
           </li>
           <!-- <li>
             <a href="/contact">Contact Us</a>
@@ -105,7 +108,8 @@
             <section>
               <input type="number" name="whatsapp" v-model="wpno" placeholder="WhatsApp Number" required>
             </section>
-            <input type="submit" value="Submit" :disabled="disabled">
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit"
+              value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
             <p v-if="mujerror !== ''" id="mujregister-error" class="register-error">{{mujerror}}</p>
@@ -150,7 +154,8 @@
               <input id="default-radio" type="checkbox" v-model="campamb">
               <label for="default-radio">Do you wish to be a Campus Ambassador?<span id="custom-radio"></span></label>
             </section>
-            <input type="submit" value="Submit" :disabled="disabled">
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit"
+              value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
             <p v-if="othererror !== ''" id="otherregister-error" class="register-error">{{othererror}}</p>
