@@ -54,26 +54,26 @@ new Vue({
         this.wpno == ""
       ) {
         if (this.name == "") {
-          alert("Name empty");
+          self.othererror = "Name empty";
         } else if (this.college == "") {
-          alert("College empty");
+          self.othererror = "College empty";
         } else if (this.password == "") {
-          alert("Password empty");
+          self.othererror = "Password empty";
         } else if (this.repassword == "") {
-          alert("Password again empty");
+          self.othererror = "Password again empty";
         } else if (this.username == "") {
-          alert("Username empty");
+          self.othererror = "Username empty";
         } else if (this.email == "") {
-          alert("Email empty");
+          self.othererror = "Email empty";
         } else if (this.pno == "") {
-          alert("Phone Number empty");
+          self.othererror = "Phone Number empty";
         } else {
-          alert("Whatsapp Number empty");
+          self.othererror = "Whatsapp Number empty";
         }
         return false;
       }
       if (this.password != this.repassword) {
-        alert("Both passwords don't match.");
+        self.othererror = "Both passwords don't match.";
         return false;
       }
       return true;
@@ -84,6 +84,7 @@ new Vue({
       var uniqueCode = this.random_code();
       var self = this;
       if (!result) {
+        self.disabled = false;
         return;
       }
       firebase
@@ -94,9 +95,9 @@ new Vue({
         .then(
           function(querySnapshot) {
             if (querySnapshot.size > 0) {
-              alert(
-                "Username already exists. Please try with another username."
-              );
+              self.othererror =
+                "Username already exists. Please try with another username.";
+              self.disabled = false;
             } else {
               if (self.code != "") {
                 firebase
@@ -135,7 +136,8 @@ new Vue({
                                       referralcode: newCode
                                     })
                                     .catch(function(error) {
-                                      alert(error.message);
+                                      self.othererror = error.message;
+                                      self.disabled = false;
                                     });
                                 }
                                 if (
@@ -186,9 +188,11 @@ new Vue({
                                   .then(
                                     function() {
                                       console.log("Successful");
+                                      self.disabled = false;
                                     },
                                     function(error) {
                                       console.log(error.message);
+                                      self.disabled = false;
                                     }
                                   );
                                 body = {
@@ -208,26 +212,30 @@ new Vue({
                                   })
                                   .then(response => {
                                     if (response.code === 200) {
-                                      self.mujerror = "We'll get back to you!";
+                                      self.othererror =
+                                        "We'll get back to you!";
                                     } else if (response.code === 405) {
-                                      self.mujerror = "Fields cant be empty!";
+                                      self.othererror = "Fields cant be empty!";
                                     } else if (response.code === 406) {
-                                      self.mujerror = "Invalid E-Mail";
+                                      self.othererror = "Invalid E-Mail";
                                     }
                                     // window.location = "/eventregistrations";
                                   });
                               },
                               function(error) {
-                                self.mujerror = error.message;
+                                self.othererror = error.message;
+                                self.disabled = false;
                               }
                             );
                         });
                       } else {
-                        alert("Referral Code not valid.");
+                        self.othererror = "Referral Code not Valid";
+                        self.disabled = false;
                       }
                     },
                     function(error) {
-                      self.mujerror = error.message;
+                      self.othererror = error.message;
+                      self.disabled = false;
                       return;
                     }
                   );
@@ -261,7 +269,8 @@ new Vue({
                             referralcode: newCode
                           })
                           .catch(function(error) {
-                            self.mujerror = error.message;
+                            self.othererror = error.message;
+                            self.disabled = false;
                           });
                       }
                       firebase
@@ -304,22 +313,29 @@ new Vue({
                                 }
                                 // window.location = "/eventregistrations";
                               });
+                            self.othererror = "Successfully Registered";
+                            self.disabled = false;
+                            self.clear();
+                            setTimeout(() => {
+                              window.location("/eventregistrations");
+                            }, 1500);
                           },
                           function(error) {
                             console.log(error.message);
+                            self.disabled = false;
                           }
                         );
                     },
                     function(error) {
-                      alert(error.message);
+                      self.othererror = error.message;
+                      self.disabled = false;
                     }
                   );
               }
             }
-            self.disabled = false;
           },
           function(error) {
-            alert(error.message);
+            self.othererror = error.message;
             self.disabled = true;
           }
         );
@@ -341,26 +357,26 @@ new Vue({
         this.wpno == ""
       ) {
         if (this.name == "") {
-          alert("Name empty");
+          self.mujerror = "Name empty";
         } else if (this.regno == "") {
-          alert("Registration Number empty");
+          self.mujerror = "Registration Number empty";
         } else if (this.password == "") {
-          alert("Password empty");
+          self.mujerror = "Password empty";
         } else if (this.repassword == "") {
-          alert("Password again empty");
+          self.mujerror = "Password again empty";
         } else if (this.username == "") {
-          alert("Username empty");
+          self.mujerror = "Username empty";
         } else if (this.email == "") {
-          alert("Email empty");
+          self.mujerror = "Email empty";
         } else if (this.pno == "") {
-          alert("Phone Number empty");
+          self.mujerror = "Phone Number empty";
         } else {
-          alert("Whatsapp Number empty");
+          self.mujerror = "Whatsapp Number empty";
         }
         return false;
       }
       if (this.password != this.repassword) {
-        alert("Both passwords don't match.");
+        self.mujerror = "Both passwords don't match.";
         return false;
       }
       return true;
@@ -370,6 +386,7 @@ new Vue({
       var uniqueCode = this.random_code();
       var self = this;
       if (!result) {
+        self.disabled = false;
         return;
       }
       firebase
@@ -380,9 +397,8 @@ new Vue({
         .then(
           function(querySnapshot) {
             if (querySnapshot.size > 0) {
-              alert(
-                "Username already exists. Please try with another username."
-              );
+              self.mujerror =
+                "Username already exists. Please try with another username.";
             } else {
               firebase
                 .auth()
@@ -429,24 +445,27 @@ new Vue({
                               } else if (response.code === 406) {
                                 self.mujerror = "Invalid E-Mail";
                               }
-                              alert(
-                                "Successfully Registered. Click ok to proceed."
-                              );
+                              self.disabled = false;
                             });
+                          self.disabled = false;
+                          self.mujerror = "Successfully Registered!";
+                          self.clear();
+                          setTimeout(() => {
+                            window.location("/eventregistrations");
+                          }, 1500);
                         },
                         function(error) {
                           self.mujerror = error.message;
+                          self.disabled = false;
                         }
                       );
                   },
                   function(error) {
                     self.mujerror = error.message;
+                    self.disabled = false;
                   }
                 );
             }
-            window.location = "/eventregistrations";
-            self.disabled = false;
-            // self.clear();
           },
           function(error) {
             console.log(error);
@@ -464,20 +483,10 @@ new Vue({
       this.password = "";
       this.code = "";
       this.ucode = "";
-      self.username = "";
+      this.username = "";
       this.repassword = "";
       this.campamb = "";
       this.isManipal = false;
-      this.mujerror = "";
-      this.othererror = "";
     }
-  },
-  created() {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        alert("You're already logged in.");
-        window.location = "/eventregistrations";
-      }
-    });
   }
 });
