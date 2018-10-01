@@ -32,9 +32,6 @@
     .ono-btn--light:hover {
       background: #c10812; }
 
-.wordmark-dark {
-  filter: invert(1); }
-
 .mt-0 {
   margin-top: 0; }
 
@@ -714,6 +711,13 @@ a:link, a:visited {
   width: 50%;
   height: 100vh;
   float: right; }
+
+#login-error {
+  font-size: 2rem;
+  font-family: "Gotham-Bold";
+  position: absolute;
+  color: #e50914;
+  margin-top: 5rem; }
 
 #register-container {
   height: 100%; }

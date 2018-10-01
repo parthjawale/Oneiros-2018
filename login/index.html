@@ -47,14 +47,13 @@
             <a href="/" class="custom-link">Home</a>
           </li>
           <li>
-            <a href="/login" class="custom-link">Login</a>
+            <a href="/login" class="custom-link">Sign In</a>
           </li>
           <li>
-            <a href="/register" class="custom-link">Register</a>
+            <a href="/register" class="custom-link">Sign Up</a>
           </li>
           <li>
-            <a href="/eventregistrations" class="custom-link">Register-Events</a>
-          </li>
+            <a href="/eventregistrations" class="custom-link">Registration</a>
           <li>
             <a href="/events" class="custom-link">Events</a>
           </li>
@@ -63,6 +62,9 @@
           </li>
           <li>
             <a href="/accomodation" class="custom-link">Accomodation</a>
+          </li>
+          <li id="logout">
+            <a href="/" class="custom-link">Logout</a>
           </li>
           <!-- <li>
             <a href="/contact">Contact Us</a>
@@ -90,7 +92,9 @@
             <span class="line"></span>
           </div>
           <div class="input-group">
-            <button @click="login" class="mt-0 ono-btn ono-btn--small">Submit</button>
+            <button :disabled="disabled" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
+              @click="login" class="mt-0 ono-btn ono-btn--small">Submit</button>
+            <p v-if="error !== ''" id="login-error">{{error}}</p>
           </div>
         </div>
       </div>

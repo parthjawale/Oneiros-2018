@@ -3,7 +3,9 @@ new Vue({
   data: {
     username: "",
     password: "",
-    userexists: false
+    userexists: false,
+    disabled: false,
+    error: ""
   },
   methods: {
     getArray(array) {
@@ -21,6 +23,7 @@ new Vue({
     login() {
       if (this.username != "" && this.password != "") {
         var self = this;
+        self.disabled = true;
         var email;
         firebase
           .firestore()
@@ -37,28 +40,24 @@ new Vue({
                 .signInWithEmailAndPassword(email, self.password)
                 .then(
                   function(user) {
-                    alert("You're already logged in.");
-                    window.location = "/eventregistrations";
+                    self.error = "Login Successful!";
+                    self.disabled = false;
+                    setTimeout(() => {
+                      window.location = "/";
+                    }, 1500);
                   },
                   function(error) {
-                    alert(error.message);
+                    self.error = error.message;
+                    self.disabled = false;
                   }
                 );
             },
             function(error) {
-              alert(error.message);
+              self.error = error.message;
+              self.disabled = false;
             }
           );
       }
     }
-  },
-  created() {
-    var self = this;
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        window.location = "/eventregistrations";
-        self.userexists = true;
-      }
-    });
   }
 });
