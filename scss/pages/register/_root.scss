@@ -12,6 +12,7 @@ textarea {
 }
 
 .register-container {
+  padding-bottom: 4rem;
   .modal {
     opacity: 0;
     visibility: hidden;
@@ -120,7 +121,7 @@ textarea {
     }
 
     form {
-      margin: 5rem 0;
+      margin: 3rem 0;
       padding: 0 3rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
