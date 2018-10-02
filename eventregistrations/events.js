@@ -1,9 +1,7 @@
-var clubs = [
-  {
+var clubs = [{
     name: 'Aperture',
     desc: 'Photography Events',
-    events: [
-      {
+    events: [{
         name: 'FOCUS',
         price: 'Free',
         type: 'solo'
@@ -48,8 +46,7 @@ var clubs = [
   {
     name: 'The Music Club',
     desc: 'Music Events',
-    events: [
-      {
+    events: [{
         name: 'Octaves',
         price: 150,
         min: 1,
@@ -103,8 +100,7 @@ var clubs = [
   {
     name: 'Litmus',
     desc: 'English Literature Events',
-    events: [
-      {
+    events: [{
         name: 'Bamboozled',
         price: 250,
         min: 2,
@@ -149,10 +145,9 @@ var clubs = [
     ]
   },
   {
-    name: 'Coreofrafia',
+    name: 'Coreografia',
     desc: 'Dance Events',
-    events: [
-      {
+    events: [{
         name: 'NEXTARs',
         price: 200,
         min: 1,
@@ -185,9 +180,8 @@ var clubs = [
   {
     name: 'Cinefilia',
     desc: 'Dramatics Events',
-    events: [
-      {
-        name: 'AD Mak',
+    events: [{
+        name: 'AD-Mak',
         price: 100,
         min: 3,
         max: 5,
@@ -201,7 +195,7 @@ var clubs = [
         type: 'team'
       },
       {
-        name: 'Humor Us',
+        name: 'Humor-Us',
         price: 150,
         min: 1,
         max: 1,
@@ -247,8 +241,7 @@ var clubs = [
   {
     name: 'Scribbles',
     desc: 'Art & Craft Events',
-    events: [
-      {
+    events: [{
         name: 'Fusionoid',
         price: 100,
         min: 1,
@@ -285,21 +278,18 @@ var clubs = [
   {
     name: 'Shabd',
     desc: 'Hindi Literature Events',
-    events: [
-      {
-        name: 'Izhar',
-        price: 50,
-        min: 1,
-        max: 1,
-        type: 'solo'
-      }
-    ]
+    events: [{
+      name: 'Izhar',
+      price: 50,
+      min: 1,
+      max: 1,
+      type: 'solo'
+    }]
   },
   {
     name: 'Qureka',
     desc: 'Quizzing Events',
-    events: [
-      {
+    events: [{
         name: 'BizTech Quiz(Ignited Minds)',
         price: 100,
         min: 1,
@@ -318,8 +308,7 @@ var clubs = [
   {
     name: 'Sophia',
     desc: 'Philosophy Events',
-    events: [
-      {
+    events: [{
         name: "Let's Tweet",
         price: 200,
         min: 1,
@@ -352,9 +341,8 @@ var clubs = [
   {
     name: 'Collab Events',
     desc: 'Two is better than one!',
-    events: [
-      {
-        name: 'Pop-a-razzi(Litmus-Qureka)',
+    events: [{
+        name: 'Pop-A-Razzi(Litmus-Qureka)',
         price: 100,
         min: 1,
         max: 2,
@@ -379,8 +367,7 @@ var clubs = [
   {
     name: 'Major Events',
     desc: 'Wait for It!',
-    events: [
-      {
+    events: [{
         name: 'Requiem - War Of Bands',
         price: 1500,
         min: 3,
@@ -388,7 +375,7 @@ var clubs = [
         type: 'fixed'
       },
       {
-        name: 'Destival - Group Dance Competetion',
+        name: 'Destival - Group Dance Competition',
         price: 150,
         min: 12,
         max: 43,

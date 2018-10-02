@@ -39,12 +39,12 @@ textarea {
     display: none;
   }
 
-  .modal-state:checked + .modal {
+  .modal-state:checked+.modal {
     opacity: 1;
     visibility: visible;
   }
 
-  .modal-state:checked + .modal .modal__inner {
+  .modal-state:checked+.modal .modal__inner {
     top: 0;
   }
 
@@ -120,7 +120,7 @@ textarea {
     }
 
     form {
-      margin: 5rem 0;
+      margin: 3rem 0;
       padding: 0 3rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -211,8 +211,10 @@ textarea {
       background: white;
       color: $color-primary;
 
-      &:hover {
+      &:hover, &:focus {
         color: #fff;
+        background: transparent;
+        border: 5px solid $color-secondary;
       }
     }
 
@@ -242,7 +244,7 @@ textarea {
 #default-radio {
   display: none;
 
-  &:checked + label #custom-radio::after {
+  &:checked+label #custom-radio::after {
     opacity: 1;
   }
 }
@@ -273,7 +275,9 @@ textarea {
 
 .register-error {
   font-size: 2rem;
+  padding-bottom: 4rem;
   font-family: "Gotham-Bold";
   text-align: center;
   color: $color-secondary;
+  padding-bottom: 5rem;
 }
