@@ -2,7 +2,7 @@ const item = $(".clubs-grid__item");
 
 $(document).ready(function() {
   $("#fullpage").fullpage({
-    anchors: ["main", "club-names"],
+    anchors: ["main", "club-names","club-names2" ],
     afterLoad: (i, path) => {
       if (path.index === 0) startVideo();
     }
