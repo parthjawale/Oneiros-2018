@@ -984,8 +984,10 @@ textarea {
 .register-container__black-section--underlay input[type="submit"] {
   background: white;
   color: #e50914; }
-  .register-container__black-section--underlay input[type="submit"]:hover {
-    color: #fff; }
+  .register-container__black-section--underlay input[type="submit"]:hover, .register-container__black-section--underlay input[type="submit"]:focus {
+    color: #fff;
+    background: transparent;
+    border: 5px solid #c10812; }
 
 .register-container__black-section--underlay label {
   color: #fff; }

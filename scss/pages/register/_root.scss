@@ -211,8 +211,10 @@ textarea {
       background: white;
       color: $color-primary;
 
-      &:hover {
+      &:hover, &:focus {
         color: #fff;
+        background: transparent;
+        border: 5px solid $color-secondary;
       }
     }
 

@@ -35,11 +35,16 @@ new Vue({
               querySnapshot.forEach(function(doc) {
                 email = doc.data().email;
               });
+              if (!email) {
+                self.error = "Invalid Username";
+                self.disabled = false;
+                return;
+              }
               firebase
                 .auth()
                 .signInWithEmailAndPassword(email, self.password)
                 .then(
-                  function(user) {
+                  function() {
                     self.error = "Login Successful!";
                     self.disabled = false;
                     setTimeout(() => {
@@ -61,3 +66,11 @@ new Vue({
     }
   }
 });
+
+document.getElementById("password").onkeypress = e => {
+  if (!e) e = window.event;
+  var code = e.keyCode;
+  if (code === 13) {
+    document.getElementById("submit-button").click();
+  }
+};
