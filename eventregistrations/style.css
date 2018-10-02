@@ -3,11 +3,12 @@
 html {
   font-size: 62.5%;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Gotham', sans-serif;
 }
 
 select:focus {
@@ -19,11 +20,19 @@ body {
   background: linear-gradient(to right bottom, rgb(185, 37, 37), #222);
   margin: 0;
   font-size: 1.6rem;
-  text-align: center;
   min-height: 100%;
-  padding: 6rem;
   height: auto;
   background-attachment: fixed;
+}
+
+/* main {
+  padding-top: 10rem;
+} */
+
+@media screen and (max-width: 800px) {
+  main {
+    padding-top: 15rem;
+  }
 }
 
 #app {
@@ -38,7 +47,7 @@ body {
 
 @media screen and (max-width: 768px) {
   #app {
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -50,8 +59,16 @@ body {
 
 .container {
   margin: 0 auto;
-  text-align: center;
   overflow: hidden;
+}
+
+.logo {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.logo>img {
+  margin: 0;
 }
 
 header.Reg {
@@ -125,7 +142,9 @@ i.fas.fa-info-circle {
 }
 
 option {
-  background-color: rgba(170, 165, 165, 0.856);
+  background-color: rgba(226, 226, 226, 0.856);
+  color: #d14c53;
+  font-weight: bold;
 }
 
 .select-selected:after {
@@ -210,13 +229,13 @@ option {
   display: none;
 }
 
-.modal-state:checked + .modal {
+.modal-state:checked+.modal {
   opacity: 1;
   visibility: visible;
 }
 
-.modal-state:checked + .modal .modal__inner {
-  top: 0;
+.modal-state:checked+.modal .modal__inner {
+  top: 8rem;
 }
 
 .modal__inner {
@@ -334,22 +353,6 @@ p img {
   outline: none;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #bbb9b9;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #d14c53;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #d14c53;
-}
-
 @media screen and (max-width: 768px) {
   html {
     font-size: 7.5px;
@@ -357,7 +360,7 @@ p img {
 
   #app-wrapper {
     width: 100%;
-    padding: 0 4rem;
+    padding: 4rem 4rem;
   }
 
   .modal__inner {
@@ -390,5 +393,11 @@ p img {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 6px;
   }
 }
