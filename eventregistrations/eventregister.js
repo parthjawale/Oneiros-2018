@@ -113,16 +113,17 @@ new Vue({
 
       if (this.requemSelected || this.destivalSelected) {
         const event = this.requemSelected ? this.requiem : this.destival
-        console.log('TCL: check -> event', event)
         var error = false
         const keys = Object.keys(event)
-        console.log('TCL: check -> keys', keys)
         keys.forEach(key => {
           if (!event[key]) {
             error = true
           }
         })
         this.error = error
+        if (!(this.value >= min && this.value <= max)) {
+          this.error = true
+        }
       }
     },
     logout() {
@@ -149,9 +150,6 @@ new Vue({
             if (doc.exists) {
               if (doc.data().users != undefined || doc.data().users != null)
                 self.userarr = doc.data().users
-              // if (!self.userarr.includes(self.user.uid)) {
-              //   self.userarr.push(self.user.uid);
-              // }
               var obj = {
                 user: self.user.uid,
                 value: self.value
