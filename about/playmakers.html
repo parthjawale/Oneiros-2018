@@ -5,12 +5,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <title>Playmakers</title>
 </head>
 
 <body class="playmakers">
-  <h1 class="playmakers__header">Play<span class="playmakers__header--highlight">makers</span></h1>
+  <div class="loader-prime">
+    <img src="/img/logos/alpha.gif" alt="Alpha" />
+    <div class="wordmark"></div>
+    <div class="moodi-logo"></div>
+    <div class="mext-logo"></div>
+    <div class="dates">
+      <h4>18th - 20th October</h4>
+    </div>
+  </div>
+  <header>
+    <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+    <div class="nav">
+      <ul>
+        <li>
+          <span class="nav__sword"></span>
+          <span class="nav__handle"></span>
+        </li>
+        <li>
+          <span class="nav__handle"></span>
+          <span class="nav__sword"></span>
+        </li>
+        <li>
+          <span class="nav__sword"></span>
+          <span class="nav__handle"></span>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-container">
+      <div class="nav-container__redoverlay"></div>
+      <div class="nav-container__blackoverlay"></div>
+      <div class="nav-container__whiteoverlay">
+        <ul>
+          <li>
+            <a href="/" class="custom-link">Home</a>
+          </li>
+          <li>
+            <a href="/login" class="custom-link">Sign In</a>
+          </li>
+          <li>
+            <a href="/register" class="custom-link">Sign Up</a>
+          </li>
+          <li>
+            <a href="/eventregistrations" class="custom-link">Registration</a>
+          <li>
+            <a href="/events" class="custom-link">Events</a>
+          </li>
+          <li>
+            <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
+          </li>
+          <li>
+            <a href="/about/playmakers.html" class="custom-link">Team</a>
+          </li>
+          <li>
+            <a href="/accomodation" class="custom-link">Accomodation</a>
+          </li>
+          <li id="logout">
+            <a href="/" class="custom-link">Logout</a>
+          </li>
+          <!-- <li>
+                          <a href="/contact">Contact Us</a>
+                        </li> -->
+        </ul>
+      </div>
+    </div>
+  </header>
+  <h1 class="playmakers__header">Executive<span class="playmakers__header--highlight"> Committee</span></h1>
   <div class="card-grid" id="convenor--grid">
     <div class="card-grid__item" id="convenor--card">
       <div class="card-grid__item__wrapper">
@@ -324,6 +389,11 @@
         <hr class="red">
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script src="/js/config/db.js"></script>
+    <script src="/js/libs/jquery.js"></script>
+    <script src="/js/common/global.js"></script>
+
 </body>
 
 </html>
