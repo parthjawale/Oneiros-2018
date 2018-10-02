@@ -41,7 +41,7 @@
 	<!-- event list end -->
 
 	<header>
-		<img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+		<img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
 		<div class="nav">
 			<ul>
 				<li>
@@ -58,33 +58,50 @@
 				</li>
 			</ul>
 		</div>
-		<div class="nav-container">
-			<div class="nav-container__redoverlay"></div>
-			<div class="nav-container__blackoverlay"></div>
-			<div class="nav-container__whiteoverlay">
-				<ul>
-					<li>
-						<a href="/" class="custom-link">Home</a>
-					</li>
-					<li>
-						<a href="/events" class="custom-link">Events</a>
-					</li>
-					<li>
-						<a href="/majorevents" class="custom-link">Major Events</a>
-					</li>
-					<li>
-						<a href="/campusambassador" class="custom-link">Campus Ambassador</a>
-					</li>
-					<li>
-						<a href="/accomodation" class="custom-link">Accomodation</a>
-					</li>
-				</ul>
+
+		<div class="nav-container newnav-container">
+			<div class="newnav-container__splash">
+				<div class="newnav-container__splash--box">
+					<img src="/img/logos/wordmark.png" alt="">
+				</div>
 			</div>
+			<ul>
+				<li>
+					<a href="/" class="custom-link">Home</a>
+				</li>
+				<li>
+					<a href="/login" class="custom-link">Sign In</a>
+				</li>
+				<li>
+					<a href="/register" class="custom-link">Sign Up</a>
+				</li>
+				<li>
+					<a href="/about/playmakers.html" class="custom-link">Team</a>
+				</li>
+				<li>
+					<a href="/eventregistrations" class="custom-link">Registration</a>
+				</li>
+				<li>
+					<a href="/events" class="custom-link">Events</a>
+				</li>
+				<li>
+					<a href="/majorevents" class="custom-link">Major Events</a>
+				</li>
+				<li>
+					<a href="/campusambassador" class="custom-link">Campus Ambassador</a>
+				</li>
+				<li>
+					<a href="/accomodation" class="custom-link">Accomodation</a>
+				</li>
+				<li id="logout">
+					<a href="/" class="custom-link">Logout</a>
+				</li>
+			</ul>
 		</div>
 	</header>
+	<div id="black-overlay"></div>
 
 	<main id="fullpage">
-		<div id="black-overlay"></div>
 		<!-- TMC -->
 
 		<section class="section all__prime tmc-prime">
@@ -109,10 +126,10 @@
 					can let your songs and voice transcend all the boundaries. So come on and sing the song
 					to make the whole world sing.</h3>
 				<!-- SOCIAL -->
-				<div>
+				<!-- <div>
 					<i class="fab fa-facebook-square"></i>
 					<i class="fab fa-instagram"></i>
-				</div>
+				</div> -->
 			</div>
 			<div class="event-image event-image__octaves"></div>
 		</section>
@@ -212,10 +229,10 @@
 					indulge in the joy that comes with it. Register yourself as soon as possible and get ready for the
 					competition!</h3>
 				<!-- SOCIAL -->
-				<div>
+				<!-- <div>
 					<i class="fab fa-facebook-square"></i>
 					<i class="fab fa-instagram"></i>
-				</div>
+				</div> -->
 			</div>
 			<div class="event-image event-image__dhwani" style="background-position: right !important"></div>
 		</section>
@@ -320,10 +337,10 @@
 					culturally
 					renowned form of singing-The Indian Classical singing.</h3>
 				<!-- SOCIAL -->
-				<div>
+				<!-- <div>
 					<i class="fab fa-facebook-square"></i>
 					<i class="fab fa-instagram"></i>
-				</div>
+				</div> -->
 			</div>
 			<div class="event-image event-image__saptak"></div>
 		</section>
@@ -421,10 +438,10 @@
 					come on up
 					and showcase your musical chemistry with your partner, and make the stage your very own.</h3>
 				<!-- SOCIAL -->
-				<div>
+				<!-- <div>
 					<i class="fab fa-facebook-square"></i>
 					<i class="fab fa-instagram"></i>
-				</div>
+				</div> -->
 			</div>
 			<div class="event-image event-image__twicethevoice"></div>
 		</section>
@@ -514,10 +531,10 @@
 					leave music-muggles and maestros awestruck alike.
 				</h3>
 				<!-- SOCIAL -->
-				<div>
+				<!-- <div>
 					<i class="fab fa-facebook-square"></i>
 					<i class="fab fa-instagram"></i>
-				</div>
+				</div> -->
 			</div>
 			<div class="event-image event-image__ensemble"></div>
 		</section>
@@ -608,10 +625,10 @@
 					So who has the fire? Who owns the mic? Show them all what you can do!
 				</h3>
 				<!-- SOCIAL -->
-				<div>
+				<!-- <div>
 					<i class="fab fa-facebook-square"></i>
 					<i class="fab fa-instagram"></i>
-				</div>
+				</div> -->
 			</div>
 			<div class="event-image event-image__beatstreet"></div>
 		</section>
@@ -829,10 +846,10 @@
 					other fellow contestants. Blaze a trail on stage and exuberate brilliance.
 				</h3>
 				<!-- SOCIAL -->
-				<div>
+				<!-- <div>
 					<i class="fab fa-facebook-square"></i>
 					<i class="fab fa-instagram"></i>
-				</div>
+				</div> -->
 			</div>
 			<div class="event-image event-image__woodstock"></div>
 		</section>
@@ -907,6 +924,8 @@
 
 	</main>
 
+	<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+	<script src="/js/config/db.js"></script>
 	<script src="/js/libs/jquery.js"></script>
 	<script src="/js/libs/fullpage.js"></script>
 	<script src="/js/events/clubs/tmc.js"></script>

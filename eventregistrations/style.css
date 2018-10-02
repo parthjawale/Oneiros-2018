@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 html {
   font-size: 62.5%;
@@ -8,7 +8,7 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Gotham', sans-serif;
 }
 
 select:focus {
@@ -19,11 +19,20 @@ body {
   width: 100%;
   background: linear-gradient(to right bottom, rgb(185, 37, 37), #222);
   margin: 0;
-  padding: 0;
   font-size: 1.6rem;
-  text-align: center;
-  height: 100%;
-  padding: 6rem;
+  min-height: 100%;
+  height: auto;
+  background-attachment: fixed;
+}
+
+/* main {
+  padding-top: 10rem;
+} */
+
+@media screen and (max-width: 800px) {
+  main {
+    padding-top: 15rem;
+  }
 }
 
 #app {
@@ -31,25 +40,38 @@ body {
   height: fit-content;
   padding-bottom: 5rem;
   overflow-y: auto;
-  width: 50%;
+  width: 60%;
   box-shadow: 0rem 0.6rem 2.5rem rgba(0, 0, 0, 0.383);
   background: rgb(255, 255, 255);
 }
 
+@media screen and (max-width: 768px) {
+  #app {
+    width: 100%;
+  }
+}
+
 #app-wrapper {
   width: 90%;
+  margin-top: 4rem;
   margin: 0 auto;
 }
 
 .container {
-  width: 60%;
-  height: 100%;
   margin: 0 auto;
-  text-align: center;
   overflow: hidden;
 }
 
-header {
+.logo {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.logo>img {
+  margin: 0;
+}
+
+header.Reg {
   font-size: 4.5rem;
   font-weight: 800;
   color: #d14c53;
@@ -120,12 +142,14 @@ i.fas.fa-info-circle {
 }
 
 option {
-  background-color: rgba(170, 165, 165, 0.856);
+  background-color: rgba(226, 226, 226, 0.856);
+  color: #d14c53;
+  font-weight: bold;
 }
 
 .select-selected:after {
   position: absolute;
-  content: "";
+  content: '';
   top: 14px;
   right: 10px;
   width: 0;
@@ -205,13 +229,13 @@ option {
   display: none;
 }
 
-.modal-state:checked + .modal {
+.modal-state:checked+.modal {
   opacity: 1;
   visibility: visible;
 }
 
-.modal-state:checked + .modal .modal__inner {
-  top: 0;
+.modal-state:checked+.modal .modal__inner {
+  top: 8rem;
 }
 
 .modal__inner {
@@ -242,7 +266,7 @@ option {
 
 .modal__close:after,
 .modal__close:before {
-  content: "";
+  content: '';
   position: absolute;
   width: 2px;
   margin: 5rem 0;
@@ -329,22 +353,6 @@ p img {
   outline: none;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #bbb9b9;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #d14c53;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #d14c53;
-}
-
 @media screen and (max-width: 768px) {
   html {
     font-size: 7.5px;
@@ -352,7 +360,7 @@ p img {
 
   #app-wrapper {
     width: 100%;
-    padding: 0 4rem;
+    padding: 4rem 4rem;
   }
 
   .modal__inner {
@@ -378,5 +386,18 @@ p img {
   .btn.btn--blue {
     text-align: center;
     font-size: 2.5rem;
+  }
+
+  .logout-btn {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 6px;
   }
 }

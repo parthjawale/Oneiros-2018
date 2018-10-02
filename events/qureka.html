@@ -23,8 +23,20 @@
     </div>
   </div>
 
+  <!-- event list -->
+  <div class="events-list ono-animatedbtn">
+    <span class="ono-animatedbtn__circle"></span>
+    <span class="events-list__item--selected">Select Event</span>
+    <ul>
+      <li><a href="#sadharanthegeneralquiz-desc">SADHARAN</a></li>
+      <li><a href="#ignitedmindsthebusinessquiz-desc">IGNITED MINDS</a></li>
+      <li><a href="#poparazzitheculturalquiz-desc">POP-A-RAZZI</a></li>
+    </ul>
+  </div>
+
+
   <header>
-    <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+    <img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
     <div class="nav">
       <ul>
         <li>
@@ -41,33 +53,50 @@
         </li>
       </ul>
     </div>
-    <div class="nav-container">
-      <div class="nav-container__redoverlay"></div>
-      <div class="nav-container__blackoverlay"></div>
-      <div class="nav-container__whiteoverlay">
-        <ul>
-          <li>
-            <a href="/" class="custom-link">Home</a>
-          </li>
-          <li>
-            <a href="/events" class="custom-link">Events</a>
-          </li>
-          <li>
-            <a href="/majorevents" class="custom-link">Major Events</a>
-          </li>
-          <li>
-            <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
-          </li>
-          <li>
-            <a href="/accomodation" class="custom-link">Accomodation</a>
-          </li>
-        </ul>
+
+    <div class="nav-container newnav-container">
+      <div class="newnav-container__splash">
+        <div class="newnav-container__splash--box">
+          <img src="/img/logos/wordmark.png" alt="">
+        </div>
       </div>
+      <ul>
+        <li>
+          <a href="/" class="custom-link">Home</a>
+        </li>
+        <li>
+          <a href="/login" class="custom-link">Sign In</a>
+        </li>
+        <li>
+          <a href="/register" class="custom-link">Sign Up</a>
+        </li>
+        <li>
+          <a href="/about/playmakers.html" class="custom-link">Team</a>
+        </li>
+        <li>
+          <a href="/eventregistrations" class="custom-link">Registration</a>
+        </li>
+        <li>
+          <a href="/events" class="custom-link">Events</a>
+        </li>
+        <li>
+          <a href="/majorevents" class="custom-link">Major Events</a>
+        </li>
+        <li>
+          <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
+        </li>
+        <li>
+          <a href="/accomodation" class="custom-link">Accomodation</a>
+        </li>
+        <li id="logout">
+          <a href="/" class="custom-link">Logout</a>
+        </li>
+      </ul>
     </div>
   </header>
+  <div id="black-overlay"></div>
 
   <main id="fullpage">
-    <div id="black-overlay"></div>
     <!-- TMC -->
 
     <section class="section all__prime qureka-prime">
@@ -96,7 +125,7 @@
           <i class="fab fa-instagram"></i>
         </div>
       </div>
-      <div class="event-image event-image__octaves-splash"></div>
+      <div class="event-image event-image__sadharan"></div>
     </section>
     <section class="section event-desc bg-grey-light bg-grey-light">
       <div class="event-desc__info">
@@ -111,12 +140,12 @@
 
           </h3>
         </div>
-        <!-- <div class="event-desc__info--detail">
+        <div class="event-desc__info--detail">
           <h1>Price</h1>
           <h3>
-            X for Y members
+            Upto Rs. 3000/-
           </h3>
-        </div> -->
+        </div>
         <div class="event-desc__info--detail">
           <h1>Co-ordinators</h1>
           <h3>
@@ -137,7 +166,8 @@
             2. A team can have 1 or 2 individuals only.<br>
             3. Quizmaster’s decision is final<br>
             4. No phones are allowed during the quiz. Anyone found using their phone will be disqualified
-            immediately.
+            immediately. <br>
+            5. Rs. 100/- per participant (Maximum 2 per team).
           </p>
         </div>
       </div>
@@ -156,21 +186,23 @@
       </a>
     </section>
 
-    <!-- TMC - DHWANI -->
+    <!-- Ignited Minds ‘The Business Quiz’ -->
     <section class="section event-container">
       <div class="event">
         <h1 class="event__header">Ignited Minds ‘The Business Quiz’ <br><span class="event__header--subheading"></span></h1>
         <h3 class="event__desc">This quiz will revolve around the latest happenings in the business and technology
-          world, history of famous business, unique achievements of various businesses and famous people
-          behind the businesses and prevalent technologies. Achievements of Indian businesses and how they
-          started their businesses will also be covered.</h3>
+          world, history of famous businesses, unique achievements of various businesses and famous people behind the
+          businesses and prevalent technologies.
+          Achievements of Indian businesses and how they were started will also be covered.
+          Also advance world of technology will also will be there, in which history of any old or new technology,
+          their inventors, their use, history of it will be there.</h3>
         <!-- SOCIAL -->
         <div>
           <i class="fab fa-facebook-square"></i>
           <i class="fab fa-instagram"></i>
         </div>
       </div>
-      <div class="event-image event-image__octaves-splash"></div>
+      <div class="event-image event-image__ignited"></div>
     </section>
     <section class="section event-desc bg-grey-light">
       <div class="event-desc__info">
@@ -185,17 +217,19 @@
 
           </h3>
         </div>
-        <!-- <div class="event-desc__info--detail">
-            <h1>Price</h1>
-            <h3>
-              X for Y members
-            </h3>
-          </div>  -->
+        <div class="event-desc__info--detail">
+          <h1>Price</h1>
+          <h3>
+            up to Rs. 3000.
+          </h3>
+        </div>
         <div class="event-desc__info--detail">
           <h1>Co-ordinators</h1>
           <h3>
-            Samarth Joshi - 9772029056<br><br>
-            Ritwick Bhattacharya - 8283927456
+            Ritwick Bhattacharya- 08283927456
+            <br> <br>
+            Govind Singh - 09653702434
+
 
           </h3>
         </div>
@@ -208,11 +242,13 @@
         <div class="event-rules__item">
           <!-- <h1 class="event-rules__header">Round 1</h1> -->
           <p class="event-rules__content">
-            1. There will be 4 rounds and five teams will qualify for the finals.<br>
-            2. A team can have 1 or 2 individuals only.<br>
-            3. Quizmaster’s decision is final. <br>
-            4. No phones are allowed during the quiz. Anyone found using their phone will be disqualified
-            immediately.
+            1. Preliminary round of 20 question will be there. <br>
+            2. There will be four rounds and top five teams will qualify for the finals. <br>
+            3. A team can have one or two individuals only. <br>
+            4. Quiz master’s decision is final. <br>
+            5. No phones are allowed during the quiz. Anyone found using there phones will be disqualified immediately.
+            <br>
+            6. Registration Fees:- Rs. 100 per team. <br>
 
           </p>
         </div>
@@ -233,22 +269,22 @@
     </section>
 
 
-    <!-- TMC - SAPTAK -->
+    <!-- Pop-a-Razzi -->
     <section class="section event-container">
       <div class="event">
         <h1 class="event__header">Pop-a-Razzi ‘The Pop Culture Quiz’ <br><span class="event__header--subheading"></span></h1>
-        <h3 class="event__desc">This quiz topics are a favourite for students. It will broadly cover movies, tv shows,
-          anime, comics, video games, books, music etc. So questions ranging from who played Batman I nthe
-          dark knight trilogy to who created Batman can be asked. Specific pop culture moments can also be
-          asked like in which show are the lines ‘Daya, darwaza tod do’ heard. It will be a fun and exciting quiz
-          for everyone.</h3>
+        <h3 class="event__desc">POP-A-RAZZI is a is a pop culture quiz that has topics that will broadly cover movies,
+          TV shows, music, comics, video games, books etc.
+          Come and check if you’re an entertainment expert by answering questions ranging from who played Batman in the
+          dark Knight trilogy to who created it.
+          Iconic and specific pop culture moments would be thrown in to make it a fun and exciting experience</h3>
         <!-- SOCIAL -->
         <div>
           <i class="fab fa-facebook-square"></i>
           <i class="fab fa-instagram"></i>
         </div>
       </div>
-      <div class="event-image event-image__octaves-splash"></div>
+      <div class="event-image event-image__poparazzi"></div>
     </section>
     <section class="section event-desc bg-grey-light">
       <div class="event-desc__info">
@@ -263,20 +299,21 @@
           <h3>9 a.m to 11 p.m, Day 3
           </h3>
         </div>
-        <!-- <div class="event-desc__info--detail">
+        <div class="event-desc__info--detail">
           <h1>Price</h1>
           <h3>
-            X for Y members
+            Upto Rs 3000 worth.
           </h3>
-        </div> -->
-        <!-- <div class="event-desc__info--detail">
+        </div>
+        <div class="event-desc__info--detail">
           <h1>Co-ordinators</h1>
           <h3>
-            Anwesha Sinha-7761808560 danwesha.pisces11@yahoo.com<br><br>
-            Sriniket Sondur-9892902043
+            Anamay Deshpande- 9689993649.
+            <br> <br>
+            Harshit Joshi- 8960664490.
 
           </h3>
-        </div> -->
+        </div>
       </div>
     </section>
 
@@ -286,11 +323,11 @@
         <div class="event-rules__item">
           <!-- <h1 class="event-rules__header">Round 1</h1> -->
           <p class="event-rules__content">
-            1. There will be 4 rounds and five teams will qualify for the finals.<br>
-            2. A team can have 1 or 2 individuals only.<br>
-            3. Quizmaster’s decision is final<br>
-            4. No phones are allowed during the quiz. Anyone found using their phone will be disqualified
-            immediately.
+            1. First round is a prelim round with 20 questions. <br>
+            2. The qualifying teams face an array of rounds with 6 questions in each round. <br>
+            3. The Quizmaster's decision is final. <br>
+            4. No phones are allowed during the quiz. <br>
+            5. Rs 100 per participant (Upto 2 members in a team). <br>
 
           </p>
         </div>
@@ -312,10 +349,14 @@
 
   </main>
 
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script src="/js/config/db.js"></script>
   <script src="/js/libs/jquery.js"></script>
   <script src="/js/libs/fullpage.js"></script>
   <script src="/js/events/clubs/qureka.js"></script>
   <script src="/js/common/global.js"></script>
+  <script src="/js/common/eventslist.js"></script>
+  <script src="/js/common/btn.js"></script>
 </body>
 
 </html>
