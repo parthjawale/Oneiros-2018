@@ -106,7 +106,7 @@ new Vue({
         .auth()
         .signOut()
         .then(function () {
-          window.location = "/index.html";
+          window.location = "/eventregistrations.html";
         })
         .catch(function (error) {
           alert(error.message);
