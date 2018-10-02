@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 html {
   font-size: 62.5%;
@@ -8,7 +8,7 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Gotham', sans-serif;
+  font-family: "Gotham", sans-serif;
 }
 
 select:focus {
@@ -67,7 +67,7 @@ body {
   margin-left: 2rem;
 }
 
-.logo>img {
+.logo > img {
   margin: 0;
 }
 
@@ -106,6 +106,7 @@ label {
   display: flex;
   align-items: center;
   padding: 1.5rem 2rem;
+  line-height: 1.5;
   background: rgba(236, 32, 32, 0.712);
   border-radius: 0.6rem;
   margin-bottom: 2.5rem;
@@ -149,7 +150,7 @@ option {
 
 .select-selected:after {
   position: absolute;
-  content: '';
+  content: "";
   top: 14px;
   right: 10px;
   width: 0;
@@ -229,12 +230,12 @@ option {
   display: none;
 }
 
-.modal-state:checked+.modal {
+.modal-state:checked + .modal {
   opacity: 1;
   visibility: visible;
 }
 
-.modal-state:checked+.modal .modal__inner {
+.modal-state:checked + .modal .modal__inner {
   top: 8rem;
 }
 
@@ -266,7 +267,7 @@ option {
 
 .modal__close:after,
 .modal__close:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 2px;
   margin: 5rem 0;
