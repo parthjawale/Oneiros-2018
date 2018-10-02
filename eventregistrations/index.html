@@ -131,23 +131,30 @@
 
             <template v-if="destivalSelected">
                 <h2 class="details-participants">Team Name</h2>
-                <input type="text" v-model="destival.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;">
+                <input type="text" v-model="destival.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;"
+                    @input="check">
                 <h2 class="details-participants">Links</h2>
-                <input type="text" v-model="destival.links" class="Part" placeholder="Links" style="margin-bottom: 2.5rem;">
+                <input type="text" v-model="destival.links" class="Part" placeholder="Links" style="margin-bottom: 2.5rem;"
+                    @input="check">
             </template>
 
 
             <template v-if="requemSelected">
                 <h2 class="details-participants">Band Name</h2>
-                <input type="text" v-model="requiem.bandname" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;">
+                <input type="text" v-model="requiem.bandname" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"
+                    @input="check">
                 <h2 class="details-participants">Description</h2>
-                <input type="text" v-model="requiem.description" class="Part" placeholder="Description" style="margin-bottom: 2.5rem;">
+                <input type="text" v-model="requiem.description" class="Part" placeholder="Description" style="margin-bottom: 2.5rem;"
+                    @input="check">
                 <h2 class="details-participants">Contact Number</h2>
-                <input type="number" v-model="requiem.contact" class="Part" placeholder="Contact" style="margin-bottom: 2.5rem;">
+                <input type="number" v-model="requiem.contact" class="Part" placeholder="Contact" style="margin-bottom: 2.5rem;"
+                    @input="check">
                 <h2 class="details-participants">Link to Songdew Profile</h2>
-                <input type="text" v-model="requiem.songdew" class="Part" placeholder="Link To Song Dew Profile" style="margin-bottom: 2.5rem;">
+                <input type="text" v-model="requiem.songdew" class="Part" placeholder="Link To Song Dew Profile" style="margin-bottom: 2.5rem;"
+                    @input="check">
                 <h2 class="details-participants">Genre</h2>
-                <input type="text" v-model="requiem.genre" class="Part" placeholder="Genre" style="margin-bottom: 2.5rem;">
+                <input type="text" v-model="requiem.genre" class="Part" placeholder="Genre" style="margin-bottom: 2.5rem;"
+                    @input="check">
             </template>
 
 
