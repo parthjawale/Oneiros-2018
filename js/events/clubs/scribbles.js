@@ -4,7 +4,19 @@ $(document).ready(() => {
   $('#fullpage').fullpage({
     scrollBar: true,
 
-    anchors: [],
+    anchors: ['club-scribbles',
+    'fuionoid-desc',
+    'fuionoid-info',
+    'fuionoid-rules',
+    'fuionoid-registration',
+    'ignited-desc',
+    'ignited-info',
+    'ignited-rules',
+    'ignited-registration',
+    'pop-desc',
+    'pop-info',
+    'pop-rules',
+    'pop-registration'],
     afterLoad: (origin, dest) => {
       let option = 0
       const selectedEvent = $('.events-list__item--selected')
