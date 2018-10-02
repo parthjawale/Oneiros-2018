@@ -1,7 +1,6 @@
 new Vue({
   el: '#app',
   data: {
-    name: '',
     selectedClub: '',
     eventName: '',
     value: 0,
@@ -12,13 +11,12 @@ new Vue({
       bandname: '',
       description: '',
       contact: null,
-      links: '',
       songdew: '',
       genre: ''
     },
     destival: {
       teamname: '',
-      link: ''
+      links: ''
     },
     clubs,
     userarr: [],
@@ -79,9 +77,6 @@ new Vue({
   watch: {
     value: function() {
       this.check()
-    },
-    name: function() {
-      this.check()
     }
   },
   methods: {
@@ -112,6 +107,20 @@ new Vue({
         } else {
           this.error = true
         }
+      }
+
+      if (this.requemSelected || this.destivalSelected) {
+        const event = this.requemSelected ? this.requiem : this.destival
+        console.log('TCL: check -> event', event)
+        var error = false
+        const keys = Object.keys(event)
+        console.log('TCL: check -> keys', keys)
+        keys.forEach(key => {
+          if (!event[key]) {
+            error = true
+          }
+        })
+        this.error = error
       }
     },
     logout() {
