@@ -54,21 +54,21 @@ new Vue({
         this.wpno == ""
       ) {
         if (this.name == "") {
-          self.othererror = "Name empty";
+          self.othererror = "Name is Required!";
         } else if (this.college == "") {
-          self.othererror = "College empty";
+          self.othererror = "College is Required!";
         } else if (this.password == "") {
-          self.othererror = "Password empty";
+          self.othererror = "Password is Required!";
         } else if (this.repassword == "") {
-          self.othererror = "Password again empty";
+          self.othererror = "Password again is Required!";
         } else if (this.username == "") {
-          self.othererror = "Username empty";
+          self.othererror = "Username is Required!";
         } else if (this.email == "") {
-          self.othererror = "Email empty";
+          self.othererror = "Email is Required!";
         } else if (this.pno == "") {
-          self.othererror = "Phone Number empty";
+          self.othererror = "Phone Number is Required!";
         } else {
-          self.othererror = "Whatsapp Number empty";
+          self.othererror = "Whatsapp Number is Required!";
         }
         return false;
       }
@@ -357,21 +357,21 @@ new Vue({
         this.wpno == ""
       ) {
         if (this.name == "") {
-          self.mujerror = "Name empty";
+          self.mujerror = "Name is Required!";
         } else if (this.regno == "") {
-          self.mujerror = "Registration Number empty";
+          self.mujerror = "Registration Number is Required!";
         } else if (this.password == "") {
-          self.mujerror = "Password empty";
+          self.mujerror = "Password is Required!";
         } else if (this.repassword == "") {
-          self.mujerror = "Password again empty";
+          self.mujerror = "Password again is Required!";
         } else if (this.username == "") {
-          self.mujerror = "Username empty";
+          self.mujerror = "Username is Required!";
         } else if (this.email == "") {
-          self.mujerror = "Email empty";
+          self.mujerror = "Email is Required!";
         } else if (this.pno == "") {
-          self.mujerror = "Phone Number empty";
+          self.mujerror = "Phone Number is Required!";
         } else {
-          self.mujerror = "Whatsapp Number empty";
+          self.mujerror = "Whatsapp Number is Required!";
         }
         return false;
       }
@@ -490,3 +490,19 @@ new Vue({
     }
   }
 });
+
+document.getElementById("muj-last").onkeypress = e => {
+  if (!e) e = window.event;
+  var code = e.keyCode;
+  if (code === 13) {
+    document.getElementById("muj-submit").click();
+  }
+};
+
+document.getElementById("other-last").onkeypress = e => {
+  if (!e) e = window.event;
+  var code = e.keyCode;
+  if (code === 13) {
+    document.getElementById("other-submit").click();
+  }
+};

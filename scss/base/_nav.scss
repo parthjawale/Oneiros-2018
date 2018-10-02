@@ -18,7 +18,7 @@
   cursor: pointer;
 
   @media screen and (max-width: 800px) {
-    top: 4rem !important;
+    top: 2rem !important;
   }
 
   ul {
@@ -55,8 +55,8 @@
   }
 
   &:hover .nav__sword {
-    background: #FFEB3B;
-    box-shadow: 0 0 15px #FFEB3B;
+    background: #ffeb3b;
+    box-shadow: 0 0 15px #ffeb3b;
     border-radius: 100px;
   }
 
