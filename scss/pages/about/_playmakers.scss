@@ -1,5 +1,5 @@
 .playmakers {
-  padding-top: 3rem;
+  padding-top: 0.1rem;
   position: relative;
   background: linear-gradient(
     160deg,
@@ -29,6 +29,7 @@
 
   &__header {
     margin-top: 5rem;
+    padding-top: 3rem;
     margin-bottom: 2rem;
     text-align: center;
     font-size: 5.5rem;
@@ -43,7 +44,7 @@
 
 .card-grid {
   padding: 0rem 2rem;
-  // padding-bottom: 6rem;
+  padding-bottom: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;

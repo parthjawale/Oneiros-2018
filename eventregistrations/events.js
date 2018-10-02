@@ -149,7 +149,7 @@ var clubs = [
     ]
   },
   {
-    name: "Coreofrafia",
+    name: "Coreografia",
     desc: "Dance Events",
     events: [
       {
@@ -201,7 +201,7 @@ var clubs = [
         type: "team"
       },
       {
-        name: "Humor Us",
+        name: "Humor-Us",
         price: 150,
         min: 1,
         max: 1,
@@ -354,7 +354,7 @@ var clubs = [
     desc: "Two is better than one!",
     events: [
       {
-        name: "Pop-a-razzi(Litmus-Qureka)",
+        name: "Pop-A-Razzi(Litmus-Qureka)",
         price: 100,
         min: 1,
         max: 2,
@@ -375,32 +375,32 @@ var clubs = [
         type: "team"
       }
     ]
-  },
-  {
-    name: "Major Events",
-    desc: "Wait for It!",
-    events: [
-      {
-        name: "Requiem - War Of Bands",
-        price: 1500,
-        min: 3,
-        max: 8,
-        type: "fixed"
-      },
-      {
-        name: "Destival - Group Dance Competition",
-        price: 150,
-        min: 12,
-        max: 43,
-        type: "team"
-      },
-      {
-        name: "Kairos - Fashion Show",
-        price: 200,
-        min: 12,
-        max: 22,
-        type: "team"
-      }
-    ]
   }
+  // {
+  //   name: "Major Events",
+  //   desc: "Wait for It!",
+  //   events: [
+  //     {
+  //       name: "Requiem - War Of Bands",
+  //       price: 1500,
+  //       min: 3,
+  //       max: 8,
+  //       type: "fixed"
+  //     },
+  //     {
+  //       name: "Destival - Group Dance Competition",
+  //       price: 150,
+  //       min: 12,
+  //       max: 43,
+  //       type: "team"
+  //     },
+  //     {
+  //       name: "Kairos - Fashion Show",
+  //       price: 200,
+  //       min: 12,
+  //       max: 22,
+  //       type: "team"
+  //     }
+  //   ]
+  // }
 ];
