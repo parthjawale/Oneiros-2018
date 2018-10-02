@@ -269,6 +269,12 @@ a:link, a:visited {
 .nav-darken {
   background: #fff; }
 
+.show-nav-links {
+  left: 0 !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+  transform: translateX(0) !important; }
+
 .newnav-container {
   position: fixed;
   width: 0;
@@ -290,12 +296,15 @@ a:link, a:visited {
     padding: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
-    display: none; }
+    grid-gap: 1rem; }
     .newnav-container ul li {
       list-style-type: none;
       font-size: 3rem;
-      margin: 3rem 5rem; }
+      margin: 3rem 5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: .5s all;
+      transform: translateX(25px); }
       .newnav-container ul li a {
         padding: 2.5rem 3rem;
         display: block;
