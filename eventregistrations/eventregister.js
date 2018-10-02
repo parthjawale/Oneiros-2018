@@ -12,6 +12,7 @@ new Vue({
       description: '',
       contact: null,
       songdew: '',
+      link: '',
       genre: ''
     },
     destival: {
@@ -27,7 +28,7 @@ new Vue({
   created() {
     var self = this
     firebase.auth().onAuthStateChanged(
-      function(user) {
+      function (user) {
         if (user) {
           self.user = user
           console.log(user)
@@ -36,13 +37,13 @@ new Vue({
           // window.location = '/register'
         }
       },
-      function(error) {
+      function (error) {
         console.log(error)
       }
     )
   },
   computed: {
-    amount: function() {
+    amount: function () {
       if (!this.error) {
         if (this.eventName) {
           if (this.eventName.name == 'Ensemble') {
@@ -64,24 +65,24 @@ new Vue({
         return 'Not Applicable'
       }
     },
-    getParticipants: function() {
+    getParticipants: function () {
       const type = this.eventName.type
       return type === 'team' || type === 'fixed' ? true : false
     },
-    requemSelected: function() {
+    requiemSelected: function () {
       return this.eventName.name == 'Requiem - War Of Bands'
     },
-    destivalSelected: function() {
+    destivalSelected: function () {
       return this.eventName.name == 'Destival - Group Dance Competition'
     }
   },
   watch: {
-    value: function() {
+    value: function () {
       this.check()
     }
   },
   methods: {
-    jsUcfirst: function(string) {
+    jsUcfirst: function (string) {
       return string.charAt(0).toUpperCase() + string.slice(1)
     },
     changeclub() {
@@ -92,6 +93,7 @@ new Vue({
     changevent() {
       this.error = false
       this.value = this.eventName.name != 'Ensemble' ? this.eventName.min : 7
+      this.check()
     },
     check() {
       const eventType = this.eventName.type
@@ -111,8 +113,8 @@ new Vue({
         }
       }
 
-      if (this.requemSelected || this.destivalSelected) {
-        const event = this.requemSelected ? this.requiem : this.destival
+      if (this.requiemSelected || this.destivalSelected) {
+        const event = this.requiemSelected ? this.requiem : this.destival
         var error = false
         const keys = Object.keys(event)
         keys.forEach(key => {
@@ -130,15 +132,18 @@ new Vue({
       firebase
         .auth()
         .signOut()
-        .then(function() {
+        .then(function () {
           window.location = '/eventregistrations.html'
         })
-        .catch(function(error) {
+        .catch(function (error) {
           alert(error.message)
         })
     },
     submit() {
       var self = this
+      console.log(this.eventName)
+      console.log(this.selectedClub)
+      console.log(this.user)
       self.disabled = true
       var userdb = firebase.firestore().collection('users')
       var eventdb = firebase.firestore().collection('events')
@@ -146,19 +151,44 @@ new Vue({
         .doc(self.eventName.name)
         .get()
         .then(
-          function(doc) {
+          function (doc) {
             if (doc.exists) {
               if (doc.data().users != undefined || doc.data().users != null)
                 self.userarr = doc.data().users
-              var obj = {
-                user: self.user.uid,
-                value: self.value
+              var obj = {};
+              if (self.requiemSelected) {
+                obj = {
+                  user: self.user.uid,
+                  value: self.value,
+                  bandName: self.requiem.bandname,
+                  description: self.requiem.description,
+                  contact: self.requiem.contact,
+                  songdewLink: self.requiem.songdew,
+                  videoLink: self.requiem.link,
+                  genre: self.requiem.genre
+                }
+              } else if (self.destivalSelected) {
+                obj = {
+                  user: self.user.uid,
+                  value: self.value,
+                  teamName: self.destival.teamname,
+                  links: self.destival.links
+                }
+              } else {
+                obj = {
+                  user: self.user.uid,
+                  value: self.value
+                }
               }
-              var found = self.userarr.some(function(el) {
+              var found = self.userarr.some(function (el) {
                 return el.user === self.user.uid
               })
               if (!found) {
                 self.userarr.push(obj)
+              } else {
+                self.disabled = false
+                alert("You've already registered.")
+                return;
               }
               eventdb.doc(self.eventName.name).update({
                 users: self.userarr
@@ -166,7 +196,7 @@ new Vue({
               userdb
                 .doc(self.user.uid)
                 .get()
-                .then(function(doc) {
+                .then(function (doc) {
                   if (
                     doc.data().events != undefined ||
                     doc.data().events != null
@@ -179,25 +209,24 @@ new Vue({
                     .update({
                       events: self.eventarr
                     })
-                    .then(function() {
+                    .then(function () {
                       alert(
                         'Thank you for registering for ' +
-                          self.eventName.name +
-                          '. Your unique code is: ' +
-                          doc.data().ucode +
-                          '. Please refer to the mail for further instructions.'
+                        self.eventName.name +
+                        '. Your unique code is: ' +
+                        doc.data().ucode +
+                        '. Please refer to the mail for further instructions.'
                       )
                       userdb
                         .doc(self.user.uid)
                         .get()
-                        .then(function(doc) {
-                          if (doc.exists) {
-                            ;(self.email = doc.data().email),
-                              (self.name = doc.data().name)
+                        .then(function (doc) {
+                          if (doc.exists) {;
+                            (self.email = doc.data().email),
+                            (self.name = doc.data().name)
                             body = {
                               email: self.email,
-                              message:
-                                'Thank you for registering for ' +
+                              message: 'Thank you for registering for ' +
                                 self.eventName.name +
                                 '. <br>Your unique code is ' +
                                 doc.data().ucode +
@@ -205,12 +234,12 @@ new Vue({
                               name: self.name
                             }
                             fetch('/mail/checkMail.php', {
-                              method: 'POST',
-                              headers: {
-                                'Content-Type': 'application/json'
-                              },
-                              body: JSON.stringify(body)
-                            })
+                                method: 'POST',
+                                headers: {
+                                  'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(body)
+                              })
                               .then(res => {
                                 return res.json()
                               })
@@ -231,7 +260,7 @@ new Vue({
                 })
             }
           },
-          function(error) {
+          function (error) {
             alert(error.message)
             self.disabled = false
           }

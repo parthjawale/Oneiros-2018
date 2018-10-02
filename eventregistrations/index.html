@@ -162,7 +162,7 @@
 
 
                 <transition name="fade">
-                    <div v-if="requemSelected">
+                    <div v-if="requiemSelected">
                         <h2 class="details-participants">Band Name</h2>
                         <input type="text" v-model="requiem.bandname" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"
                             @input="check">
@@ -172,12 +172,15 @@
                         <h2 class="details-participants">Contact Number</h2>
                         <input type="number" v-model="requiem.contact" class="Part" placeholder="Contact" style="margin-bottom: 2.5rem;"
                             @input="check">
+                        <h2 class="details-participants">Link To Previous Performances</h2>
+                        <input type="text" v-model="requiem.link" class="Part" placeholder="Enter Link" style="margin-bottom: 2.5rem;"
+                            @input="check">
                         <h2 class="details-participants">Link to Songdew Profile</h2>
                         <input type="text" v-model="requiem.songdew" class="Part" placeholder="Link To Song Dew Profile"
                             style="margin-bottom: 2.5rem;" @input="check">
                         <p style="display: flex; align-items: center; margin-bottom: 2rem;">
-                            If you don't have a Sondew create one here: <a href="https://www.songdew.com" class="logo"
-                                target="_blank"><img src="./songdewlogo.png" alt="songdewlogo">
+                            If you don't have a Songdew profile, please create one here: <a href="https://www.songdew.com"
+                                class="logo" target="_blank"><img src="./songdewlogo.png" alt="songdewlogo">
                             </a>
                         </p>
 
@@ -190,7 +193,7 @@
 
 
                 <h2 class="details-participants" v-if="getParticipants">
-                    <template v-if="requemSelected || destivalSelected">
+                    <template v-if="requiemSelected || destivalSelected">
                         Enter the number of members
                     </template>
                     <template v-else>
@@ -233,7 +236,7 @@
 
                             <hr class="details--divider">
 
-                            <template v-if="requemSelected">
+                            <template v-if="requiemSelected">
                                 <h4 class="details--heading">Bandname</h4>
                                 <p class="details--entry">
                                     {{requiem.bandname}}
@@ -258,6 +261,7 @@
                                 <p class="details--entry">
                                     {{requiem.genre}}
                                 </p>
+                                <hr class="details--divider">
                             </template>
 
 
@@ -271,9 +275,9 @@
                                 <p class="details--entry">
                                     {{destival.links}}
                                 </p>
+                                <hr class="details--divider">
                             </template>
 
-                            <hr class="details--divider">
                             <h4 class="details--heading">No. of Participants:</h4>
                             <p class="details--entry">
                                 {{value}}
