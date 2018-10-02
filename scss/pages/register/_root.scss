@@ -39,12 +39,12 @@ textarea {
     display: none;
   }
 
-  .modal-state:checked + .modal {
+  .modal-state:checked+.modal {
     opacity: 1;
     visibility: visible;
   }
 
-  .modal-state:checked + .modal .modal__inner {
+  .modal-state:checked+.modal .modal__inner {
     top: 0;
   }
 
@@ -242,7 +242,7 @@ textarea {
 #default-radio {
   display: none;
 
-  &:checked + label #custom-radio::after {
+  &:checked+label #custom-radio::after {
     opacity: 1;
   }
 }
@@ -276,4 +276,5 @@ textarea {
   font-family: "Gotham-Bold";
   text-align: center;
   color: $color-secondary;
+  padding-bottom: 5rem;
 }
