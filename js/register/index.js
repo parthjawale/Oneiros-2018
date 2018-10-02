@@ -81,3 +81,10 @@ const blockContact = (bool) => {
     })
   }
 }
+
+$(document).ready(() => {
+  if (window.innerWidth < 800) {
+    $('.nav__sword').addClass('nav-darken')
+    $('.nav__handle').addClass('nav-darken')
+  }
+})
