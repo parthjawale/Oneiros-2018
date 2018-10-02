@@ -21,6 +21,7 @@
       <h4>18th - 20th October</h4>
     </div>
   </div>
+
   <header>
     <img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
     <div class="nav">
@@ -39,36 +40,48 @@
         </li>
       </ul>
     </div>
-    <div class="nav-container">
-      <div class="nav-container__redoverlay"></div>
-      <div class="nav-container__blackoverlay"></div>
-      <div class="nav-container__whiteoverlay">
-        <ul>
-          <li>
-            <a href="/" class="custom-link">Home</a>
-          </li>
-          <li>
-            <a href="/events" class="custom-link">Events</a>
-          </li>
-          <li>
-            <a href="/register" class="custom-link">Register</a>
-          </li>
-          <li>
-            <a href="/login" class="custom-link">Login</a>
-          </li>
-          <li>
-            <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
-          </li>
-          <li>
-            <a href="/accomodation" class="custom-link">Accomodation</a>
-          </li>
-          <!-- <li>
-            <a href="/contact">Contact Us</a>
-          </li> -->
-        </ul>
+
+    <div class="nav-container newnav-container">
+      <div class="newnav-container__splash">
+        <div class="newnav-container__splash--box">
+          <img src="/img/logos/wordmark.png" alt="">
+        </div>
       </div>
+      <ul>
+        <li>
+          <a href="/" class="custom-link">Home</a>
+        </li>
+        <li>
+          <a href="/login" class="custom-link">Sign In</a>
+        </li>
+        <li>
+          <a href="/register" class="custom-link">Sign Up</a>
+        </li>
+        <li>
+          <a href="/about/playmakers.html" class="custom-link">Team</a>
+        </li>
+        <li>
+          <a href="/eventregistrations" class="custom-link">Registration</a>
+        </li>
+        <li>
+          <a href="/events" class="custom-link">Events</a>
+        </li>
+        <li>
+          <a href="/majorevents" class="custom-link">Major Events</a>
+        </li>
+        <li>
+          <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
+        </li>
+        <li>
+          <a href="/accomodation" class="custom-link">Accomodation</a>
+        </li>
+        <li id="logout">
+          <a href="/" class="custom-link">Logout</a>
+        </li>
+      </ul>
     </div>
   </header>
+  <div id="black-overlay"></div>
 
   <main id="register-container">
     <div class="register-container">
@@ -101,9 +114,10 @@
               <input type="number" name="phno" v-model="pno" placeholder="Phone Number" required>
             </section>
             <section>
-              <input type="number" name="whatsapp" v-model="wpno" placeholder="WhatsApp Number" required>
+              <input id="muj-last" type="number" name="whatsapp" v-model="wpno" placeholder="WhatsApp Number" required>
             </section>
-            <input type="submit" value="Submit">
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit" id="muj-submit"
+              value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
             <p v-if="mujerror !== ''" id="mujregister-error" class="register-error">{{mujerror}}</p>
@@ -139,7 +153,7 @@
               <input autocomplete="off" v-model="pno" type="number" name="phno" placeholder="Phone Number">
             </section>
             <section>
-              <input autocomplete="off" v-model="wpno" type="number" name="whatsapp" placeholder="WhatsApp Number">
+              <input id="other-last" autocomplete="off" v-model="wpno" type="number" name="whatsapp" placeholder="WhatsApp Number">
             </section>
             <section id="refcode">
               <input autocomplete="off" v-model="code" type="text" name="refcode" placeholder="Referral Code (Optional)">
@@ -148,7 +162,8 @@
               <input id="default-radio" type="checkbox" v-model="campamb">
               <label for="default-radio">Do you wish to be a Campus Ambassador?<span id="custom-radio"></span></label>
             </section>
-            <input type="submit" value="Submit">
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit" id="other-submit"
+              value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
             <p v-if="othererror !== ''" id="otherregister-error" class="register-error">{{othererror}}</p>

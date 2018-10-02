@@ -16,6 +16,7 @@ var config = {
   storageBucket: "mast-project-naam.appspot.com",
   messagingSenderId: "400633154339"
 };
+
 firebase.initializeApp(config);
 if (!firebase.apps.length) {
   firebase.initializeApp(config);
@@ -23,4 +24,4 @@ if (!firebase.apps.length) {
 
 firebase.firestore().settings({
   timestampsInSnapshots: true
-})
+});
