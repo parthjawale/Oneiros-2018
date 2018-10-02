@@ -3,11 +3,12 @@
 html {
   font-size: 62.5%;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Gotham', sans-serif;
 }
 
 select:focus {
@@ -21,9 +22,18 @@ body {
   font-size: 1.6rem;
   text-align: center;
   min-height: 100%;
-  padding: 6rem;
   height: auto;
   background-attachment: fixed;
+}
+
+main {
+  padding-top: 10rem;
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    padding-top: 15rem;
+  }
 }
 
 #app {
@@ -210,12 +220,12 @@ option {
   display: none;
 }
 
-.modal-state:checked + .modal {
+.modal-state:checked+.modal {
   opacity: 1;
   visibility: visible;
 }
 
-.modal-state:checked + .modal .modal__inner {
+.modal-state:checked+.modal .modal__inner {
   top: 0;
 }
 
@@ -332,22 +342,6 @@ p img {
   margin-bottom: 2rem;
   border: none;
   outline: none;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #bbb9b9;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #d14c53;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #d14c53;
 }
 
 @media screen and (max-width: 768px) {
