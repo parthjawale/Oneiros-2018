@@ -103,10 +103,12 @@
 //   }
 // }
 
-// .show-nav-links {
-//   left: 0 !important;
-//   opacity: 1 !important;
-// }
+.show-nav-links {
+  left: 0 !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+  transform: translateX(0) !important;
+}
 
 
 
@@ -139,12 +141,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
-    display: none;
 
     li {
       list-style-type: none;
       font-size: 3rem;
       margin: 3rem 5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: .5s all;
+      transform: translateX(25px);
 
       a {
         padding: 2.5rem 3rem;

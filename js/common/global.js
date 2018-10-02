@@ -40,6 +40,8 @@ nav.click(e => {
   }
 });
 
+const newLinks = $('.newnav-container li')
+const navSplash = $('.newnav-container__splash')
 const showNewNav = bool => {
   if (bool) {
     $(".nav-container").removeClass('nav--shrink')
@@ -47,14 +49,24 @@ const showNewNav = bool => {
     $(".nav-container").addClass('nav--expand')
     setTimeout(() => {
       $(".nav-container").addClass('nav--full')
+      navSplash.fadeIn()
+      for (let i = 0; i < newLinks.length; i++)
+        setTimeout(() => {
+          newLinks[i].classList.add("show-nav-links");
+        }, i * 100);
     }, 1000);
   } else {
-    $(".nav-container").addClass('nav--shrink')
+    navSplash.fadeOut()
+    newLinks.removeClass('show-nav-links')
     setTimeout(() => {
-      $(".nav-container").removeClass('nav--expand')
-      $(".nav-container").removeClass('nav--full')
-      $(".nav-container").addClass('nav--close')
+      $(".nav-container").addClass('nav--shrink')
+      setTimeout(() => {
+        $(".nav-container").removeClass('nav--expand')
+        $(".nav-container").removeClass('nav--full')
+        $(".nav-container").addClass('nav--close')
+      }, 500);
     }, 500);
+
   }
 }
 
