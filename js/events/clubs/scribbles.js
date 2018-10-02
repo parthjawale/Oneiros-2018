@@ -4,7 +4,24 @@ $(document).ready(() => {
   $('#fullpage').fullpage({
     scrollBar: true,
 
-    anchors: [],
+    anchors: ['club-scribbles',
+    'fusionoid-desc',
+    'fusionoid-info',
+    'fusionoid-rules',
+    'fusionoid-registration',
+    'comicstaan-desc',
+    'comicstaan-info',
+    'comicstaan-rules',
+    'comicstaan-registration',
+    'trippy-desc',
+    'trippy-info',
+    'trippy-rules',
+    'trippy-registration',
+    'junk-desc',
+    'junk-info',
+    'junk-rules',
+    'junk-registration'
+    ],
     afterLoad: (origin, dest) => {
       let option = 0
       const selectedEvent = $('.events-list__item--selected')
