@@ -12,6 +12,93 @@ textarea {
 }
 
 .register-container {
+  .modal {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 12;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.9);
+    transition: opacity 0.25s ease;
+  }
+
+  .modal__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  .modal-state {
+    display: none;
+  }
+
+  .modal-state:checked+.modal {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-state:checked+.modal .modal__inner {
+    top: 0;
+  }
+
+  .modal__inner {
+    transition: top 0.25s ease;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    margin: auto;
+    overflow: auto;
+    background: #fff;
+    border-radius: 5px;
+    padding: 1em 2em;
+    height: 90%;
+  }
+
+  .modal__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 12;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .modal__close:after,
+  .modal__close:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    margin: 5rem 0;
+    height: 100%;
+    background: #ccc;
+    display: block;
+    transform: rotate(45deg);
+    left: 50%;
+    margin: -3px 0 0 -1px;
+    top: 0;
+  }
+
+  .modal__close:hover:after,
+  .modal__close:hover:before {
+    background: #aaa;
+  }
+
+  .modal__close:before {
+    transform: rotate(-45deg);
+  }
+
   @media screen and (max-width: 800px) {
     flex-direction: column;
   }
@@ -33,7 +120,7 @@ textarea {
     }
 
     form {
-      margin: 5rem 0;
+      margin: 3rem 0;
       padding: 0 3rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -124,8 +211,10 @@ textarea {
       background: white;
       color: $color-primary;
 
-      &:hover {
+      &:hover, &:focus {
         color: #fff;
+        background: transparent;
+        border: 5px solid $color-secondary;
       }
     }
 
@@ -155,7 +244,7 @@ textarea {
 #default-radio {
   display: none;
 
-  &:checked + label #custom-radio::after {
+  &:checked+label #custom-radio::after {
     opacity: 1;
   }
 }
@@ -186,7 +275,9 @@ textarea {
 
 .register-error {
   font-size: 2rem;
+  padding-bottom: 4rem;
   font-family: "Gotham-Bold";
   text-align: center;
   color: $color-secondary;
+  padding-bottom: 5rem;
 }
