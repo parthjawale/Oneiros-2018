@@ -42,39 +42,50 @@
         </li>
       </ul>
     </div>
-    <div class="nav-container">
-      <div class="nav-container__redoverlay"></div>
-      <div class="nav-container__blackoverlay"></div>
-      <div class="nav-container__whiteoverlay">
-        <ul>
-          <li>
-            <a href="/" class="custom-link">Home</a>
-          </li>
-          <li>
-            <a href="/login" class="custom-link">Login</a>
-          </li>
-          <li>
-            <a href="/register" class="custom-link">Register</a>
-          </li>
-          <li>
-            <a href="/events" class="custom-link">Events</a>
-          </li>
-          <li>
-            <a href="/majorevents" class="custom-link">Major Events</a>
-          </li>
-          <li>
-            <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
-          </li>
-          <li>
-            <a href="/accomodation" class="custom-link">Accomodation</a>
-          </li>
-        </ul>
+
+    <div class="nav-container newnav-container">
+      <div class="newnav-container__splash">
+        <div class="newnav-container__splash--box">
+          <img src="/img/logos/wordmark.png" alt="">
+        </div>
       </div>
+      <ul>
+        <li>
+          <a href="/" class="custom-link">Home</a>
+        </li>
+        <li>
+          <a href="/login" class="custom-link">Sign In</a>
+        </li>
+        <li>
+          <a href="/register" class="custom-link">Sign Up</a>
+        </li>
+        <li>
+          <a href="/about/playmakers.html" class="custom-link">Team</a>
+        </li>
+        <li>
+          <a href="/eventregistrations" class="custom-link">Registration</a>
+        </li>
+        <li>
+          <a href="/events" class="custom-link">Events</a>
+        </li>
+        <li>
+          <a href="/majorevents" class="custom-link">Major Events</a>
+        </li>
+        <li>
+          <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
+        </li>
+        <li>
+          <a href="/accomodation" class="custom-link">Accomodation</a>
+        </li>
+        <li id="logout">
+          <a href="/" class="custom-link">Logout</a>
+        </li>
+      </ul>
     </div>
   </header>
+  <div id="black-overlay"></div>
 
   <main id="fullpage">
-    <div id="black-overlay"></div>
 
     <section class="events-splash section">
       <video id="events-video" controls autoplay playsinline muted loop>
@@ -110,7 +121,7 @@
         <a href="/events/tmc.html" class="clubs-grid__item custom-link">
           <div class="clubs-grid__item--solid club-tmc">
             <h1 class="clubs-grid__item--header"></h1>
-            <p class="clubs-grid__item--content">Magic isn't found, it’s created​.</p>
+            <p class="clubs-grid__item--content">Tune in and forget all your trebles!</p>
             <img class="clubs-grid__item--logo" src="/img/events/clubs/logos/tmc.png" alt="Tmc">
           </div>
           <div class="clubs-grid__item--image club-tmc__image club-image"></div>
@@ -159,7 +170,7 @@
           </div>
           <div class="clubs-grid__item--image club-shabd__image club-image"></div>
         </a>
-        <a href="#" class="clubs-grid__item">
+        <a href="/events/qureka.html" class="clubs-grid__item">
           <div class="clubs-grid__item--solid club-qureka">
             <h1 class="clubs-grid__item--header"></h1>
             <p class="clubs-grid__item--content">Coming Soon.</p>
@@ -172,6 +183,8 @@
   </main>
 
 
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script src="/js/config/db.js"></script>
   <script src="/js/libs/jquery.js"></script>
   <script src="/js/libs/fullpage.js"></script>
   <script src="/js/events/main.js"></script>
