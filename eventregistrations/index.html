@@ -97,7 +97,7 @@
             <input type="text" name="name" v-model="name" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"> -->
 
                 <select class="Drop-Down" v-model="selectedClub" @change="changeclub">
-                    <option value="">Select Club</option>
+                    <option value="">Select Category</option>
                     <option :value="club" v-for="club in clubs">{{club.desc}} - {{club.name}}</option>
                 </select>
                 <span class="underline"></span>
