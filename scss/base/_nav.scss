@@ -14,7 +14,7 @@
   height: 50px;
   right: 2rem;
   top: 2rem;
-  z-index: 11;
+  z-index: 1001;
   cursor: pointer;
 
   ul {
@@ -51,8 +51,8 @@
   }
 
   &:hover .nav__sword {
-    background: $color-secondary;
-    box-shadow: 0 0 15px red;
+    background: #FFEB3B;
+    box-shadow: 0 0 15px #FFEB3B;
     border-radius: 100px;
   }
 
@@ -80,7 +80,7 @@
   position: absolute;
 
   span {
-    background: #222;
+    background: #fff;
   }
 }
 
@@ -97,7 +97,7 @@
   }
 
   span {
-    background: #222;
+    background: #fff;
   }
 }
 
@@ -108,5 +108,5 @@
 }
 
 .nav-darken {
-  background: #222;
+  background: #fff;
 }
