@@ -150,19 +150,19 @@
                     </div>
                 </transition>
                 <transition name="fade">
-                    <template v-if="destivalSelected">
+                    <div v-if="destivalSelected">
                         <h2 class="details-participants">Team Name</h2>
                         <input type="text" v-model="destival.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;"
                             @input="check">
                         <h2 class="details-participants">Links</h2>
                         <input type="text" v-model="destival.links" class="Part" placeholder="Links" style="margin-bottom: 2.5rem;"
                             @input="check">
-                    </template>
+                    </div>
                 </transition>
 
 
                 <transition name="fade">
-                    <template v-if="requemSelected">
+                    <div v-if="requemSelected">
                         <h2 class="details-participants">Band Name</h2>
                         <input type="text" v-model="requiem.bandname" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"
                             @input="check">
@@ -178,7 +178,7 @@
                         <h2 class="details-participants">Genre</h2>
                         <input type="text" v-model="requiem.genre" class="Part" placeholder="Genre" style="margin-bottom: 2.5rem;"
                             @input="check">
-                    </template>
+                    </div>
                 </transition>
 
 
