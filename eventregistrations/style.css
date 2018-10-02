@@ -64,9 +64,10 @@ body {
 
 .logo {
   display: inline-block;
+  margin-left: 2rem;
 }
 
-.logo > img {
+.logo>img {
   margin: 0;
 }
 
@@ -228,12 +229,12 @@ option {
   display: none;
 }
 
-.modal-state:checked + .modal {
+.modal-state:checked+.modal {
   opacity: 1;
   visibility: visible;
 }
 
-.modal-state:checked + .modal .modal__inner {
+.modal-state:checked+.modal .modal__inner {
   top: 8rem;
 }
 
