@@ -208,43 +208,6 @@ new Vue({
                     .doc(self.user.uid)
                     .update({
                       events: self.eventarr
-<<<<<<< HEAD
-                  })
-                  .then(function () {
-                      alert('HO GAYA')
-                  })
-
-                  userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
-                  .get()
-                  .then(function(doc){  
-                    if(doc.exists){
-                      self.email = doc.data().email,
-                      self.name = doc.data().name                
-
-                      body = {
-
-                        email: self.email,
-                        message: "Thank you for registering for "+self.eventName.name,
-                        name: self.name
-                      };
-                      fetch("/mail/checkMail.php", {
-                        method: "POST",
-                        headers: {
-                          "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(body)
-                      })
-                        .then(res => {
-                          return res.json();
-                        })
-                        .then(response => {
-                          if (response.code === 200) {
-                            self.mujerror = "We'll get back to you!";
-                          } else if (response.code === 405) {
-                            self.mujerror = "Fields cant be empty!";
-                          } else if (response.code === 406) {
-                            self.mujerror = "Invalid E-Mail";
-=======
                     })
                     .then(function () {
                       alert(
@@ -291,7 +254,6 @@ new Vue({
                                 // self.clear();
                               })
                             self.disabled = false
->>>>>>> 1ca448589ab760a377ba43bd0427102446118673
                           }
                         })
                     })
