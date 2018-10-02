@@ -15,4 +15,4 @@ if (!firebase.apps.length) {
 
 firebase.firestore().settings({
   timestampsInSnapshots: true
-})
+});
