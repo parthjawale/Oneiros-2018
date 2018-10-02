@@ -41,23 +41,18 @@
 @font-face {
   font-family: "Gotham-Black";
   src: url("/fonts/gotham/Gotham-Black.otf"); }
-
 @font-face {
   font-family: "Gotham-Bold";
   src: url("/fonts/gotham/Gotham-Bold.otf"); }
-
 @font-face {
   font-family: "Gotham";
   src: url("/fonts/gotham/GothamBook.ttf"); }
-
 @font-face {
   font-family: "Gotham-Light";
   src: url("/fonts/gotham/Gotham-Light.otf"); }
-
 @font-face {
   font-family: "Gotham-Thin";
   src: url("/fonts/gotham/Gotham-XLight.otf"); }
-
 html {
   font-size: 62.5%; }
 
@@ -215,7 +210,7 @@ a:link, a:visited {
   cursor: pointer; }
   @media screen and (max-width: 800px) {
     .nav {
-      top: 4rem !important; } }
+      top: 2rem !important; } }
   .nav ul {
     height: 100%;
     transition: 1s all; }
@@ -237,8 +232,8 @@ a:link, a:visited {
         .nav ul li:nth-child(3) {
           top: 4rem; } }
   .nav:hover .nav__sword {
-    background: #FFEB3B;
-    box-shadow: 0 0 15px #FFEB3B;
+    background: #ffeb3b;
+    box-shadow: 0 0 15px #ffeb3b;
     border-radius: 100px; }
   .nav__sword, .nav__handle, .nav__middle {
     height: 100%;
@@ -571,13 +566,11 @@ a:link, a:visited {
   pointer-events: none;
   opacity: 0;
   transition: 0.5s all; }
-
 .home-theme__header {
   font-size: 7rem;
   font-family: "Gotham-Black";
   color: #e50914;
   margin-bottom: 2rem; }
-
 .home-theme__para {
   font-size: 2rem;
   line-height: 1.5; }
@@ -736,14 +729,12 @@ a:link, a:visited {
       color: #ddd; }
   .login--form .input-group:not(:nth-child(1)) {
     margin-top: 5rem; }
-
 .login .title {
   font-family: "Gotham-Black", sans-serif;
   color: #e50914;
   font-size: 4rem;
   margin-bottom: 9rem;
   font-size: 10rem; }
-
 .login--background {
   width: 50%;
   height: 100vh;
@@ -835,7 +826,6 @@ textarea {
   text-align: left;
   background: rgba(0, 0, 0, 0.9);
   transition: opacity 0.25s ease; }
-
 .register-container .modal__bg {
   position: absolute;
   top: 0;
@@ -843,17 +833,13 @@ textarea {
   bottom: 0;
   left: 0;
   cursor: pointer; }
-
 .register-container .modal-state {
   display: none; }
-
 .register-container .modal-state:checked + .modal {
   opacity: 1;
   visibility: visible; }
-
 .register-container .modal-state:checked + .modal .modal__inner {
   top: 0; }
-
 .register-container .modal__inner {
   transition: top 0.25s ease;
   position: absolute;
@@ -868,7 +854,6 @@ textarea {
   border-radius: 5px;
   padding: 1em 2em;
   height: 90%; }
-
 .register-container .modal__close {
   position: absolute;
   right: 10px;
@@ -878,7 +863,6 @@ textarea {
   height: 20px;
   cursor: pointer;
   margin: 0; }
-
 .register-container .modal__close:after,
 .register-container .modal__close:before {
   content: "";
@@ -892,18 +876,14 @@ textarea {
   left: 50%;
   margin: -3px 0 0 -1px;
   top: 0; }
-
 .register-container .modal__close:hover:after,
 .register-container .modal__close:hover:before {
   background: #aaa; }
-
 .register-container .modal__close:before {
   transform: rotate(-45deg); }
-
 @media screen and (max-width: 800px) {
   .register-container {
     flex-direction: column; } }
-
 .register-container__underlay {
   position: absolute;
   width: 100%;
@@ -972,21 +952,25 @@ textarea {
       background: transparent;
       border: 5px solid #c10812;
       color: #222; }
-
 .register-container__black-section--underlay h1 {
   color: #fff; }
-
 .register-container__black-section--underlay input {
   color: #fff; }
   .register-container__black-section--underlay input::placeholder {
     color: #fff; }
-
 .register-container__black-section--underlay input[type="submit"] {
   background: white;
   color: #e50914; }
+<<<<<<< HEAD
   .register-container__black-section--underlay input[type="submit"]:hover {
     color: #fff; }
+=======
+  .register-container__black-section--underlay input[type="submit"]:hover, .register-container__black-section--underlay input[type="submit"]:focus {
+    color: #fff;
+    background: transparent;
+    border: 5px solid #c10812; }
 
+>>>>>>> afe109c1f3544fc8af60e63fe36cb4e58eb3e863
 .register-container__black-section--underlay label {
   color: #fff; }
 
@@ -1124,7 +1108,6 @@ textarea {
 .event-image__frame {
   perspective: 3000px;
   pointer-events: none; }
-
 .event-image__container {
   position: relative;
   transition: 0.2s all;
@@ -1181,7 +1164,6 @@ textarea {
     transform: translateY(0); }
   100% {
     transform: translateY(0); } }
-
 .club-image {
   position: absolute;
   top: 0;
@@ -1243,10 +1225,8 @@ textarea {
 
 .all * {
   pointer-events: none; }
-
 .all__prime * {
   pointer-events: none; }
-
 .all__prime a {
   position: absolute;
   bottom: 0;
@@ -1260,14 +1240,12 @@ textarea {
     font-size: 50px;
     opacity: 0.7;
     margin-bottom: 10px; }
-
 .all__prime--header, .all__prime--desc {
   z-index: 2;
   padding: 0 5rem;
   color: #fff; }
   .all__prime--header *, .all__prime--desc * {
     pointer-events: none; }
-
 .all__prime--header {
   font-size: 10rem;
   font-family: "Gotham-Black";
@@ -1275,13 +1253,11 @@ textarea {
   text-shadow: 0 0 2rem #222;
   position: relative;
   z-index: 1; }
-
 .all__prime--desc {
   margin-top: 2rem;
   font-size: 3rem;
   z-index: 1;
   position: relative; }
-
 .all__prime--overlay {
   position: absolute;
   width: 100%;
@@ -1316,12 +1292,10 @@ textarea {
 
 .event-container * {
   pointer-events: none; }
-
 .event-container .fp-tableCell {
   display: flex;
   justify-content: space-around;
   align-items: center; }
-
 .event-container .event-image {
   width: 42rem;
   height: 56rem;
@@ -1331,14 +1305,12 @@ textarea {
   box-shadow: 0 1rem 3rem rgba(34, 34, 34, 0.3);
   background: transparent;
   border: 1rem solid #fff; }
-
 @media screen and (max-width: 768px) {
   .event-container .event-image {
     display: none; } }
 
 .event-desc * {
   pointer-events: none; }
-
 .event-desc__info {
   padding: 0 15rem;
   display: grid;
@@ -1404,7 +1376,6 @@ textarea {
       border-radius: 100%;
       background: #fff;
       animation: scroll infinite 3s; }
-
 .event-reg__reg {
   display: flex;
   justify-content: space-around;
@@ -1437,7 +1408,6 @@ textarea {
 
 .event-rules * {
   pointer-events: none; }
-
 .event-rules__header {
   font-size: 3rem;
   color: #ccc;
@@ -1448,13 +1418,10 @@ textarea {
     color: #e50914;
     text-transform: uppercase;
     padding: 0 10rem; }
-
 .event-rules__container {
   padding: 0 10rem; }
-
 .event-rules__item {
   padding: 2rem 0; }
-
 .event-rules__content {
   font-size: 1.5rem;
   font-family: "Gotham-Bold";
@@ -1467,7 +1434,6 @@ textarea {
     transform: translateY(15px); }
   20% {
     transform: translateY(0); } }
-
 @keyframes changePad {
   10% {
     width: 4rem;
@@ -1483,7 +1449,6 @@ textarea {
   70% {
     width: 4rem;
     height: 6rem; } }
-
 .aperture-prime {
   background: url("/img/events/clubs/aperture/prime.jpg");
   background-position: center;
@@ -1661,7 +1626,7 @@ textarea {
   .me-container .requiem__overlay {
     background: #9C27B0; }
   .me-container .fashionshow__splash {
-    background: url("https://images.unsplash.com/photo-1519075509237-10f3fe5aeee1?ixlib=rb-0.3.5&s=bdb14dc2e37ca9dd5bbf34b89916f53f&auto=format&fit=crop&w=668&q=80"); }
+    background: url("/img/majorevents/fashionshow.jpg"); }
   .me-container .fashionshow__overlay {
     background: #E91E63; }
 
@@ -1734,7 +1699,6 @@ textarea {
 .majorevent * {
   line-height: 1.6;
   color: #fff; }
-
 .majorevent__content {
   display: none;
   position: relative;
@@ -2037,7 +2001,6 @@ textarea {
   margin-bottom: 20rem;
   filter: drop-shadow(0rem 0.7rem 3rem rgba(0, 0, 0, 0.55));
   position: relative; }
-
 .skew__parallel {
   position: absolute;
   transform: skewY(12deg) translateY(13rem);
@@ -2052,7 +2015,6 @@ textarea {
     right: 0;
     width: 25%;
     transform: skewY(-12deg) translateY(19.7rem); }
-
 .skew__item {
   display: flex;
   transform: skewY(-12deg); }
@@ -2281,24 +2243,26 @@ textarea {
     transform: translateY(8px); }
   20% {
     transform: translateY(0); } }
-
 @media (max-width: 1400px) {
   html {
     font-size: 8px; } }
-
 @media (max-width: 500px) {
   html {
     font-size: 6px; }
+
   #wordmark {
     top: 2rem;
     left: 2rem; }
+
   .ono-animatedbtn__circle {
     width: 100%;
     height: 100%;
     border-radius: 4rem; }
+
   .clubs-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr; }
+
   .home.about {
     width: 70%;
     right: auto;
@@ -2308,14 +2272,19 @@ textarea {
     .home.about__content {
       font-size: 2.5rem;
       line-height: 1.4; }
+
   .activate-redoverlay {
     width: 75%; }
+
   .activate-blackoverlay {
     width: 68%; }
+
   .activate-whiteoverlay {
     width: 60%; }
+
   .nav-container__whiteoverlay ul li a {
     white-space: normal; }
+
   .home-theme__splash {
     background-position: center 30%; }
   .home-theme__content {
@@ -2336,13 +2305,16 @@ textarea {
   .home-theme__para {
     font-size: 2rem;
     line-height: 1.5; }
+
   .nav {
     top: 2rem;
     right: 2rem; }
+
   .all__prime--header {
     font-size: 5rem; }
   .all__prime--desc {
     box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.3); }
+
   .event {
     width: 100%;
     margin-bottom: 2rem;
@@ -2353,6 +2325,7 @@ textarea {
       margin-bottom: 3rem; }
       .event__desc * {
         pointer-events: none; }
+
   .event-rules * {
     pointer-events: none; }
   .event-rules__header {
@@ -2368,8 +2341,10 @@ textarea {
     font-family: gotham;
     line-height: 1.5;
     padding: 0 2rem; }
+
   .majorevent__content--details {
     flex-direction: column; }
+
   .event-desc {
     color: black; }
     .event-desc * {
@@ -2396,6 +2371,7 @@ textarea {
             background: #b4b4b459; }
         .event-desc__info--detail h3 {
           text-align: left; }
+
   .events-list {
     padding: 2rem 2.5rem; }
     .events-list__item--selected {
@@ -2405,6 +2381,7 @@ textarea {
       font-size: 2rem; }
       .events-list > ul > li > a {
         padding: 2rem 2.5rem; }
+
   .events-splash__container--header {
     position: relative;
     font-size: 12rem !important; }
@@ -2428,6 +2405,7 @@ textarea {
       background: #9b02c660;
       transform: rotate(4deg) translate(0%, -50%);
       content: ""; }
+
   .event-container .fp-tableCell {
     flex-direction: column;
     padding: 6rem;
@@ -2435,6 +2413,7 @@ textarea {
     align-items: stretch; }
   .event-container .event-image {
     margin: 0 auto; }
+
   .event-reg__reg--fee {
     color: #747474;
     font-size: 3.2rem;
@@ -2444,6 +2423,7 @@ textarea {
     text-align: center;
     width: 80%;
     margin-bottom: 8rem; }
+
   .clubs-grid__item--logo {
     width: 23rem;
     top: 20%;
@@ -2460,10 +2440,13 @@ textarea {
     transform: none;
     top: auto;
     line-height: 1.4; }
+
   #shabdLogo {
     width: 10rem; }
+
   #aperturelogo {
     width: 18rem; }
+
   .camb__list {
     width: 100%; }
     .camb__list li {
@@ -2498,28 +2481,37 @@ textarea {
       .camb__content--right:before {
         right: auto;
         left: -2.5rem; }
+
   #smallfz {
     font-size: 2rem;
     flex-basis: 30%; }
+
   #nextar__rules {
     font-size: 1.8rem; }
+
   #aperture__rules {
     font-size: 1.8rem; }
+
   .card-grid {
     padding: 2rem 4.5rem;
     justify-content: space-between; }
     .card-grid__item {
       flex-basis: 47%;
       margin-left: 0%; }
+
   #convenor--grid {
     justify-content: center; } }
-
 @media (max-width: 365px) {
   html {
     font-size: 4.5px; }
+
   .event-rules__content {
     font-size: 2.4rem; }
+
   #nextar__rules {
     font-size: 2.1rem; }
+
   #aperture__rules {
     font-size: 2.1rem; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -58,13 +58,16 @@
           <a href="/register" class="custom-link">Sign Up</a>
         </li>
         <li>
+          <a href="/about/playmakers.html" class="custom-link">Team</a>
+        </li>
+        <li>
           <a href="/eventregistrations" class="custom-link">Registration</a>
         </li>
         <li>
           <a href="/events" class="custom-link">Events</a>
         </li>
         <li>
-          <a href="/about/playmakers.html" class="custom-link">Team</a>
+          <a href="/majorevents" class="custom-link">Major Events</a>
         </li>
         <li>
           <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
@@ -111,9 +114,9 @@
               <input type="number" name="phno" v-model="pno" placeholder="Phone Number" required>
             </section>
             <section>
-              <input type="number" name="whatsapp" v-model="wpno" placeholder="WhatsApp Number" required>
+              <input id="muj-last" type="number" name="whatsapp" v-model="wpno" placeholder="WhatsApp Number" required>
             </section>
-            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit"
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit" id="muj-submit"
               value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
@@ -150,7 +153,7 @@
               <input autocomplete="off" v-model="pno" type="number" name="phno" placeholder="Phone Number">
             </section>
             <section>
-              <input autocomplete="off" v-model="wpno" type="number" name="whatsapp" placeholder="WhatsApp Number">
+              <input id="other-last" autocomplete="off" v-model="wpno" type="number" name="whatsapp" placeholder="WhatsApp Number">
             </section>
             <section id="refcode">
               <input autocomplete="off" v-model="code" type="text" name="refcode" placeholder="Referral Code (Optional)">
@@ -159,7 +162,7 @@
               <input id="default-radio" type="checkbox" v-model="campamb">
               <label for="default-radio">Do you wish to be a Campus Ambassador?<span id="custom-radio"></span></label>
             </section>
-            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit"
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit" id="other-submit"
               value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
@@ -177,6 +180,7 @@
   <script src="/js/common/global.js"></script>
   <script src="/js/register/index.js"></script>
   <script src="/js/register/form.js"></script>
+
   <!-- <script src="/js/config/register/manipal.js"></script> -->
 </body>
 

@@ -96,7 +96,7 @@
             <span class="line"></span>
           </div>
           <div class="input-group">
-            <button :disabled="disabled" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
+            <button id="submit-button" :disabled="disabled" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
               @click="login" class="mt-0 ono-btn ono-btn--small">Submit</button>
             <p v-if="error !== ''" id="login-error">{{error}}</p>
           </div>

@@ -60,13 +60,16 @@
                     <a href="/register" class="custom-link">Sign Up</a>
                 </li>
                 <li>
+                    <a href="/about/playmakers.html" class="custom-link">Team</a>
+                </li>
+                <li>
                     <a href="/eventregistrations" class="custom-link">Registration</a>
                 </li>
                 <li>
                     <a href="/events" class="custom-link">Events</a>
                 </li>
                 <li>
-                    <a href="/about/playmakers.html" class="custom-link">Team</a>
+                    <a href="/majorevents" class="custom-link">Major Events</a>
                 </li>
                 <li>
                     <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
@@ -82,7 +85,7 @@
     </header>
     <div id="black-overlay"></div>
 
-    <div style="padding-top: 10rem">
+    <div style="padding: 2.5rem;padding-top: 10rem; padding-bottom: 6rem; ">
         <div class="container" id="app">
             <!-- <div class="logout-btn">
                 <button class="btn btn--blue" @click="logout">Logout</button>
@@ -146,8 +149,57 @@
                         </p>
                     </div>
                 </transition>
+                <transition name="fade">
+                    <div v-if="destivalSelected">
+                        <h2 class="details-participants">Team Name</h2>
+                        <input type="text" v-model="destival.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;"
+                            @input="check">
+                        <h2 class="details-participants">Links</h2>
+                        <input type="text" v-model="destival.links" class="Part" placeholder="Links" style="margin-bottom: 2.5rem;"
+                            @input="check">
+                    </div>
+                </transition>
 
-                <h2 class="details-participants" v-if="getParticipants">Enter the number of participants</h2>
+
+                <transition name="fade">
+                    <div v-if="requiemSelected">
+                        <h2 class="details-participants">Band Name</h2>
+                        <input type="text" v-model="requiem.bandname" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"
+                            @input="check">
+                        <h2 class="details-participants">Description</h2>
+                        <input type="text" v-model="requiem.description" class="Part" placeholder="Description" style="margin-bottom: 2.5rem;"
+                            @input="check">
+                        <h2 class="details-participants">Contact Number</h2>
+                        <input type="number" v-model="requiem.contact" class="Part" placeholder="Contact" style="margin-bottom: 2.5rem;"
+                            @input="check">
+                        <h2 class="details-participants">Link To Previous Performances</h2>
+                        <input type="text" v-model="requiem.link" class="Part" placeholder="Enter Link" style="margin-bottom: 2.5rem;"
+                            @input="check">
+                        <h2 class="details-participants">Link to Songdew Profile</h2>
+                        <input type="text" v-model="requiem.songdew" class="Part" placeholder="Link To Song Dew Profile"
+                            style="margin-bottom: 2.5rem;" @input="check">
+                        <p style="display: flex; align-items: center; margin-bottom: 2rem;">
+                            If you don't have a Songdew profile, please create one here: <a href="https://www.songdew.com"
+                                class="logo" target="_blank"><img src="./songdewlogo.png" alt="songdewlogo">
+                            </a>
+                        </p>
+
+                        <h2 class="details-participants">Genre</h2>
+                        <input type="text" v-model="requiem.genre" class="Part" placeholder="Genre" style="margin-bottom: 2.5rem;"
+                            @input="check">
+                    </div>
+                </transition>
+
+
+
+                <h2 class="details-participants" v-if="getParticipants">
+                    <template v-if="requiemSelected || destivalSelected">
+                        Enter the number of members
+                    </template>
+                    <template v-else>
+                        Enter the number of participants
+                    </template>
+                </h2>
                 <input type="number" name="Participants" v-model="value" class="Part" placeholder="No. of Participants"
                     v-if="getParticipants">
 
@@ -176,16 +228,56 @@
                         <div class="modal__inner">
                             <label class="modal__close" for="modal-2"></label>
                             <h2 class="details--header">Registration Details</h2>
-
-                            <!-- <h4 class="details--heading">Participant Name</h4>
-                        <p class="details--entry">{{ name }}</p> -->
-
                             <h4 class="details--heading">Club</h4>
                             <p class="details--entry">{{ selectedClub.name }}</p>
                             <hr class="details--divider">
                             <h4 class="details--heading">Event</h4>
                             <p class="details--entry">{{ eventName.name }}</p>
+
                             <hr class="details--divider">
+
+                            <template v-if="requiemSelected">
+                                <h4 class="details--heading">Bandname</h4>
+                                <p class="details--entry">
+                                    {{requiem.bandname}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Description</h4>
+                                <p class="details--entry">
+                                    {{requiem.description}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Contact No.:</h4>
+                                <p class="details--entry">
+                                    {{requiem.contact}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Link to songdew profile</h4>
+                                <p class="details--entry">
+                                    {{requiem.songdew}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Genre</h4>
+                                <p class="details--entry">
+                                    {{requiem.genre}}
+                                </p>
+                                <hr class="details--divider">
+                            </template>
+
+
+                            <template v-if="destivalSelected">
+                                <h4 class="details--heading">Teamname</h4>
+                                <p class="details--entry">
+                                    {{destival.teamname}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Links</h4>
+                                <p class="details--entry">
+                                    {{destival.links}}
+                                </p>
+                                <hr class="details--divider">
+                            </template>
+
                             <h4 class="details--heading">No. of Participants:</h4>
                             <p class="details--entry">
                                 {{value}}
@@ -208,6 +300,7 @@
         </div>
         </main>
 
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
         <script src="/js/config/db.js"></script>
