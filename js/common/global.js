@@ -145,7 +145,7 @@ $(".custom-link").click(e => {
 
 const login = $(".nav-container li:nth-child(2)");
 const register = $(".nav-container li:nth-child(3)");
-const events = $(".nav-container li:nth-child(4)");
+const events = $(".nav-container li:nth-child(5)");
 const logout = $("#logout");
 
 firebase.auth().onAuthStateChanged(user => {
