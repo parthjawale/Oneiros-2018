@@ -9,14 +9,14 @@ const whiteoverlay = $(".nav-container__whiteoverlay");
 const whiteotheroverlay = $(".nav-container__whiteotheroverlay");
 
 const links = $(".nav-container__whiteoverlay a");
-$("body").click(() => {
-  nav.removeClass("nav-active");
-  sword1.removeClass("sword1-activate");
-  sword2.removeClass("sword2-activate");
-  sword3.removeClass("sword3-activate");
-  $("#black-overlay").removeClass("body-darken");
-  showNavPage(false);
-});
+// $("body").click(() => {
+//   nav.removeClass("nav-active");
+//   sword1.removeClass("sword1-activate");
+//   sword2.removeClass("sword2-activate");
+//   sword3.removeClass("sword3-activate");
+//   $("#black-overlay").removeClass("body-darken");
+//   showNavPage(false);
+// });
 nav.click(e => {
   e.stopPropagation();
   if (!nav.hasClass("nav-active")) {
@@ -44,6 +44,9 @@ const newLinks = $('.newnav-container li')
 const navSplash = $('.newnav-container__splash')
 const showNewNav = bool => {
   if (bool) {
+    nav.css({
+      pointerEvents: "none"
+    });
     $(".nav-container").removeClass('nav--shrink')
     $(".nav-container").removeClass('nav--close')
     $(".nav-container").addClass('nav--expand')
@@ -54,8 +57,16 @@ const showNewNav = bool => {
         setTimeout(() => {
           newLinks[i].classList.add("show-nav-links");
         }, i * 100);
-    }, 1000);
+      setTimeout(() => {
+        nav.css({
+          pointerEvents: "all"
+        });
+      }, 1000);
+    }, 500);
   } else {
+    nav.css({
+      pointerEvents: "none"
+    });
     navSplash.fadeOut()
     newLinks.removeClass('show-nav-links')
     setTimeout(() => {
@@ -64,6 +75,9 @@ const showNewNav = bool => {
         $(".nav-container").removeClass('nav--expand')
         $(".nav-container").removeClass('nav--full')
         $(".nav-container").addClass('nav--close')
+        nav.css({
+          pointerEvents: "all"
+        });
       }, 500);
     }, 500);
 
