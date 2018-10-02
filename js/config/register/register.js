@@ -219,8 +219,8 @@ new Vue({
                                     } else if (response.code === 406) {
                                       self.othererror = "Invalid E-Mail";
                                     }
-                                    // window.location = "/eventregistrations";
                                   });
+                                window.location = "/";
                               },
                               function (error) {
                                 self.othererror = error.message;
@@ -311,7 +311,7 @@ new Vue({
                                 } else if (response.code === 406) {
                                   self.mujerror = "Invalid E-Mail";
                                 }
-                                // window.location = "/eventregistrations";
+                                // window.open = "/eventregistrations";
                               });
                             self.othererror = "Successfully Registered";
                             self.disabled = false;
@@ -468,7 +468,7 @@ new Vue({
             }
           },
           function (error) {
-            console.log(error);
+            this.mujerror = error.message;
             self.disabled = false;
           }
         );

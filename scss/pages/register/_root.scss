@@ -120,7 +120,7 @@ textarea {
     }
 
     form {
-      margin: 5rem 0;
+      margin: 3rem 0;
       padding: 0 3rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -273,6 +273,7 @@ textarea {
 
 .register-error {
   font-size: 2rem;
+  padding-bottom: 4rem;
   font-family: "Gotham-Bold";
   text-align: center;
   color: $color-secondary;

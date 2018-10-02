@@ -86,7 +86,7 @@
             <header class="Reg">Event Registration Page</header>
 
             <select class="Drop-Down" v-model="selectedClub" @change="changeclub">
-                <option value="">Select Club</option>
+                <option value="">Select Category</option>
                 <option :value="club" v-for="club in clubs">{{club.desc}} - {{club.name}}</option>
             </select>
             <span class="underline"></span>
@@ -118,8 +118,7 @@
 
                 <div class="imp" v-if="eventName && getParticipants">
                     <i class="fas fa-info-circle"></i>
-                    <p class="imp-content" v-if="eventName.name != 'Ensemble'">
-
+                    <p class="imp-content" v-if="eventName.name != 'Ensemble' && eventName.name != 'Destival - Group Dance Competition'">
                         <span style="display: block; font-size: 2.5rem;
                 font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
                             Event rules
@@ -127,7 +126,16 @@
                         Min. No. of Participants: {{ eventName.min}} <br>
                         Max No. of Pariticipants: {{ eventName.max }}
                     </p>
-                    <p class="imp-content" v-else>
+                    <p class="imp-content" v-if="eventName.name == 'Destival - Group Dance Competition'">
+
+                        <span style="display: block; font-size: 2.5rem;
+                    font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                            Event rules
+                        </span>
+                        Min. No. of Participants: {{ eventName.min}} <br>
+                        Max No. of Pariticipants: {{ eventName.max }} (including helpers)
+                    </p>
+                    <p class="imp-content" v-if="eventName.name == 'Ensemble'">
 
                         <span style="display: block; font-size: 2.5rem;
                     font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
@@ -141,29 +149,36 @@
 
             <template v-if="destivalSelected">
                 <h2 class="details-participants">Team Name</h2>
-                <input type="text" v-model="destival.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;">
-                <h2 class="details-participants">Links</h2>
-                <input type="text" v-model="destival.links" class="Part" placeholder="Links" style="margin-bottom: 2.5rem;">
+                <input type="text" @input="destivalCheck" v-model="destival.teamname" class="Part" placeholder="Team Name"
+                    style="margin-bottom: 2.5rem;">
+                <h2 class="details-participants">Link to Preliminary Video Round </h2>
+                <input type="text" @input="destivalCheck" v-model="destival.links" class="Part" placeholder="Links"
+                    style="margin-bottom: 2.5rem;">
             </template>
 
 
-            <template v-if="requemSelected">
+            <template v-if="requiemSelected">
                 <h2 class="details-participants">Band Name</h2>
-                <input type="text" v-model="requiem.bandname" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;">
+                <input @input="requiemCheck" type="text" v-model="requiem.bandname" class="Part" placeholder="Full Name"
+                    style="margin-bottom: 2.5rem;">
                 <h2 class="details-participants">Description</h2>
-                <input type="text" v-model="requiem.description" class="Part" placeholder="Description" style="margin-bottom: 2.5rem;">
+                <input @input="requiemCheck" type="text" v-model="requiem.description" class="Part" placeholder="Location, Active Since, Past Experience"
+                    style="margin-bottom: 2.5rem;">
                 <h2 class="details-participants">Contact Number</h2>
-                <input type="number" v-model="requiem.contact" class="Part" placeholder="Contact" style="margin-bottom: 2.5rem;">
+                <input @input="requiemCheck" type="number" v-model="requiem.contact" class="Part" placeholder="Contact"
+                    style="margin-bottom: 2.5rem;">
+                <h2 class="details-participants">Links - YouTube / SoundCloud / Apple Music / BandCamp / Spotify</h2>
+                <input @input="requiemCheck" type="text" v-model="requiem.links" class="Part" placeholder="Enter Links"
+                    style="margin-bottom: 2.5rem;">
                 <h2 class="details-participants">Link to Songdew Profile</h2>
-                <input type="text" v-model="requiem.songdew" class="Part" placeholder="Link To Song Dew Profile" style="margin-bottom: 2.5rem;">
+                <input @input="requiemCheck" type="text" v-model="requiem.songdew" class="Part" placeholder="Link To Song Dew Profile"
+                    style="margin-bottom: 2.5rem;">
                 <h2 class="details-participants">Genre</h2>
-                <input type="text" v-model="requiem.genre" class="Part" placeholder="Genre" style="margin-bottom: 2.5rem;">
+                <input @input="requiemCheck" type="text" v-model="requiem.genre" class="Part" placeholder="Genre" style="margin-bottom: 2.5rem;">
             </template>
-
-
 
             <h2 class="details-participants" v-if="getParticipants">
-                <template v-if="requemSelected || destivalSelected">
+                <template v-if="requiemSelected || destivalSelected">
                     Enter the number of members
                 </template>
                 <template v-else>
@@ -202,7 +217,7 @@
                         <!-- <h4 class="details--heading">Participant Name</h4>
                         <p class="details--entry">{{ name }}</p> -->
 
-                        <h4 class="details--heading">Club</h4>
+                        <h4 class="details--heading">Category</h4>
                         <p class="details--entry">{{ selectedClub.name }}</p>
                         <hr class="details--divider">
                         <h4 class="details--heading">Event</h4>
