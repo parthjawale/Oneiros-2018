@@ -85,7 +85,7 @@
     </header>
     <div id="black-overlay"></div>
 
-    <div style="padding-top: 10rem">
+    <div style="padding: 2.5rem;padding-top: 10rem; padding-bottom: 6rem; ">
         <div class="container" id="app">
             <!-- <div class="logout-btn">
                 <button class="btn btn--blue" @click="logout">Logout</button>
@@ -175,6 +175,12 @@
                         <h2 class="details-participants">Link to Songdew Profile</h2>
                         <input type="text" v-model="requiem.songdew" class="Part" placeholder="Link To Song Dew Profile"
                             style="margin-bottom: 2.5rem;" @input="check">
+                        <p style="display: flex; align-items: center; margin-bottom: 2rem;">
+                            If you don't have a Sondew create one here: <a href="https://www.songdew.com" class="logo"
+                                target="_blank"><img src="./songdewlogo.png" alt="songdewlogo">
+                            </a>
+                        </p>
+
                         <h2 class="details-participants">Genre</h2>
                         <input type="text" v-model="requiem.genre" class="Part" placeholder="Genre" style="margin-bottom: 2.5rem;"
                             @input="check">
@@ -219,15 +225,54 @@
                         <div class="modal__inner">
                             <label class="modal__close" for="modal-2"></label>
                             <h2 class="details--header">Registration Details</h2>
-
-                            <!-- <h4 class="details--heading">Participant Name</h4>
-                        <p class="details--entry">{{ name }}</p> -->
-
                             <h4 class="details--heading">Club</h4>
                             <p class="details--entry">{{ selectedClub.name }}</p>
                             <hr class="details--divider">
                             <h4 class="details--heading">Event</h4>
                             <p class="details--entry">{{ eventName.name }}</p>
+
+                            <hr class="details--divider">
+
+                            <template v-if="requemSelected">
+                                <h4 class="details--heading">Bandname</h4>
+                                <p class="details--entry">
+                                    {{requiem.bandname}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Description</h4>
+                                <p class="details--entry">
+                                    {{requiem.description}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Contact No.:</h4>
+                                <p class="details--entry">
+                                    {{requiem.contact}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Link to songdew profile</h4>
+                                <p class="details--entry">
+                                    {{requiem.songdew}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Genre</h4>
+                                <p class="details--entry">
+                                    {{requiem.genre}}
+                                </p>
+                            </template>
+
+
+                            <template v-if="destivalSelected">
+                                <h4 class="details--heading">Teamname</h4>
+                                <p class="details--entry">
+                                    {{destival.teamname}}
+                                </p>
+                                <hr class="details--divider">
+                                <h4 class="details--heading">Links</h4>
+                                <p class="details--entry">
+                                    {{destival.links}}
+                                </p>
+                            </template>
+
                             <hr class="details--divider">
                             <h4 class="details--heading">No. of Participants:</h4>
                             <p class="details--entry">
