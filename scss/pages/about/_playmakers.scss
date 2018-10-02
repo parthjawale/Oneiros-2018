@@ -1,5 +1,4 @@
 .playmakers {
-  padding-top: 3rem;
   position: relative;
   background: linear-gradient(
     160deg,
@@ -11,6 +10,7 @@
   background-attachment: fixed;
   min-height: 100%;
   height: auto;
+
   &::-webkit-scrollbar {
     width: 5px;
 
@@ -28,7 +28,6 @@
   }
 
   &__header {
-    margin-top: 5rem;
     margin-bottom: 2rem;
     text-align: center;
     font-size: 5.5rem;
@@ -42,7 +41,7 @@
 }
 
 .card-grid {
-  padding: 2rem 2rem;
+  padding: 0rem 2rem;
   padding-bottom: 6rem;
   display: flex;
   justify-content: center;
@@ -122,6 +121,7 @@
         object-fit: cover;
         transition: filter 0.4s ease-in-out;
       }
+
       > img:hover {
         position: absolute;
         filter: grayscale(0%);
@@ -148,6 +148,7 @@
       margin-bottom: 1rem;
       color: rgb(230, 63, 63);
     }
+
     &__contact {
       font-size: 1.3rem;
       text-align: center;
@@ -158,6 +159,7 @@
       outline: none;
       margin-bottom: 1rem;
     }
+
     &:after,
     &:before {
       position: absolute;
@@ -195,6 +197,7 @@
       }
     }
   }
+
   .zigzag-drop {
     position: absolute;
     width: 100%;
@@ -385,6 +388,7 @@
     font-size: 5rem;
     padding-bottom: 2rem;
     text-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.4);
+
     &--light {
       color: #555;
     }
