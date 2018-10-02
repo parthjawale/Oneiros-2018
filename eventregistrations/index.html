@@ -154,12 +154,11 @@
                         <h2 class="details-participants">Team Name</h2>
                         <input type="text" v-model="destival.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;"
                             @input="check">
-                        <h2 class="details-participants">Links</h2>
+                        <h2 class="details-participants">Link To Preliminary Video Round</h2>
                         <input type="text" v-model="destival.links" class="Part" placeholder="Links" style="margin-bottom: 2.5rem;"
                             @input="check">
                     </div>
                 </transition>
-
 
                 <transition name="fade">
                     <div v-if="requiemSelected">
@@ -186,6 +185,13 @@
 
                         <h2 class="details-participants">Genre</h2>
                         <input type="text" v-model="requiem.genre" class="Part" placeholder="Genre" style="margin-bottom: 2.5rem;"
+                            @input="check">
+                    </div>
+                </transition>
+                <transition name="fade">
+                    <div v-if="fashionshowSelected">
+                        <h2 class="details-participants">Team Name</h2>
+                        <input type="text" v-model="fashionshow.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;"
                             @input="check">
                     </div>
                 </transition>
@@ -264,6 +270,13 @@
                                 <hr class="details--divider">
                             </template>
 
+                            <template v-if="fashionshowSelected">
+                                <h4 class="details--heading">Team Name</h4>
+                                <p class="details--entry">
+                                    {{fashionshow.teamname}}
+                                </p>
+                                <hr class="details--divider">
+                            </template>
 
                             <template v-if="destivalSelected">
                                 <h4 class="details--heading">Teamname</h4>
