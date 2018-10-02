@@ -21,11 +21,11 @@ new Vue({
     clubs,
     userarr: [],
     eventarr: [],
+    clubs,
     email: ''
   },
   created() {
     var self = this
-    console.log('./events.json')
     firebase.auth().onAuthStateChanged(
       function(user) {
         if (user) {
@@ -33,7 +33,7 @@ new Vue({
           console.log(user)
         } else {
           // alert('Please register yourself first.')
-          // window.location = "/register";
+          // window.location = '/register'
         }
       },
       function(error) {
@@ -45,15 +45,16 @@ new Vue({
     amount: function() {
       if (!this.error) {
         if (this.eventName) {
-          if (this.eventName.name == 'ensemble') {
-            if (this.value <= 10) {
+          if (this.eventName.name == 'Ensemble') {
+            if (this.value >= 7 && this.value <= 10) {
               return this.eventName.price
-            } else {
+            } else if (this.value > 10) {
               return this.eventName.price + (this.value - 10) * 100
             }
           } else if (this.eventName.type == 'team' && this.value != 0) {
             return this.value * this.eventName.price
           } else {
+            //return the the event's fixed price if type is : solo, duet and fixed
             return this.eventName.price
           }
         } else {
@@ -66,12 +67,6 @@ new Vue({
     getParticipants: function() {
       const type = this.eventName.type
       return type === 'team' || type === 'fixed' ? true : false
-    },
-    requemSelected: function() {
-      return this.eventName.name == 'Requiem - War Of Bands'
-    },
-    destivalSelected: function() {
-      return this.eventName.name == 'Destival - Group Dance Competetion'
     }
   },
   watch: {
@@ -90,17 +85,18 @@ new Vue({
     },
     changevent() {
       this.error = false
-      this.value = this.eventName.name != 'ensemble' ? this.eventName.min : 7
+      this.value = this.eventName.name != 'Ensemble' ? this.eventName.min : 7
     },
     check() {
       const eventType = this.eventName.type
       const min = this.eventName.min
       const max = this.eventName.max
 
-      if (this.eventName.name == 'ensemble') {
+      if (this.eventName.name == 'Ensemble') {
         return
       }
-
+      if (eventType == 'solo') this.value = 1
+      if (eventType == 'duet') this.value = 2
       if (eventType == 'team' || eventType == 'fixed') {
         if (this.value >= min && this.value <= max) {
           this.error = false
@@ -128,7 +124,7 @@ new Vue({
         .auth()
         .signOut()
         .then(function() {
-          window.location = '/index.html'
+          window.location = '/eventregistrations.html'
         })
         .catch(function(error) {
           alert(error.message)
@@ -147,8 +143,18 @@ new Vue({
             if (doc.exists) {
               if (doc.data().users != undefined || doc.data().users != null)
                 self.userarr = doc.data().users
-              if (!self.userarr.includes(self.user.uid)) {
-                self.userarr.push(self.user.uid)
+              // if (!self.userarr.includes(self.user.uid)) {
+              //   self.userarr.push(self.user.uid);
+              // }
+              var obj = {
+                user: self.user.uid,
+                value: self.value
+              }
+              var found = self.userarr.some(function(el) {
+                return el.user === self.user.uid
+              })
+              if (!found) {
+                self.userarr.push(obj)
               }
               eventdb.doc(self.eventName.name).update({
                 users: self.userarr
@@ -213,8 +219,8 @@ new Vue({
                                   self.mujerror = 'Invalid E-Mail'
                                 }
                                 // self.clear();
-                                self.disabled = false
                               })
+                            self.disabled = false
                           }
                         })
                     })

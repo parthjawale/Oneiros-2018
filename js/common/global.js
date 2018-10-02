@@ -9,14 +9,14 @@ const whiteoverlay = $(".nav-container__whiteoverlay");
 const whiteotheroverlay = $(".nav-container__whiteotheroverlay");
 
 const links = $(".nav-container__whiteoverlay a");
-$("body").click(() => {
-  nav.removeClass("nav-active");
-  sword1.removeClass("sword1-activate");
-  sword2.removeClass("sword2-activate");
-  sword3.removeClass("sword3-activate");
-  $("#black-overlay").removeClass("body-darken");
-  showNavPage(false);
-});
+// $("body").click(() => {
+//   nav.removeClass("nav-active");
+//   sword1.removeClass("sword1-activate");
+//   sword2.removeClass("sword2-activate");
+//   sword3.removeClass("sword3-activate");
+//   $("#black-overlay").removeClass("body-darken");
+//   showNavPage(false);
+// });
 nav.click(e => {
   e.stopPropagation();
   if (!nav.hasClass("nav-active")) {
@@ -25,16 +25,64 @@ nav.click(e => {
     sword2.addClass("sword2-activate");
     sword3.addClass("sword3-activate");
     $("#black-overlay").addClass("body-darken");
-    showNavPage(true);
+    // showNavPage(true);
+    showNewNav(true)
   } else {
     nav.removeClass("nav-active");
     sword1.removeClass("sword1-activate");
     sword2.removeClass("sword2-activate");
     sword3.removeClass("sword3-activate");
-    $("#black-overlay").removeClass("body-darken");
-    showNavPage(false);
+    setTimeout(() => {
+      $("#black-overlay").removeClass("body-darken");
+    }, 1000);
+    // showNavPage(false);
+    showNewNav(false)
   }
 });
+
+const newLinks = $('.newnav-container li')
+const navSplash = $('.newnav-container__splash')
+const showNewNav = bool => {
+  if (bool) {
+    nav.css({
+      pointerEvents: "none"
+    });
+    $(".nav-container").removeClass('nav--shrink')
+    $(".nav-container").removeClass('nav--close')
+    $(".nav-container").addClass('nav--expand')
+    setTimeout(() => {
+      $(".nav-container").addClass('nav--full')
+      navSplash.fadeIn()
+      for (let i = 0; i < newLinks.length; i++)
+        setTimeout(() => {
+          newLinks[i].classList.add("show-nav-links");
+        }, i * 100);
+      setTimeout(() => {
+        nav.css({
+          pointerEvents: "all"
+        });
+      }, 1000);
+    }, 500);
+  } else {
+    nav.css({
+      pointerEvents: "none"
+    });
+    navSplash.fadeOut()
+    newLinks.removeClass('show-nav-links')
+    setTimeout(() => {
+      $(".nav-container").addClass('nav--shrink')
+      setTimeout(() => {
+        $(".nav-container").removeClass('nav--expand')
+        $(".nav-container").removeClass('nav--full')
+        $(".nav-container").addClass('nav--close')
+        nav.css({
+          pointerEvents: "all"
+        });
+      }, 500);
+    }, 500);
+
+  }
+}
 
 const showNavPage = bool => {
   if (bool) {
@@ -71,16 +119,16 @@ $(document).ready(() => {
   setTimeout(() => {
     $(".loader-prime").addClass("hide-prime-loader");
   }, 2000);
-  $(".mext-logo").click(function() {
+  $(".mext-logo").click(function () {
     window.open("https://mext.in", "_blank");
   });
-  $(".moodi-logo").click(function() {
+  $(".moodi-logo").click(function () {
     window.open("https://moodi.org", "_blank");
   });
-  $(".wordmark, #wordmark").click(function() {
+  $(".wordmark, #wordmark").click(function () {
     window.open("https://oneiros.co.in", "_self");
   });
-  $("#mext").click(function() {
+  $("#mext").click(function () {
     window.open("https://mext.in", "_blank");
   });
 });
@@ -97,20 +145,36 @@ $(".custom-link").click(e => {
 
 const login = $(".nav-container li:nth-child(2)");
 const register = $(".nav-container li:nth-child(3)");
-const events = $(".nav-container li:nth-child(4)");
+const events = $(".nav-container li:nth-child(5)");
 const logout = $("#logout");
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    login.css({ display: "none" });
-    register.css({ display: "none" });
-    events.css({ display: "all" });
-    logout.css({ display: "all" });
+    login.css({
+      display: "none"
+    });
+    register.css({
+      display: "none"
+    });
+    events.css({
+      display: "all"
+    });
+    logout.css({
+      display: "all"
+    });
   } else {
-    login.css({ display: "all" });
-    register.css({ display: "all" });
-    events.css({ display: "none" });
-    logout.css({ display: "none" });
+    login.css({
+      display: "all"
+    });
+    register.css({
+      display: "all"
+    });
+    events.css({
+      display: "none"
+    });
+    logout.css({
+      display: "none"
+    });
   }
 });
 
