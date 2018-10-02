@@ -8,43 +8,43 @@ new Vue({
     error: false,
     clubs: [
       {
-        name: "aperture",
+        name: "Aperture",
         events: [
           {
-            name: "focus",
-            price: "free",
+            name: "FOCUS",
+            price: "Free",
             type: "solo"
           },
           {
-            name: "shutter up",
+            name: "Shutter Up",
             price: 200,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "instaperture",
+            name: "InstAperture",
             price: 100,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "show down of societies",
+            name: "Show Down Of Societies",
             price: 500,
             min: 3,
             max: 5,
             type: "fixed"
           },
           {
-            name: "picture perfect",
+            name: "Picture Perfect",
             price: 100,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "power shoot",
+            name: "Power Shoot",
             price: 100,
             min: 2,
             max: 2,
@@ -53,45 +53,45 @@ new Vue({
         ]
       },
       {
-        name: "the music club",
+        name: "The Music Club",
         events: [
           {
-            name: "octaves",
+            name: "Octaves",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "dhwani",
+            name: "Dhwani",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "beatstreet",
+            name: "BeatStreet",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "saptak",
+            name: "Saptak",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "ensemble",
+            name: "Ensemble",
             price: 800,
-            min: "6 Vocalists + 1 Accompanists",
-            max: "No limit",
+            min: 7,
+            max: 1000,
             type: "team"
           },
           {
-            name: "twice the voice",
+            name: "Twice The Voice",
             price: 250,
             min: 2,
             max: 2,
@@ -99,7 +99,7 @@ new Vue({
           },
           // { name: 'rapisody', price: 150 },
           {
-            name: "woodstock",
+            name: "Woodstock",
             price: 150,
             min: 1,
             max: 3,
@@ -108,38 +108,38 @@ new Vue({
         ]
       },
       {
-        name: "litmus",
+        name: "Litmus",
         events: [
           {
-            name: "bamboozled",
+            name: "Bamboozled",
             price: 250,
             min: 2,
             max: 3,
             type: "fixed"
           },
           {
-            name: "ekphrasis",
+            name: "Ekphrasis",
             price: 100,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "just a minute",
+            name: "Just A Minute",
             price: 100,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "parliamentary debate",
+            name: "British Parliamentary Debate",
             price: 500,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "pictionary",
+            name: "Pictionary",
             price: 150,
             min: 2,
             max: 2,
@@ -147,7 +147,7 @@ new Vue({
           },
 
           {
-            name: "voice over",
+            name: "Voice Over",
             price: 150,
             min: 2,
             max: 2,
@@ -156,31 +156,31 @@ new Vue({
         ]
       },
       {
-        name: "coreofrafia",
+        name: "Coreofrafia",
         events: [
           {
-            name: "nextar(solo and duet)",
+            name: "Nextar",
             price: 200,
             min: 1,
             max: 2,
             type: "team"
           },
           {
-            name: "showcase",
+            name: "Showcase",
             price: 100,
             min: 1,
             max: 2,
             type: "team"
           },
           {
-            name: "ground zero",
+            name: "Ground Zero",
             price: 800,
             min: 4,
             max: 6,
             type: "team"
           },
           {
-            name: "steps vs beats",
+            name: "Steps Vs Beats",
             price: 100,
             min: 1,
             max: 1,
@@ -189,59 +189,59 @@ new Vue({
         ]
       },
       {
-        name: "cinefilia",
+        name: "Cinefilia",
         events: [
           {
-            name: "ad mark",
+            name: "AD Mak",
             price: 100,
             min: 3,
             max: 5,
             type: "team"
           },
           {
-            name: "awaaz",
+            name: "Awaaz",
             price: 100,
             min: 8,
             max: 20,
             type: "team"
           },
           {
-            name: "humor us",
+            name: "Humor Us",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "mission improvable",
+            name: "Mission Improvable",
             price: 100,
             min: 4,
             max: 5,
             type: "team"
           },
           {
-            name: "pandora's box",
+            name: "Pandora's Box",
             price: 250,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "rangmanch",
+            name: "Rangmanch",
             price: 100,
             min: 4,
             max: 15,
             type: "team"
           },
           {
-            name: "mono-act",
+            name: "Mono-Act",
             price: 150,
             min: 1,
             max: 1,
             type: "solo"
           },
           {
-            name: "spoofy do",
+            name: "Spoofy Do",
             price: 150,
             min: 1,
             max: 1,
@@ -250,7 +250,7 @@ new Vue({
         ]
       },
       {
-        name: "scribbles",
+        name: "Scribbles",
         events: [
           {
             name: "Fusionoid",
@@ -260,7 +260,7 @@ new Vue({
             type: "solo"
           },
           {
-            name: "Trippy Tales",
+            name: "Trippy Tiles",
             price: 200,
             min: 1,
             max: 2,
@@ -274,7 +274,7 @@ new Vue({
             type: "team"
           },
           {
-            name: "Junk-o-mania",
+            name: "Junk-O-Mania",
             price: 150,
             min: 1,
             max: 2,
@@ -287,12 +287,12 @@ new Vue({
         ]
       },
       {
-        name: "shabd",
+        name: "Shabd",
         events: [
           // { name: 'Poetry Event', price: 50 },
           // { name: 'Quiz Event', price: 150 },
           {
-            name: "izhar",
+            name: "Izhar",
             price: 50,
             min: 1,
             max: 1,
@@ -301,18 +301,18 @@ new Vue({
         ]
       },
       {
-        name: "qureka",
+        name: "Qureka",
         events: [
           // { name: 'Pop Culture/Fantasy Quiz', price: 100 },
           {
-            name: "BizTech Quiz",
+            name: "BizTech Quiz(Ignited Minds)",
             price: 100,
             min: 1,
             max: 2,
             type: "team"
           },
           {
-            name: "General Quiz",
+            name: "General Quiz(Sadharan)",
             price: 100,
             min: 1,
             max: 2,
@@ -321,7 +321,7 @@ new Vue({
         ]
       },
       {
-        name: "sophia",
+        name: "Sophia",
         events: [
           {
             name: "Let's Tweet",
@@ -345,7 +345,7 @@ new Vue({
             type: "solo"
           },
           {
-            name: "debate",
+            name: "Debate",
             price: 200,
             min: 1,
             max: 1,
@@ -354,24 +354,24 @@ new Vue({
         ]
       },
       {
-        name: "collab events",
+        name: "Collab Events",
         events: [
           {
-            name: "Pop-a-razzi",
+            name: "Pop-a-razzi(Litmus-Qureka)",
             price: 100,
             min: 1,
             max: 2,
             type: "team"
           },
           {
-            name: "chakravyuh(cinefilia-shabd)",
+            name: "Chakravyuh(Cinefilia-Shabd)",
             price: 150,
             min: 2,
             max: 5,
             type: "team"
           },
           {
-            name: "song-smith(tmc-litmus)",
+            name: "Song-Smith(TMC-Litmus)",
             price: 200,
             min: 2,
             max: 4,
@@ -388,10 +388,10 @@ new Vue({
       },
 
       {
-        name: "major events",
+        name: "Major Events",
         events: [
           {
-            name: "requiem- war of bands",
+            name: "Requiem - War Of Bands",
             price: 1500,
             min: 3,
             max: 8,
@@ -405,7 +405,7 @@ new Vue({
             type: "team"
           },
           {
-            name: "Fashion Show",
+            name: "Kairos - Fashion Show",
             price: 200,
             min: 12,
             max: 22,
@@ -414,21 +414,23 @@ new Vue({
         ]
       }
     ],
-    userarr:[],
-    eventarr:[],
-    email:""
+    userarr: [],
+    eventarr: [],
+    email: ""
   },
 
   computed: {
-    amount: function() {
+    amount: function () {
       if (!this.error) {
         if (this.eventName) {
-          if (this.eventName.name == "ensemble") {
-            if (this.value <= 10) {
+          if (this.eventName.name == "Ensemble") {
+
+            if (this.value >= 7 && this.value <= 10) {
               return this.eventName.price;
-            } else {
+            } else if (this.value > 10) {
               return this.eventName.price + (this.value - 10) * 100;
             }
+
           } else if (this.eventName.type == "team" && this.value != 0) {
             return this.value * this.eventName.price;
           } else {
@@ -442,16 +444,16 @@ new Vue({
         return "Not Applicable";
       }
     },
-    getParticipants: function() {
+    getParticipants: function () {
       const type = this.eventName.type;
       return type === "team" || type === "fixed" ? true : false;
     }
   },
   watch: {
-    value: function() {
+    value: function () {
       this.check();
     },
-    name: function() {
+    name: function () {
       this.check();
     }
   },
@@ -463,7 +465,7 @@ new Vue({
     },
     changevent() {
       this.error = false;
-      this.value = this.eventName.name != "ensemble" ? this.eventName.min : 7;
+      this.value = this.eventName.name != "Ensemble" ? this.eventName.min : 7;
     },
     check() {
       const eventType = this.eventName.type;
@@ -474,9 +476,9 @@ new Vue({
       //     return this.error = true
       // }
 
-      if (this.eventName.name == "ensemble") {
-        return;
-      }
+      // if (this.eventName.name == "Ensemble") {
+      //   return;
+      // }
 
       if (eventType == "team" || eventType == "fixed") {
         if (this.value >= min && this.value <= max) {
@@ -487,48 +489,47 @@ new Vue({
       }
     },
     submit() {
-      console.log("method chala")
-      var self=this
-      var userdb=firebase.firestore().collection('users')
-      var eventdb=firebase.firestore().collection('events')
+      var self = this
+      var userdb = firebase.firestore().collection('users')
+      var eventdb = firebase.firestore().collection('events')
       console.log(self.eventName)
       eventdb.doc(self.eventName.name)
-      .get()
-      .then(function (doc) {
+        .get()
+        .then(function (doc) {
           if (doc.exists) {
-              if (doc.data().users != undefined || doc.data().users != null)
-                  self.userarr = doc.data().users
-              if (!self.userarr.includes("JGPUrYgmhFRoFjV7hSblfb4zxHG2")) {
-                self.userarr.push("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
-              }
-              eventdb.doc(self.eventName.name).update({
-                  users:self.userarr
-              })
-              userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
+            if (doc.data().users != undefined || doc.data().users != null)
+              self.userarr = doc.data().users
+            if (!self.userarr.includes("JGPUrYgmhFRoFjV7hSblfb4zxHG2")) {
+              self.userarr.push("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
+            }
+            eventdb.doc(self.eventName.name).update({
+              users: self.userarr
+            })
+            userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
               .get()
               .then(function (doc) {
-                  if (doc.data().events != undefined || doc.data().events != null)
-                      self.eventarr = doc.data().events
-                  if (!self.eventarr.includes(self.eventName.name))
-                      self.eventarr.push(self.eventName.name)
-                  userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2").update({
-                      events: self.eventarr
-                  })
+                if (doc.data().events != undefined || doc.data().events != null)
+                  self.eventarr = doc.data().events
+                if (!self.eventarr.includes(self.eventName.name))
+                  self.eventarr.push(self.eventName.name)
+                userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2").update({
+                  events: self.eventarr
+                })
                   .then(function () {
-                      alert('HO GAYA')
+                    alert('HO GAYA')
                   })
 
-                  userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
+                userdb.doc("JGPUrYgmhFRoFjV7hSblfb4zxHG2")
                   .get()
-                  .then(function(doc){  
-                    if(doc.exists){
+                  .then(function (doc) {
+                    if (doc.exists) {
                       self.email = doc.data().email,
-                      self.name = doc.data().name
+                        self.name = doc.data().name
 
                       body = {
 
                         email: self.email,
-                        message: "Thank you for registering for "+self.eventName.name,
+                        message: "Thank you for registering for " + self.eventName.name,
                         name: self.name
                       };
                       fetch("/mail/checkMail.php", {
@@ -554,10 +555,10 @@ new Vue({
                   })
               })
           }
-      }, function (error) {
-        alert(error.message)
-      })
+        }, function (error) {
+          alert(error.message)
+        })
     }
   },
-  
+
 });
