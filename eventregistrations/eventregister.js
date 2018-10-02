@@ -67,6 +67,12 @@ new Vue({
     getParticipants: function() {
       const type = this.eventName.type
       return type === 'team' || type === 'fixed' ? true : false
+    },
+    requemSelected: function() {
+      return this.eventName.name == 'Requiem - War Of Bands'
+    },
+    destivalSelected: function() {
+      return this.eventName.name == 'Destival - Group Dance Competition'
     }
   },
   watch: {
