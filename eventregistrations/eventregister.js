@@ -523,7 +523,7 @@ new Vue({
                   .then(function(doc){  
                     if(doc.exists){
                       self.email = doc.data().email,
-                      self.name = doc.data().name
+                      self.name = doc.data().name                
 
                       body = {
 
