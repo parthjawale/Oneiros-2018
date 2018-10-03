@@ -77,6 +77,8 @@ header.Reg {
   color: #d14c53;
   padding: 5rem 0;
   display: block;
+  padding-top: 5rem;
+  line-height: 1.5;
   width: 100%;
 }
 
@@ -109,7 +111,7 @@ label {
   line-height: 1.5;
   background: rgba(236, 32, 32, 0.712);
   border-radius: 0.6rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5.5rem;
 }
 
 i.fas.fa-info-circle {
@@ -143,8 +145,8 @@ i.fas.fa-info-circle {
 }
 
 option {
-  background-color: rgba(226, 226, 226, 0.856);
-  color: #d14c53;
+  /* background-color: rgba(226, 226, 226, 0.856); */
+  /* color: #d14c53; */
   font-weight: bold;
 }
 
@@ -157,6 +159,7 @@ option {
   height: 0;
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
+  line-height: 1.5;
 }
 
 .amount {
@@ -373,6 +376,7 @@ p img {
   .Reg {
     font-size: 3.5rem;
     font-weight: 700;
+    line-height: 1.5;
   }
 
   .Drop-Down {
