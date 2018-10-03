@@ -7,9 +7,9 @@ var config = {
   storageBucket: "oneiros-2018.appspot.com",
   messagingSenderId: "358484877394"
 };
-
 firebase.initializeApp(config);
 
+firebase.initializeApp(config);
 if (!firebase.apps.length) {
   firebase.initializeApp(config);
 }

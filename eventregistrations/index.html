@@ -91,13 +91,13 @@
                 <button class="btn btn--blue" @click="logout">Logout</button>
             </div> -->
             <div id="app-wrapper">
-                <header class="Reg" style="line-height: 1.5; padding-top: 2rem;">Event Registration Page</header>
+                <header class="Reg">Event Registration Page</header>
                 <!-- 
             <h2 class="details-participants">Full Name</h2>
             <input type="text" name="name" v-model="name" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"> -->
 
                 <select class="Drop-Down" v-model="selectedClub" @change="changeclub">
-                    <option value="">Select Club</option>
+                    <option value="">Select Category</option>
                     <option :value="club" v-for="club in clubs">{{club.desc}} - {{club.name}}</option>
                 </select>
                 <span class="underline"></span>
@@ -129,7 +129,7 @@
 
                     <div class="imp" v-if="eventName && getParticipants">
                         <i class="fas fa-info-circle"></i>
-                        <p class="imp-content" v-if="eventName.name != 'Ensemble'">
+                        <p class="imp-content" v-if="eventName.name != 'Ensemble' && eventName.name != 'Kairos - Fashion Show' && eventName.name != 'Destival - Group Dance Competition'">
 
                             <span style="display: block; font-size: 2.5rem;
                 font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
@@ -138,7 +138,25 @@
                             Min. No. of Participants: {{ eventName.min}} <br>
                             Max No. of Pariticipants: {{ eventName.max }}
                         </p>
-                        <p class="imp-content" v-else>
+                        <p class="imp-content" v-if="eventName.name != 'Ensemble' && eventName.name == 'Kairos - Fashion Show' && eventName.name != 'Destival - Group Dance Competition'">
+
+                            <span style="display: block; font-size: 2.5rem;
+                    font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                                Event rules
+                            </span>
+                            Min. No. of Participants: {{ eventName.min}} <br>
+                            Max No. of Pariticipants: {{ eventName.max }} (including helpers)
+                        </p>
+                        <p class="imp-content" v-if="eventName.name != 'Ensemble' && eventName.name != 'Kairos - Fashion Show' && eventName.name == 'Destival - Group Dance Competition'">
+
+                            <span style="display: block; font-size: 2.5rem;
+                        font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                                Event rules
+                            </span>
+                            Min. No. of Participants: {{ eventName.min}} <br>
+                            Max No. of Pariticipants: {{ eventName.max }} (including helpers)
+                        </p>
+                        <p class="imp-content" v-if="eventName.name == 'Ensemble' && eventName.name != 'Kairos - Fashion Show' && eventName.name != 'Destival - Group Dance Competition'">
 
                             <span style="display: block; font-size: 2.5rem;
                     font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
@@ -154,25 +172,25 @@
                         <h2 class="details-participants">Team Name</h2>
                         <input type="text" v-model="destival.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;"
                             @input="check">
-                        <h2 class="details-participants">Links</h2>
+                        <h2 class="details-participants">Link To Preliminary Video Round</h2>
                         <input type="text" v-model="destival.links" class="Part" placeholder="Links" style="margin-bottom: 2.5rem;"
                             @input="check">
                     </div>
                 </transition>
-
 
                 <transition name="fade">
                     <div v-if="requiemSelected">
                         <h2 class="details-participants">Band Name</h2>
                         <input type="text" v-model="requiem.bandname" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"
                             @input="check">
-                        <h2 class="details-participants">Description</h2>
+                        <h2 class="details-participants">Description - Location/ Active Since/ Past Experience</h2>
                         <input type="text" v-model="requiem.description" class="Part" placeholder="Description" style="margin-bottom: 2.5rem;"
                             @input="check">
                         <h2 class="details-participants">Contact Number</h2>
                         <input type="number" v-model="requiem.contact" class="Part" placeholder="Contact" style="margin-bottom: 2.5rem;"
                             @input="check">
-                        <h2 class="details-participants">Link To Previous Performances</h2>
+                        <h2 class="details-participants">Link To Previous Performances - YouTube / SoundCloud/ Apple
+                            Music / BandCamp / Spotify</h2>
                         <input type="text" v-model="requiem.link" class="Part" placeholder="Enter Link" style="margin-bottom: 2.5rem;"
                             @input="check">
                         <h2 class="details-participants">Link to Songdew Profile</h2>
@@ -186,6 +204,13 @@
 
                         <h2 class="details-participants">Genre</h2>
                         <input type="text" v-model="requiem.genre" class="Part" placeholder="Genre" style="margin-bottom: 2.5rem;"
+                            @input="check">
+                    </div>
+                </transition>
+                <transition name="fade">
+                    <div v-if="fashionshowSelected">
+                        <h2 class="details-participants">Team Name</h2>
+                        <input type="text" v-model="fashionshow.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;"
                             @input="check">
                     </div>
                 </transition>
@@ -264,6 +289,13 @@
                                 <hr class="details--divider">
                             </template>
 
+                            <template v-if="fashionshowSelected">
+                                <h4 class="details--heading">Team Name</h4>
+                                <p class="details--entry">
+                                    {{fashionshow.teamname}}
+                                </p>
+                                <hr class="details--divider">
+                            </template>
 
                             <template v-if="destivalSelected">
                                 <h4 class="details--heading">Teamname</h4>
