@@ -1825,7 +1825,7 @@ textarea {
     background-position: bottom;
     background-size: cover;
     opacity: 0;
-    transition: .2s all; }
+    transition: .5s opacity, .2s filter; }
     @media screen and (max-width: 800px) {
       .me__all--item {
         background-position: center; } }
@@ -1886,7 +1886,9 @@ textarea {
     transition: .5s all;
     cursor: pointer;
     pointer-events: none;
-    opacity: 0; }
+    opacity: 0;
+    box-shadow: 0 0 2rem rgba(34, 34, 34, 0.2);
+    border-radius: 5px; }
     .me__controls--control:hover {
       background: #fff;
       width: 20rem; }
@@ -1973,7 +1975,7 @@ textarea {
   transform: translate(-50%, -50%) translateY(0); }
 
 .bg--fade {
-  filter: brightness(0.5); }
+  filter: brightness(0.2); }
 
 .majorevent__content {
   position: relative;
