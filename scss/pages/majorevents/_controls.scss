@@ -20,6 +20,8 @@
       cursor: pointer;
       pointer-events: none;
       opacity: 0;
+      box-shadow: 0 0 2rem rgba(#222, .2);
+      border-radius: 5px;
 
       &:hover {
         background: #fff;

@@ -30,7 +30,7 @@ const showDetails = (option) => {
 const details = {
   destival: `
     <div class="majorevent__content">
-      <div class="majorevent__content--header">Destival</div>
+      <div class="majorevent__content--header">Destival (Group Dance Competition)</div>
       <div class="majorevent__content--para">
         Dance with your heart and soul and you&#39;re all set to steal the show.
         Yes, folks it&#39;s time for you to swivel your way onto the stage and light it up with passion and colors.
@@ -157,7 +157,7 @@ const details = {
   `,
   kairos: `
     <div class="majorevent__content">
-      <div class="majorevent__content--header">Kairos</div>
+      <div class="majorevent__content--header">Kairos (Fashion Show)</div>
       <div class="majorevent__content--para">
         You cannot lose something which is not yours; to lose something is an illusion
         because everything you own is a mirage!
@@ -244,7 +244,7 @@ const details = {
   `,
   requiem: `
     <div class="majorevent__content">
-      <div class="majorevent__content--header">Requiem</div>
+      <div class="majorevent__content--header">Requiem (War of Bands)</div>
       <div class="majorevent__content--para">
         Do you miss hearing the roar of the crowd as you climb on stage and
         feel the exhilarating atmosphere? Can you hear past the distorted
