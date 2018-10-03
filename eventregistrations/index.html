@@ -91,7 +91,7 @@
                 <button class="btn btn--blue" @click="logout">Logout</button>
             </div> -->
             <div id="app-wrapper">
-                <header class="Reg" style="line-height: 1.5; padding-top: 2rem;">Event Registration Page</header>
+                <header class="Reg">Event Registration Page</header>
                 <!-- 
             <h2 class="details-participants">Full Name</h2>
             <input type="text" name="name" v-model="name" class="Part" placeholder="Full Name" style="margin-bottom: 2.5rem;"> -->
@@ -129,7 +129,7 @@
 
                     <div class="imp" v-if="eventName && getParticipants">
                         <i class="fas fa-info-circle"></i>
-                        <p class="imp-content" v-if="eventName.name != 'Ensemble'">
+                        <p class="imp-content" v-if="eventName.name != 'Ensemble' && eventName.name != 'Requiem - War Of Bands' && eventName.name != 'Destival - Group Dance Competition'">
 
                             <span style="display: block; font-size: 2.5rem;
                 font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
@@ -138,7 +138,25 @@
                             Min. No. of Participants: {{ eventName.min}} <br>
                             Max No. of Pariticipants: {{ eventName.max }}
                         </p>
-                        <p class="imp-content" v-else>
+                        <p class="imp-content" v-if="eventName.name != 'Ensemble' && eventName.name == 'Requiem - War Of Bands' && eventName.name != 'Destival - Group Dance Competition'">
+
+                            <span style="display: block; font-size: 2.5rem;
+                    font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                                Event rules
+                            </span>
+                            Min. No. of Participants: {{ eventName.min}} <br>
+                            Max No. of Pariticipants: {{ eventName.max }} (including helpers)
+                        </p>
+                        <p class="imp-content" v-if="eventName.name != 'Ensemble' && eventName.name != 'Requiem - War Of Bands' && eventName.name == 'Destival - Group Dance Competition'">
+
+                            <span style="display: block; font-size: 2.5rem;
+                        font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                                Event rules
+                            </span>
+                            Min. No. of Participants: {{ eventName.min}} <br>
+                            Max No. of Pariticipants: {{ eventName.max }} (including helpers)
+                        </p>
+                        <p class="imp-content" v-if="eventName.name == 'Ensemble' && eventName.name != 'Requiem - War Of Bands' && eventName.name != 'Destival - Group Dance Competition'">
 
                             <span style="display: block; font-size: 2.5rem;
                     font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
