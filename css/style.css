@@ -1977,13 +1977,6 @@ textarea {
 .bg--fade {
   filter: brightness(0.2); }
 
-<<<<<<< HEAD
-.majorevent * {
-  line-height: 1.6;
-  color: #fff; }
-
-=======
->>>>>>> 64a7e701986ca1efd1535647e9565e60f2ad84f9
 .majorevent__content {
   position: relative;
   padding: 5rem; }
