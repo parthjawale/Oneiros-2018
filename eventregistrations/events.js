@@ -170,7 +170,7 @@ var clubs = [
         name: "Ground Zero",
         price: 900,
         min: 4,
-        max: 6,
+        max: 8,
         type: "fixed"
       },
       {

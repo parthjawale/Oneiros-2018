@@ -158,6 +158,10 @@
       display: block;
       outline: none;
       margin-bottom: 1rem;
+      .heading {
+        color: black;
+        margin-bottom: 0.5rem;
+      }
     }
 
     &:after,
