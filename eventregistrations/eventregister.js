@@ -24,7 +24,7 @@ $(document).ready(function() {
         teamname: '',
         links: ''
       },
-      kairos: {
+      fashionshow: {
         link: ''
       },
       message: '',
@@ -133,7 +133,7 @@ $(document).ready(function() {
         if (
           this.requiemSelected ||
           this.destivalSelected ||
-          this.fashionshowSelected
+          this.kairosSelected
         ) {
           var event
           if (this.requiemSelected) event = this.requiem
