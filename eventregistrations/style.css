@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 html {
   font-size: 62.5%;
@@ -8,7 +8,7 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Gotham', sans-serif;
+  font-family: "Gotham", sans-serif;
 }
 
 select:focus {
@@ -67,7 +67,7 @@ body {
   margin-left: 2rem;
 }
 
-.logo>img {
+.logo > img {
   margin: 0;
 }
 
@@ -77,6 +77,8 @@ header.Reg {
   color: #d14c53;
   padding: 5rem 0;
   display: block;
+  padding-top: 5rem;
+  line-height: 1.5;
   width: 100%;
 }
 
@@ -96,6 +98,7 @@ label {
   text-decoration: none;
   border: 0;
   width: 100%;
+  font-family: "Gotham-Thin", sans-serif;
   background: transparent;
   padding-bottom: 2rem;
   font-weight: bold;
@@ -106,9 +109,10 @@ label {
   display: flex;
   align-items: center;
   padding: 1.5rem 2rem;
+  line-height: 1.5;
   background: rgba(236, 32, 32, 0.712);
   border-radius: 0.6rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5.5rem;
 }
 
 i.fas.fa-info-circle {
@@ -142,20 +146,21 @@ i.fas.fa-info-circle {
 }
 
 option {
-  background-color: rgba(226, 226, 226, 0.856);
-  color: #d14c53;
+  /* background-color: rgba(226, 226, 226, 0.856); */
+  /* color: #d14c53; */
   font-weight: bold;
 }
 
 .select-selected:after {
   position: absolute;
-  content: '';
+  content: "";
   top: 14px;
   right: 10px;
   width: 0;
   height: 0;
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
+  line-height: 1.5;
 }
 
 .amount {
@@ -229,12 +234,12 @@ option {
   display: none;
 }
 
-.modal-state:checked+.modal {
+.modal-state:checked + .modal {
   opacity: 1;
   visibility: visible;
 }
 
-.modal-state:checked+.modal .modal__inner {
+.modal-state:checked + .modal .modal__inner {
   top: 8rem;
 }
 
@@ -266,7 +271,7 @@ option {
 
 .modal__close:after,
 .modal__close:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 2px;
   margin: 5rem 0;
@@ -372,6 +377,7 @@ p img {
   .Reg {
     font-size: 3.5rem;
     font-weight: 700;
+    line-height: 1.5;
   }
 
   .Drop-Down {
