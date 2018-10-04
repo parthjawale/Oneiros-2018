@@ -127,10 +127,10 @@ var clubs = [
       },
       {
         name: "British Parliamentary Debate",
-        price: 500,
-        min: 1,
-        max: 1,
-        type: "solo"
+        price: 400,
+        min: 2,
+        max: 2,
+        type: "duet"
       },
       {
         name: "Pictionary",
