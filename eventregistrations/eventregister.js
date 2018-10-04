@@ -49,9 +49,14 @@ $(document).ready(function() {
     },
     mounted() {
       var self = this
-      // $('body').click(function() {
-      //   self.authCheck()
-      // })
+
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+          console.log('object')
+          window.location.href = '/login'
+        }
+      })
+
       $('.notification__close').click(function() {
         $(self.$refs.notification).removeClass('notification--show')
       })
