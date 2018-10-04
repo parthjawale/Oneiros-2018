@@ -288,16 +288,23 @@ option {
 }
 
 .btn {
+  display: inline-block;
   cursor: pointer;
   display: inline-block;
   padding: 1.5rem 2rem;
   color: #fff;
   border-radius: 3px;
   transition: background 0.2s linear;
+  outline: none;
+  border: none;
+  border-radius: 0.7rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  box-shadow: 0px 0.6rem 2.5rem rgba(0, 0, 0, 0.383);
 }
 
 .btn--blue {
-  background: #222;
+  background: rgb(34, 34, 34);
 }
 
 .btn--blue:hover,
@@ -307,6 +314,31 @@ option {
 
 .btn--blue:active {
   background: #4e4e4e;
+}
+
+.notification {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  max-width: 500px;
+  padding: 2rem;
+  background: rgb(31, 31, 31);
+  color: #f0f0f0;
+  transition: transform 0.3s ease;
+  box-shadow: 0rem 0rem 2.5rem rgba(0, 0, 0, 0.383);
+  border-radius: 0 0 0.6rem 0.6rem;
+}
+
+.notification__close {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid rgba(216, 43, 43, 0.561);
+}
+.notification--show {
+  transform: translate(-50%, 0%);
 }
 
 p img {
