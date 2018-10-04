@@ -131,19 +131,14 @@ $(document).ready(function() {
         }
 
         if (
-          this.requemSelected ||
+          this.requiemSelected ||
           this.destivalSelected ||
-          this.kairosSelected
+          this.fashionshowSelected
         ) {
           var event
-          if (this.requemSelected) {
-            event = this.requiem
-          } else if (this.destivalSelected) {
-            event = this.destival
-          } else {
-            console.log('object')
-            event = this.kairos
-          }
+          if (this.requiemSelected) event = this.requiem
+          else if (this.destivalSelected) event = this.destival
+          else event = this.fashionshow
           var error = false
           const keys = Object.keys(event)
           keys.forEach(key => {
@@ -170,6 +165,9 @@ $(document).ready(function() {
       },
       submit() {
         var self = this
+        console.log(this.eventName)
+        console.log(this.selectedClub)
+        console.log(this.user)
         self.disabled = true
         var userdb = firebase.firestore().collection('users')
         var eventdb = firebase.firestore().collection('events')
@@ -181,15 +179,46 @@ $(document).ready(function() {
               if (doc.exists) {
                 if (doc.data().users != undefined || doc.data().users != null)
                   self.userarr = doc.data().users
-                var obj = {
-                  user: self.user.uid,
-                  value: self.value
+                var obj = {}
+                if (self.requiemSelected) {
+                  obj = {
+                    user: self.user.uid,
+                    value: self.value,
+                    bandName: self.requiem.bandname,
+                    description: self.requiem.description,
+                    contact: self.requiem.contact,
+                    songdewLink: self.requiem.songdew,
+                    videoLink: self.requiem.link,
+                    genre: self.requiem.genre
+                  }
+                } else if (self.destivalSelected) {
+                  obj = {
+                    user: self.user.uid,
+                    value: self.value,
+                    teamName: self.destival.teamname,
+                    links: self.destival.links
+                  }
+                } else if (self.fashionshowSelected) {
+                  obj = {
+                    user: self.user.uid,
+                    value: self.value,
+                    teamName: self.fashionshow.teamname
+                  }
+                } else {
+                  obj = {
+                    user: self.user.uid,
+                    value: self.value
+                  }
                 }
                 var found = self.userarr.some(function(el) {
                   return el.user === self.user.uid
                 })
                 if (!found) {
                   self.userarr.push(obj)
+                } else {
+                  self.disabled = false
+                  alert("You've already registered.")
+                  return
                 }
                 eventdb.doc(self.eventName.name).update({
                   users: self.userarr

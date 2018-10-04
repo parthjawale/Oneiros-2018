@@ -8,16 +8,7 @@ var config = {
   messagingSenderId: "358484877394"
 };
 
-// var config = {
-//   apiKey: "AIzaSyCszYWkqAN5VQsXjrtAVB7dI7hIB-q1CQ0",
-//   authDomain: "mast-project-naam.firebaseapp.com",
-//   databaseURL: "https://mast-project-naam.firebaseio.com",
-//   projectId: "mast-project-naam",
-//   storageBucket: "mast-project-naam.appspot.com",
-//   messagingSenderId: "400633154339"
-// };
 firebase.initializeApp(config);
-
 if (!firebase.apps.length) {
   firebase.initializeApp(config);
 }
