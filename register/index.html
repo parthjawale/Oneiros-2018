@@ -116,8 +116,8 @@
             <section>
               <input id="muj-last" type="number" name="whatsapp" v-model="wpno" placeholder="WhatsApp Number" required>
             </section>
-            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit" id="muj-submit"
-              value="Submit" :disabled="disabled">
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit"
+              id="muj-submit" value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
             <p v-if="mujerror !== ''" id="mujregister-error" class="register-error">{{mujerror}}</p>
@@ -162,8 +162,8 @@
               <input id="default-radio" type="checkbox" v-model="campamb">
               <label for="default-radio">Do you wish to be a Campus Ambassador?<span id="custom-radio"></span></label>
             </section>
-            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit" id="other-submit"
-              value="Submit" :disabled="disabled">
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit"
+              id="other-submit" value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
             <p v-if="othererror !== ''" id="otherregister-error" class="register-error">{{othererror}}</p>
