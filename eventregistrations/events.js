@@ -278,6 +278,8 @@ var clubs = [
       },
       {
         name: "Art Gallery",
+        min: 0,
+        max: 0,
         price: "Free"
       }
     ]
