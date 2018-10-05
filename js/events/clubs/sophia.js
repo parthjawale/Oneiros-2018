@@ -5,7 +5,7 @@ $(document).ready(() => {
     scrollBar: true,
 
     anchors: [
-      'club-coreografia',
+      'club-sophia',
       'tweet-desc',
       'tweet-info',
       'tweet-rules',
