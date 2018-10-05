@@ -1,137 +1,149 @@
 $(document).ready(function() {
-  $('.notification__close').on('click', function() {
-    console.log('object')
-    $('.notification').removeClass('notification--show')
-  })
+  $(".notification__close").on("click", function() {
+    console.log("object");
+    $(".notification").removeClass("notification--show");
+  });
 
   new Vue({
-    el: '#app',
+    el: "#app",
     data: {
-      selectedClub: '',
-      eventName: '',
+      selectedClub: "",
+      eventName: "",
       value: 0,
       user: null,
       error: false,
       disabled: false,
       requiem: {
-        bandname: '',
-        description: '',
+        bandname: "",
+        description: "",
         contact: null,
-        songdew: '',
-        genre: ''
+        songdew: "",
+        link: "",
+        genre: ""
       },
       destival: {
-        teamname: '',
-        links: ''
+        teamname: "",
+        links: ""
       },
+
       fashionshow: {
-        link: ''
+        teamname: "",
+        link: ""
       },
-      message: '',
+      message: "",
       clubs,
       userarr: [],
       eventarr: [],
       clubs,
-      email: ''
+      email: ""
     },
     created() {
-      var self = this
+      var self = this;
       firebase.auth().onAuthStateChanged(
         function(user) {
           if (user) {
-            self.user = user
+            self.user = user;
+            firebase
+              .firestore()
+              .collection("users")
+              .doc(self.user.uid)
+              .get()
+              .then(function(doc) {
+                self.user.displayName = doc.data().name;
+                console.log(self.user);
+              });
           }
         },
         function(error) {
-          console.log(error)
+          console.log(error);
         }
-      )
+      );
     },
     mounted() {
-      var self = this
+      var self = this;
 
       firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
-          console.log('object')
-          window.location.href = '/login'
+          console.log("object");
+          window.location.href = "/login";
         }
-      })
+      });
 
-      $('.notification__close').click(function() {
-        $(self.$refs.notification).removeClass('notification--show')
-      })
+      $(".notification__close").click(function() {
+        $(self.$refs.notification).removeClass("notification--show");
+      });
     },
     computed: {
       amount: function() {
         if (!this.error) {
           if (this.eventName) {
-            if (this.eventName.name == 'Ensemble') {
+            if (this.eventName.name == "Ensemble") {
               if (this.value >= 7 && this.value <= 10) {
-                return this.eventName.price
+                return this.eventName.price;
               } else if (this.value > 10) {
-                return this.eventName.price + (this.value - 10) * 100
+                return this.eventName.price + (this.value - 10) * 100;
               }
-            } else if (this.eventName.type == 'team' && this.value != 0) {
-              return this.value * this.eventName.price
+            } else if (this.eventName.type == "team" && this.value != 0) {
+              return this.value * this.eventName.price;
             } else {
               //return the the event's fixed price if type is : solo, duet and fixed
-              return this.eventName.price
+              return this.eventName.price;
             }
           } else {
-            return 0
+            return 0;
           }
         } else {
-          return 'Not Applicable'
+          return "Not Applicable";
         }
       },
       getParticipants: function() {
-        const type = this.eventName.type
-        return type === 'team' || type === 'fixed' ? true : false
+        const type = this.eventName.type;
+        return type === "team" || type === "fixed" ? true : false;
       },
-      requemSelected: function() {
-        return this.eventName.name == 'Requiem - War Of Bands'
+      requiemSelected: function() {
+        return this.eventName.name == "Requiem - War Of Bands";
       },
       destivalSelected: function() {
-        return this.eventName.name == 'Destival - Group Dance Competition'
+        return this.eventName.name == "Destival - Group Dance Competition";
       },
       kairosSelected: function() {
-        return this.eventName.name == 'Kairos - Fashion Show'
+        return this.eventName.name == "Kairos - Fashion Show";
       }
     },
     watch: {
       value: function() {
-        this.check()
+        this.check();
       }
     },
     methods: {
       jsUcfirst: function(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1)
+        return string.charAt(0).toUpperCase() + string.slice(1);
       },
       changeclub() {
-        this.eventName = ''
-        this.error = false
-        this.value = 0
+        this.eventName = "";
+        this.error = false;
+        this.value = 0;
       },
       changevent() {
-        this.error = false
-        this.value = this.eventName.name != 'Ensemble' ? this.eventName.min : 7
-        this.check()
+        this.error = false;
+        this.value = this.eventName.name != "Ensemble" ? this.eventName.min : 7;
+        this.check();
       },
       check() {
-        const eventType = this.eventName.type
-        const min = this.eventName.min
-        const max = this.eventName.max
+        const eventType = this.eventName.type;
+        const min = this.eventName.min;
+        const max = this.eventName.max;
 
-        if (this.eventName.name == 'Ensemble') {
-          return
+        if (this.eventName.name == "Ensemble") {
+          return;
         }
-        if (eventType == 'solo') this.value = 1
-        if (eventType == 'duet') this.value = 2
-        if (eventType == 'team' || eventType == 'fixed') {
+        if (eventType == "solo") this.value = 1;
+        if (eventType == "duet") this.value = 2;
+        if (eventType == "team" || eventType == "fixed") {
           if (this.value >= min && this.value <= max) {
-            this.error = false
+            this.error = false;
           } else {
-            this.error = true
+            this.error = true;
           }
         }
 
@@ -140,20 +152,20 @@ $(document).ready(function() {
           this.destivalSelected ||
           this.kairosSelected
         ) {
-          var event
-          if (this.requiemSelected) event = this.requiem
-          else if (this.destivalSelected) event = this.destival
-          else event = this.fashionshow
-          var error = false
-          const keys = Object.keys(event)
+          var event;
+          if (this.requiemSelected) event = this.requiem;
+          else if (this.destivalSelected) event = this.destival;
+          else event = this.fashionshow;
+          var error = false;
+          const keys = Object.keys(event);
           keys.forEach(key => {
             if (!event[key]) {
-              error = true
+              error = true;
             }
-          })
-          this.error = error
+          });
+          this.error = error;
           if (!(this.value >= min && this.value <= max)) {
-            this.error = true
+            this.error = true;
           }
         }
       },
@@ -162,20 +174,20 @@ $(document).ready(function() {
           .auth()
           .signOut()
           .then(function() {
-            window.location = '/eventregistrations.html'
+            window.location = "/eventregistrations.html";
           })
           .catch(function(error) {
-            alert(error.message)
-          })
+            alert(error.message);
+          });
       },
       submit() {
-        var self = this
-        console.log(this.eventName)
-        console.log(this.selectedClub)
-        console.log(this.user)
-        self.disabled = true
-        var userdb = firebase.firestore().collection('users')
-        var eventdb = firebase.firestore().collection('events')
+        var self = this;
+        console.log(this.eventName);
+        console.log(this.selectedClub);
+        console.log(this.user);
+        self.disabled = true;
+        var userdb = firebase.firestore().collection("users");
+        var eventdb = firebase.firestore().collection("events");
         eventdb
           .doc(self.eventName.name)
           .get()
@@ -183,11 +195,15 @@ $(document).ready(function() {
             function(doc) {
               if (doc.exists) {
                 if (doc.data().users != undefined || doc.data().users != null)
-                  self.userarr = doc.data().users
-                var obj = {}
-                if (self.requiemSelected) {
+                  self.userarr = doc.data().users;
+                var obj = {};
+                if (self.eventName.name == "Requiem - War Of Bands") {
                   obj = {
                     user: self.user.uid,
+                    userName: self.user.displayName,
+                    paid: false,
+                    amount: self.amount,
+                    email: self.user.email,
                     value: self.value,
                     bandName: self.requiem.bandname,
                     description: self.requiem.description,
@@ -195,39 +211,54 @@ $(document).ready(function() {
                     songdewLink: self.requiem.songdew,
                     videoLink: self.requiem.link,
                     genre: self.requiem.genre
-                  }
-                } else if (self.destivalSelected) {
+                  };
+                } else if (
+                  self.eventName.name == "Destival - Group Dance Competition"
+                ) {
                   obj = {
                     user: self.user.uid,
+                    amount: self.amount,
+                    userName: self.user.displayName,
+                    paid: false,
+                    email: self.user.email,
                     value: self.value,
                     teamName: self.destival.teamname,
                     links: self.destival.links
-                  }
-                } else if (self.fashionshowSelected) {
+                  };
+                } else if (self.eventName.name == "Kairos - Fashion Show") {
                   obj = {
                     user: self.user.uid,
+                    amount: self.amount,
+                    userName: self.user.displayName,
+                    paid: false,
+                    email: self.user.email,
                     value: self.value,
                     teamName: self.fashionshow.teamname
-                  }
+                  };
                 } else {
                   obj = {
                     user: self.user.uid,
+                    amount: self.amount,
+                    userName: self.user.displayName,
+                    paid: false,
+                    email: self.user.email,
                     value: self.value
-                  }
+                  };
                 }
                 var found = self.userarr.some(function(el) {
-                  return el.user === self.user.uid
-                })
+                  return el.user === self.user.uid;
+                });
                 if (!found) {
-                  self.userarr.push(obj)
+                  self.userarr.push(obj);
                 } else {
-                  self.disabled = false
-                  alert("You've already registered.")
-                  return
+                  self.disabled = false;
+                  alert("You've already registered.");
+                  return;
                 }
+                console.log(self.userarr);
                 eventdb.doc(self.eventName.name).update({
                   users: self.userarr
-                })
+                });
                 userdb
                   .doc(self.user.uid)
                   .get()
@@ -236,9 +267,60 @@ $(document).ready(function() {
                       doc.data().events != undefined ||
                       doc.data().events != null
                     )
-                      self.eventarr = doc.data().events
-                    if (!self.eventarr.includes(self.eventName.name))
-                      self.eventarr.push(self.eventName.name)
+                      self.eventarr = doc.data().events;
+                    var obj = {};
+                    if (self.eventName.name == "Requiem - War Of Bands") {
+                      obj = {
+                        event: self.eventName.name,
+                        amount: self.amount,
+                        value: self.value,
+                        bandName: self.requiem.bandname,
+                        paid: false,
+                        description: self.requiem.description,
+                        contact: self.requiem.contact,
+                        songdewLink: self.requiem.songdew,
+                        videoLink: self.requiem.link,
+                        genre: self.requiem.genre
+                      };
+                    } else if (
+                      self.eventName.name ==
+                      "Destival - Group Dance Competition"
+                    ) {
+                      obj = {
+                        event: self.eventName.name,
+                        amount: self.amount,
+                        value: self.value,
+                        paid: false,
+                        teamName: self.destival.teamname,
+                        links: self.destival.links
+                      };
+                    } else if (self.eventName.name == "Kairos - Fashion Show") {
+                      obj = {
+                        event: self.eventName.name,
+                        amount: self.amount,
+                        paid: false,
+                        value: self.value,
+                        teamName: self.fashionshow.teamname
+                      };
+                    } else {
+                      obj = {
+                        event: self.eventName.name,
+                        amount: self.amount,
+                        value: self.value,
+                        paid: false
+                      };
+                    }
+                    var found = self.eventarr.some(function(el) {
+                      return el.event === self.eventName.name;
+                    });
+                    if (!found) {
+                      self.eventarr.push(obj);
+                    } else {
+                      self.disabled = false;
+                      alert("You've already registered.");
+                      return;
+                    }
+                    console.log(self.eventarr);
                     userdb
                       .doc(self.user.uid)
                       .update({
@@ -246,72 +328,72 @@ $(document).ready(function() {
                       })
                       .then(function() {
                         self.message =
-                          'Thank you for registering for ' +
+                          "Thank you for registering for " +
                           self.eventName.name +
-                          '. Your unique code is: ' +
+                          ". Your unique code is: " +
                           doc.data().ucode +
-                          '. Please refer to the mail for further instructions.'
+                          ". Please refer to the mail for further instructions.";
 
-                        self.$refs.modalToggle.checked = false
+                        self.$refs.modalToggle.checked = false;
                         $(self.$refs.notification).addClass(
-                          'notification--show'
-                        )
+                          "notification--show"
+                        );
 
                         userdb
                           .doc(self.user.uid)
                           .get()
                           .then(function(doc) {
                             if (doc.exists) {
-                              ;(self.email = doc.data().email),
-                                (self.name = doc.data().name)
+                              (self.email = doc.data().email),
+                                (self.name = doc.data().name);
                               body = {
                                 email: self.email,
                                 message:
-                                  'Thank you for registering for ' +
+                                  "Thank you for registering for " +
                                   self.eventName.name +
-                                  '. <br>Your unique code is ' +
+                                  ". <br>Your unique code is " +
                                   doc.data().ucode +
-                                  '.<br>Payment instructions will be sent soon.',
+                                  ".<br>Payment instructions will be sent soon.",
                                 name: self.name
-                              }
-                              fetch('/mail/checkMail.php', {
-                                method: 'POST',
+                              };
+                              fetch("/mail/checkMail.php", {
+                                method: "POST",
                                 headers: {
-                                  'Content-Type': 'application/json'
+                                  "Content-Type": "application/json"
                                 },
                                 body: JSON.stringify(body)
                               })
                                 .then(res => {
-                                  return res.json()
+                                  return res.json();
                                 })
                                 .then(response => {
                                   if (response.code === 200) {
-                                    self.mujerror = "We'll get back to you!"
+                                    self.mujerror = "We'll get back to you!";
                                   } else if (response.code === 405) {
-                                    self.mujerror = 'Fields cant be empty!'
+                                    self.mujerror = "Fields cant be empty!";
                                   } else if (response.code === 406) {
-                                    self.mujerror = 'Invalid E-Mail'
+                                    self.mujerror = "Invalid E-Mail";
                                   }
-                                  self.clear()
-                                })
-                              self.disabled = false
+                                  self.clear();
+                                });
+                              self.disabled = false;
                             }
-                          })
-                      })
-                  })
+                          });
+                      });
+                  });
               }
             },
             function(error) {
-              alert(error.message)
-              self.disabled = false
+              alert(error.message);
+              self.disabled = false;
             }
-          )
+          );
       },
       clear() {
-        this.selectedClub = ''
-        this.eventName = ''
-        this.disable = false
+        this.selectedClub = "";
+        this.eventName = "";
+        this.disable = false;
       }
     }
-  })
-})
+  });
+});
