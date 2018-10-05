@@ -48,7 +48,7 @@
 
 @font-face {
   font-family: "Gotham";
-  src: url("/fonts/gotham/GothamBook.ttf"); }
+  src: url("/fonts/gotham/GothamBook.otf"); }
 
 @font-face {
   font-family: "Gotham-Light";
@@ -106,8 +106,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 *::selection {
   background-color: #c10812;
-  color: white;
-  line-height: 1.5; }
+  color: white; }
 
 main {
   transition: 0.5s all; }
@@ -237,8 +236,8 @@ a:link, a:visited {
         .nav ul li:nth-child(3) {
           top: 4rem; } }
   .nav:hover .nav__sword {
-    background: #ffeb3b;
-    box-shadow: 0 0 15px #ffeb3b;
+    background: #1e88e5;
+    box-shadow: 0 0 5px #1e88e5;
     border-radius: 100px; }
   .nav__sword, .nav__handle, .nav__middle {
     height: 100%;
@@ -579,8 +578,7 @@ a:link, a:visited {
   margin-bottom: 2rem; }
 
 .home-theme__para {
-  font-size: 2rem;
-  line-height: 1.5; }
+  font-size: 2rem; }
 
 .home-theme-showcontent {
   opacity: 1; }
@@ -1625,7 +1623,7 @@ textarea {
   background: #ff5722; }
 
 .scribbles-prime {
-  background: url("/img/events/clubs/scribbles/scribbles.jpg");
+  background: url("/img/events/clubs/scribbles/prime.jpg");
   background-position: center;
   background-size: cover; }
 
@@ -1856,7 +1854,6 @@ textarea {
     border-bottom: 1px solid #aaa; }
   #eventsform p {
     display: block;
-    line-height: 1.5;
     padding: 2rem;
     color: red;
     font-size: 1.5rem; }
@@ -1980,18 +1977,15 @@ textarea {
       text-align: center;
       font-size: 2rem;
       color: #222;
-      line-height: 1.5;
       margin-bottom: 1rem; }
     .card-grid__item__post {
       text-align: center;
-      line-height: 1.5;
       font-size: 1.6rem;
       margin-bottom: 1rem;
       color: #e63f3f; }
     .card-grid__item__contact {
       font-size: 1.3rem;
       text-align: center;
-      line-height: 1.5;
       font-family: "Gotham";
       color: #555;
       display: block;
@@ -2180,8 +2174,7 @@ textarea {
     width: 70%; }
     .camb__list > li {
       font-size: 2rem;
-      margin-top: 1.8rem;
-      line-height: 1.5; }
+      margin-top: 1.8rem; }
       .camb__list > li:first-child {
         margin-top: 0; }
   .camb__header {
@@ -2238,7 +2231,7 @@ textarea {
     .camb__content:hover:before {
       height: 65%; }
     .camb__content::after, .camb__content:before {
-      content: '';
+      content: "";
       position: absolute;
       width: 4px;
       top: 0;
@@ -2339,8 +2332,7 @@ textarea {
       border-radius: 0 1rem 1rem 0;
       box-shadow: inset 0px 0px 2rem rgba(0, 0, 0, 0.5); }
   .home-theme__para {
-    font-size: 2rem;
-    line-height: 1.5; }
+    font-size: 2rem; }
   .nav {
     top: 2rem;
     right: 2rem; }
@@ -2354,7 +2346,6 @@ textarea {
     margin-left: 0; }
     .event__desc {
       font-size: 2.5rem;
-      line-height: 1.55;
       margin-bottom: 3rem; }
       .event__desc * {
         pointer-events: none; }
@@ -2371,7 +2362,6 @@ textarea {
   .event-rules__content {
     font-size: 1.95rem;
     font-family: gotham;
-    line-height: 1.5;
     padding: 0 2rem; }
   .majorevent__content--details {
     flex-direction: column; }

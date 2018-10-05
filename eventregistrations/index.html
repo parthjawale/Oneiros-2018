@@ -137,7 +137,7 @@
                 Event rules
               </span>
               Min. No. of Participants: {{ eventName.min}} <br>
-              Max No. of Pariticipants: {{ eventName.max }}
+              Max No. of Participants: {{ eventName.max }}
             </p>
             <p class="imp-content" v-else>
 
@@ -146,7 +146,7 @@
                 Event rules
               </span>
               Min. No. of Participants: 6 Vocalists + 1 Accompanist <br>
-              Max No. of Pariticipants: No Limit
+              Max No. of Participants: No Limit
             </p>
           </div>
         </transition>
@@ -212,7 +212,7 @@
 
 
         <h2 class="details-participants" v-if="getParticipants">
-          <template v-if="requemSelected || destivalSelected">
+          <template v-if="requiemSelected || destivalSelected">
             Enter the number of members
           </template>
           <template v-else>
@@ -229,7 +229,7 @@
             </p>
           </div>
 
-          <template v-if="!(requemSelected || destivalSelected || kairosSelected)">
+          <template v-if="!(requiemSelected || destivalSelected || kairosSelected)">
             <div v-if="!error && eventName" class="amount" key="amount">
               <span class="amount--header">Amount to be Paid : </span>
               <span class="amount--body">
@@ -257,7 +257,7 @@
               <hr class="details--divider">
 
 
-              <template v-if="requemSelected">
+              <template v-if="requiemSelected">
 
                 <h4 class="details--heading">Bandname</h4>
                 <p class="details--entry">
@@ -308,7 +308,7 @@
                 {{value}}
               </p>
               <hr class="details--divider">
-              <template v-if="!(requemSelected || destivalSelected || kairosSelected)">
+              <template v-if="!(requiemSelected || destivalSelected || kairosSelected)">
                 <h4 class="details--heading">Total Amount:</h4>
                 <p class="details--entry">
                   {{amount}}

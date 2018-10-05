@@ -20,8 +20,15 @@ new Vue({
     message: "",
     disabled: false
   },
+  mounted() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        window.location = "/";
+      }
+    });
+  },
   methods: {
-    random_code: function () {
+    random_code: function() {
       var start = new Date().getTime();
       var end = start.toString(8).substr(10);
       var random = Math.random()
@@ -93,7 +100,7 @@ new Vue({
         .where("username", "==", self.username)
         .get()
         .then(
-          function (querySnapshot) {
+          function(querySnapshot) {
             if (querySnapshot.size > 0) {
               self.othererror =
                 "Username already exists. Please try with another username.";
@@ -106,9 +113,9 @@ new Vue({
                   .where("referralcode", "==", self.code)
                   .get()
                   .then(
-                    function (querySnapshot) {
+                    function(querySnapshot) {
                       if (querySnapshot.size > 0) {
-                        querySnapshot.forEach(function (doc) {
+                        querySnapshot.forEach(function(doc) {
                           firebase
                             .auth()
                             .createUserWithEmailAndPassword(
@@ -116,7 +123,7 @@ new Vue({
                               self.password
                             )
                             .then(
-                              function (user) {
+                              function(user) {
                                 if (self.campamb) {
                                   firebase
                                     .firestore()
@@ -135,7 +142,7 @@ new Vue({
                                       referred: true,
                                       referralcode: newCode
                                     })
-                                    .catch(function (error) {
+                                    .catch(function(error) {
                                       self.othererror = error.message;
                                       self.disabled = false;
                                     });
@@ -186,11 +193,11 @@ new Vue({
                                     campamb: self.campamb
                                   })
                                   .then(
-                                    function () {
+                                    function() {
                                       console.log("Successful");
                                       self.disabled = false;
                                     },
-                                    function (error) {
+                                    function(error) {
                                       console.log(error.message);
                                       self.disabled = false;
                                     }
@@ -201,12 +208,12 @@ new Vue({
                                   name: self.name
                                 };
                                 fetch("/mail/checkMail.php", {
-                                    method: "POST",
-                                    headers: {
-                                      "Content-Type": "application/json"
-                                    },
-                                    body: JSON.stringify(body)
-                                  })
+                                  method: "POST",
+                                  headers: {
+                                    "Content-Type": "application/json"
+                                  },
+                                  body: JSON.stringify(body)
+                                })
                                   .then(res => {
                                     return res.json();
                                   })
@@ -220,9 +227,9 @@ new Vue({
                                       self.othererror = "Invalid E-Mail";
                                     }
                                   });
-                                window.location = "/";
+                                window.location = "/eventregistrations";
                               },
-                              function (error) {
+                              function(error) {
                                 self.othererror = error.message;
                                 self.disabled = false;
                               }
@@ -233,7 +240,7 @@ new Vue({
                         self.disabled = false;
                       }
                     },
-                    function (error) {
+                    function(error) {
                       self.othererror = error.message;
                       self.disabled = false;
                       return;
@@ -249,7 +256,7 @@ new Vue({
                   .auth()
                   .createUserWithEmailAndPassword(self.email, self.password)
                   .then(
-                    function (user) {
+                    function(user) {
                       if (self.campamb) {
                         firebase
                           .firestore()
@@ -268,7 +275,7 @@ new Vue({
                             referred: false,
                             referralcode: newCode
                           })
-                          .catch(function (error) {
+                          .catch(function(error) {
                             self.othererror = error.message;
                             self.disabled = false;
                           });
@@ -292,14 +299,14 @@ new Vue({
                           campamb: self.campamb
                         })
                         .then(
-                          function () {
+                          function() {
                             fetch("/mail/checkMail.php", {
-                                method: "POST",
-                                headers: {
-                                  "Content-Type": "application/json"
-                                },
-                                body: JSON.stringify(body)
-                              })
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json"
+                              },
+                              body: JSON.stringify(body)
+                            })
                               .then(res => {
                                 return res.json();
                               })
@@ -317,16 +324,16 @@ new Vue({
                             self.disabled = false;
                             self.clear();
                             setTimeout(() => {
-                              window.location = "/"
+                              window.location = "/eventregistrations";
                             }, 1500);
                           },
-                          function (error) {
+                          function(error) {
                             console.log(error.message);
                             self.disabled = false;
                           }
                         );
                     },
-                    function (error) {
+                    function(error) {
                       self.othererror = error.message;
                       self.disabled = false;
                     }
@@ -334,7 +341,7 @@ new Vue({
               }
             }
           },
-          function (error) {
+          function(error) {
             self.othererror = error.message;
             self.disabled = true;
           }
@@ -395,7 +402,7 @@ new Vue({
         .where("username", "==", self.username)
         .get()
         .then(
-          function (querySnapshot) {
+          function(querySnapshot) {
             if (querySnapshot.size > 0) {
               self.mujerror =
                 "Username already exists. Please try with another username.";
@@ -404,7 +411,7 @@ new Vue({
                 .auth()
                 .createUserWithEmailAndPassword(self.email, self.password)
                 .then(
-                  function (user) {
+                  function(user) {
                     firebase
                       .firestore()
                       .collection("users")
@@ -421,19 +428,19 @@ new Vue({
                         sameNos: self.phoneNos
                       })
                       .then(
-                        function () {
+                        function() {
                           var body = {
                             email: self.email,
                             message: self.message,
                             name: self.name
                           };
                           fetch("/mail/checkMail.php", {
-                              method: "POST",
-                              headers: {
-                                "Content-Type": "application/json"
-                              },
-                              body: JSON.stringify(body)
-                            })
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(body)
+                          })
                             .then(res => {
                               return res.json();
                             })
@@ -451,23 +458,23 @@ new Vue({
                           self.mujerror = "Successfully Registered!";
                           self.clear();
                           setTimeout(() => {
-                            window.location = "/"
+                            window.location = "/eventregistrations";
                           }, 1500);
                         },
-                        function (error) {
+                        function(error) {
                           self.mujerror = error.message;
                           self.disabled = false;
                         }
                       );
                   },
-                  function (error) {
+                  function(error) {
                     self.mujerror = error.message;
                     self.disabled = false;
                   }
                 );
             }
           },
-          function (error) {
+          function(error) {
             this.mujerror = error.message;
             self.disabled = false;
           }

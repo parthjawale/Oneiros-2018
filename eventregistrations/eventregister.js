@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $(".notification__close").on("click", function() {
-    console.log("object");
     $(".notification").removeClass("notification--show");
   });
 
@@ -52,6 +51,8 @@ $(document).ready(function() {
                 self.user.displayName = doc.data().name;
                 console.log(self.user);
               });
+          } else {
+            console.log("Not registered");
           }
         },
         function(error) {
@@ -197,7 +198,7 @@ $(document).ready(function() {
                 if (doc.data().users != undefined || doc.data().users != null)
                   self.userarr = doc.data().users;
                 var obj = {};
-                if (self.eventName.name == "Requiem - War Of Bands") {
+                if (self.requiemSelected) {
                   obj = {
                     user: self.user.uid,
                     userName: self.user.displayName,
@@ -212,9 +213,7 @@ $(document).ready(function() {
                     videoLink: self.requiem.link,
                     genre: self.requiem.genre
                   };
-                } else if (
-                  self.eventName.name == "Destival - Group Dance Competition"
-                ) {
+                } else if (self.destivalSelected) {
                   obj = {
                     user: self.user.uid,
                     amount: self.amount,
@@ -269,7 +268,7 @@ $(document).ready(function() {
                     )
                       self.eventarr = doc.data().events;
                     var obj = {};
-                    if (self.eventName.name == "Requiem - War Of Bands") {
+                    if (self.requiemSelected) {
                       obj = {
                         event: self.eventName.name,
                         amount: self.amount,
@@ -282,10 +281,7 @@ $(document).ready(function() {
                         videoLink: self.requiem.link,
                         genre: self.requiem.genre
                       };
-                    } else if (
-                      self.eventName.name ==
-                      "Destival - Group Dance Competition"
-                    ) {
+                    } else if (self.destivalSelected) {
                       obj = {
                         event: self.eventName.name,
                         amount: self.amount,
@@ -377,6 +373,7 @@ $(document).ready(function() {
                                   self.clear();
                                 });
                               self.disabled = false;
+                              self.userarr = [];
                             }
                           });
                       });
@@ -385,6 +382,7 @@ $(document).ready(function() {
             },
             function(error) {
               alert(error.message);
+              self.userarr = [];
               self.disabled = false;
             }
           );
