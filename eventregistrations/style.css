@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 html {
   font-size: 62.5%;
@@ -8,7 +8,7 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Gotham", sans-serif;
+  font-family: 'Gotham', sans-serif;
 }
 
 select:focus {
@@ -98,21 +98,21 @@ label {
   text-decoration: none;
   border: 0;
   width: 100%;
-  font-family: "Gotham-Thin", sans-serif;
+  font-family: 'Gotham-Thin', sans-serif;
   background: transparent;
   padding-bottom: 2rem;
   font-weight: bold;
 }
 
 .imp {
-  margin-top: 2.5rem;
   display: flex;
   align-items: center;
   padding: 1.5rem 2rem;
   line-height: 1.5;
   background: rgba(236, 32, 32, 0.712);
   border-radius: 0.6rem;
-  margin-bottom: 5.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 i.fas.fa-info-circle {
@@ -153,7 +153,7 @@ option {
 
 .select-selected:after {
   position: absolute;
-  content: "";
+  content: '';
   top: 14px;
   right: 10px;
   width: 0;
@@ -271,7 +271,7 @@ option {
 
 .modal__close:after,
 .modal__close:before {
-  content: "";
+  content: '';
   position: absolute;
   width: 2px;
   margin: 5rem 0;
@@ -294,16 +294,23 @@ option {
 }
 
 .btn {
+  display: inline-block;
   cursor: pointer;
   display: inline-block;
   padding: 1.5rem 2rem;
   color: #fff;
   border-radius: 3px;
   transition: background 0.2s linear;
+  outline: none;
+  border: none;
+  border-radius: 0.7rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  box-shadow: 0px 0.6rem 2.5rem rgba(0, 0, 0, 0.383);
 }
 
 .btn--blue {
-  background: #222;
+  background: rgb(34, 34, 34);
 }
 
 .btn--blue:hover,
@@ -313,6 +320,31 @@ option {
 
 .btn--blue:active {
   background: #4e4e4e;
+}
+
+.notification {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  max-width: 500px;
+  padding: 2rem;
+  background: rgb(31, 31, 31);
+  color: #f0f0f0;
+  transition: transform 0.3s ease;
+  box-shadow: 0rem 0rem 2.5rem rgba(0, 0, 0, 0.383);
+  border-radius: 0 0 0.6rem 0.6rem;
+}
+
+.notification__close {
+  padding: 0.6rem 1.5rem;
+  border: 1px solid rgba(216, 43, 43, 0.561);
+}
+.notification--show {
+  transform: translate(-50%, 0%);
 }
 
 p img {
