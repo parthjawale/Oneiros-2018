@@ -49,7 +49,6 @@ $(document).ready(function() {
               .get()
               .then(function(doc) {
                 self.user.displayName = doc.data().name;
-                console.log(self.user);
               });
           } else {
             console.log("Not registered");
@@ -65,7 +64,6 @@ $(document).ready(function() {
 
       firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
-          console.log("object");
           window.location.href = "/login";
         }
       });
@@ -183,9 +181,6 @@ $(document).ready(function() {
       },
       submit() {
         var self = this;
-        console.log(this.eventName);
-        console.log(this.selectedClub);
-        console.log(this.user);
         self.disabled = true;
         var userdb = firebase.firestore().collection("users");
         var eventdb = firebase.firestore().collection("events");
@@ -247,7 +242,6 @@ $(document).ready(function() {
                 var found = self.userarr.some(function(el) {
                   return el.user === self.user.uid;
                 });
-                console.log(self.userarr);
                 if (!found) {
                   self.userarr.push(obj);
                 } else {
@@ -309,7 +303,6 @@ $(document).ready(function() {
                     var found = self.eventarr.some(function(el) {
                       return el.event === self.eventName.name;
                     });
-                    console.log(self.eventarr);
                     if (!found) {
                       self.eventarr.push(obj);
                     } else {
