@@ -247,6 +247,7 @@ $(document).ready(function() {
                 var found = self.userarr.some(function(el) {
                   return el.user === self.user.uid;
                 });
+                console.log(self.userarr);
                 if (!found) {
                   self.userarr.push(obj);
                 } else {
@@ -254,7 +255,6 @@ $(document).ready(function() {
                   alert("You've already registered.");
                   return;
                 }
-                console.log(self.userarr);
                 eventdb.doc(self.eventName.name).update({
                   users: self.userarr
                 });
@@ -309,6 +309,7 @@ $(document).ready(function() {
                     var found = self.eventarr.some(function(el) {
                       return el.event === self.eventName.name;
                     });
+                    console.log(self.eventarr);
                     if (!found) {
                       self.eventarr.push(obj);
                     } else {
@@ -316,7 +317,6 @@ $(document).ready(function() {
                       alert("You've already registered.");
                       return;
                     }
-                    console.log(self.eventarr);
                     userdb
                       .doc(self.user.uid)
                       .update({
