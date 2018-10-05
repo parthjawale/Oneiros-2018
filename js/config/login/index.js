@@ -7,6 +7,13 @@ new Vue({
     disabled: false,
     error: ""
   },
+  mounted() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        window.location = "/index.html";
+      }
+    });
+  },
   methods: {
     getArray(array) {
       if (array) {
@@ -48,7 +55,7 @@ new Vue({
                     self.error = "Login Successful!";
                     self.disabled = false;
                     setTimeout(() => {
-                      window.location = "/";
+                      window.location = "/eventregistrations";
                     }, 1500);
                   },
                   function(error) {
