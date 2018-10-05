@@ -139,7 +139,7 @@
               Min. No. of Participants: {{ eventName.min}} <br>
               Max No. of Participants: {{ eventName.max }}
             </p>
-            <p class="imp-content" v-else>
+            <p class="imp-content" v-if="eventName.name == 'Ensemble'">
 
               <span style="display: block; font-size: 2.5rem;
                     font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
@@ -147,6 +147,14 @@
               </span>
               Min. No. of Participants: 6 Vocalists + 1 Accompanist <br>
               Max No. of Participants: No Limit
+            </p>
+            <p class="imp-content" v-if="eventName.name == 'Destival - Group Dance Competition' || eventName.name == 'Kairos - Fashion Show'">
+              <span style="display: block; font-size: 2.5rem;
+              font-weight: bold; color: rgb(236, 236, 236); margin-bottom: 0.6rem;">
+                Event rules
+              </span>
+              Min. No. of Participants: {{eventName.min}}<br>
+              Max No. of Participants: {{eventName.max}} (including helpers)
             </p>
           </div>
         </transition>
@@ -202,7 +210,7 @@
         <transition name="fade">
           <div v-if="kairosSelected">
             <h2 class="details-participants">Team Name</h2>
-            <input type="text" v-model="fashionshow.teamname" class="Part" placeholder="Link" style="margin-bottom: 2.5rem;"
+            <input type="text" v-model="fashionshow.teamname" class="Part" placeholder="Team Name" style="margin-bottom: 2.5rem;"
               @input="check">
             <h2 class="details-participants">Link to Performance Video:</h2>
             <input type="text" v-model="fashionshow.link" class="Part" placeholder="Link" style="margin-bottom: 2.5rem;"
@@ -336,7 +344,7 @@
     <script src="/js/config/db.js"></script>
     <script src="/js/libs/jquery.js"></script>
     <script src="./events.js"></script>
-    <script src="/eventregistrations/eventregister.js"></script>
+    <script src="/eventregistrations/eventregister.js?version=1"></script>
     <script src="/js/common/global.js"></script>
 
     <!-- <script src="./test.js"></script> -->
