@@ -12,14 +12,16 @@
     <div class="container">
         <div class="uid" id="details">
             <!-- <label class="uid-label"></label> -->
-            <br><input class="uid-input" type="text" name="ucode" id="ucode" v-model="ucode" placeholder="UCode" autocomplete="off" required>
-            <button class="submit" @click="display">SUBMIT</button>
-            <div class="details">
-                <h3>Name: {{name}} </h3>
-                <h3>Username: {{username}} </h3>
-                <h3>Phone Number: {{pno}} </h3>
-                <h3>Registration Number: {{regno}} </h3>
-                <h3>Email ID: {{email}} </h3>
+            <br><input @keyup.enter="display" class="uid-input" type="text" name="ucode" id="ucode" v-model="ucode" placeholder="UCode" autocomplete="off">
+            <button class="submit" @click="display" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}">SUBMIT</button>
+            <transition name="fade">
+                <div class="details" v-if="show">
+                    <h3>Name: {{name}} </h3>
+                    <h3>Username: {{username}} </h3>
+                    <h3>Phone Number: {{pno}} </h3>
+                    <h3 v-if="f==1">Registration Number: {{regno}} </h3>
+                    <h3 v-else>College Name: {{college}} </h3>
+                    <h3>Email ID: {{email}} </h3>
                     <div v-for="event in eventsarr">
                         <p v-if="event.event == 'Requiem - War Of Bands'">
                             Name: {{event.event}} <br>
@@ -35,16 +37,14 @@
                         </p>
                         <p v-if="event.event == 'Destival - Group Dance Competition'">
                                 Name: {{event.event}} <br>
-                                email: {{event.email}}<br>
                                 Team Name: {{event.teamName}}<br>
                                 No of Participants: {{event.value}} <br>
-                                Links: <a :href="event.link">{{event.videoLink}}</a><br>
+                                Links: <a :href="event.link">{{event.links}}</a><br>
                                 Paid: {{event.paid}} <br>
                                 Amount: {{event.amount}} <br>
                         <p>
                         <p v-if="event.event == 'Kairos - Fashion Show'">
                                 Name: {{event.event}} <br>
-                                email: {{event.email}}<br>
                                 Team Name: {{event.teamName}}<br>
                                 No of Participants: {{event.value}} <br>
                                 Paid: {{event.paid}} <br>
@@ -57,14 +57,23 @@
                             Amount: {{event.amount}}
                         </p>
                     </div>
-            </div>
+                </div>
+            </transition>
+            <transition name="fade">
+                <div class="details" v-if="!show">
+                    {{msg}}
+                </div>
+            </transition>
+
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/config/db.js"></script>
     <script src="/js/config/dashboard/adminportal.js"></script>
-    <script src="/js/admin/byUID/dashboard.js"></script>
+    <script src="/js/common/global.js"></script>
 </body>
 </html>
