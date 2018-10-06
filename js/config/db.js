@@ -1,4 +1,4 @@
-// Initialize Firebase
+// original db config
 // var config = {
 //   apiKey: "AIzaSyAEZdHK98COcRt9hzxbICAPeSpXOyn0vA4",
 //   authDomain: "oneiros-2018.firebaseapp.com",
@@ -7,6 +7,8 @@
 //   storageBucket: "oneiros-2018.appspot.com",
 //   messagingSenderId: "358484877394"
 // };
+
+// dummy db config
 var config = {
   apiKey: "AIzaSyCszYWkqAN5VQsXjrtAVB7dI7hIB-q1CQ0",
   authDomain: "mast-project-naam.firebaseapp.com",
