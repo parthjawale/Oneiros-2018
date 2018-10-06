@@ -153,11 +153,18 @@ var clubs = [
     desc: "Dance Events",
     events: [
       {
-        name: "NEXTAR",
+        name: "Nextar (Solo)",
         price: 200,
         min: 1,
+        max: 1,
+        type: "solo"
+      },
+      {
+        name: "Nextar (Duet)",
+        price: 400,
+        min: 2,
         max: 2,
-        type: "team"
+        type: "duet"
       },
       {
         name: "Showcase",
