@@ -20,13 +20,6 @@ new Vue({
     message: "",
     disabled: false
   },
-  mounted() {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        window.location = "/";
-      }
-    });
-  },
   methods: {
     random_code: function() {
       var start = new Date().getTime();
@@ -194,11 +187,11 @@ new Vue({
                                   })
                                   .then(
                                     function() {
-                                      console.log("Successful");
+                                      this.othererror = "Successful";
                                       self.disabled = false;
                                     },
                                     function(error) {
-                                      console.log(error.message);
+                                      this.othererror = error.message;
                                       self.disabled = false;
                                     }
                                   );
@@ -328,7 +321,7 @@ new Vue({
                             }, 1500);
                           },
                           function(error) {
-                            console.log(error.message);
+                            this.othererror = error.message;
                             self.disabled = false;
                           }
                         );
@@ -406,72 +399,87 @@ new Vue({
             if (querySnapshot.size > 0) {
               self.mujerror =
                 "Username already exists. Please try with another username.";
+              self.disabled = false;
             } else {
               firebase
-                .auth()
-                .createUserWithEmailAndPassword(self.email, self.password)
-                .then(
-                  function(user) {
+                .firestore()
+                .collection("users")
+                .where("regno", "==", self.regno)
+                .get()
+                .then(function(query) {
+                  if (query.size > 0) {
+                    self.mujerror =
+                      "This registration Number already has an account associated with it.";
+                    self.disabled = false;
+                  } else {
                     firebase
-                      .firestore()
-                      .collection("users")
-                      .doc(user.user.uid)
-                      .set({
-                        name: self.name,
-                        regno: self.regno,
-                        username: self.username,
-                        email: self.email,
-                        isManipal: true,
-                        ucode: uniqueCode,
-                        pno: self.pno,
-                        wpno: self.wpno,
-                        sameNos: self.phoneNos
-                      })
+                      .auth()
+                      .createUserWithEmailAndPassword(self.email, self.password)
                       .then(
-                        function() {
-                          var body = {
-                            email: self.email,
-                            message: self.message,
-                            name: self.name
-                          };
-                          fetch("/mail/checkMail.php", {
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify(body)
-                          })
-                            .then(res => {
-                              return res.json();
+                        function(user) {
+                          firebase
+                            .firestore()
+                            .collection("users")
+                            .doc(user.user.uid)
+                            .set({
+                              name: self.name,
+                              regno: self.regno,
+                              username: self.username,
+                              email: self.email,
+                              isManipal: true,
+                              ucode: uniqueCode,
+                              pno: self.pno,
+                              wpno: self.wpno,
+                              sameNos: self.phoneNos
                             })
-                            .then(response => {
-                              if (response.code === 200) {
-                                self.mujerror = "We'll get back to you!";
-                              } else if (response.code === 405) {
-                                self.mujerror = "Fields cant be empty!";
-                              } else if (response.code === 406) {
-                                self.mujerror = "Invalid E-Mail";
+                            .then(
+                              function() {
+                                ("In");
+                                var body = {
+                                  email: self.email,
+                                  message: self.message,
+                                  name: self.name
+                                };
+                                fetch("/mail/checkMail.php", {
+                                  method: "POST",
+                                  headers: {
+                                    "Content-Type": "application/json"
+                                  },
+                                  body: JSON.stringify(body)
+                                })
+                                  .then(res => {
+                                    return res.json();
+                                  })
+                                  .then(response => {
+                                    if (response.code === 200) {
+                                      self.mujerror = "We'll get back to you!";
+                                    } else if (response.code === 405) {
+                                      self.mujerror = "Fields cant be empty!";
+                                    } else if (response.code === 406) {
+                                      self.mujerror = "Invalid E-Mail";
+                                    }
+                                    self.disabled = false;
+                                  });
+                                self.disabled = false;
+                                self.mujerror = "Successfully Registered!";
+                                self.clear();
+                                setTimeout(() => {
+                                  window.location = "/eventregistrations";
+                                }, 1500);
+                              },
+                              function(error) {
+                                self.mujerror = error.message;
+                                self.disabled = false;
                               }
-                              self.disabled = false;
-                            });
-                          self.disabled = false;
-                          self.mujerror = "Successfully Registered!";
-                          self.clear();
-                          setTimeout(() => {
-                            window.location = "/eventregistrations";
-                          }, 1500);
+                            );
                         },
                         function(error) {
                           self.mujerror = error.message;
                           self.disabled = false;
                         }
                       );
-                  },
-                  function(error) {
-                    self.mujerror = error.message;
-                    self.disabled = false;
                   }
-                );
+                });
             }
           },
           function(error) {

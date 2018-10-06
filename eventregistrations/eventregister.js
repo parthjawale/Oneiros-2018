@@ -36,35 +36,21 @@ $(document).ready(function() {
       clubs,
       email: ""
     },
-    created() {
-      var self = this;
-      firebase.auth().onAuthStateChanged(
-        function(user) {
-          if (user) {
-            self.user = user;
-            firebase
-              .firestore()
-              .collection("users")
-              .doc(self.user.uid)
-              .get()
-              .then(function(doc) {
-                self.user.displayName = doc.data().name;
-              });
-          } else {
-            console.log("Not registered");
-          }
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
-    },
     mounted() {
       var self = this;
-
       firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
           window.location.href = "/login";
+        } else {
+          self.user = user;
+          firebase
+            .firestore()
+            .collection("users")
+            .doc(self.user.uid)
+            .get()
+            .then(function(doc) {
+              self.user.displayName = doc.data().name;
+            });
         }
       });
 
