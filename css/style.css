@@ -624,11 +624,11 @@ a:link, a:visited {
     .home-contact input::placeholder,
     .home-contact textarea::placeholder {
       color: #fff;
-      font-family: 'Gotham-Thin';
-      transition: .2s all; }
+      font-family: "Gotham-Thin";
+      transition: 0.2s all; }
     .home-contact input:focus::placeholder,
     .home-contact textarea:focus::placeholder {
-      opacity: .5; }
+      opacity: 0.5; }
   .home-contact__splash, .home-contact__details {
     display: flex;
     justify-content: center;
@@ -639,12 +639,16 @@ a:link, a:visited {
     height: 40%;
     background: url("/img/home/contact.jpg");
     background-size: cover;
-    background-position: center; }
+    background-position: top; }
     .home-contact__splash input {
       border: none;
       font-size: 7rem;
-      font-family: 'Gotham';
+      font-family: "Gotham";
       background: transparent; }
+    .home-contact__splash #contact-email {
+      width: 80%; }
+      .home-contact__splash #contact-email .home-contact__underline {
+        width: 80%; }
   .home-contact__details {
     height: 60%;
     justify-content: flex-start; }
@@ -658,7 +662,7 @@ a:link, a:visited {
       font-size: 3rem;
       background: transparent;
       color: #fff;
-      font-family: 'Gotham';
+      font-family: "Gotham";
       z-index: 5;
       position: relative; }
     .home-contact__details h1 {
@@ -668,12 +672,12 @@ a:link, a:visited {
       bottom: 1rem;
       color: #111;
       font-size: 20rem;
-      font-family: 'Gotham-Black';
+      font-family: "Gotham-Black";
       z-index: 0; }
     .home-contact__details input + span {
       margin-bottom: 5rem; }
   .home-contact__underline {
-    transition: .2s all;
+    transition: 0.2s all;
     height: 3px;
     transform: translateY(2.5rem);
     width: 0%;
@@ -683,7 +687,7 @@ a:link, a:visited {
     .home-contact__underline--white {
       background: #fff; }
     .home-contact__underline--blue {
-      background: #303F9F; }
+      background: #303f9f; }
 
 .login--form {
   display: inline-block;
