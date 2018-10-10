@@ -1880,6 +1880,11 @@ textarea {
     width: fit-content;
     padding: 1rem; }
 
+#admin-events input,
+#admin-events select {
+  display: block;
+  color: red; }
+
 .playmakers {
   position: relative;
   background: linear-gradient(160deg, #222 50%, #f6202b 50%);
