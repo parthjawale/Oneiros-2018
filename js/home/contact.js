@@ -44,11 +44,10 @@ $(document).ready(() => {
       body: JSON.stringify(body)
     })
       .then(res => {
-        console.log(res);
         return res.json();
       })
       .then(response => {
-        console.log(response);
+        response;
         if (response.code === 200) {
           trans("We'll get back to you!");
         } else if (response.code === 405) {

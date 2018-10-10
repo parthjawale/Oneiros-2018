@@ -73,7 +73,7 @@
           <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
         </li>
         <li>
-          <a href="/accomodation" class="custom-link">Accomodation</a>
+          <a href="/Accommodation" class="custom-link">Accommodation</a>
         </li>
         <li id="logout">
           <a href="/" class="custom-link">Logout</a>
@@ -116,8 +116,8 @@
             <section>
               <input id="muj-last" type="number" name="whatsapp" v-model="wpno" placeholder="WhatsApp Number" required>
             </section>
-            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit" id="muj-submit"
-              value="Submit" :disabled="disabled">
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit"
+              id="muj-submit" value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
             <p v-if="mujerror !== ''" id="mujregister-error" class="register-error">{{mujerror}}</p>
@@ -162,8 +162,8 @@
               <input id="default-radio" type="checkbox" v-model="campamb">
               <label for="default-radio">Do you wish to be a Campus Ambassador?<span id="custom-radio"></span></label>
             </section>
-            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit" id="other-submit"
-              value="Submit" :disabled="disabled">
+            <input :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}" type="submit"
+              id="other-submit" value="Submit" :disabled="disabled">
           </form>
           <transition name='fade'>
             <p v-if="othererror !== ''" id="otherregister-error" class="register-error">{{othererror}}</p>
@@ -173,14 +173,16 @@
     </div>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-  <script src="/js/config/db.js"></script>
-  <script src="/js/config/register/register.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+  <script src="/js/config/db.js?version=v1"></script>
+  <script src="/js/config/register/register.js?version=v1"></script>
   <script src="/js/common/global.js"></script>
   <script src="/js/register/index.js"></script>
   <script src="/js/register/form.js"></script>
-  <!-- <script src="/js/config/register/manipal.js"></script> -->
+
 </body>
 
 </html>
