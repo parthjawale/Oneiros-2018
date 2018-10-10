@@ -22,7 +22,6 @@
             <option value="" disabled>Select Event</option>
             <option :value="event" v-for="event in selectedClub.events">{{event.name}}</option>
         </select>
-<<<<<<< HEAD
         <button @click="display" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
             :disabled="disabled">Submit</button>
         <div v-for="user in usersarr">
@@ -57,24 +56,6 @@
         <script src="./events.js"></script>
         <script src="./index.js"></script>
         <script src="/js/common/global.js"></script>
-=======
-        <button @click="display">Submit</button>
-        <p v-for="user in usersarr">
-            {{user.userName}}
-        </p>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/js/config/db.js"></script>
-    <script src="./events.js"></script>
-    <script src="../checkPerson.js"></script>
-    <script src="./index.js"></script>
-    <script src="/js/common/global.js"></script>
->>>>>>> 5d8fd3d52f250189c67f3063f2945cbad8e8158c
 </body>
 
 </html>
