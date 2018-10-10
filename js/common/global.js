@@ -182,13 +182,13 @@ logout.click(() => {
 
 console.log(
   `%c
-M        M E E E E          X T T T T T
-MM      ME         X      X       T
-M M    M E           X   X        T
-M  M  M  E E E E E     X          T
-M    M   E           X    X       T
-M        E E E E E X        X     T`,
-  "font-family:monospace; color: white"
+M         M E E E E E X        X  T T T T T
+MM      M M E          X      X       T
+M M    M  M E            X   X        T
+M  M  M   M E E E E E      X          T
+M    M    M E            X    X       T
+M         M E E E E E  X        X     T`,
+  "font-family:monospace; color: blue"
 );
 console.log(
   `%c
