@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Admin - Event Registrations</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <div id="admin-events">
         <select name="" id="" v-model="selectedClub" @change="changeclub">
@@ -20,7 +22,7 @@
         </select>
         <button @click="display">Submit</button>
         <p v-for="user in usersarr">
-                {{user.userName}}
+            {{user.userName}}
         </p>
     </div>
 
@@ -31,7 +33,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/config/db.js"></script>
     <script src="./events.js"></script>
+    <script src="../checkPerson.js"></script>
     <script src="./index.js"></script>
     <script src="/js/common/global.js"></script>
 </body>
+
 </html>
