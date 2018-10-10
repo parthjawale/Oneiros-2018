@@ -1885,6 +1885,55 @@ textarea {
   display: block;
   color: red; }
 
+#payments-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; }
+  #payments-admin h3 {
+    font-size: 3rem;
+    text-align: center; }
+  #payments-admin input {
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    padding-top: 3rem;
+    width: 30%;
+    border-bottom: 1px solid grey;
+    display: block;
+    margin: 0 auto;
+    text-indent: 3px; }
+  #payments-admin input:focus {
+    border-bottom: 1px solid black; }
+  #payments-admin *::placeholder {
+    color: #444; }
+  #payments-admin input:focus::placeholder {
+    color: black; }
+  #payments-admin button {
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    border: 1px solid black;
+    padding: 1rem;
+    font-size: 1.5rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem;
+    outline: none;
+    transition: all 0.2s ease-in-out; }
+  #payments-admin button:hover {
+    background-color: black;
+    color: white; }
+  #payments-admin div.details {
+    font-size: 2rem; }
+  @media screen and (max-width: 768px) {
+    #payments-admin {
+      width: 80%;
+      margin: 0 auto; }
+      #payments-admin input {
+        width: 100%; } }
+
 .playmakers {
   position: relative;
   background: linear-gradient(160deg, #222 50%, #f6202b 50%);

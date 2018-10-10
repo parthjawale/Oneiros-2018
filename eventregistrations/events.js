@@ -374,7 +374,7 @@ var clubs = [
         price: 150,
         min: 2,
         max: 5,
-        type: "team"
+        type: "fixed"
       },
       {
         name: "Song-Smith(TMC-Litmus)",
