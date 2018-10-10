@@ -106,10 +106,10 @@ var clubs = [
     events: [
       {
         name: "Bamboozled",
-        price: 50,
+        price: 250,
         min: 2,
         max: 3,
-        type: "team"
+        type: "fixed"
       },
       {
         name: "Ekphrasis",
@@ -134,7 +134,7 @@ var clubs = [
       },
       {
         name: "Pictionary",
-        price: 100,
+        price: 150,
         min: 2,
         max: 2,
         type: "duet"
@@ -142,9 +142,9 @@ var clubs = [
       {
         name: "Voice Over",
         price: 150,
-        min: 1,
+        min: 2,
         max: 2,
-        type: "fixed"
+        type: "duet"
       }
     ]
   },
@@ -367,7 +367,7 @@ var clubs = [
         price: 100,
         min: 1,
         max: 2,
-        type: "fixed"
+        type: "team"
       },
       {
         name: "Chakravyuh(Cinefilia-Shabd)",

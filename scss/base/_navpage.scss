@@ -124,7 +124,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(to top right, #cb2d3e, #ef473a);
+  background: linear-gradient(to top right, #b71c1c, #c62828);
   z-index: 1000;
   transition: 0.5s all cubic-bezier(0.07, 0.57, 0.31, 1.01);
   @include flex-center-all();
@@ -165,12 +165,10 @@
         color: #fff;
         text-transform: uppercase;
         text-align: center;
-        background: linear-gradient(
-          120deg,
+        background: linear-gradient(120deg,
           transparent,
           transparent 50%,
-          #fff 0
-        );
+          #fff 0);
         background-size: 200%;
 
         @media screen and (max-width: 800px) {
