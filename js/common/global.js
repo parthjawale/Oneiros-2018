@@ -26,7 +26,7 @@ nav.click(e => {
     sword3.addClass("sword3-activate");
     $("#black-overlay").addClass("body-darken");
     // showNavPage(true);
-    showNewNav(true)
+    showNewNav(true);
   } else {
     nav.removeClass("nav-active");
     sword1.removeClass("sword1-activate");
@@ -36,23 +36,23 @@ nav.click(e => {
       $("#black-overlay").removeClass("body-darken");
     }, 1000);
     // showNavPage(false);
-    showNewNav(false)
+    showNewNav(false);
   }
 });
 
-const newLinks = $('.newnav-container li')
-const navSplash = $('.newnav-container__splash')
+const newLinks = $(".newnav-container li");
+const navSplash = $(".newnav-container__splash");
 const showNewNav = bool => {
   if (bool) {
     nav.css({
       pointerEvents: "none"
     });
-    $(".nav-container").removeClass('nav--shrink')
-    $(".nav-container").removeClass('nav--close')
-    $(".nav-container").addClass('nav--expand')
+    $(".nav-container").removeClass("nav--shrink");
+    $(".nav-container").removeClass("nav--close");
+    $(".nav-container").addClass("nav--expand");
     setTimeout(() => {
-      $(".nav-container").addClass('nav--full')
-      navSplash.fadeIn()
+      $(".nav-container").addClass("nav--full");
+      navSplash.fadeIn();
       for (let i = 0; i < newLinks.length; i++)
         setTimeout(() => {
           newLinks[i].classList.add("show-nav-links");
@@ -67,22 +67,21 @@ const showNewNav = bool => {
     nav.css({
       pointerEvents: "none"
     });
-    navSplash.fadeOut()
-    newLinks.removeClass('show-nav-links')
+    navSplash.fadeOut();
+    newLinks.removeClass("show-nav-links");
     setTimeout(() => {
-      $(".nav-container").addClass('nav--shrink')
+      $(".nav-container").addClass("nav--shrink");
       setTimeout(() => {
-        $(".nav-container").removeClass('nav--expand')
-        $(".nav-container").removeClass('nav--full')
-        $(".nav-container").addClass('nav--close')
+        $(".nav-container").removeClass("nav--expand");
+        $(".nav-container").removeClass("nav--full");
+        $(".nav-container").addClass("nav--close");
         nav.css({
           pointerEvents: "all"
         });
       }, 500);
     }, 500);
-
   }
-}
+};
 
 const showNavPage = bool => {
   if (bool) {
@@ -119,16 +118,16 @@ $(document).ready(() => {
   setTimeout(() => {
     $(".loader-prime").addClass("hide-prime-loader");
   }, 2000);
-  $(".mext-logo").click(function () {
+  $(".mext-logo").click(function() {
     window.open("https://mext.in", "_blank");
   });
-  $(".moodi-logo").click(function () {
+  $(".moodi-logo").click(function() {
     window.open("https://moodi.org", "_blank");
   });
-  $(".wordmark, #wordmark").click(function () {
+  $(".wordmark, #wordmark").click(function() {
     window.open("https://oneiros.co.in", "_self");
   });
-  $("#mext").click(function () {
+  $("#mext").click(function() {
     window.open("https://mext.in", "_blank");
   });
 });
@@ -180,3 +179,24 @@ firebase.auth().onAuthStateChanged(user => {
 logout.click(() => {
   firebase.auth().signOut();
 });
+
+console.log(
+  `%c
+M        M E E E E          X T T T T T
+MM      ME         X      X       T
+M M    M E           X   X        T
+M  M  M  E E E E E     X          T
+M    M   E           X    X       T
+M        E E E E E X        X     T`,
+  "font-family:monospace; color: white"
+);
+console.log(
+  `%c
+    O     N     N   E E E E   I   R R R      O     S S S    
+  O   O   N N   N   E         I   R    R   O   O   S 
+  O   O   N  N  N   E E E E   I   R R R    O   O   S S S
+  O   O   N   N N   E         I   R   R    O   O       S
+    O     N     N   E E E E   I   R    R     O     S S S
+  `,
+  "font-family:monospace; color: red"
+);

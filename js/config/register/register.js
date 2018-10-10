@@ -21,7 +21,7 @@ new Vue({
     disabled: false
   },
   methods: {
-    random_code: function () {
+    random_code: function() {
       var start = new Date().getTime();
       var end = start.toString(8).substr(10);
       var random = Math.random()
@@ -93,7 +93,7 @@ new Vue({
         .where("username", "==", self.username)
         .get()
         .then(
-          function (querySnapshot) {
+          function(querySnapshot) {
             if (querySnapshot.size > 0) {
               self.othererror =
                 "Username already exists. Please try with another username.";
@@ -106,9 +106,9 @@ new Vue({
                   .where("referralcode", "==", self.code)
                   .get()
                   .then(
-                    function (querySnapshot) {
+                    function(querySnapshot) {
                       if (querySnapshot.size > 0) {
-                        querySnapshot.forEach(function (doc) {
+                        querySnapshot.forEach(function(doc) {
                           firebase
                             .auth()
                             .createUserWithEmailAndPassword(
@@ -116,7 +116,7 @@ new Vue({
                               self.password
                             )
                             .then(
-                              function (user) {
+                              function(user) {
                                 if (self.campamb) {
                                   firebase
                                     .firestore()
@@ -135,7 +135,7 @@ new Vue({
                                       referred: true,
                                       referralcode: newCode
                                     })
-                                    .catch(function (error) {
+                                    .catch(function(error) {
                                       self.othererror = error.message;
                                       self.disabled = false;
                                     });
@@ -186,12 +186,12 @@ new Vue({
                                     campamb: self.campamb
                                   })
                                   .then(
-                                    function () {
-                                      console.log("Successful");
+                                    function() {
+                                      this.othererror = "Successful";
                                       self.disabled = false;
                                     },
-                                    function (error) {
-                                      console.log(error.message);
+                                    function(error) {
+                                      this.othererror = error.message;
                                       self.disabled = false;
                                     }
                                   );
@@ -201,12 +201,12 @@ new Vue({
                                   name: self.name
                                 };
                                 fetch("/mail/checkMail.php", {
-                                    method: "POST",
-                                    headers: {
-                                      "Content-Type": "application/json"
-                                    },
-                                    body: JSON.stringify(body)
-                                  })
+                                  method: "POST",
+                                  headers: {
+                                    "Content-Type": "application/json"
+                                  },
+                                  body: JSON.stringify(body)
+                                })
                                   .then(res => {
                                     return res.json();
                                   })
@@ -220,9 +220,9 @@ new Vue({
                                       self.othererror = "Invalid E-Mail";
                                     }
                                   });
-                                window.location = "/";
+                                window.location = "/eventregistrations";
                               },
-                              function (error) {
+                              function(error) {
                                 self.othererror = error.message;
                                 self.disabled = false;
                               }
@@ -233,7 +233,7 @@ new Vue({
                         self.disabled = false;
                       }
                     },
-                    function (error) {
+                    function(error) {
                       self.othererror = error.message;
                       self.disabled = false;
                       return;
@@ -249,7 +249,7 @@ new Vue({
                   .auth()
                   .createUserWithEmailAndPassword(self.email, self.password)
                   .then(
-                    function (user) {
+                    function(user) {
                       if (self.campamb) {
                         firebase
                           .firestore()
@@ -268,7 +268,7 @@ new Vue({
                             referred: false,
                             referralcode: newCode
                           })
-                          .catch(function (error) {
+                          .catch(function(error) {
                             self.othererror = error.message;
                             self.disabled = false;
                           });
@@ -292,14 +292,14 @@ new Vue({
                           campamb: self.campamb
                         })
                         .then(
-                          function () {
+                          function() {
                             fetch("/mail/checkMail.php", {
-                                method: "POST",
-                                headers: {
-                                  "Content-Type": "application/json"
-                                },
-                                body: JSON.stringify(body)
-                              })
+                              method: "POST",
+                              headers: {
+                                "Content-Type": "application/json"
+                              },
+                              body: JSON.stringify(body)
+                            })
                               .then(res => {
                                 return res.json();
                               })
@@ -317,16 +317,16 @@ new Vue({
                             self.disabled = false;
                             self.clear();
                             setTimeout(() => {
-                              window.location = "/"
+                              window.location = "/eventregistrations";
                             }, 1500);
                           },
-                          function (error) {
-                            console.log(error.message);
+                          function(error) {
+                            this.othererror = error.message;
                             self.disabled = false;
                           }
                         );
                     },
-                    function (error) {
+                    function(error) {
                       self.othererror = error.message;
                       self.disabled = false;
                     }
@@ -334,7 +334,7 @@ new Vue({
               }
             }
           },
-          function (error) {
+          function(error) {
             self.othererror = error.message;
             self.disabled = true;
           }
@@ -395,79 +395,94 @@ new Vue({
         .where("username", "==", self.username)
         .get()
         .then(
-          function (querySnapshot) {
+          function(querySnapshot) {
             if (querySnapshot.size > 0) {
               self.mujerror =
                 "Username already exists. Please try with another username.";
+              self.disabled = false;
             } else {
               firebase
-                .auth()
-                .createUserWithEmailAndPassword(self.email, self.password)
-                .then(
-                  function (user) {
+                .firestore()
+                .collection("users")
+                .where("regno", "==", self.regno)
+                .get()
+                .then(function(query) {
+                  if (query.size > 0) {
+                    self.mujerror =
+                      "This registration Number already has an account associated with it.";
+                    self.disabled = false;
+                  } else {
                     firebase
-                      .firestore()
-                      .collection("users")
-                      .doc(user.user.uid)
-                      .set({
-                        name: self.name,
-                        regno: self.regno,
-                        username: self.username,
-                        email: self.email,
-                        isManipal: true,
-                        ucode: uniqueCode,
-                        pno: self.pno,
-                        wpno: self.wpno,
-                        sameNos: self.phoneNos
-                      })
+                      .auth()
+                      .createUserWithEmailAndPassword(self.email, self.password)
                       .then(
-                        function () {
-                          var body = {
-                            email: self.email,
-                            message: self.message,
-                            name: self.name
-                          };
-                          fetch("/mail/checkMail.php", {
-                              method: "POST",
-                              headers: {
-                                "Content-Type": "application/json"
+                        function(user) {
+                          firebase
+                            .firestore()
+                            .collection("users")
+                            .doc(user.user.uid)
+                            .set({
+                              name: self.name,
+                              regno: self.regno,
+                              username: self.username,
+                              email: self.email,
+                              isManipal: true,
+                              ucode: uniqueCode,
+                              pno: self.pno,
+                              wpno: self.wpno,
+                              sameNos: self.phoneNos
+                            })
+                            .then(
+                              function() {
+                                ("In");
+                                var body = {
+                                  email: self.email,
+                                  message: self.message,
+                                  name: self.name
+                                };
+                                fetch("/mail/checkMail.php", {
+                                  method: "POST",
+                                  headers: {
+                                    "Content-Type": "application/json"
+                                  },
+                                  body: JSON.stringify(body)
+                                })
+                                  .then(res => {
+                                    return res.json();
+                                  })
+                                  .then(response => {
+                                    if (response.code === 200) {
+                                      self.mujerror = "We'll get back to you!";
+                                    } else if (response.code === 405) {
+                                      self.mujerror = "Fields cant be empty!";
+                                    } else if (response.code === 406) {
+                                      self.mujerror = "Invalid E-Mail";
+                                    }
+                                    self.disabled = false;
+                                  });
+                                self.disabled = false;
+                                self.mujerror = "Successfully Registered!";
+                                self.clear();
+                                setTimeout(() => {
+                                  window.location = "/eventregistrations";
+                                }, 1500);
                               },
-                              body: JSON.stringify(body)
-                            })
-                            .then(res => {
-                              return res.json();
-                            })
-                            .then(response => {
-                              if (response.code === 200) {
-                                self.mujerror = "We'll get back to you!";
-                              } else if (response.code === 405) {
-                                self.mujerror = "Fields cant be empty!";
-                              } else if (response.code === 406) {
-                                self.mujerror = "Invalid E-Mail";
+                              function(error) {
+                                self.mujerror = error.message;
+                                self.disabled = false;
                               }
-                              self.disabled = false;
-                            });
-                          self.disabled = false;
-                          self.mujerror = "Successfully Registered!";
-                          self.clear();
-                          setTimeout(() => {
-                            window.location = "/"
-                          }, 1500);
+                            );
                         },
-                        function (error) {
+                        function(error) {
                           self.mujerror = error.message;
                           self.disabled = false;
                         }
                       );
-                  },
-                  function (error) {
-                    self.mujerror = error.message;
-                    self.disabled = false;
                   }
-                );
+                });
             }
           },
-          function (error) {
+          function(error) {
             this.mujerror = error.message;
             self.disabled = false;
           }

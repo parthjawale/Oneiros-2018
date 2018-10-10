@@ -15,6 +15,6 @@
   }
 
   $subject = "Succesful Registration";
-  sendMail('webadmin@oneiros.in','_a3eYbhA1$', $message,$subject, $email);
+  sendMail('info@oneiros.in','Promotions@312', $message,$subject, $email);
   // echo json_encode(array('message' => 'Sent', 'code' => "200"));
 ?>
