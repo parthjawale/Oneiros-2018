@@ -1893,11 +1893,9 @@ textarea {
   left: 0;
   width: 100%; }
 
-<<<<<<< HEAD
 .majorevent * {
   line-height: 1.6;
   color: #fff; }
-=======
 .overlay--moveinright {
   right: 0;
   width: 100%; }
@@ -1941,7 +1939,6 @@ textarea {
 .bg--fade {
   filter: brightness(0.2); }
 
->>>>>>> aacc5edc5f0995f0cf07851f8aefcf78412596c4
 .majorevent__content {
   position: relative;
   padding: 5rem; }
@@ -2090,7 +2087,6 @@ textarea {
     width: fit-content;
     padding: 1rem; }
 
-<<<<<<< HEAD
 body {
   background: url("/admin/reg/bg.jpg");
   background-attachment: fixed;
@@ -2228,7 +2224,6 @@ body {
       .blog__card__content--controls > button {
         padding: 1.5rem 2.5rem;
         border: none; }
-=======
 #admin-events input,
 #admin-events select {
   display: block;
@@ -2282,7 +2277,6 @@ body {
       margin: 0 auto; }
       #payments-admin input {
         width: 100%; } }
->>>>>>> aacc5edc5f0995f0cf07851f8aefcf78412596c4
 
 .playmakers {
   position: relative;
