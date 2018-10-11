@@ -1245,6 +1245,16 @@ textarea {
   .club-spic__image {
     background: url("/img/events/clubs/overlays/aperture.jpg"); }
 
+.club-tapmi {
+  background: red; }
+  .club-tapmi__image {
+    background: url("/img/events/clubs/overlays/aperture.jpg"); }
+
+.club-misevents {
+  background: #ac89aa; }
+  .club-misevents__image {
+    background: url("/img/events/clubs/overlays/aperture.jpg"); }
+
 .all * {
   pointer-events: none; }
 
