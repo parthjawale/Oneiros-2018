@@ -87,3 +87,19 @@
     background: url("/img/events/clubs/overlays/aperture.jpg");
   }
 }
+
+.club-tapmi {
+  background: red;
+
+  &__image {
+    background: url("/img/events/clubs/overlays/aperture.jpg");
+  }
+}
+
+.club-misevents {
+  background: rgb(172, 137, 170);
+
+  &__image {
+    background: url("/img/events/clubs/overlays/aperture.jpg");
+  }
+}
