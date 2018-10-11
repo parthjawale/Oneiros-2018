@@ -31,7 +31,7 @@ var clubs = [
       },
       {
         name: "Picture Perfect",
-        price: 100,
+        price: 50,
         min: 1,
         max: 1,
         type: "solo"
@@ -267,21 +267,21 @@ var clubs = [
         price: 200,
         min: 1,
         max: 2,
-        type: "team"
+        type: "fixed"
       },
       {
         name: "Comicstan",
         price: 150,
         min: 1,
         max: 2,
-        type: "team"
+        type: "fixed"
       },
       {
         name: "Junk-O-Mania",
         price: 150,
         min: 1,
         max: 2,
-        type: "team"
+        type: "fixed"
       },
       {
         name: "Art Gallery",
@@ -381,7 +381,7 @@ var clubs = [
         price: 200,
         min: 2,
         max: 4,
-        type: "team"
+        type: "fixed"
       }
     ]
   },
