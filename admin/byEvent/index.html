@@ -28,8 +28,8 @@
             <option :value="event" v-for="event in selectedClub.events">{{event.name}}</option>
         </select>
         <button @click="display">Submit</button>
-        <p v-for="user in usersarr">
-            {{user.userName}}
+        <p v-for="(user,index) in usersarr">
+            {{index + 1}}: {{user.userName}}
         </p>
     </div>
 
