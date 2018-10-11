@@ -1837,7 +1837,7 @@ textarea {
     background-position: bottom;
     background-size: cover;
     opacity: 0;
-    transition: .5s opacity, .2s filter; }
+    transition: .5s opacity, .2s filter, .5s background-image; }
     @media screen and (max-width: 800px) {
       .me__all--item {
         background-position: center; } }
@@ -1863,8 +1863,6 @@ textarea {
         color: #fff; }
       .me__all--item__trigger--show {
         opacity: 1; }
-  .me__all--item:nth-child(1) {
-    background-image: url("/img/majorevents/artist.jpg"); }
   .me__all--item:nth-child(2) {
     background-image: url("/img/majorevents/muse.jpg"); }
   .me__all--item:nth-child(3) {

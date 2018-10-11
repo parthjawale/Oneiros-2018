@@ -165,3 +165,14 @@ const handleControls = (to, from, text, option) => {
     }, 500);
   }, 1000);
 };
+
+const tlt = $('.tlt-images')
+
+let flag = 1
+setInterval(() => {
+  if (flag === 14) flag = 1
+  tlt.css({
+      'background-image': `url('/img/majorevents/tlt/${flag}.jpg')`
+    })
+    ++flag
+}, 3000)
