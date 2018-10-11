@@ -1,62 +1,77 @@
-new Vue ({
-    el:'#details',
-    data:{
-        ucode:'',
-        name:'',
-        username:'',
-        email:'',
-        pno:'',
-        eventsarr:[],
-        eventusers:[],
-        eventdetailsarr:[],
-        isManipal:'',
-        regno:'',
-        college:'',
-        uid:'',
-        f:'',
-        disabled: false,
-        show: false,
-        msg:''
-    },
-    methods:{
-        display(){
-            var self=this
-            self.disabled = true
-            var userdb=firebase.firestore().collection("users")
-            var eventsdb=firebase.firestore().collection("events")
-            
-            userdb.where("ucode", "==", self.ucode)
-            .get()
-            .then(function(querySnapshot){
-                self.disabled = false
-                if (querySnapshot.size > 0) {
-                    querySnapshot.forEach (function (doc) {
-                        self.show = true
-
-                        console.log(doc.data())
-                        self.name=doc.data().name
-                        self.username=doc.data().username
-                        self.email=doc.data().email
-                        self.pno=doc.data().pno
-                        self.eventsarr = doc.data().events
-                        self.uid=doc.data().uid
-                        self.isManipal=doc.data().isManipal
-                        if(self.isManipal){
-                            self.regno=doc.data().regno
-                            self.f = 1;
-                        }
-                        else{
-                            self.college=doc.data().college
-                            self.f = 0;
-                        }
-                    })
-                } else {
-                    self.show = false
-                    self.msg="Invalid ucode"
-                }
-            },function(error){
-                console.log(error.message)
-            }) 
-        }
+new Vue({
+  el: '#details',
+  data: {
+    ucode: '',
+    disabled: false,
+    loading: false,
+    userData: {},
+    currUcode: '',
+    keyss: {
+      event: 'Name',
+      email: 'E-mail',
+      bandName: 'Band Name',
+      value: 'No. of participants',
+      songdewlink: 'Songdew Link',
+      videoLink: 'Video Link',
+      teamName: 'Team Name',
+      pNo: 'Phone No.',
+      pno: 'Phone No.',
+      regno: 'Registration No.'
     }
+  },
+  methods: {
+    display() {
+      if (!this.ucode) {
+        alert('Enter a valid ucode')
+        return
+      }
+
+      if (this.ucode != this.currUcode) {
+        return
+      }
+      this.currUcode = this.ucode
+      this.loading = true
+      this.disabled = true
+      var self = this
+      var userdb = firebase.firestore().collection('users')
+      userdb
+        .where('ucode', '==', self.ucode)
+        .get()
+        .then(function(querySnapshot) {
+          if (querySnapshot.size > 0) {
+            querySnapshot.forEach(function(doc) {
+              console.log(doc.data())
+              this.userData = doc.data()
+            })
+            self.loading = false
+            self.disabled = false
+          } else {
+            self.loading = false
+            self.disabled = false
+            alert('Invalid Ucode')
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
+
+      // setTimeout(() => {
+      //   this.loading = false
+      //   this.userData = {
+      //     name: 'Apoorv Agarwal',
+      //     username: 'aapoorv41',
+      //     college: 'MUJ',
+      //     pno: 8057989577,
+      //     email: 'aapoorv41@gmail.com',
+      //     events: [
+      //       {
+      //         event: 'focus',
+      //         genre: 'metal',
+      //         value: 2
+      //       }
+      //     ]
+      //   }
+      // }, 1500)
+    }
+  }
 })
