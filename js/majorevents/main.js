@@ -1,4 +1,4 @@
-const menav = $('.me__nav')
+const menav = $(".me__nav");
 
 // SPLASH PARALLAX
 const all = document.getElementsByClassName("me__splash--single");
@@ -25,25 +25,27 @@ splash.click(e => {
   splash[0].classList.add("splash__screen--moveleft");
   splash[1].classList.add("splash__screen--moveright");
 
-  const option = e.currentTarget.id
+  const option = e.currentTarget.id;
   // RENDER SHAPES + SHOW NAV
   setTimeout(() => {
-    $('.me__splash').css({
-      pointerEvents: 'none'
-    })
+    $(".me__splash").css({
+      pointerEvents: "none"
+    });
     boxes.addClass("me__shapes--box__activate");
     setTimeout(() => {
       boxes.addClass("me__shapes--box__deactivate");
       boxes[2].classList.add("me__shapes--box__deactivate--center");
       setTimeout(() => {
-        boxes.addClass('me__shapes--box__remove')
-        menav.addClass('me__nav--show')
-        $(`#${option}-nav`).addClass('option--show')
-        const headers = $(`#${option}-nav h1`)
+        boxes.addClass("me__shapes--box__remove");
+        menav.addClass("me__nav--show");
+        $(`#${option}-nav`).addClass("option--show");
+        const headers = $(`#${option}-nav h1`);
         setTimeout(() => {
           for (let i = 0; i < headers.length; i++)
             setTimeout(() => {
-              $(`#${option}-nav h1:nth-child(${i + 1})`).addClass('option--show__header')
+              $(`#${option}-nav h1:nth-child(${i + 1})`).addClass(
+                "option--show__header"
+              );
             }, i * 250);
         }, 200);
       }, 500);
@@ -52,93 +54,114 @@ splash.click(e => {
 });
 
 // NAV SELECTION CONTROLS
-const controls = $('.me__nav--header')
-const meevents = $('.me__all--item')
-const eventcontrols = $('.me__controls--control')
-const eventcontrolheader = $('.me__controls--control h1')
+const controls = $(".me__nav--header");
+const meevents = $(".me__all--item");
+const eventcontrols = $(".me__controls--control");
+const eventcontrolheader = $(".me__controls--control h1");
 
 controls.click(e => {
-  const option = e.currentTarget.id
-  meevents.removeClass('show--event')
+  const option = e.currentTarget.id;
+  meevents.removeClass("show--event");
 
   meevents.css({
-    pointerEvents: 'none'
-  })
-  $(`#${option}__details`).addClass('show--event')
+    pointerEvents: "none"
+  });
+  $(`#${option}__details`).addClass("show--event");
   $(`#${option}__details`).css({
-    pointerEvents: 'all'
-  })
+    pointerEvents: "all"
+  });
 
-  controls.removeClass('me__nav--header-active')
-  $(`#${option}`).addClass('me__nav--header-active')
-  if (!menav.hasClass('nav--bottomfix')) {
-    menav.addClass('nav--bottomfix')
+  controls.removeClass("me__nav--header-active");
+  $(`#${option}`).addClass("me__nav--header-active");
+  if (!menav.hasClass("nav--bottomfix")) {
+    menav.addClass("nav--bottomfix");
     setTimeout(() => {
-      $('.me__all--item__trigger').addClass('me__all--item__trigger--show')
+      $(".me__all--item__trigger").addClass("me__all--item__trigger--show");
     }, 1000);
   }
 
-  if (option.split('-')[0] == 'event') {
-    eventcontrols.addClass('controls--expand-left')
-    eventcontrolheader.text('Artists')
+  if (option.split("-")[0] == "event") {
+    eventcontrols.addClass("controls--expand-left");
+    eventcontrolheader.text("Artists");
   } else {
-    eventcontrols.addClass('controls--expand-right')
-    eventcontrolheader.text('Events')
+    eventcontrols.addClass("controls--expand-right");
+    eventcontrolheader.text("Events");
   }
-})
+});
 
 // EVENT CONTROLS
-const meoverlay = $('.me__overlay')
+const meoverlay = $(".me__overlay");
 eventcontrols.click(e => {
-  const option = e.currentTarget.innerText.toLowerCase().trim()
+  const option = e.currentTarget.innerText.toLowerCase().trim();
   eventcontrols.css({
-    pointerEvents: 'none'
-  })
-  if (option === 'artists')
-    handleControls('controls--expand-right', 'controls--expand-left', 'events', 'artist')
+    pointerEvents: "none"
+  });
+  if (option === "artists")
+    handleControls(
+      "controls--expand-right",
+      "controls--expand-left",
+      "events",
+      "artist"
+    );
   else
-    handleControls('controls--expand-left', 'controls--expand-right', 'artists', 'event')
-})
-
+    handleControls(
+      "controls--expand-left",
+      "controls--expand-right",
+      "artists",
+      "event"
+    );
+});
 
 const handleControls = (to, from, text, option) => {
   eventcontrolheader.css({
     opacity: 0
-  })
-  meoverlay.fadeIn()
-  eventcontrols.addClass('controls--expand')
+  });
+  meoverlay.fadeIn();
+  eventcontrols.addClass("controls--expand");
 
   setTimeout(() => {
-    eventcontrols.addClass(to)
-    eventcontrols.removeClass(from)
-    eventcontrols.removeClass('controls--expand')
-    meoverlay.fadeOut()
+    eventcontrols.addClass(to);
+    eventcontrols.removeClass(from);
+    eventcontrols.removeClass("controls--expand");
+    meoverlay.fadeOut();
 
-    $(`.me__nav--single`).removeClass('option--show')
-    $(`#${option}-nav`).addClass('option--show')
-    $(`#${option}-nav h1`).addClass('option--show__header')
-    meevents.removeClass('show--event')
+    $(`.me__nav--single`).removeClass("option--show");
+    $(`#${option}-nav`).addClass("option--show");
+    $(`#${option}-nav h1`).addClass("option--show__header");
+    meevents.removeClass("show--event");
     meevents.css({
-      pointerEvents: 'none'
-    })
+      pointerEvents: "none"
+    });
 
-    $(`${option === 'artist' ? '.me__all--item:nth-child(1)' : '.me__all--item:nth-child(4)'}`)
-      .addClass('show--event')
-    $(`${option === 'artist' ? '.me__all--item:nth-child(1)' : '.me__all--item:nth-child(4)'}`).css({
-      pointerEvents: 'all'
-    })
-    controls.removeClass('me__nav--header-active')
-    $(`${option === 'artist' ? '#artist-1' : '#event-1'}`)
-      .addClass('me__nav--header-active')
+    $(
+      `${
+        option === "artist"
+          ? ".me__all--item:nth-child(1)"
+          : ".me__all--item:nth-child(4)"
+      }`
+    ).addClass("show--event");
+    $(
+      `${
+        option === "artist"
+          ? ".me__all--item:nth-child(1)"
+          : ".me__all--item:nth-child(4)"
+      }`
+    ).css({
+      pointerEvents: "all"
+    });
+    controls.removeClass("me__nav--header-active");
+    $(`${option === "artist" ? "#artist-1" : "#event-1"}`).addClass(
+      "me__nav--header-active"
+    );
 
     setTimeout(() => {
       eventcontrols.css({
-        pointerEvents: 'all'
-      })
-      eventcontrolheader.text(text)
+        pointerEvents: "all"
+      });
+      eventcontrolheader.text(text);
       eventcontrolheader.css({
         opacity: 1
-      })
+      });
     }, 500);
   }, 1000);
-}
+};

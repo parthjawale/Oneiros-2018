@@ -2137,10 +2137,268 @@ textarea {
     width: fit-content;
     padding: 1rem; }
 
+body#post {
+  background: url("/admin/reg/bg.jpg");
+  background-attachment: fixed;
+  background-size: cover; }
+
+.post__header {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #be2d2d;
+  color: white;
+  font-size: 3.2rem;
+  position: relative;
+  z-index: 0; }
+  .post__header > h1 {
+    transform: translateY(-80%);
+    max-width: 60%;
+    text-align: center; }
+    @media (max-width: 600px) {
+      .post__header > h1 {
+        max-width: 90%;
+        transform: none; } }
+  .post__header__backdrop {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.15;
+    width: 60%;
+    height: auto;
+    left: 0;
+    bottom: 0;
+    transform: translate(-100px, 20%); }
+    @media (max-width: 600px) {
+      .post__header__backdrop {
+        width: auto;
+        height: 90%;
+        transform: translate(-300px, 20%); } }
+
+.post__body {
+  margin: 0 auto;
+  margin-top: -9rem;
+  width: 70%;
+  padding: 8rem 9rem;
+  height: 150vh;
+  box-shadow: 0rem 0rem 5.5rem rgba(0, 0, 0, 0.18);
+  background: #fafafa;
+  border-radius: 0rem;
+  position: relative;
+  z-index: 2;
+  color: #2f2f2f; }
+  @media (max-width: 600px) {
+    .post__body {
+      width: 95%; } }
+
+.post__heading {
+  margin-bottom: 3rem; }
+  .post__heading--lg {
+    font-size: 3.8rem; }
+  .post__heading--md {
+    font-size: 3rem; }
+  .post__heading--sm {
+    font-size: 2.5rem; }
+
+.post__text {
+  font-size: 2rem;
+  margin-bottom: 2rem; }
+  .post__text--light {
+    color: #b9b8b8; }
+
+.layer__effect {
+  background: #a31c1c;
+  position: relative;
+  height: 100vh;
+  perspective: 1000px; }
+
+.layer__effect:hover .layer--middle {
+  transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg) translateX(-50%) translateY(0px) translateZ(40px); }
+
+.layer__effect:hover .layer--bottom {
+  transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg) translateX(-50%) translateY(0px) translateZ(60px); }
+
+.layer__effect:hover .layer--bottom {
+  transform: perspective(1200px) rotateX(60deg) rotateY(20deg) rotateZ(-25deg) translateX(-50%) translateY(20px) translateZ(80px); }
+
+.layer {
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all ease 1600ms;
+  transform-style: preserve-3d; }
+  .layer--top {
+    z-index: 10; }
+  .layer-middle {
+    z-index: 5; }
+  .layer--bottom {
+    z-index: 2; }
+
+.blog__cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 5rem;
+  background: linear-gradient(to right bottom, #222 30%, #c72121 70%);
+  background-attachment: fixed; }
+
+.blog__card {
+  display: flex;
+  flex-basis: 22%;
+  border-radius: 0.6rem;
+  box-shadow: 0rem 0.6rem 3rem rgba(0, 0, 0, 0.3);
+  margin-top: 4rem;
+  overflow: hidden;
+  flex-direction: column;
+  background: #fff; }
+  .blog__card--large {
+    flex-basis: 44%; }
+  .blog__card__image {
+    flex-basis: 30%;
+    background: #000;
+    min-height: 200px; }
+  .blog__card__content {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column; }
+    .blog__card__content--title {
+      padding: 2rem 1.5rem;
+      font-size: 3rem; }
+    .blog__card__content--body {
+      padding: 1.5rem;
+      font-size: 2rem;
+      flex: 1; }
+    .blog__card__content--controls {
+      padding: 2.5rem;
+      display: flex;
+      justify-content: flex-end; }
+      .blog__card__content--controls > button {
+        padding: 1.5rem 2.5rem;
+        border: none; }
+
 #admin-events input,
 #admin-events select {
   display: block;
   color: red; }
+
+#payments-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; }
+  #payments-admin h3 {
+    font-size: 3rem;
+    text-align: center; }
+  #payments-admin input {
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    padding-top: 3rem;
+    width: 30%;
+    border-bottom: 1px solid grey;
+    display: block;
+    margin: 0 auto;
+    text-indent: 3px; }
+  #payments-admin input:focus {
+    border-bottom: 1px solid black; }
+  #payments-admin *::placeholder {
+    color: #444; }
+  #payments-admin input:focus::placeholder {
+    color: black; }
+  #payments-admin button {
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    border: 1px solid black;
+    padding: 1rem;
+    font-size: 1.5rem;
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem;
+    outline: none;
+    transition: all 0.2s ease-in-out; }
+  #payments-admin button:hover {
+    background-color: black;
+    color: white; }
+  #payments-admin div.details {
+    font-size: 2rem; }
+  @media screen and (max-width: 768px) {
+    #payments-admin {
+      width: 80%;
+      margin: 0 auto; }
+      #payments-admin input {
+        width: 100%; } }
+
+#admin-index {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  #admin-index h2 {
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 2rem; }
+  #admin-index a {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    border: 1px solid black;
+    padding: 1rem;
+    font-size: 1.5rem;
+    display: block;
+    margin: 0 auto;
+    width: 40rem;
+    word-wrap: break-word;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 2rem;
+    color: black;
+    text-align: center; }
+  #admin-index a:hover {
+    background-color: black;
+    color: white; }
+
+.admin-loader {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 1000;
+  background-color: white; }
+  .admin-loader .box-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .admin-loader .box-wrapper h2 {
+      padding-bottom: 3rem;
+      font-size: 3rem; }
+    .admin-loader .box-wrapper .box {
+      margin: 0 auto;
+      height: 20px;
+      width: 20px;
+      background-color: black;
+      animation: spin infinite 2s; }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 
 .playmakers {
   position: relative;

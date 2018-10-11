@@ -42,7 +42,7 @@ function sendMail($username,$password,$body,$subject,$receiver) {
       // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
       $mail->send();
-      echo json_encode(array('message' => 'Sent', 'code' => "200"));
+      // echo json_encode(array('message' => 'Sent', 'code' => "200"));
       
   } catch (Exception $e) {
     echo json_encode(array('message' => $mail->ErrorInfo, 'code' => "200"));
