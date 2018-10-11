@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $("body").css("display", "none");
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       firebase
@@ -14,7 +13,9 @@ $(document).ready(function() {
             !doc.data().admin
           )
             window.location = "/";
-          else $("body").css("display", "initial");
+          else {
+            $(".admin-loader").css("display", "none");
+          }
         });
     } else {
       window.location = "/";

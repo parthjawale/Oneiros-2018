@@ -11,6 +11,13 @@
 </head>
 
 <body>
+  <div class="admin-loader">
+    <div class="box-wrapper">
+      <h2>Loading</h2>
+      <div class="box">
+      </div>
+    </div>
+  </div>
   <div id="payments-admin">
     <h3>Admin Payment</h3>
     <input type="text" id="uid" @keyup.enter="addPayment" v-model="uid" placeholder="Enter UID">
