@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD:admin/reg/dashboard.html
   <div class="container">
     <h2 class="title">Admin Dashboard</h2>
     <div class="uid" id="details">
@@ -50,6 +51,17 @@
 
 
         <!-- <div class="details" v-if="show">
+=======
+    <h2 class="dashboard-title">Dashboard</h2>
+    <div class="container">
+        <div class="uid" id="details">
+            <!-- <label class="uid-label"></label> -->
+            <br><input @keyup.enter="display" class="uid-input" type="text" name="ucode" id="ucode" v-model="ucode"
+                placeholder="UCode" autocomplete="off">
+            <button class="submit" @click="display" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}">SUBMIT</button>
+            <transition name="fade">
+                <div class="details" v-if="show">
+>>>>>>> aacc5edc5f0995f0cf07851f8aefcf78412596c4:admin/reg/index.html
                     <h3>Name: {{name}} </h3>
                     <h3>Username: {{username}} </h3>
                     <h3>Phone Number: {{pno}} </h3>
@@ -70,30 +82,31 @@
                             Amount: {{event.amount}} <br>
                         </p>
                         <p v-if="event.event == 'Destival - Group Dance Competition'">
-                                Name: {{event.event}} <br>
-                                Team Name: {{event.teamName}}<br>
-                                No of Participants: {{event.value}} <br>
-                                Links: <a :href="event.link">{{event.links}}</a><br>
-                                Paid: {{event.paid}} <br>
-                                Amount: {{event.amount}} <br>
-                        <p>
-                        <p v-if="event.event == 'Kairos - Fashion Show'">
-                                Name: {{event.event}} <br>
-                                Team Name: {{event.teamName}}<br>
-                                No of Participants: {{event.value}} <br>
-                                Paid: {{event.paid}} <br>
-                                Amount: {{event.amount}} <br>
-                        <p>
-                        <p v-if="event.event != 'Requiem - War Of Bands' && event.event != 'Destival - Group Dance Competition' && event.event != 'Kairos - Fashion Show'">
                             Name: {{event.event}} <br>
+                            Team Name: {{event.teamName}}<br>
                             No of Participants: {{event.value}} <br>
+                            Links: <a :href="event.link">{{event.links}}</a><br>
                             Paid: {{event.paid}} <br>
-                            Amount: {{event.amount}}
-                        </p>
+                            Amount: {{event.amount}} <br>
+                            <p>
+                                <p v-if="event.event == 'Kairos - Fashion Show'">
+                                    Name: {{event.event}} <br>
+                                    Team Name: {{event.teamName}}<br>
+                                    No of Participants: {{event.value}} <br>
+                                    Paid: {{event.paid}} <br>
+                                    Amount: {{event.amount}} <br>
+                                    <p>
+                                        <p v-if="event.event != 'Requiem - War Of Bands' && event.event != 'Destival - Group Dance Competition' && event.event != 'Kairos - Fashion Show'">
+                                            Name: {{event.event}} <br>
+                                            No of Participants: {{event.value}} <br>
+                                            Paid: {{event.paid}} <br>
+                                            Amount: {{event.amount}}
+                                        </p>
                     </div>
                 </div> -->
       </transition>
     </div>
+<<<<<<< HEAD:admin/reg/dashboard.html
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
@@ -103,6 +116,17 @@
   <script src="/js/config/db.js"></script>
   <script src="/js/config/dashboard/adminportal.js"></script>
   <script src="/js/common/global.js"></script>
+=======
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/config/db.js"></script>
+    <script src="../checkPerson.js"></script>
+    <script src="/js/config/admin/dashboard/adminportal.js"></script>
+    <script src="/js/common/global.js"></script>
+>>>>>>> aacc5edc5f0995f0cf07851f8aefcf78412596c4:admin/reg/index.html
 </body>
 
 </html>

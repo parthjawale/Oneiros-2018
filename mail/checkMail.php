@@ -10,11 +10,14 @@
   $name = $data["name"];
 
   if ($message == '' || $email == '' ) {
-    echo json_encode(array('message' => 'empty', 'code' => "405"));
+    $arr = array("message" => "empty", "code" => 405);
+    echo json_encode(array($arr));
     die();
   }
 
   $subject = "Succesful Registration";
-  sendMail('info@oneiros.in','Promotions@312', $message,$subject, $email);
-  // echo json_encode(array('message' => 'Sent', 'code' => "200"));
+  sendMail('info@oneiros.in','Promotions@312', $message, $subject, $email);
+  $arr = array("message" => "Sent", "code" => 200);
+  echo json_encode(array($arr));
+  
 ?>
