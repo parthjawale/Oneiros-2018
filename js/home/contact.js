@@ -36,31 +36,29 @@ $(document).ready(() => {
       message: msg
     };
 
-    // fetch("/mail/contact.php", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       Accept: "application/json"
-    //     },
-    //     body: JSON.stringify(body)
-    //   })
-    //   .then(res => {
-    //     console.log(res)
-    //     return res.json();
-    //   })
-    //   .then(function (response) {
-    //     console.log(response)
-    //     if (response.code === 200) {
-    //       trans("We'll get back to you!");
-    //     } else if (response.code === 405) {
-    //       trans("Fields cant be empty!");
-    //     } else if (response.code === 406) {
-    //       trans("Invalid E-Mail");
-    //     }
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+    fetch("/mail/checkMail.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(body)
+      })
+      .then(res => {
+        return res.json();
+      })
+      .then(function (response) {
+        if (response.code === 200) {
+          trans("We'll get back to you!");
+        } else if (response.code === 405) {
+          trans("Fields cant be empty!");
+        } else if (response.code === 406) {
+          trans("Invalid E-Mail");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   });
 });
 
@@ -70,8 +68,7 @@ function validateEmail(email) {
 }
 
 const validate = (name, email, message) => {
-  console.log(validateEmail(email), email, name, message)
-  if (validateEmail(email)) {
+  if (!validateEmail(email)) {
     return "email";
   } else if (name.length === 0) {
     return "name";
