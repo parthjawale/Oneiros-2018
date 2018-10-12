@@ -117,7 +117,7 @@ main {
 
 #black-overlay {
   background: #000;
-  z-index: 5;
+  z-index: 5000;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -210,7 +210,7 @@ a:link, a:visited {
   height: 50px;
   right: 2rem;
   top: 2rem;
-  z-index: 1001;
+  z-index: 10001;
   cursor: pointer; }
   @media screen and (max-width: 800px) {
     .nav {
@@ -289,7 +289,7 @@ a:link, a:visited {
   top: 50%;
   transform: translate(-50%, -50%);
   background: linear-gradient(to top right, #b71c1c, #c62828);
-  z-index: 1000;
+  z-index: 10000;
   transition: 0.5s all cubic-bezier(0.07, 0.57, 0.31, 1.01);
   display: flex;
   justify-content: flex-end;
@@ -308,7 +308,7 @@ a:link, a:visited {
         grid-template-columns: 1fr; } }
     .newnav-container ul li {
       list-style-type: none;
-      margin: 3rem 5rem;
+      margin: 1rem 5rem;
       opacity: 0;
       pointer-events: none;
       transition: 0.5s all;
@@ -321,7 +321,7 @@ a:link, a:visited {
         display: block;
         font-family: "Gotham-Thin", sans-serif;
         transition: 0.2s all;
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: #fff;
         text-transform: uppercase;
         text-align: center;
@@ -513,6 +513,28 @@ a:link, a:visited {
   font-size: 1.8rem;
   font-family: "Gotham-Thin";
   z-index: 100; }
+
+#funzone {
+  position: absolute;
+  left: 3rem;
+  top: 48%;
+  transform: translate(-50%) rotate(90deg); }
+  #funzone a {
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 2.5rem 3rem;
+    transition: 0.2s all;
+    background: linear-gradient(120deg, transparent, transparent 50%, #fff 0);
+    background-size: 200%; }
+    @media screen and (max-width: 800px) {
+      #funzone a {
+        background-position: 100%;
+        color: #e50914; } }
+    #funzone a:hover {
+      background-position: 100%;
+      color: #e50914; }
 
 .home.about {
   pointer-events: none;
