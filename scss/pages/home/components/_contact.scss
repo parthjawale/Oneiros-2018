@@ -1,56 +1,3 @@
-// .home-contact {
-//   &__form {
-//     background: #fff;
-//     position: absolute;
-//     left: 50%;
-//     bottom: 5rem;
-//     transform: translateX(-50%);
-//     width: 60% !important;
-//     height: 75%;
-//     border-radius: 5px;
-//     box-shadow: 0 0 2rem #fff;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//   }
-
-//   input,
-//   textarea {
-//     position: relative;
-//     border: none;
-//     width: 80%;
-//     font-family: 'Gotham-Bold';
-//     font-size: 3rem !important;
-//     margin: 2rem 0;
-//     border-bottom: 1px solid rgba(#222, .1);
-//     padding: 1rem 0;
-
-//     &:focus+.home-contact__underline {
-//       width: 80%;
-//     }
-
-//     &::placeholder {
-//       transition: .2s all;
-//       opacity: .5;
-//     }
-
-//     &:focus::placeholder {
-//       opacity: .2;
-//     }
-//   }
-
-//   &__underline {
-//     transition: .2s all;
-//     height: 3px;
-//     background: #303F9F;
-//     transform: translateY(-2rem);
-//     width: 0px;
-//     border-radius: 10px;
-//   }
-// }
-
 .home-contact {
   display: flex;
   flex-direction: column;
@@ -70,7 +17,7 @@
     position: relative;
     z-index: 5;
 
-    &:focus + .home-contact__underline {
+    &:focus+.home-contact__underline {
       width: 80%;
     }
 
@@ -105,9 +52,24 @@
       font-size: 7rem;
       font-family: "Gotham";
       background: transparent;
+
+      &:focus+span {
+        background: $color-secondary;
+      }
+
+      @media (max-width: 800px) {
+        font-size: 5rem;
+        margin-top: 12rem;
+      }
     }
+
+    input+span {
+      width: 80% !important;
+    }
+
     #contact-email {
       width: 80%;
+
       // border-top: none;
       // border-left: none;
       // border-right: none;
@@ -132,7 +94,7 @@
     input,
     textarea {
       border: none;
-      font-size: 3rem;
+      font-size: 2.5rem;
       background: transparent;
       color: #fff;
       font-family: "Gotham";
@@ -151,7 +113,7 @@
       z-index: 0;
     }
 
-    input + span {
+    input+span {
       margin-bottom: 5rem;
     }
   }
