@@ -2284,11 +2284,6 @@ body#post {
         padding: 1.5rem 2.5rem;
         border: none; }
 
-#admin-events input,
-#admin-events select {
-  display: block;
-  color: red; }
-
 #payments-admin {
   display: flex;
   flex-direction: column;
