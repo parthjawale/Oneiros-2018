@@ -4,7 +4,17 @@ $(document).ready(() => {
   $('#fullpage').fullpage({
     scrollBar: true,
 
-    anchors: [],
+    anchors: [
+      'club-shabh',
+      'chakravyuh-desc',
+      'chakravyuh-info',
+      'chakravyuh-rules',
+      'chakravyuh-registration',
+      'izhaar-desc',
+      'izhaar-info',
+      'izhaar-rules',
+      'izhaar-registration'
+         ],
     afterLoad: (origin, dest) => {
       let option = 0
       const selectedEvent = $('.events-list__item--selected')

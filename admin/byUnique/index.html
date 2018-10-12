@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+  <link rel="stylesheet" type="text/css" href="dashboard.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admin Portal</title>
+</head>
+
+
+<body>
+  <div class="admin-loader">
+    <div class="box-wrapper">
+      <h2>Loading</h2>
+      <div class="box">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="title">Admin Dashboard</h2>
+    <div class="uid" id="details">
+      <br><input @keyup.enter="display" class="uid-input" type="text" name="ucode" id="ucode" v-model="ucode"
+        placeholder="UCode" autocomplete="off">
+      <button class="submit" @click="display" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}">SUBMIT</button>
+      <transition name="fade" mode="out-in">
+        <div key='loader' v-if="loading" class="loader">
+          loading...
+        </div>
+        <div v-if="!loading && userData.name">
+          <div class="details">
+            <div v-for="(value, key) in userData" :key="key" class="details__section" v-if="key != 'events'">
+              <h3 class="capitalize">
+                {{keyss[key] || key}}
+              </h3>
+              <p>{{ value }}</p>
+            </div>
+          </div>
+          <h1 class="title" style="margin-top: 3rem;">Event Details</h1>
+          <div class="eventDetails">
+            <div class="eventDetails__item" v-for="(event, index) in userData.events" :key="index">
+              <div class="eventDetails__item--info">
+                <h1 class="eventDetails__item--heading">
+                  {{event.event}}
+                </h1>
+                <div class="details__section" v-for="(dataValue, dataKey) in event" :key="dataKey">
+                  <h3 class="capitalize">
+                    {{keyss[dataKey] || dataKey}}
+                  </h3>
+                  <p>{{ dataValue }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="details" v-if="show">
+                    <h3>Name: {{name}} </h3>
+                    <h3>Username: {{username}} </h3>
+                    <h3>Phone Number: {{pno}} </h3>
+                    <h3 v-if="f==1">Registration Number: {{regno}} </h3>
+                    <h3 v-else>College Name: {{college}} </h3>
+                    <h3>Email ID: {{email}} </h3>
+                    <div v-for="event in eventsarr">
+                        <p v-if="event.event == 'Requiem - War Of Bands'">
+                            Name: {{event.event}} <br>
+                            email: {{event.email}}<br>
+                            Band Name: {{event.bandName}}<br>
+                            Description: {{event.description}}
+                            No of Participants: {{event.value}} <br>
+                            Genre: {{event.genre}}<br>
+                            Songdew Link: <a :href="event.songdewLink">{{event.songdewLink}}</a><br>
+                            Video Link: <a :href="event.videoLink">{{event.videoLink}}</a><br>
+                            Paid: {{event.paid}} <br>
+                            Amount: {{event.amount}} <br>
+                        </p>
+                        <p v-if="event.event == 'Destival - Group Dance Competition'">
+                            Name: {{event.event}} <br>
+                            Team Name: {{event.teamName}}<br>
+                            No of Participants: {{event.value}} <br>
+                            Links: <a :href="event.link">{{event.links}}</a><br>
+                            Paid: {{event.paid}} <br>
+                            Amount: {{event.amount}} <br>
+                            <p>
+                                <p v-if="event.event == 'Kairos - Fashion Show'">
+                                    Name: {{event.event}} <br>
+                                    Team Name: {{event.teamName}}<br>
+                                    No of Participants: {{event.value}} <br>
+                                    Paid: {{event.paid}} <br>
+                                    Amount: {{event.amount}} <br>
+                                    <p>
+                                        <p v-if="event.event != 'Requiem - War Of Bands' && event.event != 'Destival - Group Dance Competition' && event.event != 'Kairos - Fashion Show'">
+                                            Name: {{event.event}} <br>
+                                            No of Participants: {{event.value}} <br>
+                                            Paid: {{event.paid}} <br>
+                                            Amount: {{event.amount}}
+                                        </p>
+                    </div>
+                </div> -->
+      </transition>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/js/config/db.js"></script>
+  <script src="../checkPerson.js"></script>
+  <script src="/js/config/admin/dashboard/adminportal.js"></script>
+  <script src="/js/common/global.js"></script>
+</body>
+
+</html>

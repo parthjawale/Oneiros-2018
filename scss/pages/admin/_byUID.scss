@@ -1,4 +1,5 @@
 #admin-events {
+<<<<<<< HEAD
   padding-top: 4rem;
   text-align: center;
   h2 {
@@ -30,5 +31,11 @@
     font-size: 2rem;
     margin: 0 auto;
     margin-bottom: 2rem;
+=======
+  input,
+  select {
+    display: block;
+    color: red;
+>>>>>>> 10b3f5025c8bfe35cd38d25d10c925f47398d1e3
   }
 }

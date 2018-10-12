@@ -13,6 +13,9 @@ $(document).ready(function() {
             !doc.data().admin
           )
             window.location = "/";
+          else {
+            $(".admin-loader").css("display", "none");
+          }
         });
     } else {
       window.location = "/";
