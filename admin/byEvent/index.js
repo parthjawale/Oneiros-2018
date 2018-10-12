@@ -14,6 +14,10 @@ new Vue({
     },
     display() {
       var self = this;
+      if (self.selectedClub == "" || self.selectedEvent == "") {
+        self.disabled = false;
+        return;
+      }
       self.disabled = true;
       firebase
         .firestore()

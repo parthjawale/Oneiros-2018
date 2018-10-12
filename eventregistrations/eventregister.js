@@ -39,13 +39,14 @@ $(document).ready(function() {
       clubs,
       email: ""
     },
-    mounted() {
+    created() {
       var self = this;
       firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
           window.location.href = "/login";
         } else {
           self.user = user;
+          console.log(user);
           firebase
             .firestore()
             .collection("users")

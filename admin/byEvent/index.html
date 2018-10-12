@@ -25,7 +25,7 @@
             <option :value="club" v-for="club in clubs">{{club.name}}</option>
         </select>
 
-        <select name="" id="" v-model="selectedEvent">
+        <select name="" id="" v-if="selectedClub != ''" v-model="selectedEvent">
             <option value="" disabled>Select Event</option>
             <option :value="event" v-for="event in selectedClub.events">{{event.name}}</option>
         </select>

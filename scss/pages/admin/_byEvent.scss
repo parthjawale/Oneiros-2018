@@ -9,11 +9,15 @@
   input,
   select {
     margin: 0 auto;
+    outline: none;
     display: block;
     border-radius: 0;
     width: 20%;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    :focus {
+      outline: 1px solid black;
+    }
   }
   button {
     border-radius: 0;
