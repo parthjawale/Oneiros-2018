@@ -146,7 +146,7 @@ a:link, a:visited {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  z-index: 10000;
+  z-index: 12000;
   transition: 1s all;
   opacity: 1;
   color: white; }
@@ -2404,7 +2404,7 @@ body#post {
     border-radius: 0;
     border: 1px solid black;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: block;
     margin: 0 auto;
     width: 40rem;

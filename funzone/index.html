@@ -108,23 +108,17 @@
 
     <script src="./assets/js/libs/vue.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-    <script type="text/javascript">
-        var config = {
-            apiKey: 'AIzaSyCszYWkqAN5VQsXjrtAVB7dI7hIB-q1CQ0',
-            authDomain: 'mast-project-naam.firebaseapp.com',
-            databaseURL: 'https://mast-project-naam.firebaseio.com',
-            projectId: 'mast-project-naam',
-            storageBucket: 'mast-project-naam.appspot.com',
-            messagingSenderId: '400633154339'
-        }
-        const app = firebase.initializeApp(config)
-        const firestore = firebase.firestore()
-        firestore.settings({
-            timestampsInSnapshots: true
-        })
-        const auth = firebase.auth()
-    </script>
     <script src="./assets/js/libs/jquery.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyAEZdHK98COcRt9hzxbICAPeSpXOyn0vA4",
+            authDomain: "oneiros-2018.firebaseapp.com",
+            databaseURL: "https://oneiros-2018.firebaseio.com",
+            projectId: "oneiros-2018",
+            storageBucket: "oneiros-2018.appspot.com",
+            messagingSenderId: "358484877394"
+        };
+        const app = firebase.initializeApp(config);</script>
     <script src="/js/common/global.js"></script>
     <script>
         new Vue({
@@ -151,7 +145,7 @@
                 login(e) {
                     this.loading = !this.loading
                     var this2 = this
-                    auth.signInWithEmailAndPassword(this.email, this.password)
+                    firebase.auth().signInWithEmailAndPassword(this.email, this.password)
                         .then(function (user) {
                             window.location.href = './funzone.html';
                         })

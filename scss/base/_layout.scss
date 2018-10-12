@@ -83,7 +83,6 @@ main {
 }
 
 a {
-
   &:link,
   &:visited {
     text-decoration: none;
@@ -115,7 +114,7 @@ a {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  z-index: 10000;
+  z-index: 12000;
   transition: 1s all;
   opacity: 1;
   color: white;
