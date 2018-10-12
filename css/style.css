@@ -645,6 +645,14 @@ a:link, a:visited {
       font-size: 7rem;
       font-family: "Gotham";
       background: transparent; }
+      .home-contact__splash input:focus + span {
+        background: #c10812; }
+      @media (max-width: 800px) {
+        .home-contact__splash input {
+          font-size: 5rem;
+          margin-top: 12rem; } }
+    .home-contact__splash input + span {
+      width: 80% !important; }
     .home-contact__splash #contact-email {
       width: 80%; }
       .home-contact__splash #contact-email .home-contact__underline {
@@ -659,7 +667,7 @@ a:link, a:visited {
     .home-contact__details input,
     .home-contact__details textarea {
       border: none;
-      font-size: 3rem;
+      font-size: 2.5rem;
       background: transparent;
       color: #fff;
       font-family: "Gotham";
@@ -1245,6 +1253,16 @@ textarea {
   .club-spic__image {
     background: url("/img/events/clubs/overlays/aperture.jpg"); }
 
+.club-tapmi {
+  background: red; }
+  .club-tapmi__image {
+    background: url("/img/events/clubs/overlays/aperture.jpg"); }
+
+.club-misevents {
+  background: #ac89aa; }
+  .club-misevents__image {
+    background: url("/img/events/clubs/overlays/aperture.jpg"); }
+
 .all * {
   pointer-events: none; }
 
@@ -1827,7 +1845,7 @@ textarea {
     background-position: bottom;
     background-size: cover;
     opacity: 0;
-    transition: .5s opacity, .2s filter; }
+    transition: .5s opacity, .2s filter, .5s background-image; }
     @media screen and (max-width: 800px) {
       .me__all--item {
         background-position: center; } }
@@ -1853,8 +1871,6 @@ textarea {
         color: #fff; }
       .me__all--item__trigger--show {
         opacity: 1; }
-  .me__all--item:nth-child(1) {
-    background-image: url("/img/majorevents/artist.jpg"); }
   .me__all--item:nth-child(2) {
     background-image: url("/img/majorevents/muse.jpg"); }
   .me__all--item:nth-child(3) {
