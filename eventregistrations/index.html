@@ -366,8 +366,18 @@
 
 
               <div style="text-align: center; margin-bottom: 1.5rem;">
-                <button class="btn btn--blue" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
-                  @click="submit" :disabled="disabled" ref="registerButton">Register</button>
+                <span>
+                  <button class="btn btn--blue" v-if="paymentNow" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
+                  @click="submit('now')" :disabled="disabled" ref="registerButton">Pay Now</button>
+                </span>
+                <span>
+                  <button class="btn btn--blue" v-if="paymentNow" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
+                  @click="submit('later')" :disabled="disabled" ref="registerButton">Pay Later</button>
+                </span>
+                <div v-if="transactionBox" id="transaction-holder">
+                  <input type="text" v-model="transactionID" placeholder="Transaction ID">
+                  <button id="transactionButton" @click="addID">Submit</button>
+                </div>
               </div>
             </div>
           </div>
@@ -378,7 +388,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
-
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
