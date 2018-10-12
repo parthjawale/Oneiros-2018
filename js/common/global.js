@@ -118,16 +118,16 @@ $(document).ready(() => {
   setTimeout(() => {
     $(".loader-prime").addClass("hide-prime-loader");
   }, 2000);
-  $(".mext-logo").click(function() {
+  $(".mext-logo").click(function () {
     window.open("https://mext.in", "_blank");
   });
-  $(".moodi-logo").click(function() {
+  $(".moodi-logo").click(function () {
     window.open("https://moodi.org", "_blank");
   });
-  $(".wordmark, #wordmark").click(function() {
+  $(".wordmark, #wordmark").click(function () {
     window.open("https://oneiros.co.in", "_self");
   });
-  $("#mext").click(function() {
+  $("#mext").click(function () {
     window.open("https://mext.in", "_blank");
   });
 });
@@ -142,9 +142,9 @@ $(".custom-link").click(e => {
   }, 2000);
 });
 
-const login = $(".nav-container li:nth-child(2)");
-const register = $(".nav-container li:nth-child(3)");
-const events = $(".nav-container li:nth-child(5)");
+const login = $("#loginButton");
+const register = $("#registerButton");
+const events = $("#eventsButton");
 const logout = $("#logout");
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
