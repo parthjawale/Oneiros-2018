@@ -25,7 +25,7 @@ new Vue({
         alert("Enter a valid ucode");
         return;
       }
-
+      this.ucode = this.ucode.trim();
       // if (this.ucode != this.currUcode) {
       //   return
       // }

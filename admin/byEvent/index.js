@@ -36,7 +36,6 @@ new Vue({
                 .doc(child.user)
                 .get()
                 .then(function(userDoc) {
-                  console.log(child);
                   child.college = userDoc.data().college;
                   child.userName = userDoc.data().name;
                   child.pno = userDoc.data().pno;
@@ -44,6 +43,12 @@ new Vue({
                   child.isManipal = userDoc.data().isManipal;
                   child.ucode = userDoc.data().ucode;
                   self.disabled = false;
+                  var found = userDoc
+                    .data()
+                    .events.findIndex(function(element) {
+                      return element.event == self.selectedEvent.name;
+                    });
+                  child.paid = userDoc.data().events[found].paid;
                   res();
                 });
             });
@@ -51,8 +56,6 @@ new Vue({
           });
           Promise.all(promArr).then(() => {
             self.usersarr = arr;
-            console.log(self.usersarr);
-            console.log(arr);
           });
         });
     }
