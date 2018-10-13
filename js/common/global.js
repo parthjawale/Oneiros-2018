@@ -180,6 +180,11 @@ logout.click(() => {
   firebase.auth().signOut();
 });
 
+$(document).ready(() => {
+  const moodi = `<img src="/img/logos/moodi-logo.png" id="moodi-nav-logo" alt="">`
+  $('.newnav-container__splash--box').append(moodi)
+})
+
 console.log(
   `%c
 M         M E E E E E X        X  T T T T T
