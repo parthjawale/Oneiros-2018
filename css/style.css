@@ -2436,6 +2436,8 @@ body#post {
     font-size: 2rem;
     margin: 0 auto;
     margin-bottom: 2rem; }
+  #admin-events div {
+    margin-bottom: 5rem; }
 
 #admin-index {
   position: absolute;
