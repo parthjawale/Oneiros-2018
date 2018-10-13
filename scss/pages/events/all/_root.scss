@@ -1,3 +1,15 @@
+@import "./aperture";
+@import "./tmc";
+@import "./coreo";
+@import "./litmus";
+@import "./cinefilia";
+@import "./shabd";
+@import "./scribbles";
+@import "./qureka";
+@import "./misevents";
+@import "./sophia";
+@import "./tapmi";
+
 .all {
   * {
     pointer-events: none;
@@ -327,12 +339,3 @@
     height: 6rem;
   }
 }
-
-@import "./aperture";
-@import "./tmc";
-@import "./coreo";
-@import "./litmus";
-@import "./cinefilia";
-@import "./shabd";
-@import "./scribbles";
-@import "./qureka";

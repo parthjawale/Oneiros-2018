@@ -1273,17 +1273,204 @@ textarea {
 .club-spic {
   background: yellow; }
   .club-spic__image {
-    background: url("/img/events/clubs/overlays/aperture.jpg"); }
+    background: url("/img/events/clubs/overlays/spic.jpg"); }
 
 .club-tapmi {
   background: red; }
   .club-tapmi__image {
-    background: url("/img/events/clubs/overlays/aperture.jpg"); }
+    background: url("/img/events/clubs/overlays/tapmi.jpg"); }
 
 .club-misevents {
-  background: #ac89aa; }
+  background: #2196f3; }
   .club-misevents__image {
-    background: url("/img/events/clubs/overlays/aperture.jpg"); }
+    background: url("/img/events/clubs/overlays/misevents.jpg"); }
+
+.aperture-prime {
+  background: url("/img/events/clubs/aperture/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__aperture {
+  background: #ff5722; }
+
+.event-image__focus {
+  background-image: url("/img/events/clubs/aperture/focus.jpeg") !important; }
+
+.event-image__shutterup {
+  background-image: url("/img/events/clubs/aperture/shutterup.jpeg") !important; }
+
+.event-image__instaperture {
+  background-image: url("/img/events/clubs/aperture/instaperture.jpeg") !important; }
+
+.event-image__showdownofsocieties {
+  background-image: url("/img/events/clubs/aperture/showdown.jpeg") !important; }
+
+.event-image__pictureperfect {
+  background-image: url("/img/events/clubs/aperture/pictureperfect.png") !important; }
+
+.event-image__powershoot {
+  background-image: url("/img/events/clubs/aperture/powershoot.jpeg") !important; }
+
+.tmc-prime {
+  background: url("/img/events/clubs/tmc/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__tmc {
+  background: #c62828; }
+
+.event-image__woodstock {
+  background-image: url("/img/events/clubs/tmc/woodstock.jpg") !important; }
+
+.event-image__beatstreet {
+  background-image: url("/img/events/clubs/tmc/beatstreet.jpg") !important; }
+
+.event-image__dhwani {
+  background-image: url("/img/events/clubs/tmc/dhwani.jpg") !important; }
+
+.event-image__ensemble {
+  background-image: url("/img/events/clubs/tmc/ensemble.jpg") !important; }
+
+.event-image__octaves {
+  background-image: url("/img/events/clubs/tmc/octaves.jpg") !important; }
+
+.event-image__saptak {
+  background-image: url("/img/events/clubs/tmc/saptak.jpg") !important; }
+
+.event-image__twicethevoice {
+  background-image: url("/img/events/clubs/tmc/twicethevoice.jpg") !important; }
+
+.event-image__songsmith {
+  background-image: url("/img/events/clubs/tmc/songsmith.jpg") !important; }
+
+.coreo-prime {
+  background: url("/img/events/clubs/coreografia/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__coreo {
+  background: #f06292; }
+
+.litmus-prime {
+  background: url("/img/events/clubs/litmus/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__litmus {
+  background: #303f9f; }
+
+.event-image__bamboozled {
+  background-image: url("/img/events/clubs/litmus/bamboozled.jpg") !important; }
+
+.event-image__ekphrasis {
+  background-image: url("/img/events/clubs/litmus/ekphrasis.jpg") !important; }
+
+.event-image__jam {
+  background-image: url("/img/events/clubs/litmus/jam.jpg") !important; }
+
+.event-image__debate {
+  background-image: url("/img/events/clubs/litmus/debate.jpg") !important; }
+
+.event-image__pictionary {
+  background-image: url("/img/events/clubs/litmus/pictionary.jpg") !important; }
+
+.event-image__songsmith {
+  background-image: url("/img/events/clubs/litmus/songsmith.jpg") !important; }
+
+.event-image__poparazzi {
+  background-image: url("/img/events/clubs/litmus/poparazzi.jpeg") !important; }
+
+.event-image__voiceover {
+  background-image: url("/img/events/clubs/litmus/voiceover.jpg") !important; }
+
+.cinefilia-prime {
+  background: url("/img/events/clubs/cinefilia/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__cinefilia {
+  background: #ffb300; }
+
+.event-image__admak {
+  background-image: url("/img/events/clubs/cinefilia/admak.jpg") !important; }
+
+.event-image__awaaz {
+  background-image: url("/img/events/clubs/cinefilia/awaaz.jpg") !important; }
+
+.event-image__humorus {
+  background-image: url("/img/events/clubs/cinefilia/humorus.jpg") !important; }
+
+.event-image__missionimpossible {
+  background-image: url("/img/events/clubs/cinefilia/missionimpossible.jpg") !important; }
+
+.event-image__pandorasbox {
+  background-image: url("/img/events/clubs/cinefilia/pandorasbox.jpg") !important; }
+
+.event-image__rangmanch {
+  background-image: url("/img/events/clubs/cinefilia/rangmanch.jpg") !important; }
+
+.event-image__spoofydo {
+  background-image: url("/img/events/clubs/cinefilia/spoofydo.jpg") !important; }
+
+.event-image__monoact {
+  background-image: url("/img/events/clubs/cinefilia/monoact.jpg") !important; }
+
+.shabd-prime {
+  background: url("/img/events/clubs/shabd/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__shabd {
+  background: #ff5722; }
+
+.scribbles-prime {
+  background: url("/img/events/clubs/scribbles/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__scribbles {
+  background: #ff5722; }
+
+.qureka-prime {
+  background: url("/img/events/clubs/qureka/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__qureka {
+  background: #ff5722; }
+
+.event-image__ignited {
+  background-image: url("/img/events/clubs/qureka/ignited.jpg") !important; }
+
+.event-image__poparazzi {
+  background-image: url("/img/events/clubs/qureka/poparazzi.jpg") !important; }
+
+.event-image__sadharan {
+  background-image: url("/img/events/clubs/qureka/sadharan.jpg") !important; }
+
+.misevents-prime {
+  background: url("/img/events/clubs/misevents/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__misevents {
+  background: #2196f3; }
+
+.sophia-prime {
+  background: url("/img/events/clubs/sophia/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__sophia {
+  background: darkgreen; }
+
+.tapmi-prime {
+  background: url("/img/events/clubs/tapmi/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__tapmi {
+  background: red; }
 
 .all * {
   pointer-events: none; }
@@ -1527,169 +1714,6 @@ textarea {
   70% {
     width: 4rem;
     height: 6rem; } }
-
-.aperture-prime {
-  background: url("/img/events/clubs/aperture/prime.jpg");
-  background-position: center;
-  background-size: cover; }
-
-.event-next__aperture {
-  background: #ff5722; }
-
-.event-image__focus {
-  background-image: url("/img/events/clubs/aperture/focus.jpeg") !important; }
-
-.event-image__shutterup {
-  background-image: url("/img/events/clubs/aperture/shutterup.jpeg") !important; }
-
-.event-image__instaperture {
-  background-image: url("/img/events/clubs/aperture/instaperture.jpeg") !important; }
-
-.event-image__showdownofsocieties {
-  background-image: url("/img/events/clubs/aperture/showdown.jpeg") !important; }
-
-.event-image__pictureperfect {
-  background-image: url("/img/events/clubs/aperture/pictureperfect.png") !important; }
-
-.event-image__powershoot {
-  background-image: url("/img/events/clubs/aperture/powershoot.jpeg") !important; }
-
-.tmc-prime {
-  background: url("/img/events/clubs/tmc/prime.jpg");
-  background-position: center;
-  background-size: cover; }
-
-.event-next__tmc {
-  background: #c62828; }
-
-.event-image__woodstock {
-  background-image: url("/img/events/clubs/tmc/woodstock.jpg") !important; }
-
-.event-image__beatstreet {
-  background-image: url("/img/events/clubs/tmc/beatstreet.jpg") !important; }
-
-.event-image__dhwani {
-  background-image: url("/img/events/clubs/tmc/dhwani.jpg") !important; }
-
-.event-image__ensemble {
-  background-image: url("/img/events/clubs/tmc/ensemble.jpg") !important; }
-
-.event-image__octaves {
-  background-image: url("/img/events/clubs/tmc/octaves.jpg") !important; }
-
-.event-image__saptak {
-  background-image: url("/img/events/clubs/tmc/saptak.jpg") !important; }
-
-.event-image__twicethevoice {
-  background-image: url("/img/events/clubs/tmc/twicethevoice.jpg") !important; }
-
-.event-image__songsmith {
-  background-image: url("/img/events/clubs/tmc/songsmith.jpg") !important; }
-
-.coreo-prime {
-  background: url("/img/events/clubs/coreografia/prime.jpg");
-  background-position: center;
-  background-size: cover; }
-
-.event-next__coreo {
-  background: #f06292; }
-
-.litmus-prime {
-  background: url("/img/events/clubs/litmus/prime.jpg");
-  background-position: center;
-  background-size: cover; }
-
-.event-next__litmus {
-  background: #303f9f; }
-
-.event-image__bamboozled {
-  background-image: url("/img/events/clubs/litmus/bamboozled.jpg") !important; }
-
-.event-image__ekphrasis {
-  background-image: url("/img/events/clubs/litmus/ekphrasis.jpg") !important; }
-
-.event-image__jam {
-  background-image: url("/img/events/clubs/litmus/jam.jpg") !important; }
-
-.event-image__debate {
-  background-image: url("/img/events/clubs/litmus/debate.jpg") !important; }
-
-.event-image__pictionary {
-  background-image: url("/img/events/clubs/litmus/pictionary.jpg") !important; }
-
-.event-image__songsmith {
-  background-image: url("/img/events/clubs/litmus/songsmith.jpg") !important; }
-
-.event-image__poparazzi {
-  background-image: url("/img/events/clubs/litmus/poparazzi.jpeg") !important; }
-
-.event-image__voiceover {
-  background-image: url("/img/events/clubs/litmus/voiceover.jpg") !important; }
-
-.cinefilia-prime {
-  background: url("/img/events/clubs/cinefilia/prime.jpg");
-  background-position: center;
-  background-size: cover; }
-
-.event-next__cinefilia {
-  background: #ffb300; }
-
-.event-image__admak {
-  background-image: url("/img/events/clubs/cinefilia/admak.jpg") !important; }
-
-.event-image__awaaz {
-  background-image: url("/img/events/clubs/cinefilia/awaaz.jpg") !important; }
-
-.event-image__humorus {
-  background-image: url("/img/events/clubs/cinefilia/humorus.jpg") !important; }
-
-.event-image__missionimpossible {
-  background-image: url("/img/events/clubs/cinefilia/missionimpossible.jpg") !important; }
-
-.event-image__pandorasbox {
-  background-image: url("/img/events/clubs/cinefilia/pandorasbox.jpg") !important; }
-
-.event-image__rangmanch {
-  background-image: url("/img/events/clubs/cinefilia/rangmanch.jpg") !important; }
-
-.event-image__spoofydo {
-  background-image: url("/img/events/clubs/cinefilia/spoofydo.jpg") !important; }
-
-.event-image__monoact {
-  background-image: url("/img/events/clubs/cinefilia/monoact.jpg") !important; }
-
-.shabd-prime {
-  background: url("");
-  background-position: center;
-  background-size: cover; }
-
-.event-next__aperture {
-  background: #ff5722; }
-
-.scribbles-prime {
-  background: url("/img/events/clubs/scribbles/prime.jpg");
-  background-position: center;
-  background-size: cover; }
-
-.event-next__aperture {
-  background: #ff5722; }
-
-.qureka-prime {
-  background: url("/img/events/clubs/qureka/prime.jpg");
-  background-position: center;
-  background-size: cover; }
-
-.event-next__aperture {
-  background: #ff5722; }
-
-.event-image__ignited {
-  background-image: url("/img/events/clubs/qureka/ignited.jpg") !important; }
-
-.event-image__poparazzi {
-  background-image: url("/img/events/clubs/qureka/poparazzi.jpg") !important; }
-
-.event-image__sadharan {
-  background-image: url("/img/events/clubs/qureka/sadharan.jpg") !important; }
 
 .me__splash {
   position: relative;
