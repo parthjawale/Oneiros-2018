@@ -53,16 +53,16 @@
         <li>
           <a href="/" class="custom-link">Home</a>
         </li>
-        <li id="loginButton">
+        <li>
           <a href="/login" class="custom-link">Sign In</a>
         </li>
-        <li id="registerButton">
+        <li>
           <a href="/register" class="custom-link">Sign Up</a>
         </li>
         <li>
           <a href="/about/playmakers.html" class="custom-link">Team</a>
         </li>
-        <li id="eventsButton">
+        <li>
           <a href="/eventregistrations" class="custom-link">Registration</a>
         </li>
         <li>
@@ -75,10 +75,7 @@
           <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
         </li>
         <li>
-          <a href="/accommodation" class="custom-link">Accommodation</a>
-        </li>
-        <li>
-          <a href="/funzone" class="custom-link">Funzone</a>
+          <a href="/Accommodation" class="custom-link">Accommodation</a>
         </li>
         <li id="logout">
           <a href="/" class="custom-link">Logout</a>
@@ -87,53 +84,12 @@
     </div>
   </header>
 
-  <div class="nav-container newnav-container">
-    <div class="newnav-container__splash">
-      <div class="newnav-container__splash--box">
-        <img src="/img/logos/wordmark.png" alt="">
-      </div>
-    </div>
-    <ul>
-      <li>
-        <a href="/" class="custom-link">Home</a>
-      </li>
-      <li>
-        <a href="/login" class="custom-link">Sign In</a>
-      </li>
-      <li>
-        <a href="/register" class="custom-link">Sign Up</a>
-      </li>
-      <li>
-        <a href="/about/playmakers.html" class="custom-link">Team</a>
-      </li>
-      <li>
-        <a href="/eventregistrations" id="eventsButton" class="custom-link">Registration</a>
-      </li>
-      <li>
-        <a href="/events" class="custom-link">Events</a>
-      </li>
-      <li>
-        <a href="/majorevents" class="custom-link">Major Events</a>
-      </li>
-      <li>
-        <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
-      </li>
-      <li>
-        <a href="/accommodation" class="custom-link">Accommodation</a>
-      </li>
-      <li id="logout">
-        <a href="/" class="custom-link">Logout</a>
-      </li>
-    </ul>
-  </div>
-  </header>
   <div id="black-overlay"></div>
 
   <div style="padding: 2.5rem;padding-top: 10rem; padding-bottom: 6rem; ">
     <div class="container" id="app">
-      <!-- <div class="logout-btn">
-                <button class="btn btn--blue" @click="logout">Logout</button>
-            </div> -->
+
+
       <div id="app-wrapper">
         <header class="Reg">Event Registration Page</header>
         <!-- 
@@ -369,18 +325,8 @@
 
 
               <div style="text-align: center; margin-bottom: 1.5rem;">
-                <span>
-                  <button class="btn btn--blue" v-if="paymentNow" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
-                    @click="submit('now')" :disabled="disabled" ref="registerButton">Pay Now</button>
-                </span>
-                <span>
-                  <button class="btn btn--blue" v-if="paymentNow" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
-                    @click="submit('later')" :disabled="disabled" ref="registerButton">Pay Later</button>
-                </span>
-                <div v-if="transactionBox" id="transaction-holder">
-                  <input type="text" v-model="transactionID" placeholder="Transaction ID">
-                  <button id="transactionButton" @click="addID">Submit</button>
-                </div>
+                <button class="btn btn--blue" :style="disabled ? {pointerEvents: 'none', opacity: .5} : {pointerEvents: 'all', opacity: 1}"
+                  @click="submit" :disabled="disabled" ref="registerButton">Register</button>
               </div>
             </div>
           </div>
@@ -391,13 +337,14 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
     <script src="/js/config/db.js"></script>
     <script src="/js/libs/jquery.js"></script>
-    <script src="./events.js?version=1"></script>
-    <script src="/eventregistrations/eventregister.js?version=3"></script>
+    <script src="./events.js?version=2"></script>
+    <script src="/eventregistrations/eventregister.js?version=4"></script>
     <script src="/js/common/global.js"></script>
 
     <!-- <script src="./test.js"></script> -->
