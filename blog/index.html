@@ -11,8 +11,12 @@
 
 <body>
   <div class="layer__effect">
-    <img src="/img/logos/wordmark-white.png" alt="" class="layer layer--top">
-    <img src="/img/logos/wordmark-black.png" alt="" class="layer layer--middle">
+    <div class="layer-wrapper">
+      <img src="/img/logos/wordmark-white.png" alt="" class="layer layer--top">
+      <button id="blog-anchor">Explore Blog</button>
+    </div>
+
+    <!-- <img src="/img/logos/wordmark-black.png" alt="" class="layer layer--middle"> -->
   </div>
   <div class="blog__cards">
     <div class="blog__card">
@@ -151,7 +155,21 @@
       </div>
     </div>
   </div>
-
+  <script src="/js/libs/jquery.js"></script>
+  <script>
+    function scrollDown() {
+      var vheight = $(window).height();
+      $('html, body').animate({
+        scrollTop: (Math.floor($(window).scrollTop() / vheight) + 1) * vheight
+      }, 500);
+    };
+    $(document).ready(function () {
+      $('#blog-anchor').click(function () {
+        scrollDown();
+        event.preventDefault();
+      })
+    })
+  </script>
 </body>
 
 </html>
