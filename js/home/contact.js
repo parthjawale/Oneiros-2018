@@ -37,17 +37,17 @@ $(document).ready(() => {
     };
 
     fetch("/mail/checkMail.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify(body)
-    })
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(body)
+      })
       .then(res => {
         return res.json();
       })
-      .then(function(response) {
+      .then(function (response) {
         if (response.code === 200) {
           trans("We'll get back to you!");
         } else if (response.code === 405) {
@@ -56,7 +56,7 @@ $(document).ready(() => {
           trans("Invalid E-Mail");
         }
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   });

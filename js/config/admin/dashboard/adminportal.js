@@ -5,7 +5,6 @@ new Vue({
     disabled: false,
     loading: false,
     userData: {},
-    // currUcode: '',
     keyss: {
       event: 'Name',
       email: 'E-mail',
@@ -14,7 +13,6 @@ new Vue({
       songdewlink: 'Songdew Link',
       videoLink: 'Video Link',
       teamName: 'Team Name',
-      pNo: 'Phone No.',
       pno: 'Phone No.',
       regno: 'Registration No.',
       wpno: 'Whatsapp No.'
@@ -30,6 +28,7 @@ new Vue({
       this.disabled = true
       var self = this
       var userdb = firebase.firestore().collection('users')
+      this.ucode = this.ucode.trim()
       userdb
         .where('ucode', '==', self.ucode)
         .get()

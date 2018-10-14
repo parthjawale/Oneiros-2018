@@ -16,6 +16,18 @@ $(document).ready(function() {
           else {
             $(".admin-loader").css("display", "none");
           }
+          if (
+            window.location.pathname == "/admin/payments/" ||
+            window.location.pathname == "/admin/payments/index.html"
+          ) {
+            if (
+              doc.data().payments == undefined ||
+              doc.data().payments == null ||
+              !doc.data().payments
+            ) {
+              window.location = "/";
+            }
+          }
         });
     } else {
       window.location = "/";

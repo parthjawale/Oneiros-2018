@@ -13,7 +13,7 @@
       background-position: bottom;
       background-size: cover;
       opacity: 0;
-      transition: .5s opacity, .2s filter;
+      transition: 0.5s opacity, 0.2s filter, 0.5s background-image;
 
       @media screen and (max-width: 800px) {
         background-position: center;
@@ -27,12 +27,12 @@
         background: #000;
         color: #fff;
         font-size: 3rem;
-        font-family: 'Gotham-Bold';
+        font-family: "Gotham-Bold";
         padding: 1rem 3rem;
         text-transform: uppercase;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
-        transition: .2s all;
+        transition: 0.2s all;
         z-index: 20;
         cursor: pointer;
         opacity: 0;
@@ -48,28 +48,28 @@
       }
     }
 
-    &--item:nth-child(1) {
-      background-image: url('/img/majorevents/artist.jpg')
-    }
+    // &--item:nth-child(1) {
+    //   background-image: url('/img/majorevents/artist.jpg')
+    // }
 
     &--item:nth-child(2) {
-      background-image: url('/img/majorevents/muse.jpg');
+      background-image: url("/img/majorevents/muse.jpg");
     }
 
     &--item:nth-child(3) {
-      background-image: url('/img/majorevents/skrillex.jpg')
+      background-image: url("/img/majorevents/skrillex.jpg");
     }
 
     &--item:nth-child(4) {
-      background-image: url('/img/majorevents/destival.jpg')
+      background-image: url("/img/majorevents/destival.jpg");
     }
 
     &--item:nth-child(5) {
-      background-image: url('/img/majorevents/kairos.jpg')
+      background-image: url("/img/majorevents/kairos.jpg");
     }
 
     &--item:nth-child(6) {
-      background-image: url('/img/majorevents/requiem.jpg')
+      background-image: url("/img/majorevents/requiem.jpg");
     }
   }
 }

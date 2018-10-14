@@ -1,19 +1,28 @@
 var config = {
-  apiKey: 'AIzaSyCszYWkqAN5VQsXjrtAVB7dI7hIB-q1CQ0',
-  authDomain: 'mast-project-naam.firebaseapp.com',
-  databaseURL: 'https://mast-project-naam.firebaseio.com',
-  projectId: 'mast-project-naam',
-  storageBucket: 'mast-project-naam.appspot.com',
-  messagingSenderId: '400633154339'
-}
-const app = firebase.initializeApp(config)
-const firestore = firebase.firestore()
+  apiKey: "AIzaSyAEZdHK98COcRt9hzxbICAPeSpXOyn0vA4",
+  authDomain: "oneiros-2018.firebaseapp.com",
+  databaseURL: "https://oneiros-2018.firebaseio.com",
+  projectId: "oneiros-2018",
+  storageBucket: "oneiros-2018.appspot.com",
+  messagingSenderId: "358484877394"
+};
+const app = firebase.initializeApp(config);
+const firestore = firebase.firestore();
 firestore.settings({
   timestampsInSnapshots: true
-})
-const auth = firebase.auth()
+});
+const auth = firebase.auth();
 auth.onAuthStateChanged(function(user) {
   if (!user) {
-    window.location.href = '/'
+    window.location.href = "/funzone";
   }
-})
+});
+
+$("#logout-funzone").click(function() {
+  firebase
+    .auth()
+    .signOut()
+    .then(function() {
+      console.log("Signed out");
+    });
+});

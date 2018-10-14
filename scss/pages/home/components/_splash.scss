@@ -9,6 +9,7 @@
   bottom: 1rem;
   z-index: 100;
   cursor: pointer;
+
   p {
     display: inline-block;
     color: $color-white;
@@ -29,4 +30,36 @@
   font-size: 1.8rem;
   font-family: "Gotham-Thin";
   z-index: 100;
+}
+
+#funzone {
+  position: absolute;
+  left: 3rem;
+  top: 48%;
+  transform: translate(-50%) rotate(90deg);
+
+  a {
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    padding: 2.5rem 3rem;
+    transition: 0.2s all;
+    background: linear-gradient(120deg,
+      transparent,
+      transparent 50%,
+      #fff 0);
+    background-size: 200%;
+
+    @media screen and (max-width: 800px) {
+      background-position: 100%;
+      color: $color-primary;
+    }
+
+    &:hover {
+      background-position: 100%;
+      color: $color-primary;
+    }
+  }
 }

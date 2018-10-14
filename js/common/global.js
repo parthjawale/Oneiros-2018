@@ -142,9 +142,9 @@ $(".custom-link").click(e => {
   }, 2000);
 });
 
-const login = $(".nav-container li:nth-child(2)");
-const register = $(".nav-container li:nth-child(3)");
-const events = $(".nav-container li:nth-child(5)");
+const login = $("#loginButton");
+const register = $("#registerButton");
+const events = $("#eventsButton");
 const logout = $("#logout");
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
@@ -178,6 +178,14 @@ firebase.auth().onAuthStateChanged(user => {
 
 logout.click(() => {
   firebase.auth().signOut();
+});
+
+$(document).ready(() => {
+  const moodi = `<img src="/img/logos/moodi-logo.png" style="cursor:pointer" id="moodi-nav-logo" alt="">`;
+  $(".newnav-container__splash--box").append(moodi);
+  $("#moodi-nav-logo").click(function() {
+    window.open("https://moodi.org", "_blank");
+  });
 });
 
 console.log(

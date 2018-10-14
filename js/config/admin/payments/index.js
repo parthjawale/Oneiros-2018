@@ -20,6 +20,7 @@ new Vue({
   methods: {
     addPayment: function() {
       var self = this;
+      self.uid = self.uid.trim();
       self.disabled = true;
       if (self.uid == "") {
         self.disabled = false;
@@ -45,6 +46,8 @@ new Vue({
               self.events = child.data().events;
             });
             self.show = true;
+            self.disabled = false;
+          } else {
             self.disabled = false;
           }
         });

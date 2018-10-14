@@ -30,7 +30,7 @@
     }
   }
 
-  > ul {
+  >ul {
     position: absolute;
     bottom: -1rem;
     left: 50%;
@@ -49,7 +49,7 @@
       visibility: visible;
     }
 
-    > li {
+    >li {
       font-size: 2rem;
       overflow: hidden;
 
@@ -62,13 +62,13 @@
       }
 
       &:hover {
-        > a {
+        >a {
           background: $color-secondary;
           color: white;
         }
       }
 
-      > a {
+      >a {
         padding: 1.5rem 2rem;
         display: inline-block;
         color: $color-secondary;
@@ -78,6 +78,27 @@
       }
 
       white-space: nowrap;
+    }
+  }
+}
+
+#misc-events {
+  grid-column: 1/-1;
+
+  @media (max-width: 500px) {
+    grid-row: -1/3;
+
+    img {
+      width: 40rem;
+    }
+  }
+}
+
+#events-sophia {
+  img {
+    @media (max-width: 500px) {
+      width: 16rem;
+      top: 2rem;
     }
   }
 }
