@@ -205,3 +205,9 @@ console.log(
   `,
   "font-family:monospace; color: red"
 );
+
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js')
+}
