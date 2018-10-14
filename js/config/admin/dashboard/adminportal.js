@@ -26,11 +26,6 @@ new Vue({
         alert('Enter a valid ucode')
         return
       }
-
-      // if (this.ucode != this.currUcode) {
-      //   return
-      // }
-      // this.currUcode = this.ucode
       this.loading = true
       this.disabled = true
       var self = this
@@ -55,24 +50,6 @@ new Vue({
         .catch(err => {
           console.log(err)
         })
-
-      // setTimeout(() => {
-      //   this.loading = false
-      //   this.userData = {
-      //     name: 'Apoorv Agarwal',
-      //     username: 'aapoorv41',
-      //     college: 'MUJ',
-      //     pno: 8057989577,
-      //     email: 'aapoorv41@gmail.com',
-      //     events: [
-      //       {
-      //         event: 'focus',
-      //         genre: 'metal',
-      //         value: 2
-      //       }
-      //     ]
-      //   }
-      // }, 1500)
     }
   }
 })
