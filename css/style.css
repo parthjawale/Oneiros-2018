@@ -41,23 +41,18 @@
 @font-face {
   font-family: "Gotham-Black";
   src: url("/fonts/gotham/Gotham-Black.otf"); }
-
 @font-face {
   font-family: "Gotham-Bold";
   src: url("/fonts/gotham/Gotham-Bold.otf"); }
-
 @font-face {
   font-family: "Gotham";
   src: url("/fonts/gotham/GothamBook.otf"); }
-
 @font-face {
   font-family: "Gotham-Light";
   src: url("/fonts/gotham/Gotham-Light.otf"); }
-
 @font-face {
   font-family: "Gotham-Thin";
   src: url("/fonts/gotham/Gotham-XLight.otf"); }
-
 html {
   font-size: 62.5%; }
 
@@ -598,13 +593,11 @@ a:link, a:visited {
   pointer-events: none;
   opacity: 0;
   transition: 0.5s all; }
-
 .home-theme__header {
   font-size: 7rem;
   font-family: "Gotham-Black";
   color: #e50914;
   margin-bottom: 2rem; }
-
 .home-theme__para {
   font-size: 2rem; }
 
@@ -774,14 +767,12 @@ a:link, a:visited {
       color: #ddd; }
   .login--form .input-group:not(:nth-child(1)) {
     margin-top: 5rem; }
-
 .login .title {
   font-family: "Gotham-Black", sans-serif;
   color: #e50914;
   font-size: 4rem;
   margin-bottom: 9rem;
   font-size: 10rem; }
-
 .login--background {
   width: 50%;
   height: 100vh;
@@ -873,7 +864,6 @@ textarea {
   text-align: left;
   background: rgba(0, 0, 0, 0.9);
   transition: opacity 0.25s ease; }
-
 .register-container .modal__bg {
   position: absolute;
   top: 0;
@@ -881,17 +871,13 @@ textarea {
   bottom: 0;
   left: 0;
   cursor: pointer; }
-
 .register-container .modal-state {
   display: none; }
-
 .register-container .modal-state:checked + .modal {
   opacity: 1;
   visibility: visible; }
-
 .register-container .modal-state:checked + .modal .modal__inner {
   top: 0; }
-
 .register-container .modal__inner {
   transition: top 0.25s ease;
   position: absolute;
@@ -906,7 +892,6 @@ textarea {
   border-radius: 5px;
   padding: 1em 2em;
   height: 90%; }
-
 .register-container .modal__close {
   position: absolute;
   right: 10px;
@@ -916,7 +901,6 @@ textarea {
   height: 20px;
   cursor: pointer;
   margin: 0; }
-
 .register-container .modal__close:after,
 .register-container .modal__close:before {
   content: "";
@@ -930,18 +914,14 @@ textarea {
   left: 50%;
   margin: -3px 0 0 -1px;
   top: 0; }
-
 .register-container .modal__close:hover:after,
 .register-container .modal__close:hover:before {
   background: #aaa; }
-
 .register-container .modal__close:before {
   transform: rotate(-45deg); }
-
 @media screen and (max-width: 800px) {
   .register-container {
     flex-direction: column; } }
-
 .register-container__underlay {
   position: absolute;
   width: 100%;
@@ -1010,15 +990,12 @@ textarea {
       background: transparent;
       border: 5px solid #c10812;
       color: #222; }
-
 .register-container__black-section--underlay h1 {
   color: #fff; }
-
 .register-container__black-section--underlay input {
   color: #fff; }
   .register-container__black-section--underlay input::placeholder {
     color: #fff; }
-
 .register-container__black-section--underlay input[type="submit"] {
   background: white;
   color: #e50914; }
@@ -1026,7 +1003,6 @@ textarea {
     color: #fff;
     background: transparent;
     border: 5px solid #c10812; }
-
 .register-container__black-section--underlay label {
   color: #fff; }
 
@@ -1164,7 +1140,6 @@ textarea {
 .event-image__frame {
   perspective: 3000px;
   pointer-events: none; }
-
 .event-image__container {
   position: relative;
   transition: 0.2s all;
@@ -1221,7 +1196,6 @@ textarea {
     transform: translateY(0); }
   100% {
     transform: translateY(0); } }
-
 .club-image {
   position: absolute;
   top: 0;
@@ -1480,10 +1454,8 @@ textarea {
 
 .all * {
   pointer-events: none; }
-
 .all__prime * {
   pointer-events: none; }
-
 .all__prime a {
   position: absolute;
   bottom: 0;
@@ -1497,14 +1469,12 @@ textarea {
     font-size: 50px;
     opacity: 0.7;
     margin-bottom: 10px; }
-
 .all__prime--header, .all__prime--desc {
   z-index: 2;
   padding: 0 5rem;
   color: #fff; }
   .all__prime--header *, .all__prime--desc * {
     pointer-events: none; }
-
 .all__prime--header {
   font-size: 10rem;
   font-family: "Gotham-Black";
@@ -1512,13 +1482,11 @@ textarea {
   text-shadow: 0 0 2rem #222;
   position: relative;
   z-index: 1; }
-
 .all__prime--desc {
   margin-top: 2rem;
   font-size: 3rem;
   z-index: 1;
   position: relative; }
-
 .all__prime--overlay {
   position: absolute;
   width: 100%;
@@ -1553,12 +1521,10 @@ textarea {
 
 .event-container * {
   pointer-events: none; }
-
 .event-container .fp-tableCell {
   display: flex;
   justify-content: space-around;
   align-items: center; }
-
 .event-container .event-image {
   width: 42rem;
   height: 56rem;
@@ -1568,14 +1534,12 @@ textarea {
   box-shadow: 0 1rem 3rem rgba(34, 34, 34, 0.3);
   background: transparent;
   border: 1rem solid #fff; }
-
 @media screen and (max-width: 768px) {
   .event-container .event-image {
     display: none; } }
 
 .event-desc * {
   pointer-events: none; }
-
 .event-desc__info {
   padding: 0 15rem;
   display: grid;
@@ -1641,7 +1605,6 @@ textarea {
       border-radius: 100%;
       background: #fff;
       animation: scroll infinite 3s; }
-
 .event-reg__reg {
   display: flex;
   justify-content: space-around;
@@ -1674,7 +1637,6 @@ textarea {
 
 .event-rules * {
   pointer-events: none; }
-
 .event-rules__header {
   font-size: 3rem;
   color: #ccc;
@@ -1685,13 +1647,10 @@ textarea {
     color: #e50914;
     text-transform: uppercase;
     padding: 0 10rem; }
-
 .event-rules__container {
   padding: 0 10rem; }
-
 .event-rules__item {
   padding: 2rem 0; }
-
 .event-rules__content {
   font-size: 1.5rem;
   font-family: "Gotham-Bold";
@@ -1704,7 +1663,6 @@ textarea {
     transform: translateY(15px); }
   20% {
     transform: translateY(0); } }
-
 @keyframes changePad {
   10% {
     width: 4rem;
@@ -1720,6 +1678,168 @@ textarea {
   70% {
     width: 4rem;
     height: 6rem; } }
+.aperture-prime {
+  background: url("/img/events/clubs/aperture/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__aperture {
+  background: #ff5722; }
+
+.event-image__focus {
+  background-image: url("/img/events/clubs/aperture/focus.jpeg") !important; }
+
+.event-image__shutterup {
+  background-image: url("/img/events/clubs/aperture/shutterup.jpeg") !important; }
+
+.event-image__instaperture {
+  background-image: url("/img/events/clubs/aperture/instaperture.jpeg") !important; }
+
+.event-image__showdownofsocieties {
+  background-image: url("/img/events/clubs/aperture/showdown.jpeg") !important; }
+
+.event-image__pictureperfect {
+  background-image: url("/img/events/clubs/aperture/pictureperfect.png") !important; }
+
+.event-image__powershoot {
+  background-image: url("/img/events/clubs/aperture/powershoot.jpeg") !important; }
+
+.tmc-prime {
+  background: url("/img/events/clubs/tmc/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__tmc {
+  background: #c62828; }
+
+.event-image__woodstock {
+  background-image: url("/img/events/clubs/tmc/woodstock.jpg") !important; }
+
+.event-image__beatstreet {
+  background-image: url("/img/events/clubs/tmc/beatstreet.jpg") !important; }
+
+.event-image__dhwani {
+  background-image: url("/img/events/clubs/tmc/dhwani.jpg") !important; }
+
+.event-image__ensemble {
+  background-image: url("/img/events/clubs/tmc/ensemble.jpg") !important; }
+
+.event-image__octaves {
+  background-image: url("/img/events/clubs/tmc/octaves.jpg") !important; }
+
+.event-image__saptak {
+  background-image: url("/img/events/clubs/tmc/saptak.jpg") !important; }
+
+.event-image__twicethevoice {
+  background-image: url("/img/events/clubs/tmc/twicethevoice.jpg") !important; }
+
+.event-image__songsmith {
+  background-image: url("/img/events/clubs/tmc/songsmith.jpg") !important; }
+
+.coreo-prime {
+  background: url("/img/events/clubs/coreografia/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__coreo {
+  background: #f06292; }
+
+.litmus-prime {
+  background: url("/img/events/clubs/litmus/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__litmus {
+  background: #303f9f; }
+
+.event-image__bamboozled {
+  background-image: url("/img/events/clubs/litmus/bamboozled.jpg") !important; }
+
+.event-image__ekphrasis {
+  background-image: url("/img/events/clubs/litmus/ekphrasis.jpg") !important; }
+
+.event-image__jam {
+  background-image: url("/img/events/clubs/litmus/jam.jpg") !important; }
+
+.event-image__debate {
+  background-image: url("/img/events/clubs/litmus/debate.jpg") !important; }
+
+.event-image__pictionary {
+  background-image: url("/img/events/clubs/litmus/pictionary.jpg") !important; }
+
+.event-image__songsmith {
+  background-image: url("/img/events/clubs/litmus/songsmith.jpg") !important; }
+
+.event-image__poparazzi {
+  background-image: url("/img/events/clubs/litmus/poparazzi.jpeg") !important; }
+
+.event-image__voiceover {
+  background-image: url("/img/events/clubs/litmus/voiceover.jpg") !important; }
+
+.cinefilia-prime {
+  background: url("/img/events/clubs/cinefilia/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__cinefilia {
+  background: #ffb300; }
+
+.event-image__admak {
+  background-image: url("/img/events/clubs/cinefilia/admak.jpg") !important; }
+
+.event-image__awaaz {
+  background-image: url("/img/events/clubs/cinefilia/awaaz.jpg") !important; }
+
+.event-image__humorus {
+  background-image: url("/img/events/clubs/cinefilia/humorus.jpg") !important; }
+
+.event-image__missionimpossible {
+  background-image: url("/img/events/clubs/cinefilia/missionimpossible.jpg") !important; }
+
+.event-image__pandorasbox {
+  background-image: url("/img/events/clubs/cinefilia/pandorasbox.jpg") !important; }
+
+.event-image__rangmanch {
+  background-image: url("/img/events/clubs/cinefilia/rangmanch.jpg") !important; }
+
+.event-image__spoofydo {
+  background-image: url("/img/events/clubs/cinefilia/spoofydo.jpg") !important; }
+
+.event-image__monoact {
+  background-image: url("/img/events/clubs/cinefilia/monoact.jpg") !important; }
+
+.shabd-prime {
+  background: url("");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__aperture {
+  background: #ff5722; }
+
+.scribbles-prime {
+  background: url("/img/events/clubs/scribbles/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__aperture {
+  background: #ff5722; }
+
+.qureka-prime {
+  background: url("/img/events/clubs/qureka/prime.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.event-next__aperture {
+  background: #ff5722; }
+
+.event-image__ignited {
+  background-image: url("/img/events/clubs/qureka/ignited.jpg") !important; }
+
+.event-image__poparazzi {
+  background-image: url("/img/events/clubs/qureka/poparazzi.jpg") !important; }
+
+.event-image__sadharan {
+  background-image: url("/img/events/clubs/qureka/sadharan.jpg") !important; }
 
 .me__splash {
   position: relative;
@@ -2214,7 +2334,7 @@ textarea {
     padding: 1rem; }
 
 body#post {
-  background: url("/admin/reg/bg.jpg");
+  background: url("/admin/byUnique/bg.jpg");
   background-attachment: fixed;
   background-size: cover; }
 
@@ -2250,7 +2370,6 @@ body#post {
         width: auto;
         height: 90%;
         transform: translate(-300px, 20%); } }
-
 .post__body {
   margin: 0 auto;
   margin-top: -9rem;
@@ -2265,8 +2384,8 @@ body#post {
   color: #2f2f2f; }
   @media (max-width: 600px) {
     .post__body {
-      width: 95%; } }
-
+      width: 95%;
+      padding: 5rem 6rem; } }
 .post__heading {
   margin-bottom: 3rem; }
   .post__heading--lg {
@@ -2275,12 +2394,19 @@ body#post {
     font-size: 3rem; }
   .post__heading--sm {
     font-size: 2.5rem; }
-
 .post__text {
   font-size: 2rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  line-height: 1.6; }
   .post__text--light {
     color: #b9b8b8; }
+.post__image {
+  display: block;
+  width: 55%;
+  margin: 4rem auto; }
+  @media (max-width: 600px) {
+    .post__image {
+      width: 100%; } }
 
 .layer__effect {
   background: #a31c1c;
@@ -2291,7 +2417,7 @@ body#post {
 .layer__effect:hover .layer--middle {
   transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg) translateX(-50%) translateY(0px) translateZ(40px); }
 
-.layer__effect:hover .layer--bottom {
+.layer__effect:hover .layer--top {
   transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg) translateX(-50%) translateY(0px) translateZ(60px); }
 
 .layer__effect:hover .layer--bottom {
@@ -2314,26 +2440,36 @@ body#post {
 
 .blog__cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   padding: 5rem;
-  background: linear-gradient(to right bottom, #222 30%, #c72121 70%);
+  background: linear-gradient(to bottom, #a31c1c, #222 70%);
   background-attachment: fixed; }
+  @media (max-width: 600px) {
+    .blog__cards {
+      padding: 3rem; } }
 
 .blog__card {
   display: flex;
-  flex-basis: 22%;
+  flex-basis: 22.5%;
   border-radius: 0.6rem;
   box-shadow: 0rem 0.6rem 3rem rgba(0, 0, 0, 0.3);
   margin-top: 4rem;
   overflow: hidden;
   flex-direction: column;
-  background: #fff; }
+  background: #fff;
+  margin-left: 2.5%; }
+  @media (max-width: 600px) {
+    .blog__card {
+      flex-basis: 47.5%; } }
   .blog__card--large {
-    flex-basis: 44%; }
+    flex-basis: 47.5%; }
+    @media (max-width: 600px) {
+      .blog__card--large {
+        flex-basis: 100%; } }
   .blog__card__image {
     flex-basis: 30%;
-    background: #000;
+    background: #c8c8c8;
     min-height: 200px; }
   .blog__card__content {
     flex-basis: 70%;
@@ -2352,7 +2488,11 @@ body#post {
       justify-content: flex-end; }
       .blog__card__content--controls > button {
         padding: 1.5rem 2.5rem;
-        border: none; }
+        border: none;
+        font-family: inherit;
+        font-size: 1.8rem;
+        cursor: pointer;
+        outline: none; }
 
 #payments-admin {
   display: flex;
@@ -2488,25 +2628,21 @@ body#post {
       width: 20px;
       background-color: black;
       animation: spin infinite 2s; }
-
 @-moz-keyframes spin {
   from {
     -moz-transform: rotate(0deg); }
   to {
     -moz-transform: rotate(360deg); } }
-
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg); }
   to {
     -webkit-transform: rotate(360deg); } }
-
 @keyframes spin {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
-
 .playmakers {
   position: relative;
   background: linear-gradient(160deg, #222 50%, #f6202b 50%);
@@ -2667,7 +2803,6 @@ body#post {
   margin-bottom: 20rem;
   filter: drop-shadow(0rem 0.7rem 3rem rgba(0, 0, 0, 0.55));
   position: relative; }
-
 .skew__parallel {
   position: absolute;
   transform: skewY(12deg) translateY(13rem);
@@ -2682,7 +2817,6 @@ body#post {
     right: 0;
     width: 25%;
     transform: skewY(-12deg) translateY(19.7rem); }
-
 .skew__item {
   display: flex;
   transform: skewY(-12deg); }
@@ -2910,24 +3044,26 @@ body#post {
     transform: translateY(8px); }
   20% {
     transform: translateY(0); } }
-
 @media (max-width: 1400px) {
   html {
     font-size: 8px; } }
-
 @media (max-width: 500px) {
   html {
     font-size: 6px; }
+
   #wordmark {
     top: 2rem;
     left: 2rem; }
+
   .ono-animatedbtn__circle {
     width: 100%;
     height: 100%;
     border-radius: 4rem; }
+
   .clubs-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr; }
+
   .home.about {
     width: 70%;
     right: auto;
@@ -2937,14 +3073,19 @@ body#post {
     .home.about__content {
       font-size: 2.5rem;
       line-height: 1.4; }
+
   .activate-redoverlay {
     width: 75%; }
+
   .activate-blackoverlay {
     width: 68%; }
+
   .activate-whiteoverlay {
     width: 60%; }
+
   .nav-container__whiteoverlay ul li a {
     white-space: normal; }
+
   .home-theme__splash {
     background-position: center 30%; }
   .home-theme__content {
@@ -2964,13 +3105,16 @@ body#post {
       box-shadow: inset 0px 0px 2rem rgba(0, 0, 0, 0.5); }
   .home-theme__para {
     font-size: 2rem; }
+
   .nav {
     top: 2rem;
     right: 2rem; }
+
   .all__prime--header {
     font-size: 5rem; }
   .all__prime--desc {
     box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.3); }
+
   .event {
     width: 100%;
     margin-bottom: 2rem;
@@ -2980,6 +3124,7 @@ body#post {
       margin-bottom: 3rem; }
       .event__desc * {
         pointer-events: none; }
+
   .event-rules * {
     pointer-events: none; }
   .event-rules__header {
@@ -2994,8 +3139,10 @@ body#post {
     font-size: 1.95rem;
     font-family: gotham;
     padding: 0 2rem; }
+
   .majorevent__content--details {
     flex-direction: column; }
+
   .event-desc {
     color: black; }
     .event-desc * {
@@ -3022,6 +3169,7 @@ body#post {
             background: #b4b4b459; }
         .event-desc__info--detail h3 {
           text-align: left; }
+
   .events-list {
     padding: 2rem 2.5rem; }
     .events-list__item--selected {
@@ -3031,6 +3179,7 @@ body#post {
       font-size: 2rem; }
       .events-list > ul > li > a {
         padding: 2rem 2.5rem; }
+
   .events-splash__container--header {
     position: relative;
     font-size: 12rem !important; }
@@ -3054,6 +3203,7 @@ body#post {
       background: #9b02c660;
       transform: rotate(4deg) translate(0%, -50%);
       content: ""; }
+
   .event-container .fp-tableCell {
     flex-direction: column;
     padding: 6rem;
@@ -3061,6 +3211,7 @@ body#post {
     align-items: stretch; }
   .event-container .event-image {
     margin: 0 auto; }
+
   .event-reg__reg--fee {
     color: #747474;
     font-size: 3.2rem;
@@ -3070,6 +3221,7 @@ body#post {
     text-align: center;
     width: 80%;
     margin-bottom: 8rem; }
+
   .clubs-grid__item--logo {
     width: 23rem;
     top: 20%;
@@ -3086,10 +3238,13 @@ body#post {
     transform: none;
     top: auto;
     line-height: 1.4; }
+
   #shabdLogo {
     width: 10rem; }
+
   #aperturelogo {
     width: 18rem; }
+
   .camb__list {
     width: 100%; }
     .camb__list li {
@@ -3124,28 +3279,37 @@ body#post {
       .camb__content--right:before {
         right: auto;
         left: -2.5rem; }
+
   #smallfz {
     font-size: 2rem;
     flex-basis: 30%; }
+
   #nextar__rules {
     font-size: 1.8rem; }
+
   #aperture__rules {
     font-size: 1.8rem; }
+
   .card-grid {
     padding: 2rem 4.5rem;
     justify-content: space-between; }
     .card-grid__item {
       flex-basis: 47%;
       margin-left: 0%; }
+
   #convenor--grid {
     justify-content: center; } }
-
 @media (max-width: 365px) {
   html {
     font-size: 4.5px; }
+
   .event-rules__content {
     font-size: 2.4rem; }
+
   #nextar__rules {
     font-size: 2.1rem; }
+
   #aperture__rules {
     font-size: 2.1rem; } }
+
+/*# sourceMappingURL=style.css.map */

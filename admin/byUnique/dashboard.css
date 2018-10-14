@@ -69,12 +69,6 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.details__section__key {
-}
-
-.details__section__value {
-}
-
 .eventDetails__item--heading {
   margin-top: 3rem;
   padding-bottom: 2rem;
