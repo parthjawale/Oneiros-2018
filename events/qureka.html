@@ -36,7 +36,7 @@
 
 
   <header>
-    <img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+    <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
     <div class="nav">
       <ul>
         <li>
@@ -64,17 +64,17 @@
         <li>
           <a href="/" class="custom-link">Home</a>
         </li>
-        <li>
+        <li id="loginButton">
           <a href="/login" class="custom-link">Sign In</a>
         </li>
-        <li>
+        <li id="registerButton">
           <a href="/register" class="custom-link">Sign Up</a>
         </li>
         <li>
           <a href="/about/playmakers.html" class="custom-link">Team</a>
         </li>
-        <li>
-          <a href="/eventregistrations" class="custom-link">Registration</a>
+        <li id="eventsButton">
+          <a href="/eventregistrations" id="eventsButton" class="custom-link">Registration</a>
         </li>
         <li>
           <a href="/events" class="custom-link">Events</a>
@@ -86,7 +86,10 @@
           <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
         </li>
         <li>
-          <a href="/Accommodation" class="custom-link">Accommodation</a>
+          <a href="/accommodation" class="custom-link">Accommodation</a>
+        </li>
+        <li>
+          <a href="/funzone" class="custom-link">Funzone</a>
         </li>
         <li id="logout">
           <a href="/" class="custom-link">Logout</a>
@@ -129,7 +132,7 @@
     </section>
     <section class="section event-desc bg-grey-light bg-grey-light">
       <div class="event-desc__info">
-        <div class="event-desc__info--detail">
+        <!-- <div class="event-desc__info--detail">
           <h1>Venue</h1>
           <h3> Room NO. 108 , 1 AB
           </h3>
@@ -139,9 +142,9 @@
           <h3> 2 p.m to 4 p.m, Day 3
 
           </h3>
-        </div>
+        </div> -->
         <div class="event-desc__info--detail">
-          <h1>Price</h1>
+          <h1>Prize</h1>
           <h3>
             Upto Rs. 3000/-
           </h3>
@@ -176,8 +179,9 @@
       <div class="event-reg__reg">
         <h1 class="event-reg__reg--header">Sadharan ‘The General Quiz’</h1>
         <a href="/eventregistrations" class="ono-btn">Register</a>
+        <h3 class="event-reg__reg--fee">Rs. 100/-</h3>
       </div>
-      <a href="#ignitedmindsthebusinessquiz-desc" class="event-reg__next event-next__tmc">
+      <a href="#ignitedmindsthebusinessquiz-desc" class="event-reg__next event-next__qureka">
         <h1>Next Event</h1>
         <div class="event-reg__next--scroll">
           <div class="event-reg__next--scroll--dot"></div>
@@ -206,7 +210,7 @@
     </section>
     <section class="section event-desc bg-grey-light">
       <div class="event-desc__info">
-        <div class="event-desc__info--detail">
+        <!-- <div class="event-desc__info--detail">
           <h1>Venue</h1>
           <h3>Sharda Pai Auditorium
           </h3>
@@ -216,9 +220,9 @@
           <h3>9 a.m to 11 a.m, Day 2
 
           </h3>
-        </div>
+        </div> -->
         <div class="event-desc__info--detail">
-          <h1>Price</h1>
+          <h1>Prize</h1>
           <h3>
             up to Rs. 3000.
           </h3>
@@ -229,8 +233,6 @@
             Ritwick Bhattacharya- 08283927456
             <br> <br>
             Govind Singh - 09653702434
-
-
           </h3>
         </div>
       </div>
@@ -258,8 +260,9 @@
       <div class="event-reg__reg">
         <h1 class="event-reg__reg--header">Ignited Minds ‘The Business Quiz’</h1>
         <a href="/eventregistrations" class="ono-btn">Register</a>
+        <h3 class="event-reg__reg--fee">Rs. 100/-</h3>
       </div>
-      <a href="#poparazzitheculturalquiz-desc" class="event-reg__next event-next__tmc">
+      <a href="#poparazzitheculturalquiz-desc" class="event-reg__next event-next__qureka">
         <h1>Next Event</h1>
         <div class="event-reg__next--scroll">
           <div class="event-reg__next--scroll--dot"></div>
@@ -287,7 +290,7 @@
       <div class="event-image event-image__poparazzi"></div>
     </section>
     <section class="section event-desc bg-grey-light">
-      <div class="event-desc__info">
+      <!-- <div class="event-desc__info">
         <div class="event-desc__info--detail">
           <h1>Venue</h1>
           <h3>Sharda Pai Auditorium
@@ -298,22 +301,22 @@
           <h1>Timings</h1>
           <h3>9 a.m to 11 a.m, Day 3
           </h3>
-        </div>
-        <div class="event-desc__info--detail">
-          <h1>Price</h1>
-          <h3>
-            Upto Rs 3000 worth.
-          </h3>
-        </div>
-        <div class="event-desc__info--detail">
-          <h1>Co-ordinators</h1>
-          <h3>
-            Anamay Deshpande- 9689993649.
-            <br> <br>
-            Harshit Joshi- 8960664490.
+        </div> -->
+      <div class="event-desc__info--detail">
+        <h1>Prize</h1>
+        <h3>
+          Upto Rs 3000 worth.
+        </h3>
+      </div>
+      <div class="event-desc__info--detail">
+        <h1>Co-ordinators</h1>
+        <h3>
+          Anamay Deshpande- 9689993649.
+          <br> <br>
+          Harshit Joshi- 8960664490.
 
-          </h3>
-        </div>
+        </h3>
+      </div>
       </div>
     </section>
 
@@ -337,13 +340,14 @@
       <div class="event-reg__reg">
         <h1 class="event-reg__reg--header">Pop-a-Razzi ‘The Pop Culture Quiz’</h1>
         <a href="/eventregistrations" class="ono-btn">Register</a>
+        <h3 class="event-reg__reg--fee">Rs. 100/-</h3>
       </div>
-      <a href="/events/aperture.html" class="event-reg__next event-next__tmc">
+      <a href="/events/tapmi.html" class="event-reg__next event-next__qureka">
         <h1>Next Club</h1>
         <div class="event-reg__next--scroll">
           <div class="event-reg__next--scroll--dot"></div>
         </div>
-        <h1>Aperture</h1>
+        <h1>Tapmi</h1>
       </a>
     </section>
 

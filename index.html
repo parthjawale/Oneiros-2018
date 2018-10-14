@@ -59,17 +59,17 @@
         <li>
           <a href="/" class="custom-link">Home</a>
         </li>
-        <li>
+        <li id="loginButton">
           <a href="/login" class="custom-link">Sign In</a>
         </li>
-        <li>
+        <li id="registerButton">
           <a href="/register" class="custom-link">Sign Up</a>
         </li>
         <li>
           <a href="/about/playmakers.html" class="custom-link">Team</a>
         </li>
-        <li>
-          <a href="/eventregistrations" class="custom-link">Registration</a>
+        <li id="eventsButton">
+          <a href="/eventregistrations" id="eventsButton" class="custom-link">Registration</a>
         </li>
         <li>
           <a href="/events" class="custom-link">Events</a>
@@ -81,7 +81,10 @@
           <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
         </li>
         <li>
-          <a href="/Accommodation" class="custom-link">Accommodation</a>
+          <a href="/accommodation" class="custom-link">Accommodation</a>
+        </li>
+        <li>
+          <a href="/funzone" class="custom-link">Funzone</a>
         </li>
         <li id="logout">
           <a href="/" class="custom-link">Logout</a>
@@ -108,6 +111,9 @@
         </div>
         <canvas class="draw"></canvas>
       </div> -->
+      <div id="funzone">
+        <a href="/funzone" class="custom-link">Funzone</a>
+      </div>
       <div id="mext">
         <p>Powered by</p>
         <img src="/img/logos/mext.png" alt="Mext">
@@ -163,32 +169,18 @@
       </a> -->
     </section>
 
-    <!-- <section class="home-contact section"> -->
-    <!-- <div class="home-contact__form noeffect">
-        <input class="noeffect" autocomplete="off" type="text" name="name" id="contact-name" placeholder="Name">
-        <span class="home-contact__underline noeffect"></span>
-        <input class="noeffect" autocomplete="off" type="text" name="college" id="contact-college" placeholder="College Name">
-        <span class="home-contact__underline noeffect"></span>
-        <input class="noeffect" autocomplete="off" type="number" name="phno" id="contact-phno" placeholder="Contact Number">
-        <span class="home-contact__underline noeffect"></span>
-        <textarea name="message" id="contact-message" rows="3" placeholder="Message" class="noeffect"></textarea>
-        <span class="home-contact__underline noeffect"></span>
-        <a href="" id="home-contact-btn" class="ono-animatedbtn noeffect">
-          <p class="noeffect">Submit</p>
-          <span class="ono-animatedbtn__circle noeffect"></span>
-        </a>
-      </div> -->
-
-    <!-- <div class="home-contact__splash">
+    <!-- <section class="home-contact section">
+      <div class="home-contact__splash">
         <div class="home-contact__overlay"></div>
-        <input id="contact-email" type="email" placeholder="Your E-Mail Address">
+        <input name="person-email" id="contact-email" type="email" placeholder="Your E-Mail Address">
         <span class="home-contact__underline home-contact__underline--white"></span>
       </div>
       <div class="home-contact__details">
-        <input id="contact-name" type="text" placeholder="Your Name">
+        <input name="name" id="contact-name" type="text" placeholder="Your Name">
         <span class="home-contact__underline home-contact__underline--blue"></span>
         <textarea id="contact-message" name="message" id="" rows="3" placeholder="Your Message"></textarea>
         <span class="home-contact__underline home-contact__underline--blue"></span>
+        <input type="hidden" id="sender-email" name="email" value="webadmin@oneiros.in">
         <h1>Get in Touch</h1>
       </div>
       <a href="#" id="home-contact-btn" class="ono-animatedbtn">

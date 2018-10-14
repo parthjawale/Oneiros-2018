@@ -37,7 +37,7 @@
 
 
   <header>
-    <img id="wordmark" class="wordmark-dark" src="/img/logos/wordmark-white.png" alt="Wordmark">
+    <img id="wordmark" src="/img/logos/wordmark-white.png" alt="Wordmark">
     <div class="nav">
       <ul>
         <li>
@@ -65,17 +65,17 @@
         <li>
           <a href="/" class="custom-link">Home</a>
         </li>
-        <li>
+        <li id="loginButton">
           <a href="/login" class="custom-link">Sign In</a>
         </li>
-        <li>
+        <li id="registerButton">
           <a href="/register" class="custom-link">Sign Up</a>
         </li>
         <li>
           <a href="/about/playmakers.html" class="custom-link">Team</a>
         </li>
-        <li>
-          <a href="/eventregistrations" class="custom-link">Registration</a>
+        <li id="eventsButton">
+          <a href="/eventregistrations" id="eventsButton" class="custom-link">Registration</a>
         </li>
         <li>
           <a href="/events" class="custom-link">Events</a>
@@ -87,7 +87,10 @@
           <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
         </li>
         <li>
-          <a href="/Accommodation" class="custom-link">Accommodation</a>
+          <a href="/accommodation" class="custom-link">Accommodation</a>
+        </li>
+        <li>
+          <a href="/funzone" class="custom-link">Funzone</a>
         </li>
         <li id="logout">
           <a href="/" class="custom-link">Logout</a>
@@ -128,7 +131,7 @@
     </section>
     <section class="section event-desc bg-grey-light bg-grey-light">
       <div class="event-desc__info">
-        <div class="event-desc__info--detail">
+        <!-- <div class="event-desc__info--detail">
           <h1>Venue</h1>
           <h3> OLD MESS
           </h3>
@@ -138,7 +141,7 @@
           <h3> Day 2: 10:30-12 pm
 
           </h3>
-        </div>
+        </div> -->
         <div class="event-desc__info--detail">
           <h1>Price</h1>
           <h3>
@@ -183,8 +186,9 @@
       <div class="event-reg__reg">
         <h1 class="event-reg__reg--header">FUSIONOID</h1>
         <a href="/eventregistrations" class="ono-btn">Register</a>
+        <h3 class="event-reg__reg--fee">Rs. 100/-</h3>
       </div>
-      <a href="#comicstaan-desc" class="event-reg__next event-next__tmc">
+      <a href="#comicstaan-desc" class="event-reg__next event-next__scribbles">
         <h1>Next Event</h1>
         <div class="event-reg__next--scroll">
           <div class="event-reg__next--scroll--dot"></div>
@@ -214,16 +218,16 @@
     </section>
     <section class="section event-desc bg-grey-light">
       <div class="event-desc__info">
-        <div class="event-desc__info--detail">
+        <!-- <div class="event-desc__info--detail">
           <h1>Venue</h1>
           <h3>OLD MESS
           </h3>
-        </div>
-        <div class="event-desc__info--detail">
+        </div> -->
+        <!-- <div class="event-desc__info--detail">
           <h1>Timings</h1>
           <h3>Day3: 10:30-12 pm
           </h3>
-        </div>
+        </div> -->
         <div class="event-desc__info--detail">
           <h1>Price</h1>
           <h3>
@@ -270,8 +274,9 @@
       <div class="event-reg__reg">
         <h1 class="event-reg__reg--header">COMICSTAAN</h1>
         <a href="/eventregistrations" class="ono-btn">Register</a>
+        <h3 class="event-reg__reg--fee">Rs. 150/-</h3>
       </div>
-      <a href="#trippy-desc" class="event-reg__next event-next__tmc">
+      <a href="#trippy-desc" class="event-reg__next event-next__scribbles">
         <h1>Next Event</h1>
         <div class="event-reg__next--scroll">
           <div class="event-reg__next--scroll--dot"></div>
@@ -298,7 +303,7 @@
     </section>
     <section class="section event-desc bg-grey-light">
       <div class="event-desc__info">
-        <div class="event-desc__info--detail">
+        <!-- <div class="event-desc__info--detail">
           <h1>Venue</h1>
           <h3>OLD MESS
 
@@ -308,7 +313,7 @@
           <h1>Timings</h1>
           <h3>Day2: 2:00-3:30 pm
           </h3>
-        </div>
+        </div> -->
         <div class="event-desc__info--detail">
           <h1>Price</h1>
           <h3>
@@ -355,8 +360,9 @@
       <div class="event-reg__reg">
         <h1 class="event-reg__reg--header">TRIPPY TILES</h1>
         <a href="/eventregistrations" class="ono-btn">Register</a>
+        <h3 class="event-reg__reg--fee">Rs. 200/-</h3>
       </div>
-      <a href="#junk-desc" class="event-reg__next event-next__tmc">
+      <a href="#junk-desc" class="event-reg__next event-next__scribbles">
         <h1>Next Club</h1>
         <div class="event-reg__next--scroll">
           <div class="event-reg__next--scroll--dot"></div>
@@ -383,7 +389,7 @@
     </section>
     <section class="section event-desc bg-grey-light">
       <div class="event-desc__info">
-        <div class="event-desc__info--detail">
+        <!-- <div class="event-desc__info--detail">
           <h1>Venue</h1>
           <h3>OLD MESS
 
@@ -393,7 +399,7 @@
           <h1>Timings</h1>
           <h3>Day2: 2:00-3:30 pm
           </h3>
-        </div>
+        </div> -->
         <div class="event-desc__info--detail">
           <h1>Price</h1>
           <h3>
@@ -446,13 +452,14 @@
       <div class="event-reg__reg">
         <h1 class="event-reg__reg--header">JUNK-O-MANIA</h1>
         <a href="/eventregistrations" class="ono-btn">Register</a>
+        <!-- <h3 class="event-reg__reg--fee">Rs. 100/-</h3> -->
       </div>
-      <a href="/events/qureka.html" class="event-reg__next event-next__tmc">
+      <a href="/events/sophia.html" class="event-reg__next event-next__scribbles">
         <h1>Next Club</h1>
         <div class="event-reg__next--scroll">
           <div class="event-reg__next--scroll--dot"></div>
         </div>
-        <h1>Qureka</h1>
+        <h1>Sophia</h1>
       </a>
     </section>
   </main>

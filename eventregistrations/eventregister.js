@@ -36,37 +36,21 @@ $(document).ready(function() {
       clubs,
       email: ""
     },
-    created() {
-      var self = this;
-      firebase.auth().onAuthStateChanged(
-        function(user) {
-          if (user) {
-            self.user = user;
-            firebase
-              .firestore()
-              .collection("users")
-              .doc(self.user.uid)
-              .get()
-              .then(function(doc) {
-                self.user.displayName = doc.data().name;
-                console.log(self.user);
-              });
-          } else {
-            console.log("Not registered");
-          }
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
-    },
     mounted() {
       var self = this;
-
       firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
-          console.log("object");
           window.location.href = "/login";
+        } else {
+          self.user = user;
+          firebase
+            .firestore()
+            .collection("users")
+            .doc(self.user.uid)
+            .get()
+            .then(function(doc) {
+              self.user.displayName = doc.data().name;
+            });
         }
       });
 
@@ -183,9 +167,6 @@ $(document).ready(function() {
       },
       submit() {
         var self = this;
-        console.log(this.eventName);
-        console.log(this.selectedClub);
-        console.log(this.user);
         self.disabled = true;
         var userdb = firebase.firestore().collection("users");
         var eventdb = firebase.firestore().collection("events");
@@ -254,7 +235,6 @@ $(document).ready(function() {
                   alert("You've already registered.");
                   return;
                 }
-                console.log(self.userarr);
                 eventdb.doc(self.eventName.name).update({
                   users: self.userarr
                 });
@@ -316,7 +296,6 @@ $(document).ready(function() {
                       alert("You've already registered.");
                       return;
                     }
-                    console.log(self.eventarr);
                     userdb
                       .doc(self.user.uid)
                       .update({

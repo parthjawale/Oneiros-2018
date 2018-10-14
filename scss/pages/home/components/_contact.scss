@@ -1,56 +1,3 @@
-// .home-contact {
-//   &__form {
-//     background: #fff;
-//     position: absolute;
-//     left: 50%;
-//     bottom: 5rem;
-//     transform: translateX(-50%);
-//     width: 60% !important;
-//     height: 75%;
-//     border-radius: 5px;
-//     box-shadow: 0 0 2rem #fff;
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//   }
-
-//   input,
-//   textarea {
-//     position: relative;
-//     border: none;
-//     width: 80%;
-//     font-family: 'Gotham-Bold';
-//     font-size: 3rem !important;
-//     margin: 2rem 0;
-//     border-bottom: 1px solid rgba(#222, .1);
-//     padding: 1rem 0;
-
-//     &:focus+.home-contact__underline {
-//       width: 80%;
-//     }
-
-//     &::placeholder {
-//       transition: .2s all;
-//       opacity: .5;
-//     }
-
-//     &:focus::placeholder {
-//       opacity: .2;
-//     }
-//   }
-
-//   &__underline {
-//     transition: .2s all;
-//     height: 3px;
-//     background: #303F9F;
-//     transform: translateY(-2rem);
-//     width: 0px;
-//     border-radius: 10px;
-//   }
-// }
-
 .home-contact {
   display: flex;
   flex-direction: column;
@@ -59,7 +6,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(#222, .5), transparent);
+    background: linear-gradient(to right, rgba(#222, 0.5), transparent);
     z-index: 1;
   }
 
@@ -76,12 +23,12 @@
 
     &::placeholder {
       color: #fff;
-      font-family: 'Gotham-Thin';
-      transition: .2s all;
+      font-family: "Gotham-Thin";
+      transition: 0.2s all;
     }
 
     &:focus::placeholder {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 
@@ -96,15 +43,39 @@
 
   &__splash {
     height: 40%;
-    background: url('/img/home/contact.jpg');
+    background: url("/img/home/contact.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: top;
 
     input {
       border: none;
       font-size: 7rem;
-      font-family: 'Gotham';
+      font-family: "Gotham";
       background: transparent;
+
+      &:focus+span {
+        background: $color-secondary;
+      }
+
+      @media (max-width: 800px) {
+        font-size: 5rem;
+        margin-top: 12rem;
+      }
+    }
+
+    input+span {
+      width: 80% !important;
+    }
+
+    #contact-email {
+      width: 80%;
+
+      // border-top: none;
+      // border-left: none;
+      // border-right: none;
+      .home-contact__underline {
+        width: 80%;
+      }
     }
   }
 
@@ -123,10 +94,10 @@
     input,
     textarea {
       border: none;
-      font-size: 3rem;
+      font-size: 2.5rem;
       background: transparent;
       color: #fff;
-      font-family: 'Gotham';
+      font-family: "Gotham";
       z-index: 5;
       position: relative;
     }
@@ -138,7 +109,7 @@
       bottom: 1rem;
       color: #111;
       font-size: 20rem;
-      font-family: 'Gotham-Black';
+      font-family: "Gotham-Black";
       z-index: 0;
     }
 
@@ -148,7 +119,7 @@
   }
 
   &__underline {
-    transition: .2s all;
+    transition: 0.2s all;
     height: 3px;
     transform: translateY(2.5rem);
     width: 0%;
@@ -161,7 +132,7 @@
     }
 
     &--blue {
-      background: #303F9F;
+      background: #303f9f;
     }
   }
 }

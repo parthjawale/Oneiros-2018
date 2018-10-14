@@ -13,7 +13,7 @@ $(document).ready(() => {
   contactbutton.on("click", e => {
     e.preventDefault();
 
-    const email = $("#contact-email").val();
+    const email = $("#sender-email").val();
     const name = $("#contact-name").val();
     const msg = $("#contact-message").val();
 
@@ -37,18 +37,17 @@ $(document).ready(() => {
     };
 
     fetch("/mail/checkMail.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-    })
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(body)
+      })
       .then(res => {
-        console.log(res);
         return res.json();
       })
-      .then(response => {
-        console.log(response);
+      .then(function (response) {
         if (response.code === 200) {
           trans("We'll get back to you!");
         } else if (response.code === 405) {
@@ -56,6 +55,9 @@ $(document).ready(() => {
         } else if (response.code === 406) {
           trans("Invalid E-Mail");
         }
+      })
+      .catch(function (error) {
+        console.log(error);
       });
   });
 });
