@@ -232,7 +232,7 @@ var clubs = [
         name: "Rangmanch",
         price: 100,
         min: 4,
-        max: 15,
+        max: 18,
         type: "team"
       },
       {
@@ -313,14 +313,14 @@ var clubs = [
         price: 100,
         min: 1,
         max: 2,
-        type: "team"
+        type: "fixed"
       },
       {
         name: "General Quiz(Sadharan)",
         price: 100,
         min: 1,
         max: 2,
-        type: "team"
+        type: "fixed"
       }
     ]
   },
