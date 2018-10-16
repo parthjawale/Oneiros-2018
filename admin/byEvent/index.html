@@ -37,22 +37,25 @@
                 No of Participants: {{user.value}} <br> <br>
                 Paid: {{user.paid}} <br> <br>
                 Total Amount: {{user.amount}} <br> <br>
-                Email: {{user.email}}
-            </p>
-            <p v-if="selectedEvent.name == 'Requiem - War Of Bands'">
-                Band Name: {{user.bandName}} <br> <br>
-                Genre: {{user.genre}} <br> <br>
-                Description: {{user.description}} <br> <br>
-                Video Link: {{user.videoLink}}
-            </p>
-            <p v-if="selectedEvent.name == 'Destival - Group Dance Competition'">
-                Links: {{user.links}} <br> <br>
-                Team Name: {{user.teamName}} <br> <br>
-            </p>
-            <p v-if="selectedEvent.name == 'Kairos - Fashion Show'">
-                Team Name: {{user.teamName}} <br> <br>
-            </p>
-            </p>
+                Email: {{user.email}} <br> <br>
+                Unique Code: {{user.ucode}} <br> <br>
+                Mobile Number: {{user.pno}} <br> <br>
+                Whatsapp Number: {{user.wpno}} <br> <br>
+                <span v-if="!user.isManipal">College: {{user.college}} </span>
+                <span v-else>College: Manipal University Jaipur </span>
+                <p v-if="selectedEvent.name == 'Requiem - War Of Bands'">
+                    Band Name: {{user.bandName}} <br> <br>
+                    Genre: {{user.genre}} <br> <br>
+                    Description: {{user.description}} <br> <br>
+                    Video Link: {{user.videoLink}}
+                </p>
+                <p v-if="selectedEvent.name == 'Destival - Group Dance Competition'">
+                    Links: {{user.links}} <br> <br>
+                    Team Name: {{user.teamName}} <br> <br>
+                </p>
+                <p v-if="selectedEvent.name == 'Kairos - Fashion Show'">
+                    Team Name: {{user.teamName}} <br> <br>
+                </p>
         </div>
         <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>

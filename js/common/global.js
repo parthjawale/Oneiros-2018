@@ -181,9 +181,12 @@ logout.click(() => {
 });
 
 $(document).ready(() => {
-  const moodi = `<img src="/img/logos/moodi-logo.png" id="moodi-nav-logo" alt="">`
-  $('.newnav-container__splash--box').append(moodi)
-})
+  const moodi = `<img src="/img/logos/moodi-logo.png" style="cursor:pointer" id="moodi-nav-logo" alt="">`;
+  $(".newnav-container__splash--box").append(moodi);
+  $("#moodi-nav-logo").click(function () {
+    window.open("https://moodi.org", "_blank");
+  });
+});
 
 console.log(
   `%c

@@ -6,15 +6,12 @@ $(document).ready(function() {
   new Vue({
     el: "#app",
     data: {
-      transactionBox: false,
       selectedClub: "",
       eventName: "",
       value: 0,
       user: null,
       error: false,
       disabled: false,
-      paymentNow: true,
-      transactionID: "",
       requiem: {
         bandname: "",
         description: "",
@@ -39,14 +36,13 @@ $(document).ready(function() {
       clubs,
       email: ""
     },
-    created() {
+    mounted() {
       var self = this;
       firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
           window.location.href = "/login";
         } else {
           self.user = user;
-          console.log(user);
           firebase
             .firestore()
             .collection("users")
@@ -169,8 +165,7 @@ $(document).ready(function() {
             alert(error.message);
           });
       },
-
-      submit(text) {
+      submit() {
         var self = this;
         self.disabled = true;
         var userdb = firebase.firestore().collection("users");
@@ -313,12 +308,11 @@ $(document).ready(function() {
                           ". Your unique code is: " +
                           doc.data().ucode +
                           ". Please refer to the mail for further instructions.";
-                        if (text != "now") {
-                          self.$refs.modalToggle.checked = false;
-                          $(self.$refs.notification).addClass(
-                            "notification--show"
-                          );
-                        }
+
+                        self.$refs.modalToggle.checked = false;
+                        $(self.$refs.notification).addClass(
+                          "notification--show"
+                        );
 
                         userdb
                           .doc(self.user.uid)
@@ -359,11 +353,6 @@ $(document).ready(function() {
                                 });
                               self.disabled = false;
                               self.userarr = [];
-                              console.log(text);
-                              if (text == "now") {
-                                self.paymentNow = false;
-                                self.transactionBox = true;
-                              }
                             }
                           });
                       });
@@ -376,62 +365,6 @@ $(document).ready(function() {
               self.disabled = false;
             }
           );
-      },
-      addID() {
-        var self = this;
-        var eventsarr = [];
-        var usersarr = [];
-        firebase
-          .firestore()
-          .collection("users")
-          .doc(self.user.uid)
-          .get()
-          .then(function(doc) {
-            eventsarr = doc.data().events;
-            eventsarr.forEach(function(child) {
-              if (child.event == self.eventName.name) {
-                child.transactionID = self.transactionID;
-              }
-            });
-            firebase
-              .firestore()
-              .collection("users")
-              .doc(self.user.uid)
-              .update({
-                events: eventsarr
-              })
-              .then(function() {
-                firebase
-                  .firestore()
-                  .collection("events")
-                  .doc(self.eventName.name)
-                  .get()
-                  .then(function(doc) {
-                    usersarr = doc.data().users;
-                    usersarr.forEach(function(child) {
-                      if (child.user == self.user.uid) {
-                        child.transactionID = self.transactionID;
-                      }
-                    });
-                    firebase
-                      .firestore()
-                      .collection("events")
-                      .doc(self.eventName.name)
-                      .update({
-                        users: usersarr
-                      })
-                      .then(function() {
-                        self.disabled = false;
-                        self.$refs.modalToggle.checked = false;
-                        $(self.$refs.notification).addClass(
-                          "notification--show"
-                        );
-                        self.userarr = [];
-                        self.clear();
-                      });
-                  });
-              });
-          });
       },
       clear() {
         this.selectedClub = "";

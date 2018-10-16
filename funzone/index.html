@@ -70,6 +70,9 @@
                     <a href="/majorevents" class="custom-link">Major Events</a>
                 </li>
                 <li>
+                    <a href="/blog" class="custom-link">Blog</a>
+                </li>
+                <li>
                     <a href="/campusambassador" class="custom-link">Campus Ambassador</a>
                 </li>
                 <li>
@@ -93,7 +96,7 @@
         <h1 class="funzone__login--header">Ready to win some coupons ?<br> <span class="funzone__login--header--sub">Go
                 ahead and knock yourself out!</span></h1>
         <form action="" @submit.prevent="login">
-            <input type="text" placeholder="Email" v-model="email" class="funzone__input">
+            <input type="text" placeholder="Username" v-model="username" class="funzone__input">
             <br>
             <input type="password" placeholder="Password" v-model="password" class="funzone__input">
             <br>
@@ -104,8 +107,6 @@
     <div class="signup">
         Don't Have an Account Sign Up <a href="https://oneiros.mext.in/register">here</a>.
     </div>
-
-
     <script src="./assets/js/libs/vue.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
     <script src="./assets/js/libs/jquery.js"></script>
@@ -118,13 +119,21 @@
             storageBucket: "oneiros-2018.appspot.com",
             messagingSenderId: "358484877394"
         };
-        const app = firebase.initializeApp(config);</script>
+        if (!firebase.apps.length) {
+            firebase.initializeApp(config);
+        }
+        firebase.firestore().settings({
+            timestampsInSnapshots: true
+        });
+
+    </script>
     <script src="/js/common/global.js"></script>
     <script>
         new Vue({
             el: "#Glogin",
             data: {
                 email: '',
+                username: '',
                 password: '',
                 loading: false
             },
@@ -143,16 +152,41 @@
             },
             methods: {
                 login(e) {
+                    var self = this
+                    if (this.username == '' || this.password == '')
+                        return
                     this.loading = !this.loading
-                    var this2 = this
-                    firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-                        .then(function (user) {
-                            window.location.href = './funzone.html';
+                    firebase
+                        .firestore()
+                        .collection('users')
+                        .where('username', '==', self.username)
+                        .get()
+                        .then(function (querySnapshot) {
+                            if (querySnapshot.size > 0) {
+                                querySnapshot.forEach(function (doc) {
+                                    self.email = doc.data().email
+                                    firebase
+                                        .auth()
+                                        .signInWithEmailAndPassword(self.email, self.password)
+                                        .then(function (user) {
+                                            window.location.href = './funzone.html';
+                                        })
+                                        .catch(function (err) {
+                                            self.loading = !self.loading
+                                            alert('Wrong Credentials');
+                                        })
+                                })
+                            } else {
+                                alert('Wrong Credentials');
+                                self.loading = !self.loading
+                                self.clear()
+                            }
                         })
-                        .catch(function (err) {
-                            this2.loading = !this2.loading
-                            alert('Wrong Credentials');
-                        })
+                },
+                clear() {
+                    this.email = ''
+                    this.username = ''
+                    this.password = ''
                 }
             }
         })
