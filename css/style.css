@@ -2235,6 +2235,8 @@ body#post {
     .post__header h1 {
       margin: 0 auto;
       text-align: center; } }
+  .post__header h1 {
+    text-align: center; }
   .post__header h5 {
     text-align: right;
     padding-top: 1.5rem; }
