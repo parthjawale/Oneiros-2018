@@ -2228,14 +2228,16 @@ body#post {
   font-size: 3.2rem;
   position: relative;
   z-index: 0; }
-  .post__header > h1 {
-    transform: translateY(-80%);
-    max-width: 60%;
-    text-align: center; }
-    @media (max-width: 600px) {
-      .post__header > h1 {
-        max-width: 90%;
-        transform: none; } }
+  .post__header div {
+    width: 90%;
+    display: inline-block; }
+  @media screen and (max-width: 768px) {
+    .post__header h1 {
+      margin: 0 auto;
+      text-align: center; } }
+  .post__header h5 {
+    text-align: right;
+    padding-top: 1.5rem; }
   .post__header__backdrop {
     position: absolute;
     z-index: -1;
@@ -2386,12 +2388,17 @@ body#post {
       .blog__card__content--controls > a {
         color: inherit;
         text-decoration: none;
+        outline: none;
         padding: 1.5rem 2.5rem;
-        border: none;
+        border: 1px solid black;
         font-family: inherit;
         font-size: 1.8rem;
         cursor: pointer;
-        outline: none; }
+        transition: all 0.4s ease-in-out; }
+        .blog__card__content--controls > a :hover {
+          color: white;
+          background-color: black;
+          border: 1px solid white; }
 
 #payments-admin {
   display: flex;
