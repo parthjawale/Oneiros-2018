@@ -118,16 +118,16 @@ $(document).ready(() => {
   setTimeout(() => {
     $(".loader-prime").addClass("hide-prime-loader");
   }, 2000);
-  $(".mext-logo").click(function() {
+  $(".mext-logo").click(function () {
     window.open("https://mext.in", "_blank");
   });
-  $(".moodi-logo").click(function() {
+  $(".moodi-logo").click(function () {
     window.open("https://moodi.org", "_blank");
   });
-  $(".wordmark, #wordmark").click(function() {
+  $(".wordmark, #wordmark").click(function () {
     window.open("https://oneiros.co.in", "_self");
   });
-  $("#mext").click(function() {
+  $("#mext").click(function () {
     window.open("https://mext.in", "_blank");
   });
 });
@@ -183,7 +183,7 @@ logout.click(() => {
 $(document).ready(() => {
   const moodi = `<img src="/img/logos/moodi-logo.png" style="cursor:pointer" id="moodi-nav-logo" alt="">`;
   $(".newnav-container__splash--box").append(moodi);
-  $("#moodi-nav-logo").click(function() {
+  $("#moodi-nav-logo").click(function () {
     window.open("https://moodi.org", "_blank");
   });
 });
@@ -208,3 +208,9 @@ console.log(
   `,
   "font-family:monospace; color: red"
 );
+
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js')
+}
