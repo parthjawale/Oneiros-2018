@@ -21,16 +21,6 @@ new Vue({
     disabled: false
   },
   methods: {
-    random_code: function() {
-      var start = new Date().getTime();
-      var end = start.toString(8).substr(10);
-      var random = Math.random()
-        .toString(36)
-        .substr(10);
-      var res = random.concat(end);
-
-      return res;
-    },
     validateOther() {
       var self = this;
       self.disabled = true;

@@ -2557,6 +2557,134 @@ body#post {
   to {
     transform: rotate(360deg); } }
 
+#sponsors-page {
+  /* .container section:nth-child(odd) {
+    background-color: #fff;
+} */ }
+  #sponsors-page .title {
+    font-size: 4rem;
+    text-align: center;
+    padding: 7rem 0; }
+  #sponsors-page .landing {
+    background: black;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gotham"; }
+    #sponsors-page .landing button {
+      background-color: white;
+      color: black;
+      border-radius: 0;
+      border: none;
+      font-family: "Gotham";
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      outline: none;
+      margin: 0 auto;
+      margin-top: 3rem;
+      display: block;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      font-size: 2.5rem;
+      padding: 1.2rem 1.5rem;
+      transition: box-shadow 0.2s ease-in-out; }
+      #sponsors-page .landing button:hover {
+        cursor: pointer;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+      @media screen and (max-width: 768px) {
+        #sponsors-page .landing button {
+          margin-top: 3rem; } }
+  #sponsors-page .main {
+    color: white;
+    margin: 0;
+    font-size: 7rem;
+    word-wrap: break-word; }
+  @media screen and (max-width: 768px) {
+    #sponsors-page .main {
+      font-size: 5rem; } }
+  #sponsors-page .container {
+    width: 100%;
+    background-color: white;
+    position: relative;
+    height: 100%; }
+  #sponsors-page .one {
+    padding: 1.5rem 0; }
+  #sponsors-page .Head {
+    font-size: 3rem;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+    color: #f52323;
+    padding: 7rem 0; }
+  #sponsors-page .IMG {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 19rem; }
+  #sponsors-page .image-2,
+  #sponsors-page .image-3,
+  #sponsors-page .image-1,
+  #sponsors-page .image-4,
+  #sponsors-page .image-5,
+  #sponsors-page .image-6 {
+    width: 100%;
+    height: 100%; }
+  #sponsors-page .logo {
+    width: 300px; }
+    #sponsors-page .logo img {
+      width: 100%;
+      height: auto; }
+  @media screen and (max-width: 768px) {
+    #sponsors-page .logo {
+      width: 200px; } }
+  #sponsors-page .image {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 3rem;
+    grid-auto-rows: minmax(200px, auto); }
+  #sponsors-page .desc {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 3rem;
+    margin: 0;
+    margin-top: 1rem; }
+  #sponsors-page .description {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1.5rem 0;
+    margin: 0; }
+  #sponsors-page .image-sponsor {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 70%;
+    display: block;
+    margin: 0 auto; }
+  #sponsors-page .imgtxt {
+    text-align: center;
+    font-size: 4 rem; }
+  #sponsors-page .Image {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3em;
+    grid-auto-rows: minmax(250px, auto); }
+  @media (max-width: 760px) {
+    #sponsors-page {
+      /* .image-sponsor {
+        width: 70%;
+    } */ }
+      #sponsors-page .ono {
+        width: 70%;
+        display: block;
+        margin: 0 auto; }
+      #sponsors-page .Image {
+        grid-template-columns: 1fr;
+        grid-gap: 3rem; } }
+
 .playmakers {
   position: relative;
   background: linear-gradient(160deg, #222 50%, #f6202b 50%);

@@ -328,10 +328,10 @@ $(document).ready(function() {
                                   self.eventName.name +
                                   ". <br>Your unique code is " +
                                   doc.data().ucode +
-                                  ".<br>Payment instructions will be sent soon.",
+                                  ".<br>. Please refer to the mail for further instructions. Please find the attached QR Code for payment of your respective event.<ul><li>Notedown the Unique ID i.e UID.</li><li>Scan the code on Paytm App and Pay as per the amount shown during Registerations.</li><li>Mention your name and UID in the Description of Paytm Payments Portal.</li><li>Email us on Payments@oneiros.in</li><li>Attach the screenshot of the Transction with  your basic details including Name, College Name, Phone Number, Email, Event Name, No. Of Participants, Amount to be paid, UID, Paytm Refrence code.</li><li>You will soon receive a confirmation mail from us as soon as we approve the Transction. The mail will contain a Bill Number which will be used to generate original bill on the Event date at MUJ ONEIROS'18 FINANCE DESK.</li></ul>",
                                 name: self.name
                               };
-                              fetch("/mail/checkMail.php", {
+                              fetch("/mail/sendImage.php", {
                                 method: "POST",
                                 headers: {
                                   "Content-Type": "application/json"
