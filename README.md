@@ -1,4 +1,5 @@
 # Oneiros-2018
+
 Oneiros 2018 Website
 
 This is the repository for the official website of Manipal University Jaipur's Cultural Festival - Oneiros, 2018.
@@ -11,3 +12,5 @@ In order to use mail functionality, go to /mail/mail.php and add the details as 
 appropriate details as instructed.
 
 Similarly to /mail/msg/msg.php and add the MSG91 API key for adding text message functionality.
+
+This project also uses WebGL for the front-page logo interactive animation.
